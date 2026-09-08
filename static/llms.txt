@@ -88,7 +88,7 @@ Go to https://uramp.gnosis.io/login and follow the steps mentioned or you can fo
 
 ## Events and Press
 
-- [Gnosis Chain Media Kit](https://www.gnosis.io/press/press-kit)
+- [Gnosis Chain Media Kit](https://www.gnosis.io/press)
 
 ## Careers
 
