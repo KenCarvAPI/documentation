@@ -41,7 +41,15 @@
 
 .actions {
   flex: 0 0 auto;
-  gap: 0.25rem;
+  gap: 0.35rem;
+}
+
+.divider {
+  width: 1px;
+  height: 20px;
+  margin: 0 0.4rem;
+  background: var(--gc-border);
+  flex: none;
 }
 
 .sections {
@@ -57,7 +65,9 @@
 }
 
 .colorModeToggle {
-  margin-left: 0.25rem;
+  margin-left: 0.15rem;
+  display: flex;
+  align-items: center;
 }
 
 @media (max-width: 996px) {
@@ -76,7 +86,8 @@
   .sections {
     display: none;
   }
-  .actions {
+  .actions,
+  .divider {
     display: none;
   }
   .colorModeToggle {

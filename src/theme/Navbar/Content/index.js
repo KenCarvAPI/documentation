@@ -49,6 +49,10 @@ export default function NavbarContent() {
   const [leftItems, rightItems] = splitNavbarItems(items);
   const searchBarItem = items.find((item) => item.type === 'search');
 
+  /* Right-hand cluster reads as two groups: text links, then icon buttons. */
+  const rightTextItems = rightItems.filter((item) => !item.html);
+  const rightIconItems = rightItems.filter((item) => item.html);
+
   return (
     <div className={clsx('navbar__inner', styles.inner)}>
       <div className={styles.topRow}>
@@ -77,7 +81,11 @@ export default function NavbarContent() {
             'navbar__items navbar__items--right',
             styles.actions,
           )}>
-          <NavbarItems items={rightItems} />
+          <NavbarItems items={rightTextItems} />
+          {rightIconItems.length > 0 && (
+            <span className={styles.divider} aria-hidden="true" />
+          )}
+          <NavbarItems items={rightIconItems} />
           <NavbarColorModeToggle className={styles.colorModeToggle} />
         </div>
       </div>

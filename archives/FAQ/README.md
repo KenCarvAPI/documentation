@@ -16,10 +16,10 @@ monitoring endpoints and staking parameters in these pages have not been maintai
 
 The FAQ section now publishes a single master FAQ,
 [Gnosis Chain FAQs](../../docs/faq/others.md), with the bridge questions folded in as a Bridging
-subsection. For node and validator questions, the maintained
-documentation is [Run a node](../../docs/node/) — in particular
-[Monitoring your node](../../docs/node/management/monitoring-node.md) — plus
-[Discord](https://discord.gg/gnosis) and the
+subsection. The node and validator documentation has since been archived too, to
+[archives/Node](../Node/) — so there is no maintained node documentation on this site. For current
+guidance see [validategnosis.com](https://www.validategnosis.com/),
+[Discord](https://discord.gg/gnosis) or the
 [Validator Request form](https://tally.so/r/3y4V1W).
 
 ## Archived pages

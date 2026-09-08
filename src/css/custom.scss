@@ -263,11 +263,11 @@ nav.navbar {
 }
 
 .navbar__items--right .navbar__link {
-  height: 34px;
+  height: 32px;
   border: 1px solid var(--gc-border);
   border-radius: 100px;
-  padding: 0 0.85rem;
-  font-size: 0.85rem;
+  padding: 0 0.8rem;
+  font-size: 0.825rem;
   color: var(--gc-text);
   background: var(--gc-surface);
 }
@@ -278,32 +278,32 @@ nav.navbar {
   display: none;
 }
 
-/* Social buttons in navbar (SVG rendered from config html) */
-.navbar__items--right a.navbar__item {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+/* The arrow glyph is noise in a cluster this dense; the label is enough. */
+.navbar__items--right .navbar__link svg[class*='iconExternalLink'] {
+  display: none;
+}
+
+/* Social buttons in navbar (SVG rendered from config html).
+   The anchor is the button: same 32px circle, border and surface as the pill
+   links beside it. The SVG carries only the glyph, so there is one ring. */
+.navbar__items--right a.navbar__link:has(.socialButton) {
+  width: 32px;
   padding: 0;
+  justify-content: center;
 }
 .socialButton {
-  height: 34px;
-  width: 34px;
-  border-radius: 8px;
+  height: 30px;
+  width: 30px;
 }
 .socialButton rect {
-  fill: var(--gc-surface);
-  stroke: var(--gc-border);
-  stroke-width: 1.5;
-  rx: 8;
+  fill: none;
+  stroke: none;
 }
 .socialButton path {
   fill: var(--gc-text-muted);
 }
 a:hover .socialButton path {
   fill: var(--gc-text);
-}
-a:hover .socialButton rect {
-  stroke: var(--gc-border-strong);
 }
 
 /* search */
@@ -361,9 +361,9 @@ a:hover .socialButton rect {
 .navbar [class*='toggleButton'] {
   color: var(--gc-text-muted);
   border: 1px solid var(--gc-border);
-  border-radius: 8px;
-  width: 34px;
-  height: 34px;
+  border-radius: 100px;
+  width: 32px;
+  height: 32px;
   background: var(--gc-surface);
 }
 .navbar [class*='toggleButton']:hover {

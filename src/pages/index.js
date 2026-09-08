@@ -226,7 +226,7 @@ function Hero() {
         </Link>
         <Link className={styles.btnSecondary} to="/technicalguides">
           <Icon.Tools width="16" height="16" />
-          Browse guides
+          Knowledge hub
         </Link>
       </div>
     </section>
