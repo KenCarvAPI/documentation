@@ -2096,20 +2096,16 @@ import TabItem from '@theme/TabItem';
 import Admonition from '@theme/Admonition';
 
 <Admonition type="info" title="Note">
-The following third-party bridges allow seamless asset transfers to and from Gnosis Chain. Ensure you verify the bridge’s security, trust and fees before using them.
+The following third-party bridges allow seamless asset transfers to and from Gnosis Chain. Ensure you verify the bridge’s security, trust and fees before using them. For the canonical bridges operated by Gnosis, see [Gnosis Bridge](https://bridge.gnosischain.com/).
 </Admonition>
 
 
 | Bridge Name      | Supported Networks | Link |
 |-----------------|-------------------|------|
-| Stargate    | Multiple EVM Chains | [Visit](https://stargate.finance/bridge?srcChain=gnosis) |
-| Symbiosis         | Multiple EVM Chains   | [Visit](https://app.symbiosis.finance/swap) |
-| Debridge | Multiple EVM Chains, Solana  | [Visit](https://app.debridge.finance/?address=&inputChain=100) |
+| NEAR Intents | Multiple EVM and non-EVM chains (NEAR, Bitcoin, Solana and more) | [Visit](https://app.near-intents.org/) |
 | Jumper   | Multiple EVM Chains, Solana | [Visit](https://jumper.exchange/?fromChain=100) |
 | Bungee | Multiple EVM Chains  | [Visit](https://www.bungee.exchange/) |
-| Hop | Multiple EVM Chains  | [Visit](https://app.hop.exchange/#/send?sourceNetwork=ethereum&destNetwork=gnosis) |
-| Hyperbridge | Multiple EVM Chains  | [Visit](https://app.hyperbridge.network/) |
-| Crosscurve | Multiple EVM Chains  | [Visit](https://app.crosscurve.fi/swap?inputChainId=27&inputToken=0x0000000000000000000000000000000000000000&outputChainId=1) |
+| Symbiosis         | Multiple EVM and non-EVM chains   | [Visit](https://app.symbiosis.finance/swap) |
 
 ---
 
@@ -5402,25 +5398,6 @@ Follow the [verifying a smart contract](https://docs.blockscout.com/for-users/ve
 - [Blockscout Explorer](https://blockscout.com/xdai/mainnet/)
 
 ![](/img/developers/verify/blockscout.png)
-
----
-
-// File: developers/Verify Smart Contracts/gnosisscan
-
-# Gnosisscan Contract Verification
-
-[Gnosisscan](https://gnosisscan.io) is a Gnosis explorer built by the same team behind [Etherscan](https://etherscan.io/).
-
-Follow the [verifying contracts](https://medium.com/etherscan-blog/verifying-contracts-on-etherscan-f995ab772327) guide on EtherScan Blog for detailed step-by-step guide. It mentions and shows screenshots taken in Etherscan, but those apply for [Gnosisscan](https://gnosisscan.io) as well.
-
-![](/img/developers/verify/gnosisscan.png)
-
-## Useful links
-
-- [Gnosisscan verification page](https://gnosisscan.io/verifyContract)
-- [Types of Contract Verification](https://info.etherscan.com/types-of-contract-verification/)
-- [Verifying contracts on Etherscan](https://medium.com/etherscan-blog/verifying-contracts-on-etherscan-f995ab772327)
-- [Verifying Contracts Programmatically](https://docs.etherscan.io/tutorials/verifying-contracts-programmatically)
 
 ---
 
@@ -15041,8 +15018,10 @@ Last Updated: April 2023
 A home to all developer tools that would be helpful when you would be building dApps on Gnosis Chain. Find the support to following in this section :
 - Blockchain explorers
 - Faucets
+- Indexers & Analytics
 - Oracles
 - RPC Providers
+- Token Distribution
 - User Onboarding
 - Wallets
 
@@ -15059,9 +15038,7 @@ Explorers are pieces of software that scans Gnosis and make easier for users to 
 Gnosis supports the following explorers:
 
 - [Blockscout](/tools/explorers/blockscout)
-- [Gnosisscan](https://gnosisscan.io/)
 - [Beacon chain explorer](https://beaconchain.gnosischain.com/)
-- [DexGuru Gnosis Block Explorer](https://gnosis.dex.guru/)
 - [3xpl](https://3xpl.com/gnosis-chain)
 
 ---
@@ -17071,18 +17048,6 @@ dRPC NodeCloud offers an AI-powered load-balancer, 180+ network endpoints, flat-
 https://gnosis-pokt.nodies.app
 ```
 
-## Blast
-
-- [Blast's Docs for Gnosis RPCs](https://blastapi.io/public-api/gnosis)
-
-```shell
-# HTTP RPC
-https://gnosis-mainnet.public.blastapi.io
-
-# WSS RPC
-wss://gnosis-mainnet.public.blastapi.io
-```
-
 ## GetBlock
 
 - [GetBlock's Docs for Gnosis Chain RPCs](https://getblock.io/nodes/gno/)
@@ -17128,6 +17093,15 @@ https://rpc.chain49.com/gnosis-chiado/<API_KEY>
 ```
 https://gnosis.api.onfinality.io/public
 ```
+
+## Tatum
+
+- [Tatum](https://tatum.io/)
+- [Tatum Docs](https://docs.tatum.io/)
+
+## Fastnode
+
+- [Fastnode](https://fastnode.io/)
 
 ---
 
@@ -17204,7 +17178,7 @@ This section shows ways to send tokens to multiple addresses in batch. Various t
 - [LinkDrop](https://linkdrop.io/): features SDK, mult-chain and multi-token support.
 - [Token MultiSender](https://multisender.app/): dev-focused & security minded interface.
 - [Iroiro](https://xdai.iroiro.social/): airdrops with lower fees, csv generation for bulk sends.
-- [AirdropMe](https://airdropme.io/): simple and free multi-chain airdrops.
+- [BiuBiu.Tools](https://biubiu.tools/#/apps/multisender): batch sending of tokens with reduced gas costs.
 
 :::info Connect to Gnosis
 All the platforms above requires to [connect MetaMask to Gnosis](/tools/wallets/metamask/).
@@ -17224,24 +17198,27 @@ Do you own research while selecting your wallet, keep your seed and funds safely
 
 ## Software wallets
 
+- [1inch Wallet](https://1inch.io/wallet/)
 - [Alpha Wallet](https://alphawallet.com/asset/the-best-wallet-for-xdai/)
 - [Ambire Wallet](https://www.ambire.com/)
 - [Coinbase Wallet](https://www.coinbase.com/wallet)
-- [DEX Wallet](https://www.dexwallet.io/)
 - [Enkrypt](https://www.enkrypt.com/?mtm_campaign=Gnosis%20Chain%20Wallet%20Wiki&mtm_kwd=Wiki)
+- [FoxWallet](https://foxwallet.com/)
 - [Frame](https://frame.sh/)
+- [FxWallet](https://www.fxwallet.com/)
+- [Gem Wallet](https://gemwallet.com/)
+- [imToken](https://token.im/)
 - [Mt Pelerin](https://www.mtpelerin.com/bridge-wallet)
 - [MetaMask](/tools/wallets/metamask)
-- [Minerva Wallet](https://minerva.digital/)
-- [MyCrypto](https://app.mycrypto.com/)
 - [Nabox Wallet](https://nabox.io/)
 - [O3Labs](https://o3.network/)
 - [Pillar Wallet](https://www.pillar.fi/)
 - [Poketto Cash](https://poketto.cash/)
-- [Portis Wallet](https://wallet.portis.io/)
 - [Rabby Wallet](https://rabby.io/)
+- [Safe](/tools/wallets/safe)
 - [TokenPocket](https://tokenpocket-gm.medium.com/how-to-add-xdai-chain-through-adding-custom-network-72d95597b017)
-- [Wallet3](https://wallet3.io/)
+- [Wigwam Wallet](https://wigwam.app/)
+- [Zerion](https://zerion.io/)
 
 ## Hardware Wallets
 

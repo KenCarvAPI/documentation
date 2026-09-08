@@ -116,18 +116,6 @@ dRPC NodeCloud offers an AI-powered load-balancer, 180+ network endpoints, flat-
 https://gnosis-pokt.nodies.app
 ```
 
-## Blast
-
-- [Blast's Docs for Gnosis RPCs](https://blastapi.io/public-api/gnosis)
-
-```shell
-# HTTP RPC
-https://gnosis-mainnet.public.blastapi.io
-
-# WSS RPC
-wss://gnosis-mainnet.public.blastapi.io
-```
-
 ## GetBlock
 
 - [GetBlock's Docs for Gnosis Chain RPCs](https://getblock.io/nodes/gno/)
@@ -173,3 +161,12 @@ https://rpc.chain49.com/gnosis-chiado/<API_KEY>
 ```
 https://gnosis.api.onfinality.io/public
 ```
+
+## Tatum
+
+- [Tatum](https://tatum.io/)
+- [Tatum Docs](https://docs.tatum.io/)
+
+## Fastnode
+
+- [Fastnode](https://fastnode.io/)
