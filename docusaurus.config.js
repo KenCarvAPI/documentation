@@ -11,8 +11,8 @@ const config = {
     "Build apps, payments and infrastructure on Gnosis Chain: an EVM network with 5-second blocks, near-zero fees and a stablecoin as gas.",
   url: "https://docs.gnosischain.com",
   baseUrl: "/",
-  onBrokenLinks: "ignore",
-  onBrokenMarkdownLinks: "ignore",
+  onBrokenLinks: "throw",
+  onBrokenMarkdownLinks: "throw",
   favicon: "img/favicon.ico",
   scripts: [
     {
@@ -165,7 +165,7 @@ const config = {
             items: [
               { label: "Start here", to: "/start" },
               { label: "Quickstart", to: "/developers/quickstart" },
-              { label: "Developer overview", to: "/developers/overview" },
+              { label: "Developer overview", to: "/developers/Overview" },
               { label: "Bridges", to: "/bridges" },
               { label: "Tools", to: "/tools" },
             ],
@@ -226,7 +226,19 @@ const config = {
     [
       "@docusaurus/plugin-client-redirects",
       {
+        // The /concepts section moved to /about; external sites still link the old paths
+        createRedirects(existingPath) {
+          if (existingPath.startsWith("/about/")) {
+            return [existingPath.replace("/about/", "/concepts/")];
+          }
+          return undefined;
+        },
         redirects: [
+          // Slug typo fixed (brige -> bridge)
+          {
+            to: "/bridges/bridge-limits",
+            from: "/bridges/brige-limits",
+          },
           // Updates blog archived to /archives/Updates; nothing under /updates is published
           {
             to: "/",

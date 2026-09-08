@@ -30,7 +30,7 @@ Check the [Gnosisscan APIs documentation](https://docs.gnosisscan.io/) for more 
 The BlockScout gas price api endpoint shows a recommended gas price for average, fast and slow transactions based on recently accepted transactions. Users can decide whether to increase the gas price to speed up a transaction or input a lower gas price which may take longer but is still likely to be successful.
 
 ```bash title="Blockscout endpoint - Gnosis Mainnet"
-https://blockscout.com/xdai/mainnet/api/v1/gas-price-oracle
+https://gnosis.blockscout.com/api/v1/gas-price-oracle
 ```
 
 ```bash title="Blockscout endpoint - Chiado Testnet"

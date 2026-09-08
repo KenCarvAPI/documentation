@@ -22,7 +22,7 @@ Nimbus is a client implementation that strives to be as lightweight as possible 
 
 :::caution Prerequisites
 
-The Beacon Node requires an Execution client in order to operate. See [Step 2: Run Execution Client](/category/step--2---run-execution-client) for more information.
+The Beacon Node requires an Execution client in order to operate. See [Step 2: Run Execution Client](/node/manual/execution) for more information.
 
 :::
 

@@ -151,22 +151,10 @@ Forkmon (Fork monitor) is another tool to monitor Node's status.
 - Gnosis Chain: https://forkmon.gnosischain.com/
 - Chiado: https://forkmon.chiadochain.net/
 
-### d14n.info
+### Gnosis Metrics
 
-:::note
-The site is deprecated
-:::
-[d14n.info](https://d14n.info/) is a real-time dashboard that measures decentralization of Gnosis Chain and Ethereum networks.
+[Gnosis Metrics](https://metrics.gnosischain.com/) (formerly d14n.info) is a real-time dashboard with network, validator and decentralization metrics for Gnosis Chain.
 
-![d14n dashboard](../../../static/img/node/monitor-node/d14n.png)
-
-### GnosisPools.info
-
-[GnosisPools.info](https://gnosispools.info/d/Pz05j7dVk/gnosispools-public?orgId=1&refresh=5m&from=now-24h&to=now) allows you to monitor the performance of Gnosis consensus staking pool. Some of the metrics you can track include:
-
-- % of inactive validators
-- Delta in rewards/penalties between consecutive epochs
-- Proposed and missed blocks for each epoch
 
 ### Block explorer
 

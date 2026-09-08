@@ -9,7 +9,7 @@ keywords: [getting started, fintech, embedded finance, gnosis eez, stablecoin pa
 
 ## About Gnosis Chain
 
-Gnosis Chain is a community-owned EVM-based network operated by a diverse set of validators around the world. It is one of Ethereum's first sidechains focused on resilience and credible neutrality as its core values. Currently, there are over 200,000 validators who secure the network.
+Gnosis Chain is a community-owned EVM-based network operated by a diverse set of validators around the world. It is one of Ethereum's first sidechains focused on resilience and credible neutrality as its core values. It is secured by hundreds of thousands of GNO staked across a globally distributed validator set; see the [beacon chain explorer](https://beaconchain.gnosischain.com/) for live figures.
 
 Gnosis Chain uses a DAO governance mechanism to ensure anyone can participate in the decision-making processes regarding the development and future of the network. Creating dApps and integrating with Gnosis Chain products is similar to any other EVM-based blockchain. You can find more details in the [protocol specification](/about/specs).
 
@@ -57,4 +57,4 @@ Every route is a bundle of the same eight components. You switch on the ones you
 
 ## If you are not a fintech
 
-The routes above are built around embedding finance components. If you are deploying a contract, running infrastructure, or bridging assets, start from the [developer overview](/developers/overview) instead.
+The routes above are built around embedding finance components. If you are deploying a contract, running infrastructure, or bridging assets, start from the [developer overview](/developers/Overview) instead.

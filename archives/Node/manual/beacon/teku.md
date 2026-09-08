@@ -12,7 +12,7 @@ This page's content is up-to-date for [Teku v26.4.0](https://github.com/ConsenSy
 :::
 
 :::caution
-The Beacon Node requires an Execution client in order to operate. See [Step 2: Run Execution Client](/category/step--2---run-execution-client) for more information.
+The Beacon Node requires an Execution client in order to operate. See [Step 2: Run Execution Client](/node/manual/execution) for more information.
 :::
 
 ## Overview

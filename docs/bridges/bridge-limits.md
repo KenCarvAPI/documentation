@@ -1,21 +1,21 @@
 ---
 sidebar_position: 6
 title: Gnosis Bridge Limits
-description: Limits of Gnosis Omni Birdge
+description: Limits of Gnosis Omni Bridge
 keywords:
   [amb bridge, arbitrary message bridge, using amb, bridge, gnosis bridge]
 ---
 
 Below is a summary of each token’s transaction limits on both Ethereum and Gnosis Chain, along with quick links to inspect their on-chain contract addresses:
 
-The below list only mentions the top 10 most actively bridged assets. For a detailed view for all assets, checkout the [Bridge Explorer's limit dashbaord](https://bridge.gnosischain.com/bridge-explorer/bridges).
+The below list only mentions the top 10 most actively bridged assets. For a detailed view for all assets, checkout the [Bridge Explorer's limit dashboard](https://bridge.gnosischain.com/bridge-explorer/bridges).
 
 
 | Token | ETH Max/Tx                                | ETH Daily Limit                                 | ETH Exec Daily              | Gnosis Max/Tx                          | Gnosis Daily Limit                     | Gnosis Exec Daily                             | Ethereum Address                                                                                                                   | Gnosis Address                                                                                                                   |
 |-------|--------------------------------------------|--------------------------------------------------|-----------------------------|----------------------------------------|----------------------------------------|-----------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------|
 | GNO   | 1000000000000000000000000000               | 1000000000000000000000000000000000000           | 36000000000000000000001     | 36000000000000000000000               | 36000000000000000000001               | 1000000000000000000000000000000000000        | [0x6810e776880C02933D47DB1b9fc05908e5386b96](https://etherscan.io/address/0x6810e776880C02933D47DB1b9fc05908e5386b96)            | [0x9C58BAcC331c9aa871AFD802DB6379a98e80CEdb](https://gnosisscan.io/address/0x9C58BAcC331c9aa871AFD802DB6379a98e80CEdb)             |
-| WBTC  | 100000000000000000                         | 100000000000000000000000000                   | 100000000000000000000000000 | 100000000000000000                   | 100000000000000000000000000           | 100000000000000000000000000                  | [0xEF826da5AaDAE742ce32cE0C460F30Ab281e51a2](https://etherscan.io/address/0xEF826da5AaDAE742ce32cE0C460F30Ab281e51a2)            | [0xD7cd100056B477C08B419a28E976D8Ade354251a](https://gnosisscan.io/address/0xD7cd100056B477C08B419a28E976D8Ade354251a)             |
-| WETH  | 1000000000000000000000000000000000000      | 1000000000000000000000000000000000001          | 1000000000000000000000000000000000001 | 1000000000000000000000000000000000000 | 1000000000000000000000000000000000001  | 1000000000000000000000000000000000001       | [0xb1A7F8b3AdA1Cbd7752c1306725b07D2F8B4e726](https://etherscan.io/address/0xb1A7F8b3AdA1Cbd7752c1306725b07D2F8B4e726)            | [0x9ba1E2F45aC86b88926a9E6F43120f42BB7eDe40](https://gnosisscan.io/address/0x9ba1E2F45aC86b88926a9E6F43120f42BB7eDe40)             |
+| WBTC  | 100000000000000000                         | 100000000000000000000000000                   | 100000000000000000000000000 | 100000000000000000                   | 100000000000000000000000000           | 100000000000000000000000000                  | [0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599](https://etherscan.io/address/0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599)            | [0x8e5bBbb09Ed1ebdE8674Cda39A0c169401db4252](https://gnosis.blockscout.com/address/0x8e5bBbb09Ed1ebdE8674Cda39A0c169401db4252)             |
+| WETH  | 1000000000000000000000000000000000000      | 1000000000000000000000000000000000001          | 1000000000000000000000000000000000001 | 1000000000000000000000000000000000000 | 1000000000000000000000000000000000001  | 1000000000000000000000000000000000001       | [0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2](https://etherscan.io/address/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2)            | [0x6A023CCd1ff6F2045C3309768eAd9E68F978f6e1](https://gnosis.blockscout.com/address/0x6A023CCd1ff6F2045C3309768eAd9E68F978f6e1)             |
 | SAFE  | 1000000000000000000000000000000000000      | 10000000000000000000000000000000000010         | 10000000000000000000000000000000000010 | 1000000000000000000000000000000000000 | 10000000000000000000000000000000000010 | 10000000000000000000000000000000000010      | [0x5aFE3855358E112B5647B952709E6165e1c1eEEe](https://etherscan.io/address/0x5aFE3855358E112B5647B952709E6165e1c1eEEe)            | [0x4d18815D14fe5c3304e87B3FA18318baa5c23820](https://gnosisscan.io/address/0x4d18815D14fe5c3304e87B3FA18318baa5c23820)             |
 | COW   | 1000000000000000000000000000               | 1000000000000000000000000000000000000          | 1000000000000000000000000000000000000  | 1000000000000000000000000000           | 1000000000000000000000000000000000000   | 1000000000000000000000000000000000000       | [0xDEf1CA1fb7FBcDC777520aa7f396b4E015F497aB](https://etherscan.io/address/0xDEf1CA1fb7FBcDC777520aa7f396b4E015F497aB)            | [0x177127622c4A00F3d409B75571e12cB3c8973d3c](https://gnosisscan.io/address/0x177127622c4A00F3d409B75571e12cB3c8973d3c)             |
 | HOPR  | 1000000000000000000000000000               | 1000000000000000000000000000000000000          | 40000000000000000000000001 | 20000000000000000000000001            | 40000000000000000000000001             | 1000000000000000000000000000000000000        | [0xF5581dFeFD8Fb0e4aeC526bE659CFaB1f8c781dA](https://etherscan.io/address/0xF5581dFeFD8Fb0e4aeC526bE659CFaB1f8c781dA)            | [0xD057604A14982FE8D88c5fC25Aac3267eA142a08](https://gnosisscan.io/address/0xD057604A14982FE8D88c5fC25Aac3267eA142a08)             |
@@ -29,7 +29,7 @@ The below list only mentions the top 10 most actively bridged assets. For a deta
 | ------------------- | ------------------ | ------------------ |
 | Default Bridge Fees | 0%                 | 0.1%               |
 
-## Check Limits thorugh Smart Contracts
+## Check Limits through Smart Contracts
 
 ![alt text](bridge.png)
 
@@ -47,7 +47,7 @@ This guide explains how to programmatically retrieve daily usage and per-transac
 > * The WETH token address on each chain
 >
 >   * Mainnet WETH: `0xC02aaa39b223FE8D0A0e5C4F27eAD9083C756Cc2`
->   * Gnosis WETH: (check the token registry for the canonical address)
+>   * Gnosis WETH: `0x6A023CCd1ff6F2045C3309768eAd9E68F978f6e1`
 
 ---
 

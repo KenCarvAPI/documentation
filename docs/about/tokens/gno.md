@@ -104,7 +104,7 @@ https://docs.gnosischain.com/img/tokens/gno.png
 
 ### Bridge
 
-- Ethereum to Gnosis token bridge: [OmniBridge](https://omni.gnosischain.com/)
+- Ethereum to Gnosis token bridge: [Gnosis Bridge](https://bridge.gnosischain.com/)
 <!-- non native bridges  -->
 
 ## Use GNO Tokens
@@ -121,13 +121,13 @@ Historically, deposits on the Beacon Chain were made with a token called `mGNO` 
 
 :::
 
-For those who prefer not to manage the infrastructure themselves, liquid staking providers offer the opportunity to stake without the need for personal infrastructure management. For more in-depth information about sGNO and rGNO tokens, please consult [Stakewise](https://stakewise.io/).
+For those who prefer not to manage the infrastructure themselves, liquid staking providers offer the opportunity to stake without the need for personal infrastructure management. For more in-depth information about osGNO (StakeWise V3), please consult [StakeWise](https://stakewise.io/).
 
 ### GnosisDAO Governance
 
 - [GnosisDAO Governance Forum](https://forum.gnosis.io/)
 - [GNO Utility and Value Proposition](https://forum.gnosis.io/t/gno-utility-and-value-proposition/2344)
-- [Community](/developers/communication)
+- [Community](/about/communication)
 
 ## GNO Token Audit
 

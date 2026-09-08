@@ -54,8 +54,8 @@ const config: HardhatUserConfig = {
         chainId: 10200,
         urls: {
           //Blockscout
-          apiURL: "https://blockscout.com/gnosis/chiado/api",
-          browserURL: "https://blockscout.com/gnosis/chiado",
+          apiURL: "https://gnosis-chiado.blockscout.com/api",
+          browserURL: "https://gnosis-chiado.blockscout.com",
         },
       },
       {
@@ -67,8 +67,8 @@ const config: HardhatUserConfig = {
           apiURL: "https://api.gnosisscan.io/api",
           browserURL: "https://gnosisscan.io/",
           // Blockscout
-          //apiURL: "https://blockscout.com/xdai/mainnet/api",
-          //browserURL: "https://blockscout.com/xdai/mainnet",
+          //apiURL: "https://gnosis.blockscout.com/api",
+          //browserURL: "https://gnosis.blockscout.com",
         },
       },
     ],
@@ -124,8 +124,8 @@ module.exports = {
         chainId: 10200,
         urls: {
           //Blockscout
-          apiURL: "https://blockscout.com/gnosis/chiado/api",
-          browserURL: "https://blockscout.com/gnosis/chiado",
+          apiURL: "https://gnosis-chiado.blockscout.com/api",
+          browserURL: "https://gnosis-chiado.blockscout.com",
         },
       },
       {
@@ -137,8 +137,8 @@ module.exports = {
           apiURL: "https://api.gnosisscan.io/api",
           browserURL: "https://gnosisscan.io/",
           // Blockscout
-          //apiURL: "https://blockscout.com/xdai/mainnet/api",
-          //browserURL: "https://blockscout.com/xdai/mainnet",
+          //apiURL: "https://gnosis.blockscout.com/api",
+          //browserURL: "https://gnosis.blockscout.com",
         },
       },
     ],

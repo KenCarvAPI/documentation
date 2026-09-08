@@ -94,7 +94,7 @@ const FEATURES = [
     icon: Icon.Build,
     title: 'Build on Gnosis',
     body: 'Deploy EVM contracts with Foundry or Hardhat and verify them on Blockscout.',
-    to: '/developers/overview',
+    to: '/developers/Overview',
   },
   {
     icon: Icon.Bridge,
@@ -189,7 +189,7 @@ const TASKS = [
       ['Useful contracts', '/developers/Usefulcontracts'],
       ['Chain specs', '/about/specs/'],
       ['GNO and xDai', '/about/tokens/'],
-      ['llms.txt', '/llms.txt'],
+      ['llms.txt', 'pathname:///llms.txt'],
     ],
   },
 ];

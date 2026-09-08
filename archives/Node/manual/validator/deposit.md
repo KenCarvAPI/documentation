@@ -15,12 +15,12 @@ sidebar_position : 2
 
 ### GNO on Gnosis Chain
 
-- Validators need to be funded using [GNO on Gnosis Chain](/concepts/tokens/gno)
+- Validators need to be funded using [GNO on Gnosis Chain](/about/tokens/gno)
 - You will need to bridge GNO over from Ethereum to Gnosis Chain
 
 :::tip
 
-You can use [Transferto.xyz](https://transferto.xyz/) or the [Omnibridge](https://omni.gnosischain.com/bridge) to bridge GNO from Ethereum to Gnosis Chain.
+You can use the [Gnosis Bridge](https://bridge.gnosischain.com/) or a third-party bridge such as [Jumper](https://jumper.exchange/) to bridge GNO from Ethereum to Gnosis Chain.
 
 :::
 

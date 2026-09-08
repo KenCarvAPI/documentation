@@ -75,13 +75,11 @@ Gnosis clients are able to run on consumer grade computers and don't require any
 
 Both options have different advantages summed up above. If you are looking for a cloud solution, in addition to many traditional cloud computing providers, there are also services focused on deploying nodes. For example:
 
-- [Gateway](https://gateway.fm/)
-- [Gnosis](../tools/RPC%20Providers/README.md)
-- [Ankr](https://www.ankr.com/rpc/gnosis/)
+- [Gateway.fm](https://gateway.fm/)
 - [Chainnodes](https://www.chainnodes.org/chains/gnosis)
-- [Blast](https://blastapi.io/public-api/gnosis)
-- [GetBlock](https://getblock.io/nodes/gno/)
-- [BlockPI](https://docs.blockpi.io/documentations/api-reference/gnosis)
+- [dRPC](https://drpc.org/)
+- [QuickNode](https://www.quicknode.com/chains/gnosis)
+- [Chainstack](https://chainstack.com/build-better-with-gnosis-chain/)
 
 Check out also [rpc providers](../tools/RPC%20Providers/README.md) for more options on hosted nodes.
 

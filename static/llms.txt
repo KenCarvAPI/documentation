@@ -107,7 +107,7 @@ Go to https://uramp.gnosis.io/login and follow the steps mentioned or you can fo
 | Native (fee) token | xDAI                             | Chiado xDAI                          |
 | Chain ID           | 100                              | 10200                                |
 | EL RPC             | https://rpc.gnosischain.com      | https://rpc.chiadochain.net          |
-| EL Explorer        | https://gnosisscan.io            | https://blockscout.com/gnosis/chiado |
+| EL Explorer        | https://gnosisscan.io            | https://gnosis-chiado.blockscout.com |
 | CL Explorer        | https://beaconchain.gnosischain.com/           | https://beacon.chiadochain.net       |
 | Fork monitor       | https://forkmon.gnosischain.com  | https://forkmon.chiadochain.net      |
 | EthStats           | https://ethstats.gnosischain.com | https://ethstats.chiadochain.net     |
@@ -119,7 +119,7 @@ Go to https://uramp.gnosis.io/login and follow the steps mentioned or you can fo
 
 # Chiado (Testnet)
 
-[Add to MetaMask](https://shanejonas.github.io/metamask-link/deep?method=wallet_addEthereumChain&params[0][chainId]=0x27D8&params[0][chainName]=Chiado&params[0][rpcUrls][0]=https://rpc.chiadochain.net&params[0][nativeCurrency][name]=Chiado%20xDAI&params[0][nativeCurrency][symbol]=XDAI&params[0][nativeCurrency][decimals]=18&params[0][blockExplorerUrls][0]=https://blockscout.com/gnosis/chiado)
+[Add to MetaMask](https://shanejonas.github.io/metamask-link/deep?method=wallet_addEthereumChain&params[0][chainId]=0x27D8&params[0][chainName]=Chiado&params[0][rpcUrls][0]=https://rpc.chiadochain.net&params[0][nativeCurrency][name]=Chiado%20xDAI&params[0][nativeCurrency][symbol]=XDAI&params[0][nativeCurrency][decimals]=18&params[0][blockExplorerUrls][0]=https://gnosis-chiado.blockscout.com)
 
 ![Chiado Train Station](../../../static/img/about/chiado.jpg)
 Image: Trams in Lisbon (credit: [Lisa Fotios](https://www.pexels.com/photo/people-at-city-1534560/))
@@ -151,7 +151,7 @@ Image: Trams in Lisbon (credit: [Lisa Fotios](https://www.pexels.com/photo/peopl
 ### How to Participate
 
 - [Running a Chiado node](https://docs.sedge.nethermind.io/docs/networks/chiado) with [Nethermind Sedge](https://docs.sedge.nethermind.io/)
-- (Here by Dragons): If you can get your hands on Testnet GNO on Chiado, you will need to interact with the [deposit contract](https://blockscout.com/gnosis/chiado/address/0xc5be8bf53755a41c2385e7aa86f6a9e28746f466) programmatically.
+- (Here by Dragons): If you can get your hands on Testnet GNO on Chiado, you will need to interact with the [deposit contract](https://gnosis-chiado.blockscout.com/address/0xb97036A26259B7147018913bD58a774cf91acf25) programmatically.
 
 ## Summary
 
@@ -188,7 +188,7 @@ Image: Trams in Lisbon (credit: [Lisa Fotios](https://www.pexels.com/photo/peopl
 - Name: Testnet xDai on Chiado
 - Type: Native Asset
 
-You can find a list of contract addresses for Chiado tokens in the [Useful Addresses](/developers/UsefulContracts) page.
+You can find a list of contract addresses for Chiado tokens in the [Useful Addresses](/developers/Usefulcontracts) page.
 
 ## Network Config
 
@@ -208,13 +208,6 @@ Gnosis maintains a [Configs Repo](https://github.com/gnosischain/configs/) that 
 - [nethermind.cfg](https://github.com/gnosischain/configs/blob/main/chiado/nethermind.cfg)
 - [GnosisDAO's Recommended Bootnodes](https://github.com/gnosischain/configs/blob/main/chiado/bootnodes_execution.yaml)
 - [Nethermind's Recommended Bootnodes](https://github.com/NethermindEth/nethermind/blob/master/src/Nethermind/Chains/chiado.json#L85)
-
-### DApps
-
-| DApp      |     |
-| --------- | --- |
-| Uniswap   | TBD |
-| Chainlink | TBD |
 
 ## Previous Iterations
 
@@ -270,17 +263,14 @@ TODO -->
 | ------------------------ | ------------------------------------------- |
 | Consensus Layer RPC      | https://rpc-gbc.gnosischain.com             |
 | Beacon Explorer          | https://beaconchain.gnosischain.com/                      |
-| Beacon Explorer Backup 1 | https://beacon-v1.gnosischain.com           |
-| Beacon Explorer Backup 2 | https://beacon-v2.gnosischain.com           |
 | Beacon Checkpoint Sync   | https://checkpoint.gnosischain.com          |
-| Beacon Checkpoint Sync   | https://checkpoint-sync-gnosis.dappnode.io/ |
+| Beacon Checkpoint Sync   | https://checkpoint-sync-gnosis.dappnode.net/ |
 
 ### Other Tools
 
 | Other Tools      |                                |
 | ---------------- | ------------------------------ |
-| GnosisPools.info | https://gnosispools.info       |
-| D14N Info        | https://d14n.info/             |
+| Gnosis Metrics           | https://metrics.gnosischain.com/            |
 | Bordel           | https://bordel.wtf/            |
 | More tools       | [Tools](../../tools/README.md) |
 
@@ -494,13 +484,13 @@ You must **run an execution client** alongside your existing consensus client. N
 ## More info
 
 - [Testnet Deployments](https://github.com/gnosischain/consensus-deployment-ansible#readme)
-- [Chiado Testnet](/concepts/networks/chiado)
+- [Chiado Testnet](/about/networks/chiado)
 
 
 ## Pre-merge consensus articles
 
-- [POSDAO](/concepts/specs/consensus/posdao)
-- [AURA](/concepts/specs/consensus/aura)
+- [POSDAO](/about/specs/consensus/posdao)
+- [AURA](/about/specs/consensus/aura)
 
 ---
 
@@ -509,20 +499,20 @@ You must **run an execution client** alongside your existing consensus client. N
 # AuRa with POSDAO Consensus
 
 :::caution The merge
-Gnosis transitioned to PoS using the [GNO Token](/concepts/tokens/gno), this page defines the pre-merge consensus model. Learn more [about The Merge](https://ethereum.org/en/upgrades/merge/).
+Gnosis transitioned to PoS using the [GNO Token](/about/tokens/gno), this page defines the pre-merge consensus model. Learn more [about The Merge](https://ethereum.org/en/upgrades/merge/).
 :::
 
 Consensus refers to the agreement process between nodes in a network. The nodes must agree on which transactions to include in the next block on the chain before these transactions are committed.
 
 There are 2 aspects to the process - the actual consensus mechanism to add transactions to blocks, and sybil protection, which prevents malicious actors.
 
-Gnosis currently uses Parity's AuRa (Authority Round) proof-of-authority consensus model to append blocks to Gnosis. In this model, selected validators ([selected through the POSDAO dPOS process](/concepts/specs/consensus/posdao)) take turns signing blocks. A signed block is broadcast to all validators, and if the majority agree it is valid, it is added to the chain. A new block is added every 5 seconds, regardless of whether any transactions occurred during that time. _Note: POSDAO offers a pluggable consensus feature, so different or additional consensus processes may be added in the future._
+Gnosis currently uses Parity's AuRa (Authority Round) proof-of-authority consensus model to append blocks to Gnosis. In this model, selected validators ([selected through the POSDAO dPOS process](/about/specs/consensus/posdao)) take turns signing blocks. A signed block is broadcast to all validators, and if the majority agree it is valid, it is added to the chain. A new block is added every 5 seconds, regardless of whether any transactions occurred during that time. _Note: POSDAO offers a pluggable consensus feature, so different or additional consensus processes may be added in the future._
 
 Gnosis uses delegated Proof of Stake to provide sybil protection. Validators and delegators must add GNO to the protocol. If the nodes participate as expected, they receive additional GNO rewards. If they engage in malicious behavior (like not revealing random numbers) the validator is banned and their GNO (and delegators GNO) is frozen. These behavioral rewards act as incentives to promote an honest group of validators participating in consensus.
 
-[Learn more in the Whitepaper](/concepts/specs/consensus/posdao#whitepaper)
+[Learn more in the Whitepaper](/about/specs/consensus/posdao#whitepaper)
 
-View current Gnosis validator pools in the [BlockScout Staking Application](https://blockscout.com/xdai/mainnet/validators).
+View current Gnosis validator pools in the [BlockScout Staking Application](https://gnosis.blockscout.com/validators).
 
 :::info
 Finality delay
@@ -539,7 +529,7 @@ A minimum of `n_v/2 + 1` validations being required, with `n_v` the number of va
 # POSDAO
 
 :::caution The merge
-Gnosis transitioned to PoS using the [GNO Token](/concepts/tokens/gno), this page defines the pre-merge consensus model. Learn more [about The Merge](/).
+Gnosis transitioned to PoS using the [GNO Token](/about/tokens/gno), this page defines the pre-merge consensus model. Learn more [about The Merge](/).
 :::
 
 ## Proof of Stake Decentralized Autonomous Organization
@@ -648,10 +638,29 @@ To stake on GBC, follow the validator instructions at [validategnosis.com](https
 | -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | GBC Deposit Contract | [0x0B98057eA310F4d31F2a452B414647007d1645d9](https://gnosis.blockscout.com/address/0x0B98057eA310F4d31F2a452B414647007d1645d9)                     |
 | GNO-> mGNO contract  | [0x647507A70Ff598F386CB96ae5046486389368C66](https://gnosis.blockscout.com/address/0x647507A70Ff598F386CB96ae5046486389368C66)                     |
-| GNO token on Gnosis  | [0x9C58BAcC331c9aa871AFD802DB6379a98e80CEdb](https://blockscout.com/xdai/mainnet/token/0x9C58BAcC331c9aa871AFD802DB6379a98e80CEdb/token-transfers) |
+| GNO token on Gnosis  | [0x9C58BAcC331c9aa871AFD802DB6379a98e80CEdb](https://gnosis.blockscout.com/token/0x9C58BAcC331c9aa871AFD802DB6379a98e80CEdb/token-transfers) |
 
 
-### **Initial Parameters (subject to change)**
+### **Current Parameters**
+
+Live values from the beacon chain spec (`/eth/v1/config/spec` on `rpc-gbc.gnosischain.com`).
+
+| Variable                       | Value                                                                |
+| ------------------------------ | -------------------------------------------------------------------- |
+| Minimum activation balance     | 1 GNO                                                                |
+| Maximum effective balance      | 64 GNO (`0x02` compounding validators, since Pectra)                 |
+| Slot time                      | 5 seconds                                                            |
+| Slots per epoch                | 16 (80-second epochs)                                                |
+| Activation / exit churn        | 2 GNO-equivalent per epoch                                           |
+| Consensus clients              | Lighthouse, Teku, Nimbus, Lodestar                                   |
+| Explorer                       | [beaconchain.gnosischain.com](https://beaconchain.gnosischain.com/)  |
+| Beacon RPC                     | [rpc-gbc.gnosischain.com](https://rpc-gbc.gnosischain.com)           |
+
+### **Launch Parameters (December 2021, historical)**
+
+:::note
+The table below records the parameters at Gnosis Beacon Chain launch. mGNO has since been deprecated, and validator balances and client support have changed; see the current parameters above.
+:::
 
 | Variable                     | Value                                                                                                                                                                                 |
 | ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -663,7 +672,7 @@ To stake on GBC, follow the validator instructions at [validategnosis.com](https
 | Slashing                     | Reductions to 16 mGNO, then removal                                                                                                                                                   |
 | Clients                      | Prysm, Lighthouse                                                                                                                                                                     |
 | Custom Deposit Contract      | <p></p><ul><li>mGNO deposit (ERC20 enabled)</li><li>Upgradeable</li><li>Claiming on accidental locks</li><li>Custom network keys generation (deposit-cli)</li></ul>                   |
-| Explorer                     | <p>Modified beaconchain explorer<br /><span data-gb-custom-inline data-tag="emoji" data-code="1f50d">🔍</span> <a href="http://beacon.gnosischain.com">beacon.gnosischain.com</a></p> |
+| Explorer                     | <p>Modified beaconchain explorer<br /><span data-gb-custom-inline data-tag="emoji" data-code="1f50d">🔍</span> <a href="https://beaconchain.gnosischain.com">beaconchain.gnosischain.com</a></p> |
 | RPC                          | [https://rpc-gbc.gnosischain.com](https://rpc-gbc.gnosischain.com)                                                                                                                    |
 | Launch MVP                   | <p>4096 validators<br />131,072 mGNO </p><p>83% APY</p>                                                                                                                               |
 | Security Goal Prior to Merge | <p>50K+ validators</p><p>1.6M+ mGNO</p><p>23% APY</p>                                                                                                                                 |
@@ -711,7 +720,7 @@ This update introduces Constantinople fork at block `1604400` in `xDai` network.
 ### Solution
 
 1. Update Parity node to `2.2.5-beta` using [the guide](https://www.poa.network/for-validators/hard-forks/parity-upgrade-guide).
-2. Update `poa-chain-spec/spec.json` - add Constantinople's [transitions](https://github.com/poanetwork/poa-chain-spec/pull/99/files#diff-42eb5109ad96d4ac46cdcbf18f2938de) to `engine.params` section. See [spec.json update](/concepts/specs/hard-forks/spec.json-update).
+2. Update `poa-chain-spec/spec.json` - add Constantinople's [transitions](https://github.com/poanetwork/poa-chain-spec/pull/99/files#diff-42eb5109ad96d4ac46cdcbf18f2938de) to `engine.params` section. See [spec.json update](/about/specs/hard-forks/spec.json-update).
 3. Organize the HF on block `1604400`.
 
 ### Verify
@@ -815,7 +824,7 @@ Upgrade to version [v1.11.7](https://github.com/NethermindEth/nethermind/release
 
 Applicable updates
 
-* [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559) – reconfigures fees to include BASEFEE. Block size increase to 34M. [See 1559 on Gnosis for more info](/concepts/specs/hard-forks/eip-1559)
+* [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559) – reconfigures fees to include BASEFEE. Block size increase to 34M. [See 1559 on Gnosis for more info](/about/specs/hard-forks/eip-1559)
 * [EIP-3198](https://eips.ethereum.org/EIPS/eip-3198) – returns the `BASEFEE` from a block
 * [EIP-3529](https://eips.ethereum.org/EIPS/eip-3529) - reduces gas refunds for EVM operations
 * [EIP-3541](https://eips.ethereum.org/EIPS/eip-3541) - prevents deploying contracts starting with `0xEF`
@@ -912,7 +921,7 @@ This update disables Constantinople EIP-1283 at block `2508800` in `xDai` networ
 ### Solution
 
 1. Update Parity node to `2.3.2-beta` using [this guide.](https://www.poa.network/for-validators/hard-forks/parity-upgrade-guide)
-2. Update `poa-chain-spec/spec.json` - add [eip1283DisableTransition](https://github.com/poanetwork/poa-chain-spec/pull/107/files#diff-42eb5109ad96d4ac46cdcbf18f2938deR38) to `engine.params` section. See [Update spec.json](/concepts/specs/hard-forks/spec.json-update)
+2. Update `poa-chain-spec/spec.json` - add [eip1283DisableTransition](https://github.com/poanetwork/poa-chain-spec/pull/107/files#diff-42eb5109ad96d4ac46cdcbf18f2938deR38) to `engine.params` section. See [Update spec.json](/about/specs/hard-forks/spec.json-update)
 3. Organize the HF on block `2508800`.
 
 ### Verify
@@ -953,7 +962,7 @@ Check the latest hard fork and update your node
 
 ## Perform Updates
 
-1. **You must update spec.json and Parity node to version 2.6.5** as the spec format was changed. [Use this guide to upgrade](/concepts/specs/hard-forks/spec.json-update).
+1. **You must update spec.json and Parity node to version 2.6.5** as the spec format was changed. [Use this guide to upgrade](/about/specs/hard-forks/spec.json-update).
 2. Organize the HF on block `7298030`
 
 ## Verify
@@ -1121,7 +1130,7 @@ Gnosis chain has both a lower `CHURN_LIMIT_QUOTIENT` and faster epoch times. A `
 | Network | Timestamp  | Date & Time (UTC)                 | Fork Hash | Beacon Chain Epoch |
 | ------- | ---------- | --------------------------------- | --------- | ------------------ |
 | Chiado  | 1706724940 | Wed Jan 31 2024 18:15:40 GMT+0000 |  0x5fbc16bc  | 516608             |
-| Mainnet | 1710181820 | Monday March 11 202418:30:20 +UTC |  0x1384dfc1  | 889856             |
+| Mainnet | 1710181820 | Monday March 11 2024 18:30:20 +UTC |  0x1384dfc1  | 889856             |
 
 ## How to Prepare
 
@@ -1247,12 +1256,16 @@ Latest announcements will be made in the #validators channel in Gnosis Discord a
 
 :::
 
+:::note Historical snapshot (November 2022)
+This table records client readiness at the time of the Merge. Every client listed has long since shipped Merge-ready releases; check each client's release page for current versions.
+:::
+
 **EL client**
 
 | Client     | Merge ready release | Status                                                             |
 | ---------- | ------------------- | ------------------------------------------------------------------ |
 | Nethermind | v1.14.6             | ✅ https://github.com/NethermindEth/nethermind/releases/tag/1.14.6 |
-| Erigon     | TBA                 | ⌛ Coming soon                                                     |
+| Erigon     | TBA                 | Released after this snapshot                                       |
 
 **CL client**
 
@@ -1261,7 +1274,7 @@ Latest announcements will be made in the #validators channel in Gnosis Discord a
 | Teku       | v22.11.0            | ✅ Available https://github.com/ConsenSys/teku/releases/tag/22.11.0    |
 | Lodestar   | v1.2.2              | ✅ Available https://github.com/ChainSafe/lodestar/releases/tag/v1.2.2 |
 | Lighthouse | v3.3.0              | ✅ Available (https://github.com/sigp/lighthouse/releases/tag/v3.3.0)  |
-| Nimbus     | TBA                 | ⌛ Coming soon                                                         |
+| Nimbus     | TBA                 | Released after this snapshot                                           |
 | Prysm      | N/A                 | ❌ Advised to switch to other clients.                                 |
 
 **DAppNode Packages**
@@ -1770,7 +1783,7 @@ https://docs.gnosischain.com/img/tokens/gno.png
 
 ### Bridge
 
-- Ethereum to Gnosis token bridge: [OmniBridge](https://omni.gnosischain.com/)
+- Ethereum to Gnosis token bridge: [Gnosis Bridge](https://bridge.gnosischain.com/)
 <!-- non native bridges  -->
 
 ## Use GNO Tokens
@@ -1787,13 +1800,13 @@ Historically, deposits on the Beacon Chain were made with a token called `mGNO` 
 
 :::
 
-For those who prefer not to manage the infrastructure themselves, liquid staking providers offer the opportunity to stake without the need for personal infrastructure management. For more in-depth information about sGNO and rGNO tokens, please consult [Stakewise](https://stakewise.io/).
+For those who prefer not to manage the infrastructure themselves, liquid staking providers offer the opportunity to stake without the need for personal infrastructure management. For more in-depth information about osGNO (StakeWise V3), please consult [StakeWise](https://stakewise.io/).
 
 ### GnosisDAO Governance
 
 - [GnosisDAO Governance Forum](https://forum.gnosis.io/)
 - [GNO Utility and Value Proposition](https://forum.gnosis.io/t/gno-utility-and-value-proposition/2344)
-- [Community](/developers/communication)
+- [Community](/about/communication)
 
 ## GNO Token Audit
 
@@ -1824,7 +1837,7 @@ Gateways and Exchanges allow users to get xDai using FIAT or swap other crypto i
 
 ### Faucets
 
-Gnosis offers [free mainnet faucets](/tools/faucets/).
+Gnosis offers [free mainnet faucets](/tools/Faucets).
 
 ## Specifications
 
@@ -1962,7 +1975,7 @@ If you are bridging funds that exceed the daily limit, your transaction will be 
 
 :::info
 If you are not coming from other chains, you can choose from a list of third-party bridges here:
-[Third-party bridges](/docs/bridges/thirdpartybridges.md)
+[Third-party bridges](/bridges/thirdpartybridges)
 :::
 
 ### Need more help?
@@ -2064,7 +2077,7 @@ If you are not coming from Ethereum, you can use one of the following bridges:
 - [Hop](https://app.hop.exchange/)
 - [Connext Bridge](https://bridge.connext.network/)
 
-Gnosis' native bridges allow for sending tokens and data, and are run by a group of [trusted bridge validators](../bridges/About%20Token%20Bridges/amb-bridgeamb-bridge#bridge-validators). There is a [roadmap](../bridges/roadmap.md) as well that you can follow.
+Gnosis' native bridges allow for sending tokens and data, and are run by a group of [trusted bridge validators](../bridges/About%20Token%20Bridges/amb-bridge.md#bridge-validators). There is a [roadmap](../bridges/roadmap.md) as well that you can follow.
 
 Gnosis' native bridges are first-class citizens in the chain's architecture due to the [native Omni and xDai bridge's](../bridges/About%20Token%20Bridges/README.md) integral role in minting and burning the native [xDai token](../about/tokens/xdai.md) used for gas.
 
@@ -2121,18 +2134,18 @@ MetaMask will show a high gas estimate for this transaction. In most cases the f
 
 ---
 
-// File: bridges/brige-limits
+// File: bridges/bridge-limits
 
 Below is a summary of each token’s transaction limits on both Ethereum and Gnosis Chain, along with quick links to inspect their on-chain contract addresses:
 
-The below list only mentions the top 10 most actively bridged assets. For a detailed view for all assets, checkout the [Bridge Explorer's limit dashbaord](https://bridge.gnosischain.com/bridge-explorer/bridges).
+The below list only mentions the top 10 most actively bridged assets. For a detailed view for all assets, checkout the [Bridge Explorer's limit dashboard](https://bridge.gnosischain.com/bridge-explorer/bridges).
 
 
 | Token | ETH Max/Tx                                | ETH Daily Limit                                 | ETH Exec Daily              | Gnosis Max/Tx                          | Gnosis Daily Limit                     | Gnosis Exec Daily                             | Ethereum Address                                                                                                                   | Gnosis Address                                                                                                                   |
 |-------|--------------------------------------------|--------------------------------------------------|-----------------------------|----------------------------------------|----------------------------------------|-----------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------|
 | GNO   | 1000000000000000000000000000               | 1000000000000000000000000000000000000           | 36000000000000000000001     | 36000000000000000000000               | 36000000000000000000001               | 1000000000000000000000000000000000000        | [0x6810e776880C02933D47DB1b9fc05908e5386b96](https://etherscan.io/address/0x6810e776880C02933D47DB1b9fc05908e5386b96)            | [0x9C58BAcC331c9aa871AFD802DB6379a98e80CEdb](https://gnosisscan.io/address/0x9C58BAcC331c9aa871AFD802DB6379a98e80CEdb)             |
-| WBTC  | 100000000000000000                         | 100000000000000000000000000                   | 100000000000000000000000000 | 100000000000000000                   | 100000000000000000000000000           | 100000000000000000000000000                  | [0xEF826da5AaDAE742ce32cE0C460F30Ab281e51a2](https://etherscan.io/address/0xEF826da5AaDAE742ce32cE0C460F30Ab281e51a2)            | [0xD7cd100056B477C08B419a28E976D8Ade354251a](https://gnosisscan.io/address/0xD7cd100056B477C08B419a28E976D8Ade354251a)             |
-| WETH  | 1000000000000000000000000000000000000      | 1000000000000000000000000000000000001          | 1000000000000000000000000000000000001 | 1000000000000000000000000000000000000 | 1000000000000000000000000000000000001  | 1000000000000000000000000000000000001       | [0xb1A7F8b3AdA1Cbd7752c1306725b07D2F8B4e726](https://etherscan.io/address/0xb1A7F8b3AdA1Cbd7752c1306725b07D2F8B4e726)            | [0x9ba1E2F45aC86b88926a9E6F43120f42BB7eDe40](https://gnosisscan.io/address/0x9ba1E2F45aC86b88926a9E6F43120f42BB7eDe40)             |
+| WBTC  | 100000000000000000                         | 100000000000000000000000000                   | 100000000000000000000000000 | 100000000000000000                   | 100000000000000000000000000           | 100000000000000000000000000                  | [0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599](https://etherscan.io/address/0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599)            | [0x8e5bBbb09Ed1ebdE8674Cda39A0c169401db4252](https://gnosis.blockscout.com/address/0x8e5bBbb09Ed1ebdE8674Cda39A0c169401db4252)             |
+| WETH  | 1000000000000000000000000000000000000      | 1000000000000000000000000000000000001          | 1000000000000000000000000000000000001 | 1000000000000000000000000000000000000 | 1000000000000000000000000000000000001  | 1000000000000000000000000000000000001       | [0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2](https://etherscan.io/address/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2)            | [0x6A023CCd1ff6F2045C3309768eAd9E68F978f6e1](https://gnosis.blockscout.com/address/0x6A023CCd1ff6F2045C3309768eAd9E68F978f6e1)             |
 | SAFE  | 1000000000000000000000000000000000000      | 10000000000000000000000000000000000010         | 10000000000000000000000000000000000010 | 1000000000000000000000000000000000000 | 10000000000000000000000000000000000010 | 10000000000000000000000000000000000010      | [0x5aFE3855358E112B5647B952709E6165e1c1eEEe](https://etherscan.io/address/0x5aFE3855358E112B5647B952709E6165e1c1eEEe)            | [0x4d18815D14fe5c3304e87B3FA18318baa5c23820](https://gnosisscan.io/address/0x4d18815D14fe5c3304e87B3FA18318baa5c23820)             |
 | COW   | 1000000000000000000000000000               | 1000000000000000000000000000000000000          | 1000000000000000000000000000000000000  | 1000000000000000000000000000           | 1000000000000000000000000000000000000   | 1000000000000000000000000000000000000       | [0xDEf1CA1fb7FBcDC777520aa7f396b4E015F497aB](https://etherscan.io/address/0xDEf1CA1fb7FBcDC777520aa7f396b4E015F497aB)            | [0x177127622c4A00F3d409B75571e12cB3c8973d3c](https://gnosisscan.io/address/0x177127622c4A00F3d409B75571e12cB3c8973d3c)             |
 | HOPR  | 1000000000000000000000000000               | 1000000000000000000000000000000000000          | 40000000000000000000000001 | 20000000000000000000000001            | 40000000000000000000000001             | 1000000000000000000000000000000000000        | [0xF5581dFeFD8Fb0e4aeC526bE659CFaB1f8c781dA](https://etherscan.io/address/0xF5581dFeFD8Fb0e4aeC526bE659CFaB1f8c781dA)            | [0xD057604A14982FE8D88c5fC25Aac3267eA142a08](https://gnosisscan.io/address/0xD057604A14982FE8D88c5fC25Aac3267eA142a08)             |
@@ -2146,7 +2159,7 @@ The below list only mentions the top 10 most actively bridged assets. For a deta
 | ------------------- | ------------------ | ------------------ |
 | Default Bridge Fees | 0%                 | 0.1%               |
 
-## Check Limits thorugh Smart Contracts
+## Check Limits through Smart Contracts
 
 ![alt text](bridge.png)
 
@@ -2164,7 +2177,7 @@ This guide explains how to programmatically retrieve daily usage and per-transac
 > * The WETH token address on each chain
 >
 >   * Mainnet WETH: `0xC02aaa39b223FE8D0A0e5C4F27eAD9083C756Cc2`
->   * Gnosis WETH: (check the token registry for the canonical address)
+>   * Gnosis WETH: `0x6A023CCd1ff6F2045C3309768eAd9E68F978f6e1`
 
 ---
 
@@ -2347,9 +2360,9 @@ async function fetchLimits() {
 
 ### Fast Confirmation Rule(FCR) integration
 
-Fast Confirmation Rule is a new Ethereum feature that provides a very strong assurance a block will not be reorged within 1 slot(13 seconds), a 98% reduction from the approximately 13-minute time to finality. Integrating FCR into bridges improves the bridging time down to seconds without sacrificing the security. Check [here](./fast-confirmation-rule.md) for more details.
+Fast Confirmation Rule is a new Ethereum feature that provides a very strong assurance a block will not be reorged within 1 slot (12 seconds), a 98% reduction from the approximately 13-minute time to finality. Integrating FCR into bridges improves the bridging time down to seconds without sacrificing the security. Check [here](./fast-confirmation-rule.md) for more details.
 
-### Hashi - A cross chain protocol based on distributed trust of the underlying security mechanisms ✅
+### Hashi - A cross chain protocol based on distributed trust of the underlying security mechanisms (shipped, later deprecated)
 
 :::warning
 🚨 The Hashi integration initiative — originally approved under [GIP‑93](https://forum.gnosis.io/t/gip-93-should-gnosisdao-support-the-integration-of-hashi-within-gnosis-chains-canonical-bridges/8245) and subsequently implemented across both the AMB & xDAI bridges—is formally **deprecated**.
@@ -2397,7 +2410,7 @@ The OmniBridge and xDai Bridge have undergone multiple independent security audi
 **Contracts**: https://github.com/gnosischain/tokenbridge-contracts/tree/xdaibridge-upgrade-sdai  
 **Audit Report**: [ChainSafe Audit Report](../../static/files/dai-xdai-08-23.pdf)
 
-**Reference**: [Savings xDAI](../bridges/Token%20Bridge/xdai-bridge.md#savings-xdai)
+**Reference**: [Savings xDAI](./About%20Token%20Bridges/xdai-bridge.md#savings-xdai)
 
 ## OmniBridge v6.0 Smart Contracts Audit by ChainSecurity
 
@@ -2447,12 +2460,12 @@ The OmniBridge and xDai Bridge have undergone multiple independent security audi
 
 # What is FCR?
 
-The Fast Confirmation Rule (FCR) is a new Ethereum feature that provides a very strong assurance a block will not be reorged within 1 slot(13 seconds), a 98% reduction from the approximately 13-minute time to finality.
+The Fast Confirmation Rule (FCR) is a new Ethereum feature that provides a very strong assurance a block will not be reorged within 1 slot (12 seconds), a 98% reduction from the approximately 13-minute time to finality.
 
 FCR works by counting attestations in real-time. If there is overwhelming support for a block and robustness checks are passed, the block is fast-confirmed.
 
 FCR comes with two core assumptions. First, it assumes the network is synchronous, meaning attestations are delivered within about 8 seconds. Second, it assumes there is no adversary with more than 25% stake, slightly less than the 33% maximum adversarial stake that finality can withstand. If these assumptions hold, any fast-confirmed block will, with certainty, be finalized.
-These assumptions are reasonable and usually hold. In the rare case that they do not, it can cause either a liveness or a safety failure. A liveness failure means it may take longer than 13 seconds to fast-confirm a block. Eventually, the rule automatically falls back to finality. This is a feature, not a bug: FCR falls back to a more secure confirmation rule when needed. A safety failure means that a fast-confirmed block is reorged. With FCR, reorg risk is extremely small. ethPandaOps has conducted experiment by replaying historical Ethereum beacon chain data(a year) through FCR from consensus clients, the result shows that there is [zero false confirmation](https://ethpandaops.io/posts/fcr-simulator/).
+These assumptions are reasonable and usually hold. In the rare case that they do not, it can cause either a liveness or a safety failure. A liveness failure means it may take longer than 12 seconds to fast-confirm a block. Eventually, the rule automatically falls back to finality. This is a feature, not a bug: FCR falls back to a more secure confirmation rule when needed. A safety failure means that a fast-confirmed block is reorged. With FCR, reorg risk is extremely small. ethPandaOps has conducted experiment by replaying historical Ethereum beacon chain data(a year) through FCR from consensus clients, the result shows that there is [zero false confirmation](https://ethpandaops.io/posts/fcr-simulator/).
 
 # Why Gnosis bridges integrate FCR?
 
@@ -3320,11 +3333,11 @@ There are two possible scenarios for how the bridge or validators contracts can 
 
 ### Governor: Setting bridge limits
 
-Different limits are set for the [xDai Bridge](../Token%20Bridge/xdai-bridge.md#fees--daily-limits) and the [OmniBridge](../Token%20Bridge/omnibridge.md#fees--daily-limits) by the bridge governors. Please see their respective documentation pages for more information.
+Different limits are set for the [xDai Bridge](../About%20Token%20Bridges/xdai-bridge.md) and the [OmniBridge](../About%20Token%20Bridges/omnibridge.md) by the bridge governors. Please see their respective documentation pages for more information.
 
 ## Bridge Validators
 
-Bridge Validators monitor events on both sides of the chains to ensure that the user's bridging requests are validated promptly. In the Gnosis Chain, there are both trusted and trustless validators. [Telepathy](/bridges/Token%20Bridge/amb-bridge#how-it-works-with-telepathy-validator), a trustless ZK-based validator on AMB, secures transactions using zero-knowledge proofs, while the rest of the validators sign the message to validate the message. The threshold of signatures from validators has to be reached in order to execute the message on the destination chain.
+Bridge Validators monitor events on both sides of the chains to ensure that the user's bridging requests are validated promptly. In the Gnosis Chain, there are both trusted and trustless validators. [Telepathy](/bridges/About%20Token%20Bridges/amb-bridge#how-it-works), a trustless ZK-based validator on AMB, secures transactions using zero-knowledge proofs, while the rest of the validators sign the message to validate the message. The threshold of signatures from validators has to be reached in order to execute the message on the destination chain.
 
 - [xDai Bridge Validators](/bridges/management/validators#xdai-bridge)
 - [AMB & OmniBridge Validators](/bridges/management/validators#amb--omnibridge)
@@ -3356,38 +3369,58 @@ Bridge Validators monitor events on both sides of the chains to ensure that the 
 
 The [Bridge Governance Board](./#current-bridge-governors) is responsible for enacting updates related to bridge functionality, contract upgrades, and other parameters impacting bridge operations. The following items have been implemented by the board.
 
+## Rotating bridge validator addresses in batch(2/2)
+
+🗳 Justification:
+Rotating the following bridge validator addresses as security hardening practice:
+
+1.  CoW
+    1.  New address for AMB: 0x5524b7a3e2Dc024f4C9c2Ecd7FE003ee316ac624
+    1.  New address for xDAI bridge: 0xA2746D5eE860a6A9cbb79C34533313144d467CA8
+    1.  Old address for AMB: 0xcc46a3873bfcaa08a6a946a308bb621535d6e6dd
+    1.  Old address for xDAI bridge: 0xaee7c90ef0fc461ec63c4d451b12c340642bc656
+1.  Kleros:
+    1.  New address for AMB & xDAI bridge: 0x59D3C2829900Ae20D02Ca547082b09FD27380eA6
+    1.  Old address for AMB & xDAI bridge: 0x156c0daab0cd73c224a424a781866d35f0f8fade
+
+Tx on Ethereum [url](https://app.safe.global/transactions/tx?safe=eth:0x42F38ec5A75acCEc50054671233dfAC9C0E7A3F6&id=multisig_0x42F38ec5A75acCEc50054671233dfAC9C0E7A3F6_0x935ca4b76ccfa5f573e2a5631de8e687760cffc41ce83c63d48f6fc0b6decffd)
+
+Tx on Gnosis Chain [url](https://app.safe.global/transactions/tx?safe=gno:0x7a48Dac683DA91e4faa5aB13D91AB5fd170875bd&id=multisig_0x7a48Dac683DA91e4faa5aB13D91AB5fd170875bd_0xdd6baaa55bb64699f2b7a70e772f320bfbff1daf22292eff7c7021fcaba1a3d0)
+
+✅ Implemented: Sept 8, 2026
+
 ## Rotating bridge validator addresses in batch(1/2)
+
 🗳 Justification:
 
-1. As a security hardening process, we're replacing the bridge validator addresses on AMB and xDAI bridge validator contract.    
-   1. Gnosis:    
-        1. Old address for AMB: 0xbdc141c8d2343f33f40cb9edd601ccf460cd0dde    
-        2. New address for AMB: 0x4A07b8AE561CC558eDD3f1836365AB8e02C52dE2    
-        3. Old address for xDAI bridge: 0x97630e2ae609d4104abda91f3066c556403182dd    
-        4. New address for xDAI bridge: 0x82b00cA9D162859f645B51967746E55bb6498DfC    
-   2. Protofire:    
-        1. Old address for AMB: 0x459a3bd49f1ff109bc90b76125533699aaaaf9a6    
-        2. New address for AMB: 0xAD93BffBC65002cC75AD2d5770d3AAfFdefd8D55    
-        3. Old address for xDAI bridge: 0x4d1c96b9a49c4469a0b720a22b74b034eddfe051    
-        4. New address for xDAI bridge: 0x2245bFAD58a6cD50e9e413084d4091C497281911    
-   3. Giveth:    
-        1. Old address for AMB: 0x105cd22ed3d089bf5589c59b452f9de0796ca52d    
-        2. New address for AMB: 0xE9fc29AE64c2923FeBb615cB016b77aF9492EBcE    
-        3. Old address for xDAI bridge: 0xc073c8e5ed9aa11cf6776c69b3e13b259ba9f506    
-        4. New address for xDAI bridge: 0xC9f0d7e76E7970590e217c57Af5d2B7d07A62c13    
-   4. Kleros:    
-        1. Old address for AMB: 0x7117f73afbdec3221bdd50ddcbf73204b3998302    
-        2. New address for AMB: 0x156c0DAAb0cD73c224a424a781866d35f0F8Fade    
-        3. Old address for xDAI bridge: 0x7117f73afbdec3221bdd50ddcbf73204b3998302    
-        4. New address for xDAI bridge: 0x156c0DAAb0cD73c224a424a781866d35f0F8Fade    
+1. As a security hardening process, we're replacing the bridge validator addresses on AMB and xDAI bridge validator contract.
+   1. Gnosis:
+      1. Old address for AMB: 0xbdc141c8d2343f33f40cb9edd601ccf460cd0dde
+      2. New address for AMB: 0x4A07b8AE561CC558eDD3f1836365AB8e02C52dE2
+      3. Old address for xDAI bridge: 0x97630e2ae609d4104abda91f3066c556403182dd
+      4. New address for xDAI bridge: 0x82b00cA9D162859f645B51967746E55bb6498DfC
+   2. Protofire:
+      1. Old address for AMB: 0x459a3bd49f1ff109bc90b76125533699aaaaf9a6
+      2. New address for AMB: 0xAD93BffBC65002cC75AD2d5770d3AAfFdefd8D55
+      3. Old address for xDAI bridge: 0x4d1c96b9a49c4469a0b720a22b74b034eddfe051
+      4. New address for xDAI bridge: 0x2245bFAD58a6cD50e9e413084d4091C497281911
+   3. Giveth:
+      1. Old address for AMB: 0x105cd22ed3d089bf5589c59b452f9de0796ca52d
+      2. New address for AMB: 0xE9fc29AE64c2923FeBb615cB016b77aF9492EBcE
+      3. Old address for xDAI bridge: 0xc073c8e5ed9aa11cf6776c69b3e13b259ba9f506
+      4. New address for xDAI bridge: 0xC9f0d7e76E7970590e217c57Af5d2B7d07A62c13
+   4. Kleros:
+      1. Old address for AMB: 0x7117f73afbdec3221bdd50ddcbf73204b3998302
+      2. New address for AMB: 0x156c0DAAb0cD73c224a424a781866d35f0F8Fade
+      3. Old address for xDAI bridge: 0x7117f73afbdec3221bdd50ddcbf73204b3998302
+      4. New address for xDAI bridge: 0x156c0DAAb0cD73c224a424a781866d35f0F8Fade
 
-Tx on Ethereum: [url](https://app.safe.global/transactions/tx?safe=eth:0x42F38ec5A75acCEc50054671233dfAC9C0E7A3F6&id=multisig_0x42F38ec5A75acCEc50054671233dfAC9C0E7A3F6_0x32c52cf71d61d8134b5bdbc7e96dd2ed8cbe618a2fbd8d4bcaab91e3595bbf17
-)
+Tx on Ethereum: [url](https://app.safe.global/transactions/tx?safe=eth:0x42F38ec5A75acCEc50054671233dfAC9C0E7A3F6&id=multisig_0x42F38ec5A75acCEc50054671233dfAC9C0E7A3F6_0x32c52cf71d61d8134b5bdbc7e96dd2ed8cbe618a2fbd8d4bcaab91e3595bbf17)
 
-Tx on GC: [url](https://app.safe.global/transactions/tx?safe=gno:0x7a48Dac683DA91e4faa5aB13D91AB5fd170875bd&id=multisig_0x7a48Dac683DA91e4faa5aB13D91AB5fd170875bd_0x71e27be50fc8a0140f8b5908493dbf4f923c99a5889aa71c455fff334118778d
-) 
+Tx on GC: [url](https://app.safe.global/transactions/tx?safe=gno:0x7a48Dac683DA91e4faa5aB13D91AB5fd170875bd&id=multisig_0x7a48Dac683DA91e4faa5aB13D91AB5fd170875bd_0x71e27be50fc8a0140f8b5908493dbf4f923c99a5889aa71c455fff334118778d)
 
 ✅ Implemented: Jul 21, 2026.
+
 ## Rotating Hopr bridge validator address
 
 🗳 Justification:
@@ -3650,7 +3683,7 @@ We [increased the limits](https://app.safe.global/transactions/tx?safe=gno:0x7a4
 
 ## Upgrade xDAI bridge to support investing in sDAI vault.
 
-🗳 Justification: We [upgrade](https://app.safe.global/transactions/tx?safe=eth:0x42F38ec5A75acCEc50054671233dfAC9C0E7A3F6&id=multisig_0x42F38ec5A75acCEc50054671233dfAC9C0E7A3F6_0xd8683bccfe39ace95a1da5f58a5c9a83dc324de39ce07f11fcffb5c2397ca96c) [xDAI bridge](https://etherscan.io/address/0x4aa42145Aa6Ebf72e164C9bBC74fbD3788045016#readProxyContract) to new implementation version in order to support investing DAI from the bridge contract into sDAI vault from Spark Protocol. This upgrade only implements changes on Ethereum, and the next phase will be on Gnosis Chain. The implementation contract is [audited by Omega and ChainSafe](../audits.md#xdai-bridge-upgrade-audit-by-omega-and-chainsafe). For more details, please refer to [docs](../tokenbridge/xdai-bridge.md#savings-xdai)
+🗳 Justification: We [upgrade](https://app.safe.global/transactions/tx?safe=eth:0x42F38ec5A75acCEc50054671233dfAC9C0E7A3F6&id=multisig_0x42F38ec5A75acCEc50054671233dfAC9C0E7A3F6_0xd8683bccfe39ace95a1da5f58a5c9a83dc324de39ce07f11fcffb5c2397ca96c) [xDAI bridge](https://etherscan.io/address/0x4aa42145Aa6Ebf72e164C9bBC74fbD3788045016#readProxyContract) to new implementation version in order to support investing DAI from the bridge contract into sDAI vault from Spark Protocol. This upgrade only implements changes on Ethereum, and the next phase will be on Gnosis Chain. The implementation contract is [audited by Omega and ChainSafe](../audits.md#xdai-bridge-upgrade-audit-by-omega-and-chainsafe). For more details, please refer to [docs](../About%20Token%20Bridges/xdai-bridge.md#savings-xdai)
 
 We call the method `upgradeTo()` on the xDAI bridge proxy contract (0x4aa42145aa6ebf72e164c9bbc74fbd3788045016) with parameters: version 8 and impl. 0x166124b75c798cedf1b43655e9b5284ebd5203db.
 
@@ -3916,7 +3949,7 @@ Increase the amount of blocks required for confirmation on the Ethereum Mainnet 
 
 ## Return user funds
 
-🗳 Justification: A user accidentally [sent over 2000 USDC](https://blockscout.com/xdai/mainnet/tx/0x2837cd89972f2e37a1cb631e60dbb761213010fe526a089c99f48ed483f63956) to the USDC token contract on Gnosis. After confirming the users identity, the board agreed to call the `claimTokensFromTokenContract` method and return the amount to the user.
+🗳 Justification: A user accidentally [sent over 2000 USDC](https://gnosis.blockscout.com/tx/0x2837cd89972f2e37a1cb631e60dbb761213010fe526a089c99f48ed483f63956) to the USDC token contract on Gnosis. After confirming the users identity, the board agreed to call the `claimTokensFromTokenContract` method and return the amount to the user.
 
 ✅ Implemented: April 15, 2021
 
@@ -3956,9 +3989,9 @@ Due to the fact that Omnibridge is built on top of AMB, these two bridges share 
 | --------------------------------------------------------------------------------------------------------------------------- | ----------------- |
 | [gno:0xAD93BffBC65002cC75AD2d5770d3AAfFdefd8D55](https://gnosisscan.io/address/0xAD93BffBC65002cC75AD2d5770d3AAfFdefd8D55)  | Protofire         |
 | [gno:0xE9fc29AE64c2923FeBb615cB016b77aF9492EBcE](https://gnosisscan.io/address/0xE9fc29AE64c2923FeBb615cB016b77aF9492EBcE)  | Giveth            |
-| [gno:0x156c0DAAb0cD73c224a424a781866d35f0F8Fade ](https://gnosisscan.io/address/0x156c0DAAb0cD73c224a424a781866d35f0F8Fade) | Kleros            |
+| [gno:0x59D3C2829900Ae20D02Ca547082b09FD27380eA6 ](https://gnosisscan.io/address/0x59D3C2829900Ae20D02Ca547082b09FD27380eA6) | Kleros            |
 | [gno:0x4A07b8AE561CC558eDD3f1836365AB8e02C52dE2](https://gnosisscan.io/address/0x4A07b8AE561CC558eDD3f1836365AB8e02C52dE2)  | GnosisDAO         |
-| [gno:0xCC46a3873BfCaa08a6a946a308bB621535D6E6Dd](https://gnosisscan.io/address/0xCC46a3873BfCaa08a6a946a308bB621535D6E6Dd)  | Cow Protocol      |
+| [gno:0x5524b7a3e2Dc024f4C9c2Ecd7FE003ee316ac624](https://gnosisscan.io/address/0x5524b7a3e2Dc024f4C9c2Ecd7FE003ee316ac624)  | Cow Protocol      |
 | [gno:0x258667E543C913264388B33328337257aF208a8f](https://gnosisscan.io/address/0x258667E543C913264388B33328337257aF208a8f)  | Gnosis Safe       |
 | [gno:0x6236925ff8aa09f29f1609a9bcd54af20e4be6b4](https://gnosisscan.io/address/0x6236925ff8aa09f29f1609a9bcd54af20e4be6b4)  | Hopr              |
 
@@ -3991,10 +4024,10 @@ Bridge transactions currently requires signatures from 4 of 7 validators.
 | ------------ | ----------------------------------------------------------------------------------------------------------------------------------- |
 | GnosisDao    | [gno:0x82b00cA9D162859f645B51967746E55bb6498DfC](https://gnosis.blockscout.com/address/0x82b00cA9D162859f645B51967746E55bb6498DfC)  |
 | Protofire    | [gno:0x2245bFAD58a6cD50e9e413084d4091C497281911](https://gnosis.blockscout.com/address/0x2245bFAD58a6cD50e9e413084d4091C497281911)  |
-| CowProtocol  | [gno:0xAeE7C90Ef0fC461ec63c4d451B12c340642bc656](https://gnosis.blockscout.com/address/0xAeE7C90Ef0fC461ec63c4d451B12c340642bc656)  |
+| CowProtocol  | [gno:0xA2746D5eE860a6A9cbb79C34533313144d467CA8](https://gnosis.blockscout.com/address/0xA2746D5eE860a6A9cbb79C34533313144d467CA8)  |
 | Giveth       | [gno:0xC9f0d7e76E7970590e217c57Af5d2B7d07A62c13](https://gnosis.blockscout.com/address/0xC9f0d7e76E7970590e217c57Af5d2B7d07A62c13)  |
 | GnosisSafe   | [gno:0x1312e98995bbcc30fc63db3cef807e20cdd33dca](https://gnosis.blockscout.com/address/0x1312e98995bbcc30fc63db3cef807e20cdd33dca)  |
-| Kleros       | [gno:0x156c0DAAb0cD73c224a424a781866d35f0F8Fade ](https://gnosis.blockscout.com/address/0x156c0DAAb0cD73c224a424a781866d35f0F8Fade) |
+| Kleros       | [gno:0x59D3C2829900Ae20D02Ca547082b09FD27380eA6 ](https://gnosis.blockscout.com/address/0x59D3C2829900Ae20D02Ca547082b09FD27380eA6) |
 | Hopr         | [gno:0x6236925ff8aa09f29f1609a9bcd54af20e4be6b4](https://gnosis.blockscout.com/address/0x6236925ff8aa09f29f1609a9bcd54af20e4be6b4)  |
 
 </TabItem>
@@ -4215,7 +4248,7 @@ Bridge transactions currently requires signatures from 4 of 7 validators.
         <p>Smart Contract, DApp & [toolset](/tools) compatibility with other Ethereum-based chains like Ethereum, Ethereum Classic, BSC and others.</p>
     </FeatureCard>
      <FeatureCard imgUrl="/img/feature-card-icons/arrow-circle.svg">
-        <p>Fully-featured explorers [Gnosisscan](https://gnosisscan.io) and [BlockScout](https://blockscout.com/xdai/mainnet).</p>
+        <p>Fully-featured explorers [Gnosisscan](https://gnosisscan.io) and [BlockScout](https://gnosis.blockscout.com).</p>
     </FeatureCard>
      <FeatureCard imgUrl="/img/feature-card-icons/arrow-circle.svg">
         <p>Growing ecosystem designed to support stable person-to-person transactions, micro transactions, conference currencies, community currencies, DeFi, NFTs, DAOs, games and more.</p>
@@ -4266,12 +4299,12 @@ Welcome to the Developers section! This section gives an extensive overview on h
 
 ## Resources
 - [Wallets](/tools/wallets): A list of wallets that support Gnosis Chain.
-- [Faucets](/tools/faucets/): A list of faucets you can use for testing purposes.
+- [Faucets](/tools/Faucets): A list of faucets you can use for testing purposes.
 - [RPC Providers](/tools/RPC%20Providers/): A list of RPC providers that provide access to the network.
 
-### Coming Soon: Building on Top of Gnosis Pay
+### Building on Top of Gnosis Pay
 
-We're excited to announce a groundbreaking development in the Gnosis ecosystem: a self-custodial Visa card, powered by Gnosis Pay. This innovative product leverages the robust and decentralized Gnosis Chain, offering users a seamless bridge between the traditional financial system and the decentralized finance (DeFi) world. We will soon be opening our SDK for Developers in our ecosystem to build financial products on Gnosis Pay cards.
+Gnosis Pay is a self-custodial Visa card powered by Gnosis Chain, bridging the traditional financial system and DeFi. Developers can build on Gnosis Pay today: see the [Gnosis Pay developer docs](https://docs.gnosispay.com/).
 
 ### Gnosis Pay: A Gateway to DeFi
 
@@ -4426,6 +4459,14 @@ The current deployment of xDAI bridge contract is from [tokenbridge-contracts/xd
 | ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | GNO | [0x9C58BAcC331c9aa871AFD802DB6379a98e80CEdb](https://gnosisscan.io/token/0x9C58BAcC331c9aa871AFD802DB6379a98e80CEdb) |
 | wxDAI | [0xe91D153E0b41518A2Ce8Dd3D7944Fa863463a97d](https://gnosisscan.io/token/0xe91D153E0b41518A2Ce8Dd3D7944Fa863463a97d)   |
+| sDAI (Savings xDAI) | [0xaf204776c7245bF4147c2612BF6e5972Ee483701](https://gnosis.blockscout.com/token/0xaf204776c7245bF4147c2612BF6e5972Ee483701) |
+| EURe (Monerium) | [0xcB444e90D8198415266c6a2724b7900fb12FC56E](https://gnosis.blockscout.com/token/0xcB444e90D8198415266c6a2724b7900fb12FC56E) |
+| USDC.e (bridged) | [0x2a22f9c3b484c3629090FeED35F17Ff8F88f76F0](https://gnosis.blockscout.com/token/0x2a22f9c3b484c3629090FeED35F17Ff8F88f76F0) |
+| WETH (bridged) | [0x6A023CCd1ff6F2045C3309768eAd9E68F978f6e1](https://gnosis.blockscout.com/token/0x6A023CCd1ff6F2045C3309768eAd9E68F978f6e1) |
+| WBTC (bridged) | [0x8e5bBbb09Ed1ebdE8674Cda39A0c169401db4252](https://gnosis.blockscout.com/token/0x8e5bBbb09Ed1ebdE8674Cda39A0c169401db4252) |
+| wstETH (bridged) | [0x6C76971f98945AE98dD7d4DFcA8711ebea946eA6](https://gnosis.blockscout.com/token/0x6C76971f98945AE98dD7d4DFcA8711ebea946eA6) |
+| osGNO (StakeWise V3) | [0xF490c80aAE5f2616d3e3BDa2483E30C4CB21d1A0](https://gnosis.blockscout.com/token/0xF490c80aAE5f2616d3e3BDa2483E30C4CB21d1A0) |
+| sGNO (StakeWise V2, deprecated) | [0xA4eF9Da5BA71Cc0D2e5E877a910A37eC43420445](https://gnosis.blockscout.com/token/0xA4eF9Da5BA71Cc0D2e5E877a910A37eC43420445) |
 | Deposit contract    | [0x0B98057eA310F4d31F2a452B414647007d1645d9](https://gnosisscan.io/address/0x0B98057eA310F4d31F2a452B414647007d1645d9) |
 
 ### Gnosis Chain bridge contract addresses
@@ -4449,38 +4490,15 @@ The current deployment of xDAI bridge contract is from [tokenbridge-contracts/xd
 | ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | xDAI Bridge Validator (Gnosis DAO)                 | [0xc9ADb79B8A6e7C6e90c765A3B4d16d81213c9D49](https://gnosisscan.io/address/0xc9ADb79B8A6e7C6e90c765A3B4d16d81213c9D49) [0x1abbf5ec09763afc398551e555967931d64e1508](https://gnosisscan.io/address/0x1abbf5ec09763afc398551e555967931d64e1508) |
 
-## Goerli
-
-### Goerli contract addresses
-| Contract                            | Address                                                                                                                                  |
-| ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| GNO                 | [0x7f477c3f03213970d939104cc436dc995cf615b5](https://goerli.etherscan.io/address/0x7f477c3f03213970d939104cc436dc995cf615b5) |
-| Governance Safe                     | [0xf02796C7B84F10Fa866DAa7d5701A95f3131A727](https://gnosis-safe.io/app/gor:0xf02796C7B84F10Fa866DAa7d5701A95f3131A727home)                                                                                                                 |
-
-### Goerli bridge contract addresses
-| Contract                            | Address                                                                                                                                  |
-| ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| OmniBridge Mediator (Foreign) | [0x00147c84f13764dCDAbAF1cbAe622fa6f6839085](https://goerli.etherscan.io/address/0x00147c84f13764dCDAbAF1cbAe622fa6f6839085) |
-| AMB Contract Proxy (Foreign)  | [0x87A19d769D875964E9Cd41dDBfc397B2543764E6](https://goerli.etherscan.io/address/0x87A19d769D875964E9Cd41dDBfc397B2543764E6) |
-| xDAI Bridge Proxy Contract     | [0x8659Cf2273438f9b5C1Eb367Def45007a7A16a24](https://goerli.etherscan.io/address/0x8659Cf2273438f9b5C1Eb367Def45007a7A16a24) |
-| xDAI Bridge Validator Contract | [0x1F35121d14ABC91689a7903bf911dce83B0c6EF6](https://goerli.etherscan.io/address/0x1F35121d14ABC91689a7903bf911dce83B0c6EF6) |
-
-### Goerli validator addresses
-
-| Name                            | Address                                                                                                                                  |
-| ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| xDAI Bridge Validator (Gateway)                 | [0xef35547c29a7547df67ff573c158bf1b74381add](https://goerli.etherscan.io/address/0xef35547c29a7547df67ff573c158bf1b74381add) |
-| xDAI Bridge Validator (Gnosis DAO)                 | [0xda286781cbbc9819c94852885a118c93ed25e064](https://goerli.etherscan.io/address/0xda286781cbbc9819c94852885a118c93ed25e064) [0x758c277ca1b04da3ba3add5d61cd26337cfafd7e](https://goerli.etherscan.io/address/0x758c277ca1b04da3ba3add5d61cd26337cfafd7e) [0x9d84152df06880cdabeb30e10c2985f40d98b901](https://goerli.etherscan.io/address/0x9d84152df06880cdabeb30e10c2985f40d98b901) [0xdc3a6044440b75c5cefb023ae2d0e5b9069230cf](https://goerli.etherscan.io/address/0xdc3a6044440b75c5cefb023ae2d0e5b9069230cf) |
-
 ## Chiado
 
 ### Chiado contract addresses
 | Contract                            | Address                                                                                                                                  |
 | ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| GnosisBridge(GNO) | [0x19C653Da7c37c66208fbfbE8908A5051B57b4C70](https://blockscout.com/gnosis/chiado/address/0x19C653Da7c37c66208fbfbE8908A5051B57b4C70) |
+| GnosisBridge(GNO) | [0x19C653Da7c37c66208fbfbE8908A5051B57b4C70](https://gnosis-chiado.blockscout.com/address/0x19C653Da7c37c66208fbfbE8908A5051B57b4C70) |
 | wxDAI | [0x18c8a7ec7897177E4529065a7E7B0878358B3BfF](https://gnosis-chiado.blockscout.com/address/0x18c8a7ec7897177E4529065a7E7B0878358B3BfF)   |
-| Deposit Contract       | [0xb97036A26259B7147018913bD58a774cf91acf25](https://blockscout.com/gnosis/chiado/address/0xb97036A26259B7147018913bD58a774cf91acf25) |
-| Governance Safe                     | [0x0Ad7de9064BAA98892a244e1415Ca8a2766096D2](https://blockscout.com/gnosis/chiado/address/0x0Ad7de9064BAA98892a244e1415Ca8a2766096D2)    
+| Deposit Contract       | [0xb97036A26259B7147018913bD58a774cf91acf25](https://gnosis-chiado.blockscout.com/address/0xb97036A26259B7147018913bD58a774cf91acf25) |
+| Governance Safe                     | [0x0Ad7de9064BAA98892a244e1415Ca8a2766096D2](https://gnosis-chiado.blockscout.com/address/0x0Ad7de9064BAA98892a244e1415Ca8a2766096D2)    
 
 ### Chiado bridge contract addresses
 | Contract                            | Address                                                                                                                                  |
@@ -4514,7 +4532,7 @@ This Dapp will allow you to wave at Gnosis, and see how many times you have wave
 ## Wallet
 
 - Select one of the [wallets](/tools/wallets/) to store Gnosis gas token (xDai).
-- Fund your wallet with xDai using one of the [faucets](/tools/faucets/).
+- Fund your wallet with xDai using one of the [faucets](/tools/Faucets).
 - To interact with dApps, we recommend to [setup and configure MetaMask](/tools/wallets/metamask/).
 
 ## Setting up your project
@@ -4720,7 +4738,7 @@ const main = async () => {
   runMain();
 ```
 
-Now before you deploy, make sure you have funds in your wallet! Visit the [funds page](/tools/faucets/), if you don't have funds.
+Now before you deploy, make sure you have funds in your wallet! Visit the [funds page](/tools/Faucets), if you don't have funds.
 
 Deploy to Gnosis with the following command:
 
@@ -4829,7 +4847,7 @@ For this walk through, we're going to be using [Hardhat](https://hardhat.org/) (
 
 ## Prerequisites 
 To follow along, it's recommended to review and be familiar with the [documentation on deploying a contract](/category/deploy-contracts-on-gnosis).
-You will also need to have a working Node.js >=16.0 installation and [a small amount of xDai for gas](/tools/faucets).
+You will also need to have a working Node.js >=16.0 installation and [a small amount of xDai for gas](/tools/Faucets).
 
 
 ## Step 1: Set up your environment
@@ -5008,7 +5026,7 @@ To deploy, run:
 ```bash
 npx hardhat run scripts/deploy.js --network gnosis
 ```
-Congrats, you have deployed a basic ERC-721 contract to Gnosis! If you like, you can build out a front end to view your NFT. For now, you can view your token in [Blockscout](https://blockscout.com/xdai/mainnet/).
+Congrats, you have deployed a basic ERC-721 contract to Gnosis! If you like, you can build out a front end to view your NFT. For now, you can view your token in [Blockscout](https://gnosis.blockscout.com/).
 
 ---
 
@@ -5038,7 +5056,7 @@ For this tutorial, we are going to be using [Hardhat](https://hardhat.org/).
 
 ## Prerequisites 
 To follow along, it's recommended to review and be familiar with the [documentation on deploying a contract](/category/deploy-contracts-on-gnosis). This will also follow a lot of the same steps as the [Launching an NFT on Gnosis tutorial](/developers/Build%20contracts%20on%20gnosis/nft).
-You will also need to have a working Node.js >=16.0 installation and [a small amount of xDai for gas](/tools/faucets).
+You will also need to have a working Node.js >=16.0 installation and [a small amount of xDai for gas](/tools/Faucets).
 
 Also, take a look at [these important points to consider](https://forum.openzeppelin.com/t/points-to-consider-when-creating-a-fungible-token-erc20-erc777/2915) before creating your token.
 
@@ -5376,7 +5394,7 @@ import DocCardList from '@theme/DocCardList';
 
 Follow the [verifying a smart contract](https://docs.blockscout.com/for-users/verifying-a-smart-contract) guide on Blockscout documentation for detailed step-by-step guide.
 
-- [Blockscout Explorer](https://blockscout.com/xdai/mainnet/)
+- [Blockscout Explorer](https://gnosis.blockscout.com/)
 
 ![](/img/developers/verify/blockscout.png)
 
@@ -5449,8 +5467,8 @@ const config: HardhatUserConfig = {
         chainId: 10200,
         urls: {
           //Blockscout
-          apiURL: "https://blockscout.com/gnosis/chiado/api",
-          browserURL: "https://blockscout.com/gnosis/chiado",
+          apiURL: "https://gnosis-chiado.blockscout.com/api",
+          browserURL: "https://gnosis-chiado.blockscout.com",
         },
       },
       {
@@ -5462,8 +5480,8 @@ const config: HardhatUserConfig = {
           apiURL: "https://api.gnosisscan.io/api",
           browserURL: "https://gnosisscan.io/",
           // Blockscout
-          //apiURL: "https://blockscout.com/xdai/mainnet/api",
-          //browserURL: "https://blockscout.com/xdai/mainnet",
+          //apiURL: "https://gnosis.blockscout.com/api",
+          //browserURL: "https://gnosis.blockscout.com",
         },
       },
     ],
@@ -5519,8 +5537,8 @@ module.exports = {
         chainId: 10200,
         urls: {
           //Blockscout
-          apiURL: "https://blockscout.com/gnosis/chiado/api",
-          browserURL: "https://blockscout.com/gnosis/chiado",
+          apiURL: "https://gnosis-chiado.blockscout.com/api",
+          browserURL: "https://gnosis-chiado.blockscout.com",
         },
       },
       {
@@ -5532,8 +5550,8 @@ module.exports = {
           apiURL: "https://api.gnosisscan.io/api",
           browserURL: "https://gnosisscan.io/",
           // Blockscout
-          //apiURL: "https://blockscout.com/xdai/mainnet/api",
-          //browserURL: "https://blockscout.com/xdai/mainnet",
+          //apiURL: "https://gnosis.blockscout.com/api",
+          //browserURL: "https://gnosis.blockscout.com",
         },
       },
     ],
@@ -5710,7 +5728,7 @@ forge create --rpc-url https://rpc.gnosischain.com \
 
 For information regarding pre-existing contract verification, visit the [official Forge documentation](https://book.getfoundry.sh/forge/deploying#verifying-a-pre-existing-contract).
 
-For further Contract Verification information, visit our [official page](/developers/verify/)
+For further Contract Verification information, visit our [official page](/developers/Verify%20Smart%20Contracts/)
 
 ---
 
@@ -5865,13 +5883,12 @@ Once the smart contract is deployed, you may check the address on Dashboard. You
 
     ‼️UPDATE: The Gnosis Ecosystem Fund was discontinued. Projects can now directly apply for funding through the GnosisDAO. For non commercial/public goods : https://bit.ly/gnosis-grants
 
-21. What is d14n.info?
+21. What is Gnosis Metrics?
 
     :::note
     The site is deprecated.
     :::
-    [d14n.info](https://www.d14n.info/) is a real-time dashboard that measures decentralization of the Gnosis Chain and Ethereum networks. We use the Nakamoto Coefficient as the primary quantitative measure across multiple dimensions of the network.
-    You may also check out [Gnosis Metrics](https://www.gnosismetrics.com/#overview)
+    [Gnosis Metrics](https://metrics.gnosischain.com/) (formerly d14n.info) is a real-time dashboard that measures decentralization of the Gnosis Chain and Ethereum networks. It uses the Nakamoto Coefficient as the primary quantitative measure across multiple dimensions of the network.
 
 ## Bridging
 
@@ -6000,7 +6017,7 @@ main();
 
 ## About Gnosis Chain
 
-Gnosis Chain is a community-owned EVM-based network operated by a diverse set of validators around the world. It is one of Ethereum's first sidechains focused on resilience and credible neutrality as its core values. Currently, there are over 200,000 validators who secure the network.
+Gnosis Chain is a community-owned EVM-based network operated by a diverse set of validators around the world. It is one of Ethereum's first sidechains focused on resilience and credible neutrality as its core values. It is secured by hundreds of thousands of GNO staked across a globally distributed validator set; see the [beacon chain explorer](https://beaconchain.gnosischain.com/) for live figures.
 
 Gnosis Chain uses a DAO governance mechanism to ensure anyone can participate in the decision-making processes regarding the development and future of the network. Creating dApps and integrating with Gnosis Chain products is similar to any other EVM-based blockchain. You can find more details in the [protocol specification](/about/specs).
 
@@ -6048,7 +6065,7 @@ Every route is a bundle of the same eight components. You switch on the ones you
 
 ## If you are not a fintech
 
-The routes above are built around embedding finance components. If you are deploying a contract, running infrastructure, or bridging assets, start from the [developer overview](/developers/overview) instead.
+The routes above are built around embedding finance components. If you are deploying a contract, running infrastructure, or bridging assets, start from the [developer overview](/developers/Overview) instead.
 
 ---
 
@@ -6297,7 +6314,7 @@ This account is for testnet work only. Never import a key that holds real funds 
 
 Chiado is the Gnosis testnet. Its chain ID is 10200 and its gas token is a valueless test xDai.
 
-Copy your address from the previous step and request funds from the faucet at [faucet.chiadochain.net](https://faucet.chiadochain.net).
+Copy your address from the previous step and request funds from the faucet at [faucet.gnosischain.com](https://faucet.gnosischain.com/?chain=chiado).
 
 Check the balance arrived:
 
@@ -7421,7 +7438,7 @@ await walletClient.sendTransaction({
 
 <CardContainer>
     <Card
-    title="Programmable wallets more advance than EOA "
+    title="Programmable wallets more advanced than EOA"
     url=""
     />
     <Card
@@ -8556,7 +8573,7 @@ Explorers are pieces of software that scans Gnosis and make easier for users to 
 
 Gnosis supports the following explorers:
 
-- [Blockscout](/tools/explorers/blockscout)
+- [Blockscout](/tools/Blockchain%20Explorers/blockscout)
 - [Beacon chain explorer](https://beaconchain.gnosischain.com/)
 - [3xpl](https://3xpl.com/gnosis-chain)
 
@@ -8587,8 +8604,8 @@ Full docs: [https://docs.blockscout.com/devs/pro-api#pro-api-overview](https://d
 
 ## More links
 
-- GraphQL: [https://blockscout.com/poa/xdai/graphiql](https://blockscout.com/poa/xdai/graphiql)
-- RPC: [https://blockscout.com/xdai/mainnet/api-docs](https://blockscout.com/xdai/mainnet/api-docs)
+- GraphQL: [https://gnosis.blockscout.com/graphiql](https://gnosis.blockscout.com/graphiql)
+- RPC: [https://gnosis.blockscout.com/api-docs](https://gnosis.blockscout.com/api-docs)
 - Eth RPC: [https://gnosis.blockscout.com/api-docs?tab=eth_rpc_api](https://gnosis.blockscout.com/api-docs?tab=eth_rpc_api)
 
 ---
@@ -9741,7 +9758,7 @@ See [MetaMask setup page](/tools/wallets/metamask) and follow the setup and conf
 
 ### 2) Get xDai with Faucet
 
-You can get enough xDai to deploy your contracts and more with the a [Faucet](/tools/faucets). You should see it added to your address in a few seconds.
+You can get enough xDai to deploy your contracts and more with the a [Faucet](/tools/Faucets). You should see it added to your address in a few seconds.
 
 ### 3) Open Remix and Create File
 
@@ -9833,10 +9850,10 @@ Once deployed, click to expand the contract. Click `getLatestPrice` to check the
 
 ### 1) Find Deployed Contract
 
-For transparency and interaction purposes, you can verify your contract on [BlockScout](https://blockscout.com/xdai/mainnet/). _Note, if a contract with the same bytecode has already been deployed and verified, your contract code may be viewable._ [_See this example_](https://gnosis.blockscout.com/address/0x681ef0446AA72723256f1De4d1BE7Dd9bb7F84Cf/contracts)_._
+For transparency and interaction purposes, you can verify your contract on [BlockScout](https://gnosis.blockscout.com/). _Note, if a contract with the same bytecode has already been deployed and verified, your contract code may be viewable._ [_See this example_](https://gnosis.blockscout.com/address/0x681ef0446AA72723256f1De4d1BE7Dd9bb7F84Cf/contracts)_._
 
 1. Copy the deployed contract address in Remix.
-2. Go to [BlockScout](https://blockscout.com/xdai/mainnet/) and paste into the search field.
+2. Go to [BlockScout](https://gnosis.blockscout.com/) and paste into the search field.
 3. Click the Code tab for verification methods.
 4. Click the **Verify and Publish** Button.
 
@@ -10010,7 +10027,7 @@ Check the [Gnosisscan APIs documentation](https://docs.gnosisscan.io/) for more 
 The BlockScout gas price api endpoint shows a recommended gas price for average, fast and slow transactions based on recently accepted transactions. Users can decide whether to increase the gas price to speed up a transaction or input a lower gas price which may take longer but is still likely to be successful.
 
 ```bash title="Blockscout endpoint - Gnosis Mainnet"
-https://blockscout.com/xdai/mainnet/api/v1/gas-price-oracle
+https://gnosis.blockscout.com/api/v1/gas-price-oracle
 ```
 
 ```bash title="Blockscout endpoint - Chiado Testnet"
@@ -10114,7 +10131,7 @@ If you have any questions or issues, contact us on the following platforms:
 // File: tools/Oracle Providers/supraoracles/README
 
 :::info testnet
-SupraOracles only supports [Chiado testnet](/concepts/networks/chiado).
+SupraOracles only supports [Chiado testnet](/about/networks/chiado).
 :::
 
 ## What is SupraOracles?
@@ -10498,8 +10515,7 @@ RPC Providers implement the JSON RPC API that Dapps and developers can interact 
 
 - [JSON RPC API reference](https://ethereum.org/en/developers/docs/apis/json-rpc/)
 - [JSON RPC Postman](https://documenter.getpostman.com/view/4117254/ethereum-json-rpc/RVu7CT5J?version=latest)
-- [Start developing in Gnosis](/developers/overview)
-
+- [Start developing in Gnosis](/developers/Overview)
 
 ## Gnosis
 
@@ -10532,32 +10548,22 @@ wss://rpc.chiadochain.net/wss
 </TabItem>
 </Tabs>
 
-## Nodies DLB
+## Gateway.fm
 
-[Nodies DLB](https://nodies.app) offers free public endpoints for Gnosis Mainnet and Chiado (available on request), in addition to Pay-As-You-Go and enterprise plans that cater to the individual needs of developers.
-
-- [Docs](https://docs.nodies.app/)
-
-```
-https://lb.nodies.app/v1/406d8dcc043f4cb3959ed7d6673d311a
-```
-
-## Ankr
-
-- [Ankr's Docs for Gnosis RPCs](https://www.ankr.com/protocol/public/gnosis/)
+- [Gateway.fm](https://gateway.fm/)
 
 <Tabs>
 <TabItem label="Mainnet" value="Mainnet">
 
 ```
-https://rpc.ankr.com/gnosis
+https://rpc.gnosis.gateway.fm
 ```
 
 </TabItem>
 <TabItem label="Chiado" value="Chiado">
 
 ```
-https://rpc.ankr.com/gnosis_testnet
+https://rpc.chiado.gateway.fm
 ```
 
 </TabItem>
@@ -10591,14 +10597,6 @@ dRPC NodeCloud offers an AI-powered load-balancer, 180+ network endpoints, flat-
 
 - [Chainstack's Docs for Gnosis RPCs](https://chainstack.com/build-better-with-gnosis-chain/)
 
-## POKT
-
-- [POKT's Docs for Gnosis Chain RPCs](https://docs.pokt.network/supported-blockchains/)
-
-```
-https://gnosis-pokt.nodies.app
-```
-
 ## GetBlock
 
 - [GetBlock's Docs for Gnosis Chain RPCs](https://getblock.io/nodes/gno/)
@@ -10609,31 +10607,6 @@ https://go.getblock.io/<ACCESS_TOKEN>
 
 # WSS RPC
 wss://go.getblock.io/<ACCESS_TOKEN>
-```
-
-## BlockPI Network
-
-- [BlockPI's Docs for Gnosis RPCs](https://docs.blockpi.io/documentations/api-reference/gnosis)
-
-```
-https://gnosis.blockpi.network/v1/rpc/<API_KEY>
-```
-
-## Chain49
-
-Free API keys available after signing up.
-
-Archive data for Mainnet and Chiado Testnet is available for paid subscriptions.
-
-- [Chain49.com](https://chain49.com/)
-- [Chain49 Docs for EVM-based chains](https://chain49.readme.io/reference/evm-based)
-
-```shell
-# Gnosis Mainnet RPC
-https://rpc.chain49.com/gnosis/<API_KEY>
-
-# Gnosis Chiado Testnet RPC
-https://rpc.chain49.com/gnosis-chiado/<API_KEY>
 ```
 
 ## OnFinality
@@ -10842,7 +10815,7 @@ After the installation, MetaMask require a configuration to work with Gnosis, fo
 <Tabs>
   <TabItem value="chainlist" label="Chain List">Use <a href="https://chainlist.org/?search=gnosis">ChainList</a> for a one-click configuration and follow the instructions.</TabItem>
   <TabItem value="deeplink-gnosis" label="Deeplink (Gnosis Mainnet)">Click on <a href="https://shanejonas.github.io/metamask-link/deep?method=wallet_addEthereumChain&params[0][chainId]=0x64&params[0][chainName]=Gnosis&params[0][rpcUrls][0]=https://rpc.gnosischain.com&params[0][nativeCurrency][name]=xDAI&params[0][nativeCurrency][symbol]=XDAI&params[0][nativeCurrency][decimals]=18&params[0][blockExplorerUrls][0]=https://gnosisscan.io">this deeplink</a> to auto-configure Gnosis in MetaMask and follow the instructions.</TabItem>
-  <TabItem value="deeplink-chiado" label="Deeplink (Chiado Testnet)">Click on <a href="https://shanejonas.github.io/metamask-link/deep?method=wallet_addEthereumChain&params[0][chainId]=0x27D8&params[0][chainName]=Chiado&params[0][rpcUrls][0]=https://rpc.chiadochain.net&params[0][nativeCurrency][name]=Chiado xDAI&params[0][nativeCurrency][symbol]=XDAI&params[0][nativeCurrency][decimals]=18&params[0][blockExplorerUrls][0]=https://blockscout.com/gnosis/chiado">this deeplink</a> to auto-configure Chiado Testnet in MetaMask and follow the instructions.</TabItem>
+  <TabItem value="deeplink-chiado" label="Deeplink (Chiado Testnet)">Click on <a href="https://shanejonas.github.io/metamask-link/deep?method=wallet_addEthereumChain&params[0][chainId]=0x27D8&params[0][chainName]=Chiado&params[0][rpcUrls][0]=https://rpc.chiadochain.net&params[0][nativeCurrency][name]=Chiado xDAI&params[0][nativeCurrency][symbol]=XDAI&params[0][nativeCurrency][decimals]=18&params[0][blockExplorerUrls][0]=https://gnosis-chiado.blockscout.com">this deeplink</a> to auto-configure Chiado Testnet in MetaMask and follow the instructions.</TabItem>
 </Tabs>
 
 ### B. Manual Configuration
@@ -10897,7 +10870,7 @@ Chiado XDAI
 ```
 
 ```jsx title="Block Explorer URL"
-https://blockscout.com/gnosis/chiado
+https://gnosis-chiado.blockscout.com
 ```
 
 
@@ -10907,7 +10880,7 @@ https://blockscout.com/gnosis/chiado
 
 ## More configurations
 
-- [Add MetaMask programmatically in your dApp](/developers/interact/metamask)
+- [Add MetaMask programmatically in your dApp](/developers/Interact%20on%20Gnosis/metamask)
 - [Add custom tokens](https://metamask.zendesk.com/hc/en-us/articles/360015489031-How-to-add-unlisted-tokens-custom-tokens-in-MetaMask)
 - [Change RPC URL](/tools/wallets/metamask/change-rpc-url)
 - [Using MetaMask with a Ledger or Trezor](https://metamask.zendesk.com/hc/en-us/articles/360020394612-How-to-connect-a-Trezor-or-Ledger-Hardware-Wallet)
@@ -11055,8 +11028,7 @@ Once connected to [Gnosis in MetaMask](/tools/wallets/metamask) and your Trezor 
 
 ## More Guides
 
-- [Apps compatible with Trezor](https://wiki.trezor.io/User_manual:Trezor_Apps)
-- [Developers guide](https://wiki.trezor.io/Developers_guide)
+- [Trezor Learn & Support](https://trezor.io/learn)
 - [Supported coins & tokens](https://trezor.io/coins/)
 
 ---
@@ -11166,3 +11138,21 @@ Domain metadata can be fetched by SDK directly.
 // requesting
 const metadata = await web3Name.getMetadata({ name: "public.gno" });
 ```
+
+## Resolving `.gno` names with the Blockscout BENS API
+
+Blockscout's name service API ([BENS](https://github.com/blockscout/blockscout-ens)) resolves Genome (`.gno`) names on Gnosis Chain without any SDK. Chain ID `100` is Gnosis mainnet.
+
+Forward resolution (name to address):
+
+```bash
+curl "https://bens.services.blockscout.com/api/v1/100/domains:lookup?name=gnosis.gno"
+```
+
+Reverse resolution (address to names):
+
+```bash
+curl "https://bens.services.blockscout.com/api/v1/100/addresses:lookup?address=0x22D26d8bC069825613E84D3664F0a5e4556BC73d&resolved_to=true&owned_by=true"
+```
+
+Both return JSON with the matching `name`, `resolved_address`, `owner` and expiry. This is the same service that powers name display on [gnosis.blockscout.com](https://gnosis.blockscout.com/).

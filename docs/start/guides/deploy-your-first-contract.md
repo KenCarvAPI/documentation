@@ -117,7 +117,7 @@ This account is for testnet work only. Never import a key that holds real funds 
 
 Chiado is the Gnosis testnet. Its chain ID is 10200 and its gas token is a valueless test xDai.
 
-Copy your address from the previous step and request funds from the faucet at [faucet.chiadochain.net](https://faucet.chiadochain.net).
+Copy your address from the previous step and request funds from the faucet at [faucet.gnosischain.com](https://faucet.gnosischain.com/?chain=chiado).
 
 Check the balance arrived:
 

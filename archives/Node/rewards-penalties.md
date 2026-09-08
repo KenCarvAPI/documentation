@@ -42,9 +42,9 @@ For practical estimates, use live explorer and dashboard data rather than static
 
 - The gas consumption for processing a transaction depends on its complexity. For instance, an ETH transfer between two accounts requires less gas than deploying a new smart contract.
 
-- Transaction fees are computed by multiplying the base fee with the gas price. The Ethereum network determines the base fee, which fluctuates according to block space demand. Users set the gas price, which can vary.
+- Since EIP-1559, the fee is `gas used × (base fee + priority fee)`. The protocol sets the base fee, which rises and falls with block space demand and is burned. Users set the priority fee (tip), which goes to the block proposer.
 
-For example, if the base fee is 10 gwei and the gas price is 100 gwei, then the fee for a transaction that uses 100,000 gas would be 1,000,000 gwei.
+For example, if the base fee is 1 gwei and the priority fee is 1 gwei, a transaction that uses 100,000 gas costs 100,000 × 2 gwei = 200,000 gwei = 0.0002 xDAI.
 
 ### Rewards Curve
 
@@ -54,7 +54,7 @@ Gnosis' rewards curve was [proposed in Nov 2021](https://forum.gnosis.io/t/launc
 
 :::
 
-- The minimum initial stake to run a validator is [1 GNO](/concepts/tokens/gno) .
+- The minimum initial stake to run a validator is [1 GNO](/about/tokens/gno) .
 - The reward rate drops with more active validators
 
 | GNO staked | % of GNO validating | reward for validators | Total GNO rewards | Overall inflation p.a. |
@@ -73,7 +73,7 @@ You can claim your Gnosis Chain rewards on the [Deposit website](https://validat
 
 ![faucet](/img/node/withdrawal/claim-withdrawal.png)
 
-> You can learn more about Deposit contracts in the [Deposit contracts](/concepts/specs/deposit-contracts) doc.
+> You can learn more about Deposit contracts in the [Deposit contracts](/about/specs/deposit-contracts) doc.
 
 ## Penalties
 

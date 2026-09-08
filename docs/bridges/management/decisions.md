@@ -322,7 +322,7 @@ We [increased the limits](https://app.safe.global/transactions/tx?safe=gno:0x7a4
 
 ## Upgrade xDAI bridge to support investing in sDAI vault.
 
-🗳 Justification: We [upgrade](https://app.safe.global/transactions/tx?safe=eth:0x42F38ec5A75acCEc50054671233dfAC9C0E7A3F6&id=multisig_0x42F38ec5A75acCEc50054671233dfAC9C0E7A3F6_0xd8683bccfe39ace95a1da5f58a5c9a83dc324de39ce07f11fcffb5c2397ca96c) [xDAI bridge](https://etherscan.io/address/0x4aa42145Aa6Ebf72e164C9bBC74fbD3788045016#readProxyContract) to new implementation version in order to support investing DAI from the bridge contract into sDAI vault from Spark Protocol. This upgrade only implements changes on Ethereum, and the next phase will be on Gnosis Chain. The implementation contract is [audited by Omega and ChainSafe](../audits.md#xdai-bridge-upgrade-audit-by-omega-and-chainsafe). For more details, please refer to [docs](../tokenbridge/xdai-bridge.md#savings-xdai)
+🗳 Justification: We [upgrade](https://app.safe.global/transactions/tx?safe=eth:0x42F38ec5A75acCEc50054671233dfAC9C0E7A3F6&id=multisig_0x42F38ec5A75acCEc50054671233dfAC9C0E7A3F6_0xd8683bccfe39ace95a1da5f58a5c9a83dc324de39ce07f11fcffb5c2397ca96c) [xDAI bridge](https://etherscan.io/address/0x4aa42145Aa6Ebf72e164C9bBC74fbD3788045016#readProxyContract) to new implementation version in order to support investing DAI from the bridge contract into sDAI vault from Spark Protocol. This upgrade only implements changes on Ethereum, and the next phase will be on Gnosis Chain. The implementation contract is [audited by Omega and ChainSafe](../audits.md#xdai-bridge-upgrade-audit-by-omega-and-chainsafe). For more details, please refer to [docs](../About%20Token%20Bridges/xdai-bridge.md#savings-xdai)
 
 We call the method `upgradeTo()` on the xDAI bridge proxy contract (0x4aa42145aa6ebf72e164c9bbc74fbd3788045016) with parameters: version 8 and impl. 0x166124b75c798cedf1b43655e9b5284ebd5203db.
 
@@ -588,7 +588,7 @@ Increase the amount of blocks required for confirmation on the Ethereum Mainnet 
 
 ## Return user funds
 
-🗳 Justification: A user accidentally [sent over 2000 USDC](https://blockscout.com/xdai/mainnet/tx/0x2837cd89972f2e37a1cb631e60dbb761213010fe526a089c99f48ed483f63956) to the USDC token contract on Gnosis. After confirming the users identity, the board agreed to call the `claimTokensFromTokenContract` method and return the amount to the user.
+🗳 Justification: A user accidentally [sent over 2000 USDC](https://gnosis.blockscout.com/tx/0x2837cd89972f2e37a1cb631e60dbb761213010fe526a089c99f48ed483f63956) to the USDC token contract on Gnosis. After confirming the users identity, the board agreed to call the `claimTokensFromTokenContract` method and return the amount to the user.
 
 ✅ Implemented: April 15, 2021
 
