@@ -208,7 +208,7 @@ const config = {
             items: [
               { label: "FAQ", to: "/faq/others" },
               { label: "Careers", href: "https://gnosis.io/careers/" },
-              { label: "Media kit", href: "https://www.gnosis.io/press/press-kit" },
+              { label: "Media kit", href: "https://www.gnosis.io/press" },
               { label: "Terms of use", to: "/terms-conditions" },
             ],
           },
