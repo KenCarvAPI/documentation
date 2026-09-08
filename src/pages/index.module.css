@@ -116,26 +116,10 @@
 .pathwayTop {
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
-.pathwayNum {
-  font-family: var(--gc-font-display);
-  font-weight: 700;
-  font-size: 1.5rem;
-  line-height: 1;
+.pathwayIcon {
   color: var(--gc-accent);
-  font-variant-numeric: tabular-nums;
-}
-.pathwayStatus {
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--gc-text-muted);
-  border: 1px solid var(--gc-border);
-  border-radius: 100px;
-  padding: 0.25rem 0.6rem;
-  white-space: nowrap;
+  display: inline-flex;
 }
 
 .pathwayBody {
@@ -159,24 +143,8 @@
 
 .pathwayFoot {
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
   padding-top: 1.25rem;
   border-top: 1px solid var(--gc-border);
-}
-.chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem;
-}
-.chip {
-  font-size: 0.72rem;
-  font-weight: 500;
-  color: var(--gc-text-muted);
-  background: var(--gc-surface-2);
-  border-radius: 6px;
-  padding: 0.2rem 0.45rem;
-  white-space: nowrap;
 }
 .pathwayCta {
   display: inline-flex;
@@ -192,7 +160,6 @@
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1rem;
-  margin-bottom: 1.5rem;
 }
 
 .featureCard {
@@ -235,53 +202,6 @@
   font-size: 0.875rem;
   line-height: 1.5;
   color: var(--gc-text-muted);
-}
-
-/* ---------- facts strip ---------- */
-.facts {
-  display: flex;
-  flex-wrap: wrap;
-  border: 1px solid var(--gc-border);
-  border-radius: var(--gc-radius);
-  background: var(--gc-surface);
-  overflow: hidden;
-  margin-bottom: 5rem;
-}
-.fact {
-  flex: 1 1 0;
-  min-width: 140px;
-  padding: 1rem 1.5rem;
-  border-right: 1px solid var(--gc-border);
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-  color: inherit;
-  text-decoration: none;
-  transition: background-color 0.15s ease;
-}
-.fact:last-child {
-  border-right: none;
-}
-.fact:hover {
-  background: var(--gc-surface-2);
-  color: inherit;
-  text-decoration: none;
-}
-.fact:hover .factValue {
-  color: var(--gc-accent);
-}
-.factKey {
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--gc-text-faint);
-}
-.factValue {
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--gc-text);
-  font-variant-numeric: tabular-nums;
 }
 
 /* ---------- sections ---------- */

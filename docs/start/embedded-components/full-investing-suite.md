@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 3
 title: Full Investing Suite
 description: For brokers and neobanks adding tokenised assets and self-custodial crypto.
 keywords: [fintech, embedded finance, gnosis eez, full investing suite]

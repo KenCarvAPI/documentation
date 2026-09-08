@@ -1,10 +1,10 @@
 {
-  "label": "0-1 guides",
+  "label": "DeFi Quickstart",
   "position": 6,
   "collapsed": false,
   "link": {
     "type": "generated-index",
-    "title": "0-1 guides",
+    "title": "DeFi Quickstart",
     "description": "Each guide takes you from an empty directory to a result you can verify on-chain. Work through them in order."
   }
 }

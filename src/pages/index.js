@@ -53,6 +53,11 @@ const Icon = {
       <rect x="4" y="4" width="16" height="16" rx="2" /><path d="M4 10h16" /><path d="M4 15h16" />
     </svg>
   ),
+  Trending: (p) => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" {...p}>
+      <path d="m3 17 6-6 4 4 8-9" /><path d="M15 6h6v6" />
+    </svg>
+  ),
 };
 
 /* ------------------------------------------------------------------ */
@@ -62,31 +67,25 @@ const Icon = {
 /* The three component bundles from the Gnosis Chain site, as routes into the docs. */
 const PATHWAYS = [
   {
-    n: '01',
+    icon: Icon.Wallet,
     title: 'Yield inside your wallet',
     audience:
       'For trading and payment apps already selling a money market fund. A rail swap on the same fee model.',
-    includes: ['Account', 'Euro Money', 'Yield'],
-    status: 'Design partners',
-    to: '/start/yield-in-your-wallet',
+    to: '/start/embedded-components/yield-in-your-wallet',
   },
   {
-    n: '02',
+    icon: Icon.Pay,
     title: 'Spend and Save',
     audience:
       'For wallets and challengers that want a card without carrying a balance sheet.',
-    includes: ['Account', 'Euro Money', 'Yield', 'Card Settlement', 'Identity'],
-    status: 'Live today',
-    to: '/start/spend-and-save',
+    to: '/start/embedded-components/spend-and-save',
   },
   {
-    n: '03',
+    icon: Icon.Trending,
     title: 'Full Investing Suite',
     audience:
       'For brokers and neobanks adding tokenised assets and self-custodial crypto.',
-    includes: ['Account', 'Euro Money', 'Yield', 'Card', 'Assets', 'Fx', 'Credit', 'Identity'],
-    status: 'Design partners',
-    to: '/start/full-investing-suite',
+    to: '/start/embedded-components/full-investing-suite',
   },
 ];
 
@@ -195,16 +194,6 @@ const TASKS = [
   },
 ];
 
-/* Chain facts. Source: Gnosis EEZ MCP, eez_chain_info (2026-07-25).
-   Each fact links to the core ecosystem piece behind it. */
-const FACTS = [
-  ['Chain ID', '100', 'https://gnosis.blockscout.com', 'Blockscout explorer'],
-  ['Block time', '5s', 'https://dune.com/gnosischain_team', 'Gnosis Chain dashboards on Dune'],
-  ['Gas token', 'xDai', 'https://bridge.gnosischain.com', 'Bridge assets to Gnosis'],
-  ['Average fee', '< $0.001', 'https://gnosis.blockscout.com/gas-tracker', 'Live gas tracker'],
-  ['Testnet', 'Chiado · 10200', '/about/networks/chiado', 'Chiado testnet docs'],
-];
-
 /* ------------------------------------------------------------------ */
 /* Sections                                                            */
 /* ------------------------------------------------------------------ */
@@ -212,12 +201,13 @@ function Hero() {
   return (
     <section className={styles.hero}>
       <h1 className={styles.heroTitle}>
-        <span className={styles.heroLine}>Build apps and payments</span>{' '}
-        <span className={styles.heroLine}>on a chain that stays neutral.</span>
+        <span className={styles.heroLine}>Embed Ethereum's economy</span>{' '}
+        <span className={styles.heroLine}>in your product.</span>
       </h1>
       <p className={styles.heroLede}>
-        Gnosis Chain is an EVM network with 5-second blocks, fees below a tenth of a cent, and a
-        stablecoin as gas. Everything you need to ship is here.
+        Gnosis EEZ gives fintechs open finance components with consumer-grade guardrails: yield,
+        savings, investing and payments that reach mainnet assets and liquidity in the same
+        transaction. The guides here take you from nothing to a result you can verify on-chain.
       </p>
       <div className={styles.heroActions}>
         <Link className={styles.btnPrimary} to="/developers/quickstart">
@@ -237,29 +227,25 @@ function Pathways() {
   return (
     <section className={styles.section}>
       <div className={styles.sectionHead}>
-        <h2 className={styles.sectionTitle}>Getting started routes</h2>
+        <h2 className={styles.sectionTitle}>Open finance for your app</h2>
         <p className={styles.sectionSub}>
           Three bundles of open finance components, each with 0-1 guides that end in a result you
           can verify on-chain.
         </p>
       </div>
       <div className={styles.pathwayGrid}>
-        {PATHWAYS.map(({n, title, audience, includes, status, to}) => (
-          <Link key={n} className={styles.pathway} to={to}>
+        {PATHWAYS.map(({icon: I, title, audience, to}) => (
+          <Link key={title} className={styles.pathway} to={to}>
             <span className={styles.pathwayTop}>
-              <span className={styles.pathwayNum}>{n}</span>
-              <span className={styles.pathwayStatus}>{status}</span>
+              <span className={styles.pathwayIcon}>
+                <I width="22" height="22" />
+              </span>
             </span>
             <span className={styles.pathwayBody}>
               <span className={styles.pathwayTitle}>{title}</span>
               <span className={styles.pathwayAudience}>{audience}</span>
             </span>
             <span className={styles.pathwayFoot}>
-              <span className={styles.chips}>
-                {includes.map((c) => (
-                  <span key={c} className={styles.chip}>{c}</span>
-                ))}
-              </span>
               <span className={styles.pathwayCta}>
                 Start <Icon.Arrow width="14" height="14" />
               </span>
@@ -273,31 +259,26 @@ function Pathways() {
 
 function Features() {
   return (
-    <section className={styles.featureGrid}>
-      {FEATURES.map(({icon: I, title, body, to}) => (
-        <Link key={title} className={styles.featureCard} to={to}>
-          <span className={styles.featureIcon}>
-            <I width="22" height="22" />
-          </span>
-          <span className={styles.featureText}>
-            <span className={styles.featureTitle}>{title}</span>
-            <span className={styles.featureBody}>{body}</span>
-          </span>
-        </Link>
-      ))}
-    </section>
-  );
-}
-
-function Facts() {
-  return (
-    <section className={styles.facts} aria-label="Gnosis Chain network facts">
-      {FACTS.map(([k, v, to, title]) => (
-        <Link key={k} to={to} title={title} className={styles.fact}>
-          <span className={styles.factKey}>{k}</span>
-          <span className={styles.factValue}>{v}</span>
-        </Link>
-      ))}
+    <section className={styles.section}>
+      <div className={styles.sectionHead}>
+        <h2 className={styles.sectionTitle}>Deploy a protocol</h2>
+        <p className={styles.sectionSub}>
+          Core building blocks for shipping directly on Gnosis Chain.
+        </p>
+      </div>
+      <div className={styles.featureGrid}>
+        {FEATURES.map(({icon: I, title, body, to}) => (
+          <Link key={title} className={styles.featureCard} to={to}>
+            <span className={styles.featureIcon}>
+              <I width="22" height="22" />
+            </span>
+            <span className={styles.featureText}>
+              <span className={styles.featureTitle}>{title}</span>
+              <span className={styles.featureBody}>{body}</span>
+            </span>
+          </Link>
+        ))}
+      </div>
     </section>
   );
 }
@@ -305,7 +286,7 @@ function Facts() {
 function UseCases() {
   return (
     <section className={styles.section}>
-      <h2 className={styles.sectionTitle}>Core use cases</h2>
+      <h2 className={styles.sectionTitle}>Other</h2>
       <div className={styles.useCaseGrid}>
         {USE_CASES.map(({icon: I, title, links}) => (
           <div key={title} className={styles.useCase}>
@@ -360,7 +341,6 @@ export default function Home() {
         <Hero />
         <Pathways />
         <Features />
-        <Facts />
         <UseCases />
         <Tasks />
       </main>

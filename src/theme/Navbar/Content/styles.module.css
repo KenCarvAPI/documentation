@@ -78,11 +78,6 @@
   .wordmark {
     display: none;
   }
-  /* Search sits beside the logo; everything else moves into the drawer. */
-  .search {
-    justify-content: flex-end;
-    flex: 1 1 auto;
-  }
   .sections {
     display: none;
   }
@@ -92,5 +87,14 @@
   }
   .colorModeToggle {
     display: none;
+  }
+}
+
+/* Below phone width the search pill collapses to an icon (see custom.scss);
+   only then does it need to sit beside the logo instead of centered. */
+@media (max-width: 560px) {
+  .search {
+    justify-content: flex-end;
+    flex: 1 1 auto;
   }
 }

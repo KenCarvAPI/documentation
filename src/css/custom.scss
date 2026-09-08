@@ -310,39 +310,52 @@ a:hover .socialButton path {
 .navbar .navbarSearchContainer_Bca1,
 .navbar [class*='navbarSearchContainer'] {
   padding: 0;
-  width: min(100%, 420px);
+  width: min(100%, 520px);
 }
-.DocSearch-Button {
+/* Docusaurus's own theme takes the search container out of the navbar's flow
+   below 996px (`position: absolute; right: ...`) so it can sit beside a
+   collapsed logo. We want the full pill to stay centered in the row down to
+   phone width instead, so put it back in normal flow through that range. */
+@media (max-width: 996px) and (min-width: 561px) {
+  .navbar [class*='navbarSearchContainer'] {
+    position: static;
+  }
+}
+/* @docsearch/css bundles its own `.DocSearch-Button { all: unset; ... }` reset
+   after this stylesheet in the compiled output, which silently wins over a
+   bare `.DocSearch-Button` selector at equal specificity. Scope every rule
+   under `.navbar` so ours always takes precedence regardless of source order. */
+.navbar .DocSearch-Button {
   width: 100%;
   margin: 0;
-  height: 36px;
-  border-radius: 8px;
+  height: 46px;
+  border-radius: 10px;
   background: var(--gc-surface);
   border: 1px solid var(--gc-border);
   color: var(--gc-text-muted);
   font-family: var(--gc-font-body);
-  font-size: 0.875rem;
-  padding: 0 0.75rem;
+  font-size: 0.95rem;
+  padding: 0 1rem;
 }
-.DocSearch-Button:hover,
-.DocSearch-Button:focus {
+.navbar .DocSearch-Button:hover,
+.navbar .DocSearch-Button:focus {
   box-shadow: none;
   border-color: var(--gc-border-strong);
   background: var(--gc-surface);
 }
-.DocSearch-Button .DocSearch-Search-Icon {
-  width: 15px;
-  height: 15px;
+.navbar .DocSearch-Button .DocSearch-Search-Icon {
+  width: 18px;
+  height: 18px;
   color: var(--gc-text-muted);
 }
-.DocSearch-Button-Placeholder {
-  font-size: 0.875rem;
-  padding: 0 0.75rem 0 0.5rem;
+.navbar .DocSearch-Button-Placeholder {
+  font-size: 0.95rem;
+  padding: 0 0.75rem 0 0.6rem;
 }
-.DocSearch-Button-Keys {
+.navbar .DocSearch-Button-Keys {
   min-width: auto;
 }
-.DocSearch-Button-Key {
+.navbar .DocSearch-Button-Key {
   background: transparent;
   box-shadow: none;
   border: 1px solid var(--gc-border);
@@ -409,12 +422,18 @@ a:hover .socialButton path {
   .navbar__logo img {
     height: 22px;
   }
+}
+
+/* Only collapse the search pill to an icon-only button on true phone
+   widths; down to tablet width it stays full-size and centered. */
+@media (max-width: 560px) {
   .navbar .navbarSearchContainer_Bca1,
   .navbar [class*='navbarSearchContainer'] {
     width: auto;
   }
-  .DocSearch-Button {
+  .navbar .DocSearch-Button {
     width: auto;
+    height: 40px;
     padding: 0 0.6rem;
   }
   .DocSearch-Button-Placeholder,

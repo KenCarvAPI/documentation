@@ -1,17 +1,17 @@
 ---
 sidebar_position: 2
-title: Yield inside your wallet
-description: For trading and payment apps already selling a money market fund. A rail swap on the same fee model.
-keywords: [fintech, embedded finance, gnosis eez, yield in your wallet]
+title: Spend and Save
+description: For wallets and challengers that want a card without carrying a balance sheet. Live today.
+keywords: [fintech, embedded finance, gnosis eez, spend and save]
 ---
 
-# Yield inside your wallet
+# Spend and Save
 
-The narrowest route in. You keep your product and your fee model, and swap the rail underneath the balance your users already hold.
+A spending account where the balance earns while it sits, and a card that settles straight from it. No float to fund and no processor to pre-pay.
 
-**Who it is for.** For trading and payment apps already selling a money market fund. A rail swap on the same fee model.
+**Who it is for.** For wallets and challengers that want a card without carrying a balance sheet. Live today.
 
-**Status.** Design partners
+**Status.** Live today
 
 ## What it switches on
 
@@ -20,6 +20,8 @@ The narrowest route in. You keep your product and your fee model, and swap the r
 | Account | core banking and a sub-ledger vendor |
 | Euro Money | a deposit account and safeguarding |
 | Yield | a money market fund rail or partner-bank sweep |
+| Card Settlement | float, processor and BIN sponsor |
+| Identity and Rewards | batch AML and a loyalty ledger |
 
 ## 0-1 guides
 
@@ -31,10 +33,10 @@ Get a verified contract on Gnosis. Every other route starts here.
 
 ### 2. [Accept stablecoin payments](/start/guides/accept-stablecoin-payments)
 
-Move euro-denominated value in and out of a contract you control.
+The payment receiver that sits behind a settlement flow.
 
 :::note
-A yield-specific walkthrough (sDAI wrapping and accrual accounting) is being written. Until it lands, the savings section of the Spark and sDAI docs covers the same mechanics.
+Card settlement is configured with Gnosis engineers rather than self-served, so there is no public 0-1 guide for the card component yet.
 :::
 
 ## Talk to the engineers

@@ -5998,23 +5998,33 @@ main();
 
 # Start here
 
+## About Gnosis Chain
+
+Gnosis Chain is a community-owned EVM-based network operated by a diverse set of validators around the world. It is one of Ethereum's first sidechains focused on resilience and credible neutrality as its core values. Currently, there are over 200,000 validators who secure the network.
+
+Gnosis Chain uses a DAO governance mechanism to ensure anyone can participate in the decision-making processes regarding the development and future of the network. Creating dApps and integrating with Gnosis Chain products is similar to any other EVM-based blockchain. You can find more details in the [protocol specification](/about/specs).
+
+**Fees.** Each transaction on Gnosis Chain (sending tokens, interacting with smart contracts, etc.) is associated with a fee in the xDai stablecoin. This is one of the main differences from other EVM chains, where users pay in a native token of that network — it reduces volatility risk and simplifies the development experience. Transaction fees are not split among pool participants of the validation process; they are received only by the validator who sealed the block. Note this is subject to change — as the network grows, fees may be redirected to support additional aspects of the protocol.
+
+## Embedded components
+
 Gnosis Chain carries a full set of consumer-grade finance components, and the rails are ready to embed. Pick the route that matches what you are shipping. Each one lists the components it switches on, what they replace, and the 0-1 guides that take you from an empty directory to a result you can verify on-chain.
 
-### 01 · [Yield inside your wallet](/start/yield-in-your-wallet)
+### 01 · [Yield inside your wallet](/start/embedded-components/yield-in-your-wallet)
 
 For trading and payment apps already selling a money market fund. A rail swap on the same fee model.
 
 **Includes:** Account, Euro Money, Yield  
 **Status:** Design partners
 
-### 02 · [Spend and Save](/start/spend-and-save)
+### 02 · [Spend and Save](/start/embedded-components/spend-and-save)
 
 For wallets and challengers that want a card without carrying a balance sheet. Live today.
 
 **Includes:** Account, Euro Money, Yield, Card Settlement, Identity and Rewards  
 **Status:** Live today
 
-### 03 · [Full Investing Suite](/start/full-investing-suite)
+### 03 · [Full Investing Suite](/start/embedded-components/full-investing-suite)
 
 For brokers and neobanks adding tokenised assets and self-custodial crypto.
 
@@ -6042,7 +6052,7 @@ The routes above are built around embedding finance components. If you are deplo
 
 ---
 
-// File: start/yield-in-your-wallet
+// File: start/embedded-components/yield-in-your-wallet
 
 # Yield inside your wallet
 
@@ -6082,7 +6092,7 @@ Bundles are configured with the Gnosis team rather than self-served end to end. 
 
 ---
 
-// File: start/spend-and-save
+// File: start/embedded-components/spend-and-save
 
 # Spend and Save
 
@@ -6124,7 +6134,7 @@ Bundles are configured with the Gnosis team rather than self-served end to end. 
 
 ---
 
-// File: start/full-investing-suite
+// File: start/embedded-components/full-investing-suite
 
 # Full Investing Suite
 
@@ -6170,25 +6180,6 @@ Secured credit and FX are configured with Gnosis engineers. Read the scope note 
 ## Talk to the engineers
 
 Bundles are configured with the Gnosis team rather than self-served end to end. The [ecosystem directory](https://ecosystem.gnosischain.com/) lists who is already live on each component.
-
----
-
-// File: start/about-gnosis-chain
-
-# Introducing Gnosis Chain
-
-Gnosis Chain is a community-owned EVM-based network operated by a diverse set of validators around the world. It is one of Ethereum’s first sidechains focused on resilience and credible neutrality as its core values. Currently, there are over 200,000 validators who secure the network.
-
-Gnosis Chain uses DAO governance mechanism to ensure anyone can participate in the decision-making processes regarding the development and future of the network. Creating dApps and integrating with Gnosis Chain products is similar to any other EVM-based blockchain. You can find more details in the [protocol specification](/about/specs).
-
-
-# Fees
-
-Each transaction on the Gnosis Chain (sending tokens, interacting with smart contracts, etc.) is associated with the fee in xDai stablecoin.
-- It is one of the main differences from other EVM chains where users pay in a native token of that network. 
-- This approach reduces the volatility risks and simplifies the development experience.
-
-Also, transaction fees are not split among pool participants of the validation process. They are received only by the validator who sealed the block. Note, this is subject to change. As the network grows, the fees may be redirected to support additional aspects of the protocol.
 
 ---
 
@@ -8646,6 +8637,21 @@ If the faucet is not functioning properly, feel free to seek assistance on the [
 
 ---
 
+// File: tools/Indexer & Analytics/README
+
+# Indexer & Analytics
+
+Indexing and analytics tools let you query and analyze on-chain data on Gnosis Chain through APIs and GraphQL, instead of scanning blocks yourself.
+
+- [The Graph](/tools/Indexer%20%26%20Analytics/the-graph) - decentralized protocol for indexing and querying chain data.
+- [SubQuery](/tools/Indexer%20%26%20Analytics/subquery) - open-source data indexer with custom APIs.
+- [Envio](/tools/Indexer%20%26%20Analytics/envio) - fast, flexible indexing solution for real-time and historical EVM data.
+- [Moralis](/tools/Indexer%20%26%20Analytics/moralis) - enterprise-grade APIs for wallet, token and NFT data.
+- [GoldRush - powered by Covalent](/tools/Indexer%20%26%20Analytics/covalent) - comprehensive blockchain data API suite.
+- [Dune](/tools/Indexer%20%26%20Analytics/dune) - on-chain data platform and dashboards.
+
+---
+
 // File: tools/Indexer & Analytics/covalent
 
 # GoldRush - powered by Covalent
@@ -9574,6 +9580,23 @@ axios(graphQLRequest)
 
 - To explore all the ways you can optimize & customize your subgraph for a better performance, read more about [creating a subgraph here](https://thegraph.com/docs/en/developing/creating-a-subgraph/).
 - For more information about querying data from your subgraph, read more [here](https://thegraph.com/docs/en/querying/querying-the-graph/).
+
+---
+
+// File: tools/Oracle Providers/README
+
+# Oracle Providers
+
+Oracles bring off-chain data - like price feeds and randomness - on-chain so smart contracts on Gnosis Chain can use it.
+
+- [Chainlink](/tools/Oracle%20Providers/chainlink) - aggregated price feeds and external data via a decentralized oracle network.
+- [Pyth](/tools/Oracle%20Providers/pyth) - real-time market data across 40+ blockchains.
+- [API3](/tools/Oracle%20Providers/api3) - first-party oracles with Oracle Extractable Value (OEV) recapture.
+- [DIA](/tools/Oracle%20Providers/dia) - transparent, customizable oracles for price and on-chain data.
+- [Tellor](/tools/Oracle%20Providers/tellor) - censorship-resistant, permissionless oracle network.
+- [Chronicle](/tools/Oracle%20Providers/chronicle) - decentralized, scalable and cost-efficient oracles.
+- [SupraOracles](/tools/Oracle%20Providers/supraoracles/) - cross-chain oracle solution, including Supra VRF.
+- [Gas Price](/tools/Oracle%20Providers/gas-price) - Blockscout and Gnosisscan gas price API endpoints.
 
 ---
 

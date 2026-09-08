@@ -67,9 +67,9 @@ const config = {
     ({
       image: "img/thumbnail.png",
       announcementBar: {
-        id: "usds_upgrade",
+        id: "eez_validator_retirement",
         content:
-          'Update: USDS migration on xDAI bridge is completed.<a href="https://docs.gnosischain.com/bridges/management/decisions" target="_blank" rel="noopener noreferrer">Learn more</a>',
+          "Update: Gnosis Chain will be retiring the validator set upon the formal migration to the Ethereum Economic Zone",
         isCloseable: true,
       },
       colorMode: {
@@ -237,11 +237,11 @@ const config = {
               "/updates/202212-bridges-pause",
             ],
           },
-          // "About Gnosis Chain" moved into Start here; the rest of /about now sits
-          // under the Knowledge hub sidebar and keeps its URLs
+          // "About Gnosis Chain" merged into the Start here page; the rest of /about
+          // now sits under the Knowledge hub sidebar and keeps its URLs
           {
-            to: "/start/about-gnosis-chain",
-            from: "/about",
+            to: "/start",
+            from: ["/about", "/start/about-gnosis-chain"],
           },
           // Run a node archived to /archives/Node; the section is no longer published
           {
