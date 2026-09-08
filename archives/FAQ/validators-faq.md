@@ -1,4 +1,19 @@
-# Validators FAQ
+---
+title: Validators FAQ
+description: Validator performance, rewards and penalties, deposits and exits on Gnosis Chain. Archived - previously published at /faq/node.
+keywords: [validator, faq, staking, rewards, penalties, archived]
+---
+
+# Validators FAQ (Archived)
+
+:::danger Archived
+This page is **no longer published**. It is kept for historical reference only and is not part of
+[docs.gnosischain.com](https://docs.gnosischain.com). Deposit and withdrawal mechanics, client
+versions, monitoring endpoints and staking parameters below have not been maintained.
+
+For maintained node and validator documentation see [Run a node](https://docs.gnosischain.com/node/),
+or ask in [Discord](https://discord.gg/gnosis).
+:::
 
 1. Where can I track my validator performance?
 

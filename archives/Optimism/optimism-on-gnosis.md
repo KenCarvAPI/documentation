@@ -1,14 +1,16 @@
 ---
-title: Optimism
-description: Optimism implementation is deployed on Gnosis. Gnosis functions as the L1 (akin to Ethereum) and Optimism on Gnosis as the L2.
-keywords: [optimism, gnosis optimism]
+title: Optimism on Gnosis
+description: An Optimism implementation deployed on Gnosis, with Gnosis as the L1 and Optimism on Gnosis as the L2. Archived - deprecated in March 2023.
+keywords: [optimism, gnosis optimism, deprecated, archived]
 ---
 
-# Optimism on Gnosis
+# Optimism on Gnosis (Archived)
 
-:::danger DEPRECATED
-Optimism on Gnosis was deprecated on March 2023. We keep this page for reference.
+:::danger Archived
+Optimism on Gnosis was deprecated in March 2023 and is **no longer part of Gnosis Chain**.
 Do NOT deposit funds, they will not be withdrawable.
+
+This page is kept for historical reference only and is not published on [docs.gnosischain.com](https://docs.gnosischain.com).
 :::
 
 An Optimism implementation is deployed on Gnosis. Gnosis functions as the L1 (akin to Ethereum) and Optimism on Gnosis as the L2.
@@ -43,7 +45,7 @@ Some smart contract wallets are blocked from calling the `depositETH (and deposi
 
 2. Connect a web3 wallet like MetaMask that contains some xDai for funding and gas fees.
 
-![](/img/about/optimism/connect-wallet.png)
+![](./img/connect-wallet.png)
 
 3. Scroll down to the **`depositETH`** method and enter the following:
 
@@ -52,7 +54,7 @@ Some smart contract wallets are blocked from calling the `depositETH (and deposi
 - value: **`Deposit value in xDai`**
 - Click **Write** and complete the transaction with your wallet.
 
-![](/img/about/optimism/method.png)
+![](./img/method.png)
 
 </details>
 

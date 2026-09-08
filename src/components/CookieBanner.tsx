@@ -30,36 +30,41 @@ const CookieBanner: React.FC = () => {
     return (
         <div style={{
             position: 'fixed',
-            bottom: '2rem',
-            left: '2rem',
-            backgroundColor: '#000',
-            color: 'white',
-            padding: '2rem',
-            borderRadius: '8px',
-            maxWidth: '400px',
+            bottom: '1.5rem',
+            left: '1rem',
+            right: '1rem',
+            backgroundColor: 'var(--gc-surface)',
+            color: 'var(--gc-text)',
+            border: '1px solid var(--gc-border)',
+            padding: '1.5rem',
+            borderRadius: 'var(--gc-radius, 20px)',
+            maxWidth: '380px',
             zIndex: 9999,
-            boxShadow: '0 4px 20px rgba(0, 0, 0, 0.5)'
+            boxShadow: '0 12px 32px rgba(7, 5, 44, 0.18)'
         }}>
             <h3 style={{
-                fontSize: '1.5rem',
-                fontWeight: 'bold',
-                margin: '0 0 1rem 0'
+                fontFamily: 'var(--gc-font-display)',
+                fontSize: '1.15rem',
+                fontWeight: 700,
+                letterSpacing: '-0.02em',
+                margin: '0 0 0.6rem 0'
             }}>
-                Cookie Settings
+                Cookie settings
             </h3>
 
             <span style={{
-                fontSize: '0.9rem',
-                lineHeight: '1.5',
-                marginBottom: '1.5rem',
-                color: '#e0e0e0',
+                display: 'block',
+                fontSize: '0.85rem',
+                lineHeight: 1.5,
+                color: 'var(--gc-text-muted)'
             }}>
                 We use tracking technologies to collect data relating to you to perform analytics. By clicking on Accept you consent to this and to the sharing of this data with our partners. You can change your mind at any time. To read more about our practices, please see our{' '}
                 <a
                     href="https://www.gnosis.io/legal/cookie-policy"
                     style={{
-                        color: '#4ade80',
-                        textDecoration: 'none',
+                        color: 'var(--gc-accent)',
+                        textDecoration: 'underline',
+                        textUnderlineOffset: '2px',
                         display: 'inline',
                         padding: '0'
                     }}
@@ -70,20 +75,21 @@ const CookieBanner: React.FC = () => {
 
             <div style={{
                 display: 'flex',
-                marginTop: '1rem',
+                marginTop: '1.25rem',
                 gap: '0.5rem'
             }}>
                 <button
                     onClick={handleReject}
                     style={{
-                        backgroundColor: '#666',
-                        color: 'white',
-                        border: 'none',
-                        padding: '0.7rem 1.5rem',
-                        fontSize: '0.9rem',
-                        fontWeight: '500',
+                        backgroundColor: 'transparent',
+                        color: 'var(--gc-text)',
+                        border: '1px solid var(--gc-border)',
+                        padding: '0.6rem 1.25rem',
+                        fontFamily: 'inherit',
+                        fontSize: '0.85rem',
+                        fontWeight: 600,
                         cursor: 'pointer',
-                        borderRadius: '4px'
+                        borderRadius: '100px'
                     }}
                 >
                     Reject
@@ -91,14 +97,15 @@ const CookieBanner: React.FC = () => {
                 <button
                     onClick={handleAccept}
                     style={{
-                        backgroundColor: 'white',
-                        color: 'black',
-                        border: 'none',
-                        padding: '0.7rem 1.5rem',
-                        fontSize: '0.9rem',
-                        fontWeight: '500',
+                        backgroundColor: 'var(--gc-cta)',
+                        color: 'var(--gc-cta-ink)',
+                        border: '1px solid transparent',
+                        padding: '0.6rem 1.25rem',
+                        fontFamily: 'inherit',
+                        fontSize: '0.85rem',
+                        fontWeight: 600,
                         cursor: 'pointer',
-                        borderRadius: '4px'
+                        borderRadius: '100px'
                     }}
                 >
                     Accept

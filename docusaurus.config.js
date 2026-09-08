@@ -8,17 +8,12 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const config = {
   title: "Gnosis Chain",
   tagline:
-    "Gnosis Chain is one of the first Ethereum sidechains and has stayed true to its values.",
+    "Build apps, payments and infrastructure on Gnosis Chain: an EVM network with 5-second blocks, near-zero fees and a stablecoin as gas.",
   url: "https://docs.gnosischain.com",
   baseUrl: "/",
   onBrokenLinks: "ignore",
   onBrokenMarkdownLinks: "ignore",
   favicon: "img/favicon.ico",
-  stylesheets: [
-    {
-      href: "https://fonts.googleapis.com/css?family=Karla:regular,600,500italic,600italic|Lora:regular,500,italic,500italic,600italic",
-    },
-  ],
   scripts: [
     {
       src: "/js/analytics-consent.js",
@@ -54,18 +49,8 @@ const config = {
           sidebarPath: require.resolve("./sidebars.js"),
           showLastUpdateTime: true,
         },
-        blog: {
-          path: "updates",
-          routeBasePath: "updates",
-          blogTitle: "Gnosis Updates",
-          blogDescription:
-            "Get Gnosis updates, announcements, changelogs, core dev info!",
-          include: ["**/*.md", "**/*.mdx"],
-          showReadingTime: true,
-          blogSidebarCount: "ALL",
-          blogSidebarTitle: "Recent updates",
-          onUntruncatedBlogPosts: 'ignore',
-        },
+        // Updates blog archived to /archives/Updates (not published).
+        blog: false,
         theme: {
           customCss: require.resolve("./src/css/custom.scss"),
         },
@@ -85,8 +70,6 @@ const config = {
         id: "usds_upgrade",
         content:
           'Update: USDS migration on xDAI bridge is completed.<a href="https://docs.gnosischain.com/bridges/management/decisions" target="_blank" rel="noopener noreferrer">Learn more</a>',
-        backgroundColor: "#fafbfc",
-        textColor: "#091E42",
         isCloseable: true,
       },
       colorMode: {
@@ -101,20 +84,54 @@ const config = {
       },
       navbar: {
         logo: {
-          alt: "Gnosis Logo",
+          alt: "Gnosis Chain",
           src: "img/gnosis.svg",
+          srcDark: "img/gnosis.svg",
+          width: 118,
+          height: 26,
         },
         items: [
           {
             type: "docSidebar",
             position: "left",
-            sidebarId: "about",
-            label: "About",
+            sidebarId: "start",
+            label: "Start here",
           },
           {
-            to: "updates",
+            type: "docSidebar",
             position: "left",
-            label: "Updates",
+            sidebarId: "developers",
+            label: "Build",
+          },
+          {
+            type: "docSidebar",
+            position: "left",
+            sidebarId: "bridges",
+            label: "Bridges",
+          },
+          {
+            type: "docSidebar",
+            position: "left",
+            sidebarId: "node",
+            label: "Run a node",
+          },
+          {
+            type: "docSidebar",
+            position: "left",
+            sidebarId: "tools",
+            label: "Tools",
+          },
+          {
+            type: "docSidebar",
+            position: "left",
+            sidebarId: "technicalGuides",
+            label: "Guides",
+          },
+          {
+            type: "docSidebar",
+            position: "left",
+            sidebarId: "about",
+            label: "About",
           },
           {
             type: "docSidebar",
@@ -124,32 +141,31 @@ const config = {
           },
           {
             href: "https://ecosystem.gnosischain.com/",
-            position: "left",
+            position: "right",
             label: "Ecosystem",
           },
           {
-            href: "https://www.notion.so/gnosischain/The-dApp-Stack-1c03b92f9cd080039675db6ec9abc9c8",
-            position: "left",
-            label: "Open Internet Kit",
+            href: "https://faucet.chiadochain.net",
+            position: "right",
+            label: "Faucet",
+          },
+          {
+            href: "https://github.com/gnosischain",
+            position: "right",
+            "aria-label": "GitHub",
+            html: `<svg class="socialButton" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0.75" y="0.75" width="32.5" height="32.5" rx="8"/><path d="M17 8a9 9 0 0 0-2.85 17.54c.45.08.62-.2.62-.43v-1.6c-2.5.54-3.03-1.06-3.03-1.06-.41-1.04-1-1.32-1-1.32-.82-.56.06-.55.06-.55.9.06 1.38.93 1.38.93.8 1.38 2.11.98 2.62.75.08-.58.31-.98.57-1.2-2-.23-4.1-1-4.1-4.45 0-.98.35-1.79.93-2.42-.1-.23-.4-1.15.09-2.39 0 0 .75-.24 2.47.92a8.6 8.6 0 0 1 4.5 0c1.72-1.16 2.47-.92 2.47-.92.49 1.24.18 2.16.09 2.39.58.63.93 1.44.93 2.42 0 3.46-2.11 4.22-4.12 4.44.32.28.61.83.61 1.67v2.48c0 .24.16.52.63.43A9 9 0 0 0 17 8Z"/></svg>`,
           },
           {
             href: "https://twitter.com/gnosischain",
-            html: `
-            <svg class="socialButton" width="53" height="53" viewBox="0 0 53 53" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="53" height="53" rx="26.5" fill="#8CE8AB"/>
-            <path d="M34.837 13.5H39.286L29.5689 24.5125L41 39.5H32.0517L25.038 30.4125L17.0224 39.5H12.5671L22.9585 27.7188L12 13.5H21.1751L27.5083 21.8062L34.837 13.5ZM33.2742 36.8625H35.7382L19.8329 16H17.1862L33.2742 36.8625Z" fill="black"/>
-            </svg>
-            `,
             position: "right",
+            "aria-label": "X",
+            html: `<svg class="socialButton" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0.75" y="0.75" width="32.5" height="32.5" rx="8"/><path d="M21.6 10h2.4l-5.25 6 6.15 8.1h-4.8l-3.78-4.93L12 24.1H9.6l5.6-6.4L9.3 10h4.92l3.42 4.5L21.6 10Zm-.84 12.66h1.33L13.5 11.3h-1.43l8.69 11.36Z"/></svg>`,
           },
           {
             href: "http://discord.gg/gnosis",
-            html: `
-            <svg class="socialButton" width="53" height="53" viewBox="0 0 53 53" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="53" height="53" rx="26.5" fill="#8CE8AB"/>
-            <path d="M38.8123 15.6959C38.8025 15.6775 38.7864 15.6631 38.7668 15.6553C36.4975 14.6401 34.1028 13.9163 31.6426 13.5018C31.6202 13.4977 31.5971 13.5006 31.5766 13.5101C31.556 13.5196 31.5391 13.5352 31.5281 13.5546C31.202 14.1316 30.906 14.7244 30.6412 15.3305C27.9892 14.938 25.2916 14.938 22.6396 15.3305C22.3731 14.7228 22.0723 14.1299 21.7387 13.5546C21.7273 13.5356 21.7103 13.5204 21.6898 13.511C21.6694 13.5016 21.6465 13.4983 21.6242 13.5018C19.1637 13.9154 16.7689 14.6393 14.4999 15.6553C14.4805 15.6633 14.4641 15.677 14.453 15.6945C9.91555 22.3012 8.67257 28.7455 9.28233 35.1099C9.28405 35.1255 9.28896 35.1406 9.29678 35.1543C9.30461 35.168 9.31518 35.1801 9.32787 35.1897C11.97 37.0971 14.9252 38.553 18.0675 39.4953C18.0896 39.5018 18.1132 39.5015 18.1352 39.4945C18.1571 39.4875 18.1764 39.4741 18.1903 39.4561C18.8652 38.5608 19.4632 37.6127 19.9782 36.6215C19.9853 36.6079 19.9893 36.593 19.9901 36.5778C19.9908 36.5625 19.9882 36.5473 19.9825 36.5331C19.9768 36.519 19.968 36.5061 19.9568 36.4955C19.9456 36.4848 19.9322 36.4766 19.9175 36.4713C18.9745 36.1195 18.0616 35.6955 17.1873 35.2031C17.1714 35.194 17.1581 35.1812 17.1485 35.1659C17.1388 35.1506 17.1332 35.1332 17.1322 35.1152C17.1311 35.0973 17.1345 35.0794 17.1422 35.0631C17.1499 35.0467 17.1616 35.0325 17.1763 35.0217C17.3597 34.8876 17.5433 34.7482 17.7185 34.6075C17.7341 34.595 17.7529 34.5869 17.7729 34.5843C17.7929 34.5817 17.8132 34.5846 17.8316 34.5926C23.5595 37.1414 29.7608 37.1414 35.4209 34.5926C35.4394 34.584 35.4599 34.5808 35.4802 34.5832C35.5005 34.5856 35.5196 34.5935 35.5355 34.6061C35.7107 34.7469 35.8942 34.8876 36.079 35.0217C36.0938 35.0324 36.1056 35.0465 36.1134 35.0628C36.1212 35.0791 36.1248 35.0969 36.1239 35.1149C36.1229 35.1328 36.1174 35.1502 36.1079 35.1656C36.0984 35.181 36.0852 35.1939 36.0694 35.2031C35.1971 35.6996 34.2833 36.1234 33.3378 36.47C33.3231 36.4754 33.3098 36.4839 33.2987 36.4947C33.2876 36.5055 33.2789 36.5185 33.2733 36.5328C33.2677 36.5471 33.2652 36.5624 33.2661 36.5777C33.2669 36.593 33.2711 36.6079 33.2783 36.6215C33.802 37.6072 34.3991 38.5541 35.0649 39.4545C35.0784 39.473 35.0975 39.4869 35.1195 39.4942C35.1416 39.5015 35.1654 39.5018 35.1877 39.4952C38.3355 38.556 41.296 37.1 43.9414 35.1897C43.9543 35.1806 43.965 35.1688 43.9728 35.1553C43.9807 35.1418 43.9855 35.1267 43.9869 35.1113C44.7169 27.7533 42.7648 21.3619 38.8123 15.6959ZM20.8336 31.2346C19.1091 31.2346 17.6881 29.6916 17.6881 27.7967C17.6881 25.9017 19.0815 24.3585 20.8336 24.3585C22.5994 24.3585 24.0066 25.9151 23.979 27.7965C23.979 29.6916 22.5856 31.2346 20.8336 31.2346ZM32.4634 31.2346C30.739 31.2346 29.318 29.6916 29.318 27.7967C29.318 25.9017 30.7114 24.3585 32.4634 24.3585C34.2293 24.3585 35.6365 25.9151 35.6089 27.7965C35.6089 29.6916 34.2293 31.2346 32.4634 31.2346Z" fill="black"/>
-            </svg>`,
             position: "right",
+            "aria-label": "Discord",
+            html: `<svg class="socialButton" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0.75" y="0.75" width="32.5" height="32.5" rx="8"/><path d="M23.4 11.3a15 15 0 0 0-3.7-1.15l-.47.96a13.9 13.9 0 0 0-4.46 0l-.47-.96a15 15 0 0 0-3.7 1.15C8.24 14.83 7.6 18.3 7.92 21.7a15.2 15.2 0 0 0 4.57 2.3c.37-.5.7-1.03.98-1.59a9.8 9.8 0 0 1-1.55-.75l.38-.3a10.8 10.8 0 0 0 9.4 0l.38.3c-.5.3-1.02.55-1.55.75.28.56.61 1.09.98 1.59a15.2 15.2 0 0 0 4.57-2.3c.38-3.95-.65-7.38-2.68-10.4ZM13.9 19.6c-.9 0-1.63-.82-1.63-1.83s.72-1.84 1.63-1.84 1.65.83 1.63 1.84c0 1.01-.72 1.83-1.63 1.83Zm6.2 0c-.9 0-1.63-.82-1.63-1.83s.72-1.84 1.63-1.84 1.65.83 1.63 1.84c0 1.01-.72 1.83-1.63 1.83Z"/></svg>`,
           },
         ],
       },
@@ -157,66 +173,43 @@ const config = {
         style: "dark",
         links: [
           {
-            title: "Documentation",
+            title: "Build",
             items: [
-              {
-                label: "Developers",
-                to: "/developers/overview",
-              },
-              {
-                label: "Node operators",
-                to: "/node",
-              },
-              {
-                label: "Bridges",
-                to: "/bridges",
-              },
-              {
-                label: "Tools",
-                to: "/tools",
-              },
-              {
-                label: "Terms of use",
-                to: "/terms-conditions",
-              },
+              { label: "Start here", to: "/start" },
+              { label: "Quickstart", to: "/developers/quickstart" },
+              { label: "Developer overview", to: "/developers/overview" },
+              { label: "Bridges", to: "/bridges" },
+              { label: "Run a node", to: "/node" },
+              { label: "Tools", to: "/tools" },
+            ],
+          },
+          {
+            title: "Network",
+            items: [
+              { label: "Network details", to: "/about/networks/" },
+              { label: "Chiado testnet", to: "/about/networks/chiado" },
+              { label: "Faucets", to: "/tools/Faucets" },
+              { label: "Blockscout", href: "https://gnosis.blockscout.com" },
+              { label: "Gnosis Bridge", href: "https://bridge.gnosischain.com" },
             ],
           },
           {
             title: "Community",
             items: [
-              {
-                label: "Telegram",
-                href: "https://t.me/gnosischain",
-              },
-              {
-                label: "Discord",
-                href: "https://discord.gg/gnosis",
-              },
-              {
-                label: "Twitter",
-                href: "https://twitter.com/gnosischain",
-              },
+              { label: "Discord", href: "https://discord.gg/gnosis" },
+              { label: "Telegram", href: "https://t.me/gnosischain" },
+              { label: "X", href: "https://twitter.com/gnosischain" },
+              { label: "GitHub", href: "https://github.com/gnosischain" },
+              { label: "Ecosystem", href: "https://ecosystem.gnosischain.com/" },
             ],
           },
           {
             title: "More",
             items: [
-              {
-                label: "Updates",
-                to: "/updates",
-              },
-              {
-                label: "Careers",
-                href: "https://gnosis.io/careers/",
-              },
-              {
-                label: "GitHub",
-                href: "https://github.com/gnosischain",
-              },
-              {
-                label: "Gnosis Chain Media Kit",
-                href: "https://www.gnosis.io/press/press-kit",
-              },
+              { label: "FAQ", to: "/faq/others" },
+              { label: "Careers", href: "https://gnosis.io/careers/" },
+              { label: "Media kit", href: "https://www.gnosis.io/press/press-kit" },
+              { label: "Terms of use", to: "/terms-conditions" },
             ],
           },
         ],
@@ -247,21 +240,43 @@ const config = {
       "@docusaurus/plugin-client-redirects",
       {
         redirects: [
+          // Updates blog archived to /archives/Updates; nothing under /updates is published
           {
-            to: "/updates/2022/12/10/merge",
-            from: "/updates/20221210-merge",
+            to: "/",
+            from: [
+              "/updates",
+              "/updates/20221210-merge",
+              "/updates/20221208-temporary-bootnodes",
+              "/updates/202212-bridges-pause",
+            ],
           },
+          // Bridges FAQs merged into the master FAQ as its Bridging subsection
           {
-            to: "/updates/2022/12/08/temporary-bootnodes",
-            from: "/updates/20221208-temporary-bootnodes",
+            to: "/faq/others",
+            from: "/faq/bridges",
           },
+          // Node FAQs and Validators FAQ archived to /archives/FAQ
           {
-            to: "/updates/2022/12/05/bridges-pause",
-            from: "/updates/202212-bridges-pause",
+            to: "/faq/others",
+            from: [
+              "/faq/node",
+              "/faq/Node FAQs/changingwc",
+              "/faq/Node FAQs/depositWithdrawalReward",
+              "/faq/Node FAQs/generalQuestions",
+              "/faq/Node FAQs/monitoring",
+              "/faq/Node FAQs/offlineAndSyncIssue",
+              "/faq/Node FAQs/runningNode",
+              "/faq/Node FAQs/staking",
+            ],
           },
           {
             to: "/about/communication",
             from: "/developers/communication",
+          },
+          // Optimism on Gnosis was deprecated in March 2023; page archived to /archives/Optimism
+          {
+            to: "/about/networks/",
+            from: "/about/networks/optimism",
           },
           // Truffle was sunset by Consensys in 2023; pages archived to /archives/Truffle
           {

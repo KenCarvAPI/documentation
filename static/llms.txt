@@ -341,115 +341,6 @@ Gnosis maintains a [Configs Repo](https://github.com/gnosischain/configs/) that 
 
 ---
 
-// File: about/networks/optimism
-
-# Optimism on Gnosis
-
-:::danger DEPRECATED
-Optimism on Gnosis was deprecated on March 2023. We keep this page for reference.
-Do NOT deposit funds, they will not be withdrawable.
-:::
-
-An Optimism implementation is deployed on Gnosis. Gnosis functions as the L1 (akin to Ethereum) and Optimism on Gnosis as the L2.
-
-Deployment processes are similar to using [Optimism with Ethereum](https://community.optimism.io/) with updated configs to match the Gnosis chain setup.
-
-| Parameter    | Value              |
-| ------------ | ------------------ |
-| Network Name | Optimism on Gnosis |
-| Chain ID     | 300                |
-
-## Make a Deposit
-
-:::danger DEPRECATED NETWORK!
-Do NOT deposit funds, they will not be withdrawable.
-:::
-
-Deposits are initiated through the [Proxy\_\_OVM_L1StandardBridge contract](https://gnosis.blockscout.com/address/0x184a119d4C1D08A459FCfBFe7ECc051c163B4c80/transactions) on the Gnosis Chain with the **`depositETH`** method and the following inputs:
-
-- \_l2Gas: **`200000`**
-- data: **`0x`**
-- value: **`Deposit value in xDai (ie. 0.1 = 0.1 xDai)`**
-
-:::info
-Some smart contract wallets are blocked from calling the `depositETH (and depositERC20) methods`. If you want to deposit using a smart contract wallet you can use the `depositETHTo function instead.`
-:::
-
-<details>
-    <summary>Example using BlockScout</summary>
-
-1. Go to [https://gnosis.blockscout.com/address/0x184a119d4C1D08A459FCfBFe7ECc051c163B4c80/write-proxy](https://gnosis.blockscout.com/address/0x184a119d4C1D08A459FCfBFe7ECc051c163B4c80/write-proxy)
-
-2. Connect a web3 wallet like MetaMask that contains some xDai for funding and gas fees.
-
-![](/img/about/optimism/connect-wallet.png)
-
-3. Scroll down to the **`depositETH`** method and enter the following:
-
-- \_l2Gas: **`200000`**
-- \_data: **`0x`**
-- value: **`Deposit value in xDai`**
-- Click **Write** and complete the transaction with your wallet.
-
-![](/img/about/optimism/method.png)
-
-</details>
-
-:::info
-It may take several minutes for the deposit to be processed and the balance to update on the Optimism on GC Chain.
-:::
-
-## L1 Contract Addresses
-
-Additional Info related to specific contracts is [available here](https://github.com/ethereum-optimism/optimism/tree/56961f9208af8a43a25a138cce21ef488c418141/packages/contracts/docs).
-
-| Contract                            | Address                                                                                                                                     |
-| ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| BondManager                         | [0x730fE4431a00286Ff8dc7E9B03c661E63Ef05121](https://gnosis.blockscout.com/address/0x730fE4431a00286Ff8dc7E9B03c661E63Ef05121/transactions) |
-| CanonicalTransactionChain           | [0x636434F59e52D50423bD8272FEB3B2bff5dF586b](https://gnosis.blockscout.com/address/0x636434F59e52D50423bD8272FEB3B2bff5dF586b/transactions) |
-| ChainStorageContainer-CTC-batches   | [0xEc64fee4f95E48A3BAd799A5912F183d222086A8](https://gnosis.blockscout.com/address/0xEc64fee4f95E48A3BAd799A5912F183d222086A8/transactions) |
-| ChainStorageContainer-SCC-batches   | [0x26EbaD990cC56ef36166d1C4114CEF25F024b75D](https://gnosis.blockscout.com/address/0x26EbaD990cC56ef36166d1C4114CEF25F024b75D/transactions) |
-| ChugSplashDictator                  | [0x77fAf5Aa4EB7874a676F773fc308e0FD8e9400f7](https://gnosis.blockscout.com/address/0x77fAf5Aa4EB7874a676F773fc308e0FD8e9400f7/transactions) |
-| ERC1820Registry                     | [x1820a4B7618BdE71Dce8cdc73aAB6C95905faD24](https://gnosis.blockscout.com/address/0x1820a4B7618BdE71Dce8cdc73aAB6C95905faD24/transactions)  |
-| L1StandardBridge                    | [0x3804bA4ecC886AAe91A6D57dE880616E17C8269C](https://gnosis.blockscout.com/address/0x3804bA4ecC886AAe91A6D57dE880616E17C8269C/transactions) |
-| OVM_L1CrossDomainMessenger          | [0x6A52b1dbE0293F1ba1bc136b0f8C8f0395F940b9](https://gnosis.blockscout.com/address/0x6A52b1dbE0293F1ba1bc136b0f8C8f0395F940b9/transactions) |
-| OVM_Proposer                        | [0xE57cfefE4B7EddE88af28d4ffB3BD63b272f578A](https://gnosis.blockscout.com/address/0xE57cfefE4B7EddE88af28d4ffB3BD63b272f578A/transactions) |
-| OVM_Sequencer                       | [0xFDCa025dB7368A84deeCc0d82598eB90638D52DF](https://gnosis.blockscout.com/address/0xFDCa025dB7368A84deeCc0d82598eB90638D52DF/transactions) |
-| Proxy\_\_OVM_L1CrossDomainMessenger | [0x4324fdD26161457f4BCc1ABDA87709d3Be8Fd10E](https://gnosis.blockscout.com/address/0x4324fdD26161457f4BCc1ABDA87709d3Be8Fd10E/transactions) |
-| Proxy\_\_OVM_L1StandardBridge       | [0x184a119d4C1D08A459FCfBFe7ECc051c163B4c80](https://gnosis.blockscout.com/address/0x184a119d4C1D08A459FCfBFe7ECc051c163B4c80/transactions) |
-| StateCommitmentChain                | [0xbAE5EA90F4A1dFBC1b0D145453f371E06287a6D8](https://gnosis.blockscout.com/address/0xbAE5EA90F4A1dFBC1b0D145453f371E06287a6D8/transactions) |
-
-## L2 Contract Addresses
-
-- Optimism L2 contracts can be explored at [https://blockscout.com/xdai/optimism](https://blockscout.com/xdai/optimism)
-- Additional Info related to specific contracts is [available here](https://github.com/ethereum-optimism/optimism/tree/56961f9208af8a43a25a138cce21ef488c418141/packages/contracts/docs).
-- Summaries for [relevant predeploys here](https://github.com/ethereum-optimism/optimism/blob/8d67991aba584c1703692ea46273ea8a1ef45f56/specs/protocol/components/predeploys.md).
-
-| Contract                    | Address                                    |
-| --------------------------- | ------------------------------------------ |
-| OVM_L2ToL1MessagePasser     | 0x4200000000000000000000000000000000000000 |
-| OVM_L1MessageSender         | 0x4200000000000000000000000000000000000001 |
-| OVM_DeployerWhitelist       | 0x4200000000000000000000000000000000000002 |
-| OVM_ECDSAContractAccount    | 0x4200000000000000000000000000000000000003 |
-| OVM_SequencerEntrypoint     | 0x4200000000000000000000000000000000000005 |
-| OVM_ETH                     | 0x4200000000000000000000000000000000000006 |
-| OVM_L2CrossDomainMessenger  | 0x4200000000000000000000000000000000000007 |
-| Lib_AddressManager          | 0x4200000000000000000000000000000000000008 |
-| OVM_ProxyEOA                | 0x4200000000000000000000000000000000000009 |
-| OVM_L2StandardBridge        | 0x4200000000000000000000000000000000000010 |
-| OVM_SequencerFeeVault       | 0x4200000000000000000000000000000000000011 |
-| OVM_ExecutionManagerWrapper | 0x420000000000000000000000000000000000000B |
-| OVM_GasPriceOracle          | 0x420000000000000000000000000000000000000F |
-
-## Graph Protocol
-
-When starting the graph-node the network key is: **`optimism`**
-
-- Graph [https://graph-optimism.gnosischain.com/](https://graph-optimism.gnosischain.com/)
-- Admin [https://admin-graph-optimism.gnosischain.com/](https://admin-graph-optimism.gnosischain.com/)
-
----
-
 // File: about/specs/README
 
 # Gnosis Specifications
@@ -458,10 +349,10 @@ When starting the graph-node the network key is: **`optimism`**
 
 | Property |  |
 | - | - |
-| Block Size | 30M gas units |
+| Block Size | 17M gas units |
 | Block Speed | 5 seconds |
 | Gas price | check [gas price oracle](/tools/Oracle%20Providers/gas-price) |
-| Patchset | Cancun |
+| Patchset | Osaka |
 | Fee Token | [xDai](/about/tokens/xdai) |
 | Consensus Token | [GNO](/about/tokens/gno) |
 | Chain ID (Gnosis) | 100 (hexa 0x64) |
@@ -1315,7 +1206,6 @@ Hard forks are backward-incompatible upgrades used to introduce new functionalit
 - **Network**: Gnosis
 - **Beacon block number**: `6,306,357`
 - **Completed:** 8 December 2022
-- [Merged successful announcement](/updates/2022/12/10/merge)
 
 # The Merge
 
@@ -2514,32 +2404,6 @@ The OmniBridge and xDai Bridge have undergone multiple independent security audi
 1. [Omega-Gnosis-USDS Upgrade Final Audit Report](https://github.com/OmegaAudits/audits/blob/main/202510-Gnosis-Bridge-USDS-Upgrade.pdf)
 2. [Gnosis Ltd internal audit final report](https://github.com/cducrest/audit-reports/blob/main/bridge-USDS-upgrade3.pdf)
 
-## Hashi integration by Omega, g0, Least Authority
-
-The scope for auditing includes the following repos:
-
-1. https://github.com/gnosis/hashi except for GiriGiriBashi.sol
-2. AMB: https://github.com/crosschain-alliance/tokenbridge-contracts/tree/feat/hashi-integration-amb
-3. XDAI: https://github.com/crosschain-alliance/tokenbridge-contracts/tree/feat/hashi-integration-xdai-bridge
-
-### Omega
-
-**Completed**: June 27, 2024  
-**Conclusion**: 1 high severity issues, 4 low severity issues, 10 info issues. All issues has been resolved or acknowledged.
-**Audit Report**:[Omega-Gnosis-Hashi Final Audit Report](../../static/files/Omega-Gnosis-Hashi%20Final%20Report.pdf)
-
-### g0
-
-**Completed**: June 28, 2024
-**Conclusion**: 1 critical issue, 3 medium issues, 4 minor issues, 4 note issues. All issues has been resolved or acknowledged.
-**Audit Report**:[g0-Gnosis-Hashi Audit Report](../../static/files/g0-Hashi-Gnosis-FinalAuditReport.pdf)
-
-### Least Authority
-
-**Completed**: June 12, 2024  
-**Conclusion**: 4 issues, 13 suggestions. All issues has been resolved or acknowledged.  
-**Audit Report**:[Least Authority-Gnosis-Hashi Audit Report](../../static/files/Least%20Authority-Gnosis%20Hashi%20Final%20Audit%20Report.pdf)
-
 ## xDAI bridge upgrade Audit by Omega and ChainSafe
 
 ### Omega
@@ -3016,7 +2880,7 @@ For more detail, please check [here](https://forum.gnosis.io/t/decommissioning-o
 1. Users initiate the relay transaction on Ethereum by approving the bridge contract and calling the [bridge contract](https://etherscan.io/address/0x4aa42145Aa6Ebf72e164C9bBC74fbD3788045016) `relayTokens(address recipient, uint256 value)`.
 2. `UserRequestForAffirmation(address recipient, uint256 value, bytes32 nonce)` event is emitted from the [bridge contract](https://etherscan.io/address/0x4aa42145Aa6Ebf72e164C9bBC74fbD3788045016).
 3. Bridge validators observe the event and call `executeAffirmation(address recipient, uint256 value, bytes32 nonce)` function on [Home xDAI bridge contract](https://gnosis.blockscout.com/address/0x7301CFA0e1756B71869E93d4e4Dca5c7d0eb0AA6) on Gnosis Chain.
-4. When enough confirmations are collected (4/7 majority), the bridge contract on Gnosis Chain calls the block reward contract to record the receiver(s) and amount(s) of xDAI to mint. Hashi acts as an additional bridge valdiator who validates transactions but no actually calling `executeAffirmation` on Home xDAI Bridge. For more details about how Hashi works in this case, check out [here](./hashi-integration.md)
+4. When enough confirmations are collected (4/7 majority), the bridge contract on Gnosis Chain calls the block reward contract to record the receiver(s) and amount(s) of xDAI to mint.
 5. The [block reward contract](https://gnosis.blockscout.com/address/0x481c034c6d9441db23Ea48De68BCAe812C5d39bA) is called by the consensus engine to update user's xDAI balance. `AddedReceiver(uint256 amount, address indexed receiver, address indexed bridge)` event is emitted within the same transaction and receiver address will be credited for the equivalent xDAI amount.
 
 User may check the balance change visually using Blockscout's [coin balance history](https://gnosis.blockscout.com/address/0xE05FB316eB8C4ba7288D43c1bd87BE8a8d16761C?tab=coin_balance_history) or programmatically using [eth_getBalance](https://docs.infura.io/api/networks/ethereum/json-rpc-methods/eth_getbalance) API by querying the balance on block number where `AddedReceiver` event is emitted.
@@ -3046,7 +2910,7 @@ Example: https://gnosis.blockscout.com/tx/0x5892a695860f6087a2d93140f05e6365142f
 3. Bridge validators observe the event and call `submitSignature(bytes signature, bytes message)` function on [Home xDAI bridge contract](https://gnosis.blockscout.com/address/0x7301CFA0e1756B71869E93d4e4Dca5c7d0eb0AA6) on Gnosis Chain.
 4. After enough signatures are collected, `CollectedSignatures` event is emitted/
 5. Anyone can execute the withdrawal on Ethereum by calling `executeSignatures(bytes message, bytes signatures)` on [Foreign xDAI bridge](https://etherscan.io/address/0x4aa42145Aa6Ebf72e164C9bBC74fbD3788045016) on Ethereum. To fetch the calldata value, please check the [guideline below](#how-to-claim-usds-on-ethereum). **USDS** is unlocked to the receiver or swap to **DAI** to the receive.
-6. `RelayedMessage(address recipient, uint256 value, bytes32 transactionHash)` emitted on Foreign xDAI Bridge. Please be aware that after Hashi upgrade, `transactionHash` has been replaced with the value of `nonce`. Please check [here](../hashi/hashi-integration.md) for more information on how it works.
+6. `RelayedMessage(address recipient, uint256 value, bytes32 transactionHash)` emitted on Foreign xDAI Bridge. Please be aware that `transactionHash` carries the value of `nonce`.
 
 ### Savings xDAI
 
@@ -3166,7 +3030,7 @@ The second contract is the Interest Receiver. This will be the address provided 
 
 ### Legacy components on the bridge contracts
 
-1. Hashi: Hashi componetns was integrated into the bridge, but was [deprecated](https://forum.gnosis.io/t/deprecation-notice-hashi-on-gnosis-canonical-bridges-ends-maintenance/11467/4). The on-chain contract still remains but don't affect the transaction verification logic. Please check [here](../hashi/hashi-integration.md) for more details.
+1. Hashi: Hashi components was integrated into the bridge, but was [deprecated](https://forum.gnosis.io/t/deprecation-notice-hashi-on-gnosis-canonical-bridges-ends-maintenance/11467/4). The on-chain contract still remains but don't affect the transaction verification logic. Please check the [archived Hashi integration doc](https://github.com/gnosischain/documentation/blob/main/archives/Hashi/hashi-integration.md) for more details.
 
 2. GSN: [OpenGSN (Ethereum Gas Stations Network)](https://github.com/opengsn) is not in used but remains in the contracts.
 
@@ -3323,7 +3187,7 @@ By setting `maxGasPerTx` to 0, the [condition in `_sendMessage()`](https://githu
 
 ### Legacy components on the bridge contracts
 
-1. Hashi: Hashi componetns was integrated into the bridge, but was [deprecated](https://forum.gnosis.io/t/deprecation-notice-hashi-on-gnosis-canonical-bridges-ends-maintenance/11467/4). The on-chain contract still remains but don't affect the transaction verification logic. Please check [here](../hashi/hashi-integration.md) for more details.
+1. Hashi: Hashi components was integrated into the bridge, but was [deprecated](https://forum.gnosis.io/t/deprecation-notice-hashi-on-gnosis-canonical-bridges-ends-maintenance/11467/4). The on-chain contract still remains but don't affect the transaction verification logic. Please check the [archived Hashi integration doc](https://github.com/gnosischain/documentation/blob/main/archives/Hashi/hashi-integration.md) for more details.
 
 2. GSN: [OpenGSN (Ethereum Gas Stations Network)](https://github.com/opengsn) is not in used but remains in the contracts.
 
@@ -3391,161 +3255,6 @@ We would love to hear from you on suggestions and ideas on bridges in Gnosis Cha
 
 - [Gnosis Bridges Improvement Proposals](https://docs.google.com/forms/d/1V5RH7rIcHw-7JSePErUNutWO_p59HwbbsNedoWidTKA/viewform?edit_requested=true)
 - [AMB developers form](https://docs.google.com/forms/d/1wj31wGZ2sxMd_n35ZTavqegQo8XEp2C9brBPLFwCMn0/viewform?edit_requested=true#responses)
-
----
-
-// File: bridges/hashi/hashi-integration
-
-:::warning
-🚨 The Hashi integration initiative — originally approved under [GIP‑93](https://forum.gnosis.io/t/gip-93-should-gnosisdao-support-the-integration-of-hashi-within-gnosis-chains-canonical-bridges/8245) and subsequently implemented across both the AMB & xDAI bridges—is formally **deprecated**.
-
-Read the entire forum details [here](https://forum.gnosis.io/t/deprecation-notice-hashi-on-gnosis-canonical-bridges-ends-maintenance/11467)
-:::
-
-# Hashi integration
-
-The proposal of Hashi integration on Gnosis Chain's bridges (AMB & Omnibridge, xDAI bridge) is [approved by Gnosis DAO members](https://forum.gnosis.io/t/gip-93-should-gnosisdao-support-the-integration-of-hashi-within-gnosis-chains-canonical-bridges/8245/5) on April 2nd, 2024. The integration introduces advanced security measures, mitigates systemic risks, and ensures the Gnosis Chain ecosystem remains resilient against the evolving landscape of security threats. With the efforts from Cross-Chain Alliance and Gnosis team, the integration is going toward production.
-
-Both the AMB and xDAI bridge have been upgraded to Hashi integration.
-
-1. AMB: [Governance Decision](../management/decisions.md#upgrade-amb-implementation-contract-for-hashi-integraion-remove-telepathy-validator-refund-trac-token-due-to-accidental-transfer)
-2. xDAI: [Governance Decision](../management/decisions.md#upgrade-xdai-implementation-contract-for-hashi-integraion-replacing-metacartel-with-monerium)
-
-## What’s new?
-
-1. Hashi Manager contract: New contract. Set reporters, adapters, and threshold parameters used by the bridge contract.
-2. New variables/function:
-   1. HASHI_ENABLED: New variable. When set to true, every message can be approved by Hashi, but the message need not to be approved by Hashi for it to get executed.
-   2. HASHI_MANDATORY: New variable. When set to true, every message has to be approved by Hashi before execution.
-   3. isApprovedByHashi(bytes32 msgId): New public function. Return whether a message w.r.t a message Id is approved by Hashi.
-   4. setHashiManager(address HashiManager): New function, onlyOwner. Set Hashi Manager contract on the bridge contract.
-3. Modified events:
-   1. xDAI Bridge: in xDAI bridge, a `bytes32 nonce` is added into `UserRequestForAffirmation` and `UserRequestForSignature` events.
-      1. `event UserRequestForAffirmation(address recipient, uint256 value)` is changed to `event UserRequestForAffirmation(address recipient, uint256 value, bytes32 nonce)`
-      2. `event UserRequestForSignature(address recipient, uint256 value)` is changed to `UserRequestForSignature(address recipient, uint256 value bytes32 nonce)`
-
-## AMB & Omnibridge
-
-![](../../../static/img/bridges/hashi/Hashi-Gnosis-AMB.png)
-
-For Omnibridge / AMB:
-
-**Ethereum → Gnosis Chain**
-
-1. User approves token for Foreign Omnibridge
-2. User calls ForeignOmnibridge.relayTokens(address token, address receiver, uint256 amount)
-   1. ForeignOmnibridge calls ForeignAMB.requireToPassMessage()
-   2. ForeignAMB check if HASHI_IS_ENABLED is true, and call Yaho.dispatchMessage
-   3. Off chain relayer detects MessageDispatched event from Yaho and call Yaho.relayMessagesToAdapters to relay message to each reporters.
-   4. Reporters relay the messageId and message hash to adapter contract on Gnosis Chain.
-   5. Light Client based oracle only stores hashes on Gnosis Chain.
-3. If Hashi is enabled & mandatory, off chain executor calls Gnosis Chain’s Yaru.executeMessages(), which check if the hash is agreed upon a threshold amount of adapters (set in Hashi Manager contract) adapters and set isApprovedByHashi(messageId) to true eventually.
-4. Bridge validators detects UserRequestForAffirmation event and call HomeAMB.executeAffirmation. If Hashi is enabled & mandatory, this step has to wait after step 3.
-
-**Gnosis Chain → Ethereum**
-
-1. User approves token for Home Omnibridge
-2. User calls HomeOmnibridge.relayTokens(address token, address receiver, uint256 amount)
-   1. HomeOmnibridge calls HomeAMB.requireToPassMessage()
-   2. HomeAMB check if HASHI_IS_ENABLED is true, and call Yaho.dispatchMessage
-   3. Off chain relayer detects MessageDispatched event from Yaho and call Yaho.relayMessagesToAdapters to relay message to each reporters.
-   4. Reporters relay the messageId and message hash to adapter contract on Ethereum.
-3. Bridge validators detects UserRequestForSignature event and call HomeAMB.submitSignatures.
-4. If Hashi is enabled & mandatory, off chain executor calls Ethereum’s Yaru.executeMessages(), which check if the hash is agreed upon adapters and set isApprovedByHashi(messageId) to true eventually.
-5. User claims token by calling Ethereum’s ForeignAMB.executeSignatures().
-
-## xDAI briddge
-
-![](../../../static/img/bridges/hashi/Hashi-Gnosis-xDAI.png)
-
-**Ethereum → Gnosis Chain**
-
-1. User approves token for Foreign xDAI bridge.
-2. User calls ForeignXDAIBridge.relayTokens(address receiver, uint256 amount)
-   1. ForeignXDAIBridge check if HASHI_IS_ENABLED is true, and call Yaho.dispatchMessage
-   2. Off chain relayer detects MessageDispatched event from Yaho and call Yaho.relayMessagesToAdapters to relay message to each reporters.
-   3. Reporters relay the messageId and message hash to adapter contract on Gnosis Chain.
-   4. Light Client based oracle only stores hashes on Gnosis Chain.
-3. If Hashi is enabled & mandatory, off chain executor calls Gnosis Chain’s Yaru.executeMessages(), which check if the hash is agreed upon a threshold amount of adapters (set in Hashi Manager contract) and set isApprovedByHashi(messageId) to true eventually.
-4. Bridge validators detects UserRequestForAffirmation event and call HomexDAIBridge.executeAffirmation. If Hashi is enabled & mandatory, this step has to wait after step 3. Block Reward contract emits AddedReceiver event, which will mint equivalent amount of xDAI to receiver in the next block.
-
-**Gnosis Chain → Ethereum**
-
-1. User calls HomexDAIBridge.relayTokens(address receiver, uint256 amount) or transfer xDAI to HomexDAIBridge without msg.data.
-   1. HomexDAIBridge check if HASHI_IS_ENABLED is true, and call Yaho.dispatchMessage
-   2. Off chain relayer detects MessageDispatched event from Yaho and call Yaho.relayMessagesToAdapters to relay message to each reporters.
-   3. Reporters relay the messageId and message hash to adapter contract on Ethereum.
-2. Bridge validators detects UserRequestForSignature event and call HomexDAIBridge.submitSignatures.
-3. If Hashi is enabled & mandatory, off chain executor calls Ethereum’s Yaru.executeMessages(), which check if the hash is agreed upon adapters and set isApprovedByHashi(messageId) to true eventually.
-4. User claims token by calling Ethereum’s ForeignxDAIBridge.executeSignatures(). DAI is transfer to the receiver eventually.
-
-# Hashi Manager contract
-
-Hashi Manager contract is the contract that controls the Hashi oracle and relevant information.
-
-<Tabs>
-<TabItem value="amb" label="AMB">
-
-| Contract                      | Address                                                                                                                |
-| ----------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| Hashi Manager on Ethereum     | [0x93f6eE78451AaCc1Db1db49a12aBfCc4662B9Cc9](https://etherscan.io/address/0x93f6eE78451AaCc1Db1db49a12aBfCc4662B9Cc9)  |
-| Hashi Manager on Gnosis Chain | [0x74CACae9801bA4Fe0027Ed6F58d53797CCa7296E](https://gnosisscan.io/address/0x74CACae9801bA4Fe0027Ed6F58d53797CCa7296E) |
-
-</TabItem>
-
-<TabItem value="xdai" label="xDai">
-
-| Contract                      | Address                                                                                                                |
-| ----------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| Hashi Manager on Ethereum     | [0x9acCFAD714A1e670CD1f6dc666FE892d1d5547BD ](https://etherscan.io/address/0x9acCFAD714A1e670CD1f6dc666FE892d1d5547BD) |
-| Hashi Manager on Gnosis Chain | [0x60Aa15198a3AdfC86FF15B941549A6447B2dDB49](https://gnosisscan.io/address/0x60Aa15198a3AdfC86FF15B941549A6447B2dDB49) |
-
-</TabItem>
-</Tabs>
-
-1. Set the oracle sets (reporter address from source chain, adapter address on target chain) for certain route (i.e. Ethereum -> Gnosis Chain, Gnosis Chain -> Ethereum).
-2. Set the target address: the bridge contract on the target chain.
-3. Set exepected adapter hash: the adapter address on the same chain.
-4. Set Yaho, Yaru: For message relaying and executing logic. Check out how it works [here](https://crosschain-alliance.gitbook.io/hashi/getting-started/how-hashi-works)
-
-## Reference
-
-1. AMB contracts: https://github.com/crosschain-alliance/tokenbridge-contracts/tree/feat/hashi-integration-amb
-2. xDAI bridge contracts: https://github.com/crosschain-alliance/tokenbridge-contracts/tree/feat/hashi-integration-xdai-bridge
-3. Test: https://github.com/crosschain-alliance/tokenbridge-contracts-migration-tests
-4. Audits: https://crosschain-alliance.gitbook.io/hashi/v0.2/audit-report#gnosis-bridge-hashi-integration
-5. Hashi: https://crosschain-alliance.gitbook.io/hashi/v0.2/introduction
-
----
-
-// File: bridges/hashi/README
-
-:::info
-🚨 The Hashi integration initiative — originally approved under [GIP‑93](https://forum.gnosis.io/t/gip-93-should-gnosisdao-support-the-integration-of-hashi-within-gnosis-chains-canonical-bridges/8245) and subsequently implemented across both the AMB & xDAI bridges—will be formally **deprecated**.
-
-Read the entire forum details [here](https://forum.gnosis.io/t/deprecation-notice-hashi-on-gnosis-canonical-bridges-ends-maintenance/11467)
-:::
-
-:::warning
-Hashi is deprecated and will be removed from the bridge UI by 29 August 2025.
-:::
-
-:::warning
-🚨 The Hashi integration initiative — originally approved under [GIP‑93](https://forum.gnosis.io/t/gip-93-should-gnosisdao-support-the-integration-of-hashi-within-gnosis-chains-canonical-bridges/8245) and subsequently implemented across both the AMB & xDAI bridges—is formally **deprecated**.
-
-Read the entire forum details [here](https://forum.gnosis.io/t/deprecation-notice-hashi-on-gnosis-canonical-bridges-ends-maintenance/11467)
-:::
-
-Hashi is an EVM Hash Oracle Aggregator, designed to facilitate a
-[principled approach to cross-chain bridge security](https://ethresear.ch/t/a-principled-approach-to-bridges/14725?u=auryn). Hashi is developed and maintained further by the Cross-chain Alliance team. The integration of Hashi within Gnosis Chain's Canonical Bridges is in progress, check out [here](https://forum.gnosis.io/t/gip-93-should-gnosisdao-support-the-integration-of-hashi-within-gnosis-chains-canonical-bridges/8245).
-
-:::info Docs Migration notice
-Hashi documentation is now at [crosschain-alliance/Hashi](https://crosschain-alliance.gitbook.io/hashi) !
-:::
-
-The primary insight being that the vast majority of bridge-related security incidents could have had minimal impact if
-the systems relying on them had built in some redundancy. In other words, it's much more secure to require messages be
-validated by multiple independent mechanisms, rather than by just one. We call this setup a **RAIHO** (Redundant Array of Independent Hash Oracles).
 
 ---
 
@@ -4255,7 +3964,7 @@ Increase the amount of blocks required for confirmation on the Ethereum Mainnet 
 
 Unlike bridge governance, a bridge validator in Gnosis Chain is an entity responsible for monitoring event emissions from one blockchain, validating the associated logic, signing the validated events, and subsequently invoking the relevant functions on the destination chain to confirm the validation.
 
-Bridge validators are formed by different trusted entities such as Gnosis DAO, Safe, etc, and trustless entity such as Hashi for AMB.
+Bridge validators are formed by different trusted entities such as Gnosis DAO, Safe, etc.
 
 ## AMB & Omnibridge
 
@@ -5731,63 +5440,6 @@ Follow the [verifying a smart contract](https://docs.sourcify.dev/docs/how-to-ve
 
 ---
 
-// File: developers/Verify Smart Contracts/truffle
-
-# Truffle Verify
-
-This [truffle plugin](https://www.npmjs.com/package/truffle-plugin-verify) allows you to automatically verify your smart contracts' source code on Gnosisscan (by Etherscan), straight from the Truffle CLI.
-
-## Installation
-
-Install the plugin with npm or yarn
-
-<Tabs groupId="package-manager">
-<TabItem value="yarn" label="yarn">
-
-```bash
-yarn add -D truffle-plugin-verify
-```
-</TabItem>
-
-<TabItem value="npm" label="npm">
-
-```bash
-npm install -D truffle-plugin-verify
-```
-</TabItem>
-</Tabs>
-
-Add the plugin to your truffle-config.js file
-
-```js
-module.exports = {
-  /* ... rest of truffle-config */
-
-  plugins: ['truffle-plugin-verify']
-}
-```
-
-Generate an API Key on your [Gnosisscan account](https://gnosisscan.io/myaccount).
-
-Add your Gnosisscan API key to your truffle config (make sure to use something like dotenv so you don't commit the api key)
-
-```js
-module.exports = {
-  /* ... rest of truffle-config */
-
-  api_keys: {
-    gnosisscan: 'MY_API_KEY'
-  }
-}
-```
-
-## Useful links
-
-- [Automatically verify Truffle smart contracts on Etherscan](https://kalis.me/verify-truffle-smart-contracts-etherscan/)
-- [Truffle Quickstart](https://trufflesuite.com/docs/truffle/quickstart/)
-
----
-
 // File: developers/dev-environment/hardhat
 
 # Using Hardhat
@@ -6104,117 +5756,6 @@ For further Contract Verification information, visit our [official page](/develo
 
 ---
 
-// File: developers/dev-environment/truffle
-
-# Using Truffle with Gnosis
-
-Truffle is a development environment used for smart contract compiling, deploying, testing and debugging.
-
-Follow the [Truffle documentation](https://trufflesuite.com/docs/truffle/) for general installation and overview. 
-
-## Config Truffle for Gnosis
-
-Update the config with Gnosis credentials
-
-```js showLineNumbers title=truffle-config.js
-module.exports = {
-  // See <http://truffleframework.com/docs/advanced/configuration>
-  // for more about customizing your Truffle configuration!
-  networks: {
-    gnosis: {
-          provider: function() {
-                return new HDWalletProvider(
-               process.env.MNEMONIC,
-               "https://rpc.gnosischain.com")
-          },
-          network_id: 100,
-          gas: 500000,
-          gasPrice: 1000000000
-    },
-    chiado: {
-          provider: function() {
-                return new HDWalletProvider(
-               process.env.MNEMONIC,
-               "https://rpc.chiadochain.net")
-          },
-          network_id: 10200,
-          gas: 500000,
-          gasPrice: 1000000000
-    },
-  }
-};
-```
-
-## Compile your Gnosis contract
-
-### Default Compile
-
-<Tabs groupId="networks">
-<TabItem value="chiado" label="Chiado Testnet">
-
-```bash
-truffle compile --network chiado
-```
-</TabItem>
-<TabItem value="gnosis" label="Gnosis Mainnet">
-
-```bash
-truffle compile --network gnosis
-```
-</TabItem>
-</Tabs>
-
-
-### Compile with Options
-
-<Tabs groupId="networks">
-<TabItem value="chiado" label="Chiado Testnet">
-
-```bash
-truffle compile [--list <filter>] [--all] [--network chiado] [--quiet]
-```
-</TabItem>
-<TabItem value="gnosis" label="Gnosis Mainnet">
-
-```bash
-truffle compile [--list <filter>] [--all] [--network gnosis] [--quiet]
-```
-</TabItem>
-</Tabs>
-
-## Deploy your Contract
-
-<Tabs groupId="networks">
-<TabItem value="chiado" label="Chiado Testnet">
-
-```bash
-truffle migrate --network chiado
-```
-</TabItem>
-<TabItem value="gnosis" label="Gnosis Mainnet">
-
-```bash
-truffle migrate --network gnosis
-```
-</TabItem>
-</Tabs>
-
-View your deployed contract any of the [explorers](/tools/explorers).
-
-Visit our [Tools page](/tools) for other support.
-
-## Verify Contract
-
-Verify with Truffle by using [Truffle Plugin Verify](https://trufflesuite.com/docs/truffle/reference/truffle-commands/#deploy)
-
-Visit our [Contract Verification Page](/developers/Verify%20Smart%20Contracts/) for more documentation on verification tools.
-
-## Additional Truffle Documentation
-
-- Additional Truffle command documentation is located [here](https://trufflesuite.com/docs/truffle/reference/truffle-commands/#deploy).
-
----
-
 // File: developers/dev-environment/cookbook
 
 # Using Cookbook
@@ -6257,767 +5798,177 @@ Once the smart contract is deployed, you may check the address on Dashboard. You
 
 ---
 
-// File: faq/Node FAQs/changingwc
+// File: faq/others
 
-:::info
-**Find this document incomplete? Visit our [Discord channel](https://discord.gg/gnosis) or contact us via [Validator Request form](https://tally.so/r/3y4V1W)!**
-:::
+# Gnosis Chain FAQs
 
-:::info
-**:bulb: This document is continuously being improved.**
-:::
+## General
 
-# Changing Withdrawal Credentials
+1. What is Gnosis chain?
 
-1. **I am trying to change my withdrawal credential from 0x00 to 0x01. I can't seem to be able to connect to my Beacon Node. Is there another way to do it?**
+   Gnosis Chain is an EVM-based Layer 1 utilizing PoS consensus. Gnosis Chain utilizes a dual token model unlike similar EVM chains. On Gnosis Chain GNO token is used to secure the consensus layer while xDai is used as the gas token.
 
-    Be sure to use the right port used by your client. For example the default port for Lighthouse might be 5052, Avado nodes seems to use 5051, etc... If you need more help you can ask on the Discord.
+2. Is Gnosis Chain a Testnet or Mainnet released?
 
-2. **Is there a public URL to generate the offline-preparation.json file for setting up the withdrawal credential?**
+   Gnosis Chain is not a testnet. It is a fully operational Layer 1 utilizing Proof of Stake. But if you are wondering, Gnosis Chain has its testnet called Chiado, the details of which can be found here: https://docs.gnosischain.com/concepts/networks/chiado.
 
-    If you have troubles generating the offline-preparation.json file please ask us for help on the Discord, we can share an already generated file if necessary
+3. I’m totally new to this project and I’m trying to feel myself around. Where should I start learning?
 
-3. **How can I change withdrawal credentials of an already exited validator?**
+   You can jump to all relevant links on our landing page at https://www.gnosis.io/. Alternatively, you can check our documentation https://docs.gnosischain.com/. Also, feel free to take a look at the governance forum to see what is being discussed around the community regarding improvement proposals https://forum.gnosis.io/.
 
-    It's not possible as now to change the withdrawal credentials of an already exited validator.
+4. What is Gnosis Faucet?
 
-4. **How to change the withdrawal credential on Windows?**
+   The Gnosis Chain xDAI faucet distributes xDAI to new users so that they may have enough gas to complete a few transactions and interact with applications on Gnosis Chain : https://faucet.gnosischain.com/
 
-    It's recommended to do it on Linux, even if it's a virtual machine. Ask us for help on the Discord if you need more help.
+5. Which wallets can I use on the Gnosis Chain?
 
-5. **How can I change my withdrawal credentials from 0x00 to 0x01?**
+   See [Wallets](../tools/wallets/README.md).
 
-    You can follow the guide in the [docs](https://docs.gnosischain.com/node/management/withdrawals) which use ethdo. If you run into troubles you can ask us, especially with the offline-preparation step.
+6. How do I connect my wallet to Gnosis Chain?
 
-6. **Is DappNode going to have a user-friendly UI for changing withdrawal credentials?**
+   Click 'Add to Metamask' in [here](https://docs.gnosischain.com/concepts/networks/mainnet) or view other options from
+   https://docs.gnosischain.com/tools/wallets/
 
-    Currently not, even if Dappnode mentioned working on it in the past. You have to follow the regular [step by step guide](https://docs.gnosischain.com/node/management/withdrawals).
+7. How can I add Gnosis Chain to Metamask?
 
-7. **How many times can I change the withdrawal credential?**
+   You can follow the instructions on this page: https://docs.gnosischain.com/tools/wallets/metamask/
 
-    It is a one time process. Once you change your withdrawal credential from 0x00 to 0x01, you cannot change it anymore.
+   Or alternatively, you can go to https://chainlist.org/ search for Gnosis Chain to get Gnosis Chain added automatically to your Metamask.
 
-8. **Do I have to make the withdrawal credential change after switching to another client?**
+8. I’ve been experiencing this error withMetamask on Gnosis Chain. It doesn’t generate fees whenever I send tokens. ‘Transaction error - Internal JASON-RPC error.’
 
-    You can switch to any client you want, the two are unrelated. BLS-to-Execution (withdrawal credential change) is important for you to be able to claim partial withdrawals or a full withdrawal when you exit your validator. While making any client changes, make sure you always have a backup of your keystore files.
+   https://metamask.zendesk.com/hc/en-us/articles/360059289871-Error-Internal-JSON-RPC-error-when-trying-to-interact-with-other-network and please update your RPC on MetaMask to https://rpc.gnosis.gateway.fm/
 
-9. **Is there any guides on how to change withdrawal credentials easily?**
+9. What is WXDAI for?
 
-     You can follow the step by step guide on our [documentation](https://docs.gnosischain.com/node/management/withdrawals#how-to-change-the-withdrawal-credential).
+   As xDai on Gnosis Chain acts similar to ETH on Ethereum Network, you would need a wrapped version of xDai to be used as an ERC-20. Basically, WXDAI is the equivalent of WETH on Gnosis Chain.
 
-10. **Will there be an easy way in the future to convert my withdrawal credential to 0x01?**
+10. What DApps can we use on Gnosis?
 
-    DappNode guys are working on a modified version of Wagyu tool for Gnosis Chain, but there's no precise ETA on that. For now, you can only do so by using ethdo as detailed in our documentation.
+    All dApps on Gnosis Ecosystem can be found here:
+    https://ecosystem.gnosischain.com/
 
-11. **Will there be an easy solution to change the withdrawal credentials from old 0x00 to new address format 0x01?**
+11. What are the NFT marketplaces on Gnosis Chain?
 
-    For now, the only way to change your withdrawal credential from 0x00 to 0x01 is using ethdo following the [step by step tutorial](https://docs.gnosischain.com/node/management/withdrawals#how-to-change-the-withdrawal-credential) on our docs.
+    https://niftyfair.io/
 
----
+12. Where can I stake my GNO?
 
-// File: faq/Node FAQs/depositWithdrawalReward
+    Currently, you can stake your GNO on [Stakewise.io] (https://stakewise.io/). Please note that your wallet must be directed at the Gnosis Chain network with your GNO tokens already bridged to Gnosis.
 
-:::info
-**Find this document incomplete? Visit our [Discord channel](https://discord.gg/gnosis) or contact us via [Validator Request form](https://tally.so/r/3y4V1W)!**
-:::
+13. Where is the simplest way to stake GNO on gnosis chain?
 
-:::info
-**:bulb: This document is continuously being improved.**
-:::
+    https://www.validategnosis.com/
 
-# Deposit, Withdrawals and Rewards
+14. What is sGNO?
 
-1. **What are withdrawals?**
+    When you stake your GNO on Stakewise you receive sGNO.
 
-   Validator withdrawal allows a validator’s account balance to get withdrawn from Beacon Chain to Execution Layer, in the form of GNO. The GNO will be accrued on validator’s withdrawal address on the Execution Layer, which is set using `eth1_withdrawal_address` option during validator key generation.
+15. What is LGNO?
 
-2. **What are two types of withdrawals?**
+    This stands for locked GNO. The LGNO contact was an incentive program for the Gnosis community to lock their GNO in return for vCOW. To learn more, please visit this thread by Stefan George -https://twitter.com/StefanDGeorge/status/1488924732191907849
 
-   There are 2 types of withdrawals: Partial Withdrawal and Full Withdrawal.
-   Partial Withdrawal: Any balance in excess of 1 GNO from the account balance gets withdrawn back to withdrawal address.
-   Full Withdrawal: All the balance from validator’s account gets withdrawn back to withdrawal address. This has to be initiated by validator, signing `voluntary_exit` message and broadcasting it to the network. It is irreversible.
+16. Is it possible run a Node and qualify for future rewards?
 
-3. **What are 0x00 and 0x01 withdrawal credentials prefixes?**
+    Yes, you can run a Node and qualify for rewards. For all the information you need in terms of running a node, please visit https://docs.gnosischain.com/node/.
 
-   The beacon chain validators have a field called withdrawal credentials, where the first byte is referred to as the withdrawal prefix. Currently, this value can be either 0x00 or 0x01, depending on how it is set during the deposit process using a deposit tool. Validators with 0x00 withdrawal credentials won’t have immediate withdrawal capabilities. To enable partial and full withdrawals and unlock their funds, these validators must undergo a one-time migration to 0x01. As this is a one time process, it is essential to be careful performing it.
+17. I was staking xdai on the easystaking xdai site and it is no longer active. How can I access my xdai?
 
-4. **How do I change my withdrawal credential?**
+    This has been down for some time now due to the old team that was running xdai not maintain it anymore. You will need to use the block explorer to interact with the contracts without the UI in order for it to be withdrawn.
 
-   You can find a full tutorial on how to change your withdrawal credential [here](https://docs.gnosischain.com/node/management/withdrawals#how-to-change-the-withdrawal-credential).
+    These are the steps that need to be taken:
 
-5. **I have been running multiple validators. Can I set up the same withdrawal credential for all of them?**
+    https://etherscan.io/address/0xecbcd6d7264e3c9eac24c7130ed3cd2b38f5a7ad#readProxyContract 11. lastDepositIds Type your address which gives you a number. 3. balances Find your deposits. They are numbered from 0 up to the number you got previously. Check all of them.
+    https://etherscan.io/address/0xecbcd6d7264e3c9eac24c7130ed3cd2b38f5a7ad#writeProxyContract 7. makeForcedWithdrawal Withdraw. Please note this instant-withdrawal has a 2% fee
 
-   Yes, you can set up the same withdrawal credential for all of your validators and can also set up different withdrawal credentials for individual validators.
+18. I recently transferred an ERC-1155 into a safe. I realized after the fact that gnosis does not support 1155s. Is there a way that I’m able to transfer it back out?
 
-6. **How long does it take for node status information to appear after a deposit?**
-It takes about 4 hours for a deposit to be processed, you can check how your validator is doing on [beaconchain.gnosischain.com](https://beaconchain.gnosischain.com/).
+    You have to use “contract interaction” on the safe when you click on “New Transaction”
+    On the pop up, you will put in the contract address of the ERC-1155 token - (It may or may not automatically pull in the ABI so you may have to copy that from the contract details via gnosis scan)
 
-7. **Where can I check my withdrawal credential?**
+    Once, the contract address and abi is input into the prompt… there should be a drop down of which functions are available to you. You want to drop down to “safeTransferFrom”
 
-    You have to claim withdrawals manually now, you can do so on the [Deposit page](https://validators.gnosischain.com/) or on the [Deposit contract](/node/management/withdrawals#how-to-receive-my-withdrawal-full-or-partial). You can also visit [official docs](https://docs.gnosischain.com/node/management/withdrawals#check-withdrawal-credential) for more detail.
+    When you select that, you will have prompts to fill in:
+    From(address) - that address that owns the token - your safe
+    To(address) - what wallet do you want to send it to?
+    id(uint256) - The token number of the NFT
+    amount(uint256) - How many of those tokens do you want to send? - usually just 1
+    data(bytes) - I just put in " 0x0 " empty data.
 
-8. **Do partial withdrawals happen automatically?**
+    Add that transaction - then sign it off and that should work
+    if you are still having issues i would suggest to hop into the Safe discord and ask for further assistance there.
 
-    As we have modified some specs regarding the withdrawals to enable withdrawing GNO instead of the native gas token xDai, unlike Ethereum, partial withdrawals currently do not happen automatically. So, for now, you will need to call [`claimWithdrawal`](https://gnosisscan.io/address/0x0b98057ea310f4d31f2a452b414647007d1645d9#writeProxyContract#F3) function on the [contract](https://gnosisscan.io/address/0x0b98057ea310f4d31f2a452b414647007d1645d9#writeProxyContract). However, it is in our plans to automate and subsidize partial withdrawals in the future.
+19. When SAFE airdrop?
 
-9. **Do full withdrawals happen automatically?**
+    https://forum.gnosis.io/t/gip-64-should-gnosisdao-distribute-safe-tokens-to-incentivize-decentralizing-gnosis-chain/5896
+    https://forum.gnosis.io/t/gip-64-should-gnosisdao-distribute-safe-tokens-to-incentivize-decentralizing-gnosis-chain/5896/54
 
-   No. If your validator is currently active and participating in the beacon chain, then the full withdrawal will not happen automatically. You will have to manually initiate an exit to cause this.
+20. Is the grants program still running?
 
-   Additionally, if you initiate an exit but still have a 0x00 withdrawal credential, your funds will not be withdrawn until a `BLSToExecutionChange` message is included on chain.
+    ‼️UPDATE: The Gnosis Ecosystem Fund was discontinued. Projects can now directly apply for funding through the GnosisDAO. For non commercial/public goods : https://bit.ly/gnosis-grants
 
-10. **Is there a UI that I can use for withdrawals?**
+21. What is d14n.info?
 
-    No, as you will have to interact with the beacon chain, it is not feasible to provide a UI that encompasses all the clients.
+    :::note
+    The site is deprecated.
+    :::
+    [d14n.info](https://www.d14n.info/) is a real-time dashboard that measures decentralization of the Gnosis Chain and Ethereum networks. We use the Nakamoto Coefficient as the primary quantitative measure across multiple dimensions of the network.
+    You may also check out [Gnosis Metrics](https://www.gnosismetrics.com/#overview)
 
-11. **Where does the automatic balance withdraw to?**
+## Bridging
 
-    In case you are using a legacy withdrawal credential 0x00, it will not be withdrawn and you will have to perform a migration to 0x01 credentials to complete the withdrawal. If you have already configured your withdrawal address and have a withdrawal credential of 0x01, then rewards in excess of 1 GNO (32 mGNO) will be transferred to your withdrawal address.
+1. What native bridges does Gnosis have?
 
-12. **Once I have changed my credential to 0x01, can I change it to an alternative withdrawal address?**
+   [xDAI & OmniBridge](https://docs.gnosischain.com/bridges/)
 
-    No, the migration from 0x00 to 0x01 is a one time process and once you set the address, it cannot be changed. Please make this migration with the utmost care. Note, the withdrawal credential can either be an externally-owned account (EOA) or a smart contract such as a SAFE.
+2. Where can I bridge my tokens to Gnosis Chain?
 
-13. **I have lost the private key to my withdrawal address, what can I do?**
+   Between Ethereum and Gnosis Chain : https://bridge.gnosischain.com/
+   More chains and options : [jumper](https://jumper.exchange/), [bungee](https://www.bungee.exchange/), [hop](https://app.hop.exchange/)
 
-    Unfortunately, there is nothing that can be done if the withdrawal address is lost. Please ensure this address is properly backed up and securely stored.
-
-14. **What happens to my GNO if I make a full withdrawal but I forget to set the withdrawal credential to 0x01?**
-
-    Nothing. Your validator will exit, and will no longer be assigned duties, neither able to earn nor lose any more additional GNO. You may still migrate your withdrawal credentials from 0x00 to 0x01. Once this is done, the validator’s balance will be withdrawn to the address you specify.
-
-15. **Can I cancel a withdrawal request that is in the queue?**
-
-    No you cannot, this is a one time, irreversible process. Once you submit your withdrawal request (BLSToExecutionChange and/or exit) you can’t go back. Please only exit or change credentials when you are fully aware of what the specific operation will do and with utmost caution.
-
-16. **What is the deposit contract?**
-
-    The deposit contract keeps track of validators and staking amounts. The GBC deposit contract is based on [the original Ethereum beacon chain deposit contract](https://github.com/ethereum/consensus-specs/blob/master/solidity_deposit_contract/deposit_contract.sol), with [some additional functionality](/concepts/specs/security-audit).
-
-- Contract Security Audit by Chainsecurity: [https://chainsecurity.com/security-audit/poa-network-stake-beacon-chain-sbc-deposit/](https://chainsecurity.com/security-audit/poa-network-stake-beacon-chain-sbc-deposit/)
-- GBC Contract Address: [0x0B98057eA310F4d31F2a452B414647007d1645d9](https://gnosis.blockscout.com/address/0x0B98057eA310F4d31F2a452B414647007d1645d9)
-
-17. **How do I voluntarily exit all my validators (using lighthouse) with DappNode?**
-
-    First of all be sure to already have a 0x01 withdrawal address or follow the step by step guide. Then go to the web3signer UI, select all keys, select the exit button, type the message ("I want to exit"), then verify on beaconchain.gnosischain.com how it is going, it can take some time between the moment where you exit and the moment where it's visible on beaconchain.gnosischain.com
-
-18. **When you receive rewards from validation, where does the reward go? Does it stay in the node or go to the address you choose to receive rewards? Because on this address I don't notice any increase of GNO.**
-
-    If you have set a withdrawal address, your rewards will accrue in the deposit contract. At the moment you will have to claim them on the [Deposit page](https://validators.gnosischain.com/) or manually from the [contract](/node/management/withdrawals#how-to-receive-my-withdrawal-full-or-partial) by calling the claimWithdrawals function and entering your withdrawal address
-
-19. **I use Lighthouse and I wanted to know if it was possible to separate the rewards of each validator from the address provided when creating the keystore.json files? I also wanted to know if it was possible to add validators later**.
-
-    For consensus layer rewards who are paid in GNO once updated to 0x01 it's not possible to change it. For execution layer rewards who are paid in xDAI you can change them as much as you want in the client or web3signer UI. You can add validator keys later on. Just add the key, configure the fee recipient address and you are fine.
-
-20. **I want to stake some GNO, I wonder how long does it take when I withdraw them?**
-
-    For solo validators, exiting then withdrawing your GNOs should take about one or two days, depending of the exit queue.
-
-21. **Can I withdraw my GNO which is currently used in validator?**
-
-    Yes, you have to do a [voluntary exit](https://docs.gnosischain.com/node/management/voluntary-exit) (either from the client itself or if you are on Dappnode from the Web3signer UI) then wait for your validator to leave the exit queue and once the withdrawal is ready claim on the [Deposit page](https://validators.gnosischain.com/) or manually from the [contract](/node/management/withdrawals#how-to-receive-my-withdrawal-full-or-partial) by calling the claimWithdrawals function and entering your withdrawal address
-
-22. **What is the easiest way to set withdrawal address without setting up locally beacon node, cli and etc.?**
-
-    Check the step by step [tutorial](https://docs.gnosischain.com/node/management/withdrawals) in the docs using ethdo ; this community made [video](https://youtu.be/By9VmNviNT0) can help too, don't hesitate to ask on Discord if you have questions/problems with the process
-
-23. **Is it possible to change the address where I get the validator rewards?**
-
-    For consensus layer rewards who are paid in GNO once updated to 0x01 it's not possible to change it. For execution layer rewards who are paid in xDAI you can change them as much as you want in the client or web3signer UI. More information in the [docs](https://docs.gnosischain.com/node/rewards-penalties).
-
-24. **In the explorer beaconchain.gnosischain.com, what is the meaning of total withdrawal?**
-
-    Total withdrawal means the total accrued GNO
-
-25. **I keep missing rewards, is it because I am running my validators on a regular disk instead of an SSD?**
-
-    You need to use a SSD to validate Gnosis, an HDD doesn't have the required performances, more information [in the docs](https://docs.gnosischain.com/node/#requirements) and a guide on which SSD to chose in this [Github](https://gist.github.com/yorickdowne/f3a3e79a573bf35767cd002cc977b038)
-26. **Want to exit and re-enter with a different withdrawal address, but can't broadcast the exit message. Can anyone help me?**
-
-    Fixes have been done in November 2023 on Dappnode for bugs related to exits so it's possible that this bug has been fixed since then. Don't hesitate to ask on the Discord if you encounter those kind of bugs.
-
-27. **Is there any other way to exit than the signer UI?**
-
-    You can also initiate an exit through your client, more information in the [docs](https://docs.gnosischain.com/node/management/voluntary-exit)
-
-28. **Can I withdraw without being online?**
-
-    It's usually very complicated to generate an exit message with an offline validator but if you want to do this, ask us for help on the Discord and we will look what can be done.
-
-29. **How do I withdraw my earnings (xDAI) to my MM wallets for each Validator recipient address?**
-
-    You don't need to claim execution layer rewards who are paid in xDAI, when you propose a block, the reward will go to your address. You can see you rewards on [Gnosisscan](https://gnosisscan.io/) on your validator address, in the Validated Blocks tab.
-31. **Could anyone please explain to me how withdrawals and validator rewards work on Gnosis Chain?**
-
-    Consensus layer rewards are paid in GNO to your withdrawal address and have to be claimed on the [Deposit page](https://validators.gnosischain.com/) or manually from the [contract](/node/management/withdrawals#how-to-receive-my-withdrawal-full-or-partial) ; Execution layer rewards are paid in xDAI to your recipient address. 
-
-31. **How to withdraw the staked validator amount though?**
-
-    You can do a [voluntary exit](https://docs.gnosischain.com/node/management/voluntary-exit) either from the client itself or if you are on Dappnode from the Web3signer UI then wait for your validator to leave the exit queue and once the withdrawal is ready claim on the [Deposit page](https://validators.gnosischain.com/) or manually from the [contract](/node/management/withdrawals#how-to-receive-my-withdrawal-full-or-partial).
-
-32. Is there a guide on how to withdraw when you only have the keystore?
-
-    If you lost your seed there is pretty much no way to get it back. But not all is lost. You still have the keystore files. Make sure you back up those somewhere. Have you set a withdrawal address when you generated the keystore files? If yes, then you are pretty fine without the seed. You only need the seed to regenerate these keys and also set a withdrawal address if you have not yet. If you have set the withdrawal address already, you do not really need the seed phrase anymore. If you have not set a withdrawal address yet, then without the seed you have no access to your deposited GNO anymore. You can still run your validators, and get the execution layer rewards (xDAI), it is not much and probably not worth it.
-
-33. **I had partial withdrawals going to an address in August. Are the future withdrawals will go to the same address?**
-
-    If back then when a bot was claiming them automatically, your withdrawals were going to a specific address, it means that your withdrawal address is correctly setup and new withdrawals will go there as well. Now you have to claim withdrawals manually, you can do so on the [Deposit page](https://validators.gnosischain.com/) or on the [Deposit contract](/node/management/withdrawals#how-to-receive-my-withdrawal-full-or-partial)
-
-34. **My wallet got hacked. Is there any way to change my withdrawal address?**
-
-    If it's already a 0x01 withdrawal address then it can't be updated anymore. If it's till a 0x00 address then follow the usual guide in the [docs](https://docs.gnosischain.com/node/management/withdrawals#how-to-change-the-withdrawal-credential).
-
-35. **I am trying to change my withdrawal credential from 0x00 to 0x01. I can't seem to be able to connect to my Beacon Node. Is there another way to do it?**
-
-    Be sure to use the right port used by your client. For example the default port for Lighthouse might be 5052, Avado nodes seems to use 5051, etc... If you need more help you can ask on the Discord.
-
-36. **Is there any way other than web3-signer to exit my validators?**
-
-    You can also initiate an exit through your client, more information in the [docs](https://docs.gnosischain.com/node/management/voluntary-exit).
-
-37. **I want to deposit GNO on the test network. Where can I find the operation guide?**
-
-    More information in the [docs](https://docs.gnosischain.com/concepts/networks/chiado/#how-to-participate). If you need Chiado GNO you can ask on the Discord.
-
-38. **How long until the GNO from my withdrawal arrives in my wallet? Do you have to claim it manually?**
-
-    You have to claim withdrawals manually, you can do so on the Deposit page or on the Deposit contract. Once claimed it should be instantaneous in the same transaction.
-
-39. **How long does the contract to manually claim withdrawals take to complete?**
-
-    It's instantaneous, as soon as the claim transaction is validated, the GNO will be sent to your withdrawal address
-40. **Are there any news regarding an easy solution to change the recipient address in my DappNode to withdraw my mGNO?**
-
-    Currently not, even if Dappnode mentioned working on it in the past. You have to follow the regular [step by step guide](https://docs.gnosischain.com/node/management/withdrawals).
-41. **I see automatic withdrawals to my wallet on beaconchain.gnosischain.com, but I don't seem to be receiving them. Is there anything else that I need to do?**
-
-    You have to claim withdrawals manually, you can do so on the [Deposit page](https://validators.gnosischain.com/) or on the Deposit contract. Once claimed it should be instantaneous in the same transaction.
-
-42. **Should the automatic withdrawals that started after Shapella go to the default fee recipient address or some other address?**
-
-    After the Shapella upgrade a bot was claiming withdrawals for everyone automatically but who was since then stopped after concerns about generating a lot of unsolicited small transactions who are complex to report for tax. You have to claim withdrawals manually now, you can do so on the Deposit page or on the Deposit contract. These withdrawals will go to your withdrawal address.
-
-43. **What happened to automatic withdrawals after Shapella? How do I claim rewards manually?**
-
-    After the Shapella upgrade a bot was claiming withdrawals for everyone automatically but who was since then stopped after concerns about generating a lot of unsolicited small transactions who are complex to report for tax. You have to claim withdrawals manually now, you can do so on the [Deposit page](https://validators.gnosischain.com/) or on the [Deposit contract](/node/management/withdrawals#how-to-receive-my-withdrawal-full-or-partial).
-
-44. **Is there an easy way to transfer the ownership of my validators to a different address?**
-
-    There's no "easy way" you would need to exit your validators, withdraw your GNO and deposit them on new validators
-45. **My validator received a considerable amount of execution reward, how is it possible?**
-
-    Recent gas spikes and higher execution rewards in blocks can be related to arbitrage bots, NFT minting, among others.
-46. **Is there any way to see how much GNO is waiting for me to be claimed from the GBC Deposit contract?**
-    Go on the [deposit contract](https://gnosisscan.io/address/0x0B98057eA310F4d31F2a452B414647007d1645d9#readProxyContract) and enter your withdrawal address in the field "7.withdrawableAmount"
-
-47. **Anyone also has problems while trying to deposit?**
-    Most problems with the deposit page on the user side seems to be related to the RPC you're using in your wallet, but it's also possible that there is a problem on our side, in that case don't hesitate to report and ask about it on the Discord
-
-48. **"failed to fetch existing deposits. Please try again", anyone facing the same issue?**
-
-    Most problems with the deposit page on the user side seems to be related to the RPC you're using in your wallet, but it's also possible that there is a problem on our side, in that case don't hesitate to report and ask about it on the Discord
-
-49. **I've got some validators, do I need to do something to receive the rewards from these validators to my wallet?**
-
-    Consensus layer rewards are paid in GNO to your withdrawal address and have to be claimed on the [Deposit page](https://validators.gnosischain.com/) or manually from the [contract](/node/management/withdrawals#how-to-receive-my-withdrawal-full-or-partial) ; Execution layer rewards are paid in xDAI to your recipient address.
-
-50. **What kind of penalties will I face if I am offline for 1 day?**
-
-    Offline penalties which basically are equal to what you would have earned in a day while validating.
-
-51. **Are rewards getting paid out in xDAI now instead of GNO?**
-
-    You can earn two kinds of rewards : consensus layer rewards who are paid in GNO and execution layer rewards who are paid in xDAI. More information in the docs.
-
-52. **After withdrawals went live, I got some GNO in my wallet, but now there are no more coming in**
-
-    After the Shapella upgrade a bot was claiming withdrawals for everyone automatically but who was since then stopped after concerns about generating a lot of unsolicited small transactions who are complex to report for tax. You have to claim withdrawals manually now, you can do so on the [Deposit page](https://validators.gnosischain.com/).
-53. **My validator node is slashed, how to withdraw GNO?**
-    You can do a voluntary exit either through the client like described in the docs or if you are using Dappnode you can exit through the Web3signer UI.
-
-54. **How long until withdrawals arrive in wallet?**
-
-    For full withdrawals you have to wait until your validator leaves the exit queue and be ready to claim. Then both for partial and full withdrawals, once claimed on the contract or on the [Deposit page](https://validators.gnosischain.com/) it should be instantaneous.
-
-55. **On beaconchain.gnosischain.com while some rewards are denominated in GNO, others are in xDai. What's the difference?**
-
-    You can earn two kinds of rewards : consensus layer rewards who are paid in GNO and execution layer rewards who are paid in xDAI. More information in the [docs](https://docs.gnosischain.com/node/rewards-penalties).
-
-56. **Any timeline from Stakewise for withdrawals?**
-
-    It will happen after the Stakewise v3 update which might take longer for Gnosis Chain because of the two tokens rewards system
-
-57. **I see a withdrawal on beaconchain.gnosischain.com, but I haven't initiated anything. Why?**
-
-    The withdrawals you see on beaconchain.gnosischain.com are basically just withdrawals ready to be claimed on the contract, the GNO in question have waiting on the deposit contract, you can claim a withdrawal on the [Deposit page](https://validators.gnosischain.com/) or manually from the [contract](/node/management/withdrawals#how-to-receive-my-withdrawal-full-or-partial).
-
-58. **I do not want partial withdrawals to be automatic due to tax reasons. Can I opt-out of this feature?**
-
-    The bot who was automatically claiming withdrawals has been stopped now, withdrawals are manuals now
-
-59. **I've been running my node for a week now. When/Where can I expect to start seeing my accrued rewards?**
-
-    If you have set a withdrawal address, your rewards will accrue in the deposit contract. At the moment you will have to claim them manually from that contract. You can either go and call claimWithdrawals function on the GBC deposit contract or use the Withdrawal Claim tab on https://validators.gnosischain.com/. You can check your accrued rewards on https://beaconchain.gnosischain.com/ as well.
-
-60. **Can I withdraw without being online?**
-
-    It is usually pretty tricky to exit without an actively running node. If getting online is an option, we suggest you to do so. If not, you can try to create an exit message using [ethdo](https://github.com/wealdtech/ethdo/blob/master/docs/exitingvalidators.md) and by [broadcasting](https://beaconchain.gnosischain.com/tools/broadcast) the message using the Broadcast tool on the [Beacon chain explorer](https://beaconchain.gnosischain.com/).
-61. **My wallet got hacked. Is there any way to change my withdrawal address?**
-
-    If the withdrawal address you have set is already 0x01, unfortunately, there is no way to change it as it is a one time process.
-
-62. **How to stop validation and withdraw my coins?**
-
-    First, make sure your withdrawal credential is set to 0x01 following the relevant tutorial on our [documentation](https://docs.gnosischain.com/node/management/withdrawals). If not, follow the ethdo tutorial to change it from 0x00 to 0x01. If it is set as 0x01, you can just use Web3Signer to exit.
-
-63. **The withdrawal credentials must be set through the Web3Signer UI, correct? I launched a new validator yesterday and gnosisch.in says there is no withdrawal address. In W3 signer, it shows that it is set correctly. Any ideas on how to rectify?**
-
-    If you have not specified a withdrawal address when creating your keystore files, you will need to follow the ethdo guide to set your withdrawal credential as 0x01.
-
-64. **Has anyone successfully used the Ethereum staking/deposit CLI tool (https://launchpad.ethereum.org/en/btec/#broadcast-message) to generate a signed "BLS To Execution Change" in order to update the withdrawal address of a Gnosis validator?**
-
-    You cannot use Ethereum Staking/Deposit CLI tool for BLS-to-Execution on Gnosis Chain as it is not supported. However, you can change your withdrawal credential by using ethdo following the [step by step tutorial](https://docs.gnosischain.com/node/management/withdrawals#how-to-change-the-withdrawal-credential) on our docs.
-
-65. **How long does it take for a withdrawal to be processed? The epoch for my exit (according to https://beaconchain.gnosischain.com/) was 5 hours ago, but if I hit the claimwithdrawal function from the withdrawal address, I don't get any GNO.**
-
-    You can check the withdrawals tab on https://beaconchain.gnosischain.com/ to see an estimate of how long you need to actually be able to claim your exited GNO.
-
-66. **Anyone know how to withdraw GNO from stakewise validator?**
-
-    Stakewise will enable withdrawals when they go live with their V3. However, if you do not want to wait, you can go to https://curve.fi/ to swap your rGNO and sGNO (subject to some slippage).
-
-67. **I set a withdrawal address to a Safe on Gnosis Chain, I see the partial withdrawals, but the balance in GNO don’t go up. What should I do?**
-
-    Unlike Ethereum, on Gnosis Chain, you will have to claim them on the [Deposit page](https://validators.gnosischain.com/) or manually from the [contract](/node/management/withdrawals#how-to-receive-my-withdrawal-full-or-partial) by calling the claimWithdrawals function and entering your withdrawal address
-
-68. **Where do Withdrawals from Validators go to? After Update I received GNO once but now it says it's sending Amounts of GNO but they never arrive in my wallet.**
-
-    After the Shapella upgrade a bot was claiming withdrawals for everyone automatically but who was since then stopped after concerns about generating a lot of unsolicited small transactions who are complex to report for tax. You have to claim withdrawals manually now, you can do so on the [Deposit page](https://validators.gnosischain.com/) or on the [Deposit contract](/node/management/withdrawals#how-to-receive-my-withdrawal-full-or-partial)
-
-69. Is there a guide on how to unstake my Gnosis validators?
-
-    Do a [voluntary exit](https://docs.gnosischain.com/node/management/voluntary-exit) either from the client itself or if you are on Dappnode from the Web3signer UI then wait for your validator to leave the exit queue and once the withdrawal is ready claim on the [Deposit page](https://validators.gnosischain.com/) or manually from the [contract](/node/management/withdrawals#how-to-receive-my-withdrawal-full-or-partial).
-
----
-
-// File: faq/Node FAQs/generalQuestions
-
-<img width="1200" alt="Twitter Announcement@2x" src="https://github.com/gnosischain/documentation/assets/75987728/6effcd11-5f0c-4b4d-ae2f-aff99badb373" />
-
-:::info
-**Find this document incomplete? Visit our [Discord channel](https://discord.gg/gnosis) or contact us via [Validator Request form](https://tally.so/r/3y4V1W)!** 
-:::
-
-:::info
-**:bulb: This document is continuously being improved.** 
-:::
-
-# General Questions
-
-1. **What is a validator?**
-   
-   Validators propose and vote on blocks to include in the chain. The chain is secured by a staked amount of GNO. Validators stake GNO and receive additional GNO as rewards for correct behavior (proposing and attesting blocks) and a slashed balance as penalties for incorrect behavior (offline node, attesting invalid blocks).
-
-2. **What is PoS (Proof-of-Stake)?**
-
- Proof-of-Stake (PoS) is a consensus mechanism for processing transactions and creating new blocks in a blockchain. Staking is when you pledge your coins to be used for verifying transactions. The same PoS implementation underlies both Gnosis Chain and Ethereum's consensus mechanism, except for a few differences outlined [here](https://docs.gnosischain.com/about/).
-
-3. **What is Gnosis Chain?**
-
- Gnosis Chain is an EVM-compatible Layer-1 blockchain that aspires to be the most secure, resilient and credibly neutral blockchain, buttressed by a deeply decentralized network secured by over 200K validators.
-
-5. **What tax software has integrated GC?**
-
-    [Cryptio](https://cryptio.co/) is available for German users.
-
----
-
-// File: faq/Node FAQs/monitoring
-
-:::info
-**Find this document incomplete? Visit our [Discord channel](https://discord.gg/gnosis) or contact us via [Validator Request form](https://tally.so/r/3y4V1W)!** 
-:::
-
-:::info
-** :bulb: This document is continuously being improved.** 
-:::
-
-# Monitoring and Alerts
-
-1. **Got a couple of validators on DappNode and I'm moving soon, how can I pause validators to avoid missing attestations?**
-
-    Either leave your validator as it is and then you will end up just having "offline penalties" which are about equal to what you would have earned by validating in a day. The other option is to exit your validators (be sure to have a 0x01 withdrawal address before). Within the community some validators consider that if you will stop validating for less than 30 days then it might not be worth exiting your validator... but over 30 days it is worth it.
-    
-2. **I am getting INFO - Beacon chain is in activity leak on Teku. Why?**
-
-    Could be related to the system clock being delayed. Open a terminal then enter ssh dappnode@[your Dappnode's IP] in your terminal then use `su` then try `sudo apt update && sudo apt install ntp`. As this is more complex, don't hesitate to ask on our Discord for help if needed.
-    
-3. **Anyone has an automated alert for their validators?**
-    
-    Open an account on the Beacon chain explorer (https://beaconchain.gnosischain.com/), it will send you an email when the node goes down
-    
-4. **Is there a queue monitor similar to validatorqueue.com for beaconchain?**
-    
-    There is an exit queue on Gnosis Chain as well but no dedicated website. Once your voluntary exit message is broadcasted, you can monitor the progress of your validator withdrawal on the Beacon chain explorer (https://beaconchain.gnosischain.com/)
-    
-5. **Would anyone in this group be interested in a Gnosis Chain validators monitoring bot?**
-    
-    Some validators from the community are currently building tools to help monitor their validators better
-    
-6. **Is there a way to check my claimable balance of GNO?**
-    
-    Go on the [deposit contract](https://gnosisscan.io/address/0x0B98057eA310F4d31F2a452B414647007d1645d9#readProxyContract) and enter your withdrawal address in the field "`7.withdrawableAmount`"
-    
-7. **Has anyone set up multiple validators to monitor under your account on the Beacon chain explorer? I'm wondering if there is a way to batch add validators instead of just one-by-one. (edited)**
-    
-    You should be able to add them in bulk by searching for the deposit/withdrawal address in the dashboard and then clicking the button that looks like a bookmark (save all to watch list).You can then select all and manage notifications for your selection in the notification center. The dashboard only shows up to 100 in the free fier, but I think you can add up to 300 to the watch list.
-    
-8. **Anyone have a detailed gas chart for Gnosis?**
-    
-    You can take a look at Blockscout to get detailed analytics about Gnosis Chain, including gas chart here: https://gnosis.blockscout.com/stats
-    
-9. **Noticed a quite high xDAI burn rate in several of my blocks during the last about 5 to 6 days. Does anyone can explain me what this is caused by? Just due to higher traffic or have some parameters been adjusted?**
-    
-    There is an ongoing NFT spam on Gnosis Chain. The spam NFT minters use legacy transaction types, meaning they only set a gas price not a base fee and tip. This results in validators getting everything above the base fee as a tip. I have no idea why they use legacy transaction, but obviously they are not price sensitive. In your block it looks like it was several MEV bots swapping tokens around also using legacy transactions.
-
----
-
-// File: faq/Node FAQs/offlineAndSyncIssue
-
-:::info
-**Find this document incomplete? Visit our [Discord channel](https://discord.gg/gnosis) or contact us via [Validator Request form](https://tally.so/r/3y4V1W)!** 
-:::
-
-:::info
-** :bulb: This document is continuously being improved.** 
-:::
-
-# Offline and Sync Issues
-
-1. **Anyone seeing errors with checkpoint sync today?**
-
-    If the usual checkpoint sync https://checkpoint.gnosischain.com doesn't work, report it so the team can investigate.
-    
-2. **My (dapp)node have been offline for a couple of hours. After restart attestation and block proposing resumed, but duties in sync committee still shows missing even after a few hours since it's up again. Does anyone has an explanation for this?**
-
-    Maybe it was related to an Intel chip bug that was fixed by Dappnode
-    
-3. **Installed Nethermind and Lighthouse on a new arm, let it sync for 24hrs and deposited validators after. Now all my validators are leaking. Do I need to wait for sync still or have something misconfigured?**
-
-    Nethermind might take longer than 24h to sync. Wait and check. This error could also be related to recent sync issues.
-    
-4. **If my Gnosis validator have been offline for a long time (several months) and I restart it, do I need to withdraw and re-deposit the collateral, or can I just wait for it to become active again? How long will it take until it start earning again?**
-
-    Update everything and wait until sync is finished, just remember to make sure your keystores are properly imported into your web3signer gnosis
-    
-5. **Using checkpoint sync, but all my nodes are down. Why?**
-
-    If the usual checkpoint sync https://checkpoint.gnosischain.com doesn't work, report it so the team can investigate.
-    
-6. **Just realized my validators are off line since the beginning of the month, can someone take a peek and help?**
-
-    Delete the Nethermind database and let it sync from scratch
-    
-7. **Hey, I run 50+ validators and seems like it misses heads quite frequently. Beaconchain shows I have average effectiveness of 88%. Any ideas on what is the most limiting factor? Just thinking what I can do to improve this.**
-
-    In most cases the most important factor are: a synced clock (ntp), and a good internet connection
-    
-8. **Is there a new checkpoint for Gnosis?**
-
-    The common checkpoint sync endpoint is: https://checkpoint.gnosischain.com
-    
-9. **My Gnosis node is crashed a month ago, was there a breaking chain upgrade a month ago?**
-
-    Gnosis Chain had the [Shapella](https://docs.gnosischain.com/concepts/specs/hard-forks/shanghai-capella) upgrade early August 2023, validators had to update their clients to continue validating.
-    
-10. **Can I use checkpoint sync with Nethermind?**
-
-    There is no checkpoint-sync or fast sync yet for Nethermind, syncing Nethermind from scratch can take up to +/- 2 days
-
----
-
-// File: faq/Node FAQs/runningNode
-
-:::info
-**Find this document incomplete? Visit our [Discord channel](https://discord.gg/gnosis) or contact us via [Validator Request form](https://tally.so/r/3y4V1W)!**
-:::
-
-:::info
-** :bulb: This document is continuously being improved.**
-:::
-
-# Running Nodes
-
-1. **I think my HOPR version dappnode is completely broken down. I would like to exit the Gnosis staking and withdraw the GNOs. How can I do that without accessing my dappnode node?**
-
-   It's usually very complicated to generate an exit message with an offline validator but if you want to do this, ask us for help on the Discord and we will look what can be done.
-
-2. **I just changed my internet provider. Since then my nodes are not syncing. Do you guys know if any ports need to be open for GC (beacon chain and/or validators)?**
-
-   If you use UPnP try to keep an eye on it and check how it behaves and if the issues persist, maybe you'll be better with manual port forwarding instead of relying on UPnP
-
-3. **I have deposited for two hours, why haven’t I seen my node information?**
-
-   It takes about 4 hours for a deposit to be processed, you can check how your validator is doing on the Beacon chain explorer: https://beaconchain.gnosischain.com/
-
-4. **I'm getting an alert in Lighthouse that I've got an invalid signature and/or that an endpoint has failed, how to troubleshoot?**
-
-   Lighthouse specific problem, you might want to ask Lighthouse directly about it
-
-5. **I have trouble connecting to my beacon node? Is there any other way to get the offline-preparation.json file?**
-
-   Be sure to use the right port used by your client. For example the default port for Lighthouse might be 5052, Avado nodes seems to use 5051, etc...
-
-6. **I am getting the error error: Api \{ error: ServerMessage \{ code: -32602, message: "ExecutionPayloadV1 expected" \} \} on Lighthouse? Why?**
-
-   If you're using Nethermind with the old xdai presets, replace them with gnosis
-
-7. **I am getting the error error: Api \{ error: ServerMessage \{ code: -32602, message: "ExecutionPayloadV1 expected" \} \} on Lighthouse? Why?**
-
-   If you're using Nethermind with the old xdai presets, replace them with gnosis
-
-8. **Is there mev-boost for Gnosis Chain similar to Ethereum? Are there any relays?**
-
-   There is no MEV-Boost on Gnosis Chain currently.
-
-9. **Are validators meetups happening at a specific recurring date?**
-
-   We aim to set the validator meetup in the third week of the month. however, due to the small size of comms team, date changes are to be expected...
-
-10. **There's already existing solutions with pre-made hardware to run a validator?**
-
-    Dappnode is the most known of ready to use validator hardware, among others on the market.
-
-11. **How many GNO should I have to make it worth running a node?**
-
-    It really depends on you but basically the more GNO you can stake (up to a few hundreds per node, for a regular Intel NUC 11), the more the cost of buying and running the node will be split and proportionally smaller for each validator.... If you're very good with DIY and have no fear of experimenting, you can even validate using a Raspberry Pi like a few validator are doing in the community.
-
-12. **I am running 4 validators on my DappNode, and it seems like a waste of the machine. Is there an easy way to add more validators?**
-
-    It's the same process basically, with the exception of a setting for the number of current instances running, where you'll need to enter the amount of validators you're already running. The Wagyu keygen tool for Gnosis is the easiest way to create your new keys.
-
-13. **If I get a DappNode, what's the max amount of GNO that I can stake per node?**
-
-    You should be able to run a few hundreds validators on a regular Dappnode. Note that you can only deposit 128 validators at a time, if you want to deposit more you need to repeat it, which is the same process basically, with the exception of a setting for the number of current instances running, where you'll need to enter the amount of validators you're already running. The Wagyu keygen tool for Gnosis is the easiest way to create your new keys.
-
-14. **What are the hardware requirements for running a node?**
-
-    [More info in the docs](https://docs.gnosischain.com/node/#requirements)
-
-15. **Could you tell me what code I have to put in the Dappnode terminal to recover all my GNO that I have staked?**
-
-    First of all be sure to already have a 0x01 withdrawal address or follow the [step by step guide](https://docs.gnosischain.com/node/management/withdrawals). Then go in the web3signer UI, select all keys, select the exit button, type the message ("I want to exit"), then verify on the Beacon chain explorer (https://beaconchain.gnosischain.com/) how it is going, it can take some time between the moment where you exit and the moment where it's visible there
-
-16. **How much does it cost per month to run a full node on Azure?**
-
-    Clouds providers are usually much more expensive than running a node yourself. An estimation in the community for Azure found that the average price to run a node on Azure, as mid-2023 would be possibly around $300 per month.
-
-17. **My validator is Status Slashed, how to withdraw or re-become validator?**
-
-    To troubleshot your node, you can check your Dappnode dashboard or the logs of the clients. If the problem comes from the consensus client, often switching to another client like Lighthouse helps. Lighthouse with checkpoint sync takes only about 2 minutes to be up and running. If you need more help to troubleshoot this, please ask on the Discord.
-
-18. **Is it possible to switch from Teku to Lodestar client?**
-
-    It's totally possible to switch to another consensus client and it often helps to solve some client problems, switching should be fast using checkpoint sync.
-
-19. **After making the 1 GNO deposit, how long it takes to the validator to be active?**
-
-    It takes about 4 hours for a deposit to be processed, you can check how your validator is doing on the Beacon chain explorer: https://beaconchain.gnosischain.com/
-
-20. **Is it worth to be a validator?**
-
-    Regardless of your number of validators, by becoming one you're helping to secure and decentralize the network. Validator APY changes over time based on validator count and network conditions, so use the live dashboards in the docs for current estimates.
-
-21. **How many deposits per epoch are allowed on GBC? How long would it take to deposit and start validating?**
-
-    You can deposit quickly on Gnosis Chain, as of mid 2023, there was 17280 new validators deposits per day if all slots are full
-
-22. **Can I run a validator on my own PC, not with ideal hardware requirements but close to the specified ones?**
-
-    It might be possible, check if your hardware is close to the requirements in the docs
-
-23. **Now I got three validator-nodes on Zonaris only to discover I can't afford the staking GNO idk if delegated staking is a thing, but if yes I would keep those nodes up if there's interest.**
-
-    Clouds node hosting can be very expensive and sometimes can also be not financially sustainable with the APY you can earn as a validator. If that's a possibility for you you might want to consider running your node at home. Otherwise you can try liquid staking like [Stakewise](https://app.stakewise.io/).
-
-24. **Is Nethermind XDAI the only Execution clients for Gnosis?**
-
-    Erigon is an alternative that you might consider.
-
-25. **Is Erigon safe to use?**
-
-    Erigon is now ready for production use!
-
-26. **Is it possible to start again an exited node?**
-
-    If you have exited, it means your validator does not have any GNO to participate in the validation. You need to deposit again to start validating.
-
-27. **How easy is it to exit validators?**
-
-    If your have changed your withdrawal credentials from 0x00 to 0x01 or if it is already set as 0x01, you can use Web3Signer to exit your validator. If not, you can follow the step by step guide on our documentation.
-
-28. **If I have, say 100 GNO, can I put them all in a single validator to earn rewards on all 100, or must I run 100 separate validators of 1 each?**
-
-    The effective balance of a single validator is 1 GNO. All other GNO rewards accrued on your validator are ready to be claimed by calling the `claimWithdrawals function` on the GBC deposit contract or using the Withdrawal Claim tab on https://validators.gnosischain.com/. If you have more than 1 GNO, you can set up multiple validators using the same machine.
-
-29. **Can I participate in gnosis governance with GNO staked in validators? I would not think so, but if yes, how?**
-
-    Depending on how the strategies for governance participation is set for a specific vote on Snapshot, you can vote with your GNO staked for validating by using the address that you have used to fund your validators.
-
-30. **Hey guys, is there any way how to free disk space on Gnosis node , any pruning or state sync?**
-
-    If you would like to clear up some space, you can delete your CL client info (except your wallet / keys of course) and use checkpoint sync, it usually takes only 2 minutes.
-
-31. **Is the Gnosis validator incentive program still available? Looking to start a node here from Ghana- West Africa.**
-
-    Gnosis VIP was run by Gnosis Builders team, which has been retired. It will go live soon. Stayed tuned!
-
-32. **My nodes are producing negative income for some reason. I have to admit I have neglected them for a while. Do I need to update them? The dappstore is showing the version of teku and nethermind I got running as the current version, the nodes are 100% synced. They are producing positive and negative income in irregular intervals, dashboard shows them as healthy, I'm kinda lost tbh, any help?**
-
-    It might be due to unstable connection. You can check the logs to see the number of peers both for your CL and EL. Also, keeping your clients up-to-date is essential.
-
-33. **I want to run a validator, where can I find documentation?**
-
-    The docs have a complete section dedicated to running a node https://docs.gnosischain.com/node/
-
-34. **Any recommended walkthroughs or guides on how best to take my Gnosis validators offline?**
-
-    You can do a [voluntary exit](https://docs.gnosischain.com/node/management/voluntary-exit) either from the client itself or if you are on Dappnode from the Web3signer UI then wait for your validator to leave the exit queue and once the withdrawal is ready claim on the Deposit page or manually from the contract by calling the claimWithdrawals function and entering your withdrawal address
-
----
-
-// File: faq/Node FAQs/staking
-
-:::info
-**Find this document incomplete? Visit our [Discord channel](https://discord.gg/gnosis) or contact us via [Validator Request form](https://tally.so/r/3y4V1W)!** 
-:::
-
-:::info
-** :bulb: This document is continuously being improved.** 
-:::
-
-# Staking, Liquid Staking
-
-1. **Where can I swap mGNO to GNO?**
-
-    mGNO is deprecated now, you can stake GNO directly
-
-3. **What’s the best place to stake my GNO bag?**
-
-    You can stake your GNO on liquid staking platforms like StakeWise, or run your own node and stake directly as a validator. APY is variable, so check the live metrics linked in the docs for current values.
-
-4. **Is there any official staking platform for GNO?**
-
-    You can run your node as a solo validator or use a liquid staking protocol like [Stakewise](https://stakewise.io/).
-
-5. **I have some Locked GNO, how to get it back?**
-
-    You can unlock your GNO on the [Locking page](https://lock.gnosis.io/)
-
-6. **Can you currently unstake sGNO or is that not ready yet?**
-
-    StakeWise V3 is live on Gnosis Chain and StakeWise V2 is deprecated. If you still hold V2 assets (sGNO/rGNO), use the migration flow to move to V3.
-
-7. **How can I convert rGNO?**
-
-    Use the [rGNO](https://curve.fi/#/xdai/pools/factory-v2-1/deposit) liquidity pool on Curve
-
-8. **Where can I swap GNO to mGNO?**
-
-    mGNO is deprecated now, you can stake GNO directly
-
-9. **How to move LGNO tokens out of a compromised wallet?**
-
-    LGNO tokens can't be transferred, you will have to unlock your GNO on the [Locking](https://lock.gnosis.io/) page but about your compromised wallet, if the hackers are using a bot to drain all tokens out of the wallet, there is a high possibility that funds won't be able to be recovered.
-    
-10. **Is there any way to stake more than 32 mGNO per validator?**
-
-    mGNO is actually deprecated, but the effective balance of your validator cannot exceed 1 GNO as the exceeding balance will be ready to be claimed as partial withdrawals.
-    
-11. **Rewards for staking are given in GNO, but what happens to the xDai used to pay gas from all transactions on the network?   Where does the GNO come from since it isn't used for gas in the transaction?**
-
-    Every validator has two addresses to which it distributes rewards to: 1. Withdrawal address: The consensus layer rewards go to this address. These rewards are: attestation rewards, sync committee rewards, block proposal rewards. It can only be set once. If you have set it during key generation/deposit, you cannot change it again. 2. Fee recipient address: The execution layer rewards go to this address. When you propose a block, people pay you to include their transaction, this fee reward goes to this address. You set this one in your validator client or web3signer for each validator. It can be changed as often as you want. For more info you can check [Rewards & Penalties](https://docs.gnosischain.com/node/rewards-penalties) section on the docs.
-
----
-
-// File: faq/bridges
-
-# Bridges FAQs
-
-1. Can I bridge tokens between Gnosis Chain and BSC using Omni Bridge
-
-   The BSC - Gnosis Chain bridge has been deprecated you can instead use a third party bridge like Jumper for example.
-
-2. What is the best way to bridge it to another chain?
+3. What is the best way to bridge it to another chain?
 
    For larger amounts, you can use the xDAI bridge (from Gnosis Chain to Ethereum) : https://bridge.gnosischain.com/ For smaller amounts or if you want to bridge them to another chain (to a L2 or another chain), with very small gas fees using Jumper : https://jumper.exchange/
 
-3. On AMB/Omni Bridge once the daily limit has been reached, how can I get my tokens?
-
-   Follow the manual execution tutorial https://docs.gnosischain.com/bridges/tutorials/using-amb once you have initiated the `executeSignature()` transaction, the token release transaction will be credited to your account automatically the next day.
-
-4. I’m trying to bridge but Omni Bridge says that the maximum amount was already transferred?
-
-   Some tokens have [bridge limits](https://docs.gnosischain.com/bridges/tokenbridge/omnibridge#single-transaction-limits), which can be a daily limit and or maximum or minimum per transaction, this is for example the case for GNO between Gnosis Chain and Ethereum, you can click the “Limits” button below the bridge box to check the current limits for a given token. These Daily Limits will be reset at 00:00 UTC.
-
-5. How much time does it take to bridge using Omni Bridge ?
+4. How much time does it take to bridge using Omni Bridge ?
 
    With the new zk light client verification, bridging assets takes about 20 minutes. You can check your bridge transaction on the bridge explorer : https://bridge-explorer.gnosischain.com/
 
-6. Why do the tokens I just got on Gnosis Chain after bridging from Ethereum have a different contract address?
+5. I’m trying to bridge but Omni Bridge says that the maximum amount was already transferred?
+
+   Some tokens have [bridge limits](https://docs.gnosischain.com/bridges/tokenbridge/omnibridge#single-transaction-limits), which can be a daily limit and or maximum or minimum per transaction, this is for example the case for GNO between Gnosis Chain and Ethereum, you can click the “Limits” button below the bridge box to check the current limits for a given token. These Daily Limits will be reset at 00:00 UTC.
+
+6. On AMB/Omni Bridge once the daily limit has been reached, how can I get my tokens?
+
+   Follow the manual execution tutorial https://docs.gnosischain.com/bridges/tutorials/using-amb once you have initiated the `executeSignature()` transaction, the token release transaction will be credited to your account automatically the next day.
+
+7. Why do the tokens I just got on Gnosis Chain after bridging from Ethereum have a different contract address?
 
    Often tokens have a different contract address because when they are bridged into Gnosis Chain, the contract address alters, becoming a proxy token of the bridged one. This process is fundamental to how the tokens are locked on the bridge.
 
-7. I bridged some agEUR tokens using the Angle Bridge, now I have lz-agEUR in my wallet, what can I do?
-
-   The Angle Bridge has daily and hourly limits (they are visible on the bridge page). If the limits are reached when processing a bridge transaction, you won’t receive agEUR in your wallet on the destination chain but instead, you will receive lz-agEUR tokens in your wallet that can be used to redeem agEUR later, when the limits reset, you would then need to make a manual claim following this tutorial : https://docs.angle.money/overview/guides/bridge#how-to-get-back-ageur-from-lz-ageur
-
-8. I’m trying to bridge agEUR from Gnosis Chain to another chain using the Angle Bridge but I’m getting an error “internal JSON-RPC error”
-
-   Be sure to have enough xDAI for gas and fees, to use the Angle Bridge you should have at least 1,5 xDAI in your wallet. More information in Angle Protocol docs : https://docs.angle.money/overview/guides/bridge
-
-9. I’m having issues using Omni bridge to bridge assets held in a SAFE between Ethereum and Gnosis Chain, I get a “failure to connect” ERROR.
+8. I’m having issues using Omni bridge to bridge assets held in a SAFE between Ethereum and Gnosis Chain, I get a “failure to connect” ERROR.
 
    Rabby wallet ( https://rabby.io/ ) wallet is good workaround allowing to load SAFE into it and inject them in similarly to Metamask.
 
-10. I bridge my WETH from Gnosis Chain to Ethereum, but I don't see my WETH balance increases on Ethereum.
+9. I bridge my WETH from Gnosis Chain to Ethereum, but I don't see my WETH balance increases on Ethereum.
 
-      When bridging [WETH](https://gnosisscan.io/token/0x6a023ccd1ff6f2045c3309768ead9e68f978f6e1) from Gnosis Chain, Omnibridge will automatically unwrap your WETH on Ethereum to ETH, so you will only accept ETH on Ethereum. The transaction calls [WETHOmnibridgeHelper](https://etherscan.io/address/0xa6439Ca0FCbA1d0F80df0bE6A17220feD9c9038a) to withdraw ETH from [WETH](https://etherscan.io/address/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2) token contract, create a new contract to receive the ETH and eventually self destruct that contract and send the ETH to the user. Check out [this transaction](https://etherscan.io/tx/0xfed3bfb9a86b4c65039de6e64f4582e7fad8b1cac0b67f69c185c0332b3fab7e) for more details.
+   When bridging [WETH](https://gnosisscan.io/token/0x6a023ccd1ff6f2045c3309768ead9e68f978f6e1) from Gnosis Chain, Omnibridge will automatically unwrap your WETH on Ethereum to ETH, so you will only accept ETH on Ethereum. The transaction calls [WETHOmnibridgeHelper](https://etherscan.io/address/0xa6439Ca0FCbA1d0F80df0bE6A17220feD9c9038a) to withdraw ETH from [WETH](https://etherscan.io/address/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2) token contract, create a new contract to receive the ETH and eventually self destruct that contract and send the ETH to the user. Check out [this transaction](https://etherscan.io/tx/0xfed3bfb9a86b4c65039de6e64f4582e7fad8b1cac0b67f69c185c0332b3fab7e) for more details.
 
-11. How do I know if xDAI get minted to my account when I'm using xDAI bridge for bridging DAI from Ethereum?
+10. How do I know if xDAI get minted to my account when I'm using xDAI bridge for bridging DAI from Ethereum?
 
-      Because xDAI is gas token(or native token) on Gnosis Chain, newly minted xDAI by xDAI bridge will not create a transaction. You may check your balance increment visually by looking for **coin balance history** section in blockscout: https://gnosis.blockscout.com/address/$YOUR_ADDRESS?tab=coin_balance_history or querying the balance programmatically using eth_getBalance api.
+    Because xDAI is gas token(or native token) on Gnosis Chain, newly minted xDAI by xDAI bridge will not create a transaction. You may check your balance increment visually by looking for **coin balance history** section in blockscout: https://gnosis.blockscout.com/address/$YOUR_ADDRESS?tab=coin_balance_history or querying the balance programmatically using eth_getBalance api.
 
-12. I want to bridge my AgEUR or EURe, what bridge should I use?
+11. How do I check if my message from AMB(or Omnibridge) has been executed?
 
-      To bridge AgEUR : https://app.angle.money/bridges-agEUR    
-      To bridge EURe: You will need have an account in [Monerium app](https://monerium.app/), click **Send Money**, select **Cross-Chain** and enter the amount you want to send, then click **Send**.. Double check the message is correct and sign the message. 
+    For Omnibridge, you can visit https://bridge.gnosischain.com/bridge-explorer and enter the transaction hash or address you want to search for.
+    For AMB, you can check it by messageId.
+    1. Find the message Id from the transaction log: In the block explorer, check the `Logs` tab of your transaction receipt, and find `messageId` in event `UserRequestForAffirmation`(bridging from ETH) or `UserRequestForSignature`(bridging from Gnosis Chain). The data type of `messageId` is `bytes32`.
+    2. On the destination chain's AMB, query the `messageCallStatus(bytes32 messageId)` by pasting the `messageId`. If it returns true, it means the message has been executed. If false, it means the message has not been executed.
+       Foreign AMB (Ethereum): https://etherscan.io/address/0x4C36d2919e407f0Cc2Ee3c993ccF8ac26d9CE64e#readProxyContract#F18
+       Home AMB (Gnosis Chain): https://gnosisscan.io/address/0x75Df5AF045d91108662D8080fD1FEFAd6aA0bb59#readProxyContract#F23
+    3. To find out the transaction of the message being executed, you can find the log which emit the event `AffirmationCompleted` (bridging from ETH), or `RelayedMessage` (bridging from GC).
 
-```mdx-code-block
-<details>
-<summary>Step by Step</summary>
-<div>
-```
-      ![Step1](../../static/img/faq/bridge/EURe-step1.png)    
-      ![Step2](../../static/img/faq/bridge/EURe-step2.png)  
-      ![Step3](../../static/img/faq/bridge/EURe-step3.png)  
-      ![Step4](../../static/img/faq/bridge/EURe-step4.png)  
-
-```mdx-code-block
-</div>
-</details>
-```
-
-13. How do I check if my message from AMB(or Omnibridge) has been executed?
-
-      For Omnibridge, you can visit https://bridge.gnosischain.com/bridge-explorer and enter the transaction hash or address you want to search for.    
-      For AMB, you can check it by messageId.    
-      1. Find the message Id from the transaction log: In the block explorer, check the `Logs` tab of your transaction receipt, and find `messageId` in event `UserRequestForAffirmation`(bridging from ETH) or `UserRequestForSignature`(bridging from Gnosis Chain). The data type of `messageId` is `bytes32`.    
-      2. On the destination chain's AMB, query the `messageCallStatus(bytes32 messageId)` by pasting the `messageId`. If it returns true, it means the message has been executed. If false, it means the message has not been executed.    
-         Foreign AMB (Ethereum): https://etherscan.io/address/0x4C36d2919e407f0Cc2Ee3c993ccF8ac26d9CE64e#readProxyContract#F18
-         Home AMB (Gnosis Chain): https://gnosisscan.io/address/0x75Df5AF045d91108662D8080fD1FEFAd6aA0bb59#readProxyContract#F23
-      3. To find out the transaction of the message being executed, you can find the log which emit the event `AffirmationCompleted` (bridging from ETH), or `RelayedMessage` (bridging from GC).     
-      Here is an example script using viem.    
+    Here is an example script using viem.
 
 ```mdx-code-block
 <details>
@@ -7082,319 +6033,6 @@ main();
 </div>
 </details>
 ```
-
----
-
-// File: faq/node
-
-# Validators FAQ
-
-1. Where can I track my validator performance?
-
-   [GnosisPools](https://www.gnosis.builders/post/gnosispools-guide), [Node monitoring guide](../node/management/monitoring-node.md)
-
-2. How to run a node on Gnosis Chain?
-
-   https://docs.gnosischain.com/node/
-
-3. What is reward & penalties?
-
-   https://docs.gnosischain.com/node/rewards-penalties
-
-4. Where can I find hardware requirements to run a node?
-
-   Hardware requirements differ by client but generally are not that high. To get a better idea, you can check each specific client’s hardware requirements here: https://docs.gnosischain.com/node/#hardware
-
-5. How did the merge impact my GBC node?
-
-   The Ethereum Mainnet merged with the beacon chain proof-of-stake system. This marked the end of proof-of-work for Ethereum, and the full transition to proof-of-stake. The Gnosis Beacon Chain (GBC) serves in a frontrunning capacity for important Ethereum consensus-layer updates.
-
-6. My nethermind xdai is lagging, it never seems to catch up to 100%. It fluctuates between 97-99.5% synced. I’m using nethermind xdai execution client, lighthouse gnosis consensus client and the web3 gnosis signer.
-
-   1. update all packages to the latest version (core, EL, CL, web3signer, etc)
-   2. turn on EL + CL and check if both are on sync before turning on the validator (see that lighthouse has 2 processes, 1 beacon and 1 validator)
-   3. (a) if both are on sync, turn on the validator and check 10 minutes later the beacon explorer
-      (b) if you don’t get both to the head, let me know here and we can troubleshoot together.
-
-7. My validator is constantly missing attestations. Several of my validators are said to be inactive and getting penalized on beacon.gnosischain.com, although logs show errors that I don’t understand. And half of them are active and well (all running on the same physical machine).
-
-   Solution from discord user @pyk:
-   https://discord.com/channels/502416149343109121/920642136272166972/1055445460023783525
-
-   This happens on my end due to one beacon node cannot handle all validators request (hence some validators miss their attestations while others dont) and sometimes beacon node lose all its peers.
-
-   My solution is to run a few beacon nodes (lodestar) connected to one execution node (nethermind), so I have backup when one beacon node disconnected from their peers.
-
-   For example here is how to connect multiple beacon nodes in one validator (lodestar):
-
-   ```
-       validator
-           --network=gnosis
-           --dataDir=/data
-           --logFileLevel=info
-           --beaconNodes=http://gnosis-beacon-1:4000,http://gnosis-beacon-2:4000,http://gnosis-beacon-3:4000,http://gnosis-beacon-4:4000,http://gnosis-beacon-5:4000
-
-   ```
-
-8. I added 3 validators and skipped the [“Step 3: Upload Keystores to Web3Signer”](https://docs.gnosischain.com/node/tools/dappnode/#step-3-upload-keystores-to-web3signer) in dappNode and got error: Status: error ❌ Message: Error importing keystore: Unable to add validator. Check that the keystore file format is valid and the password is correct.” . I went directly to “Step 4: Fund Your Validators”. Now I see they are active but missing attestations. The password is correct and the keystore files are the same I used in step 4.
-
-   1. Double-check that you’re uploading your keystores to web3signer Gnosis
-   2. Try restarting both Web3Signer Gnosis and your Consensus Client
-   3. If this is the first time you’re uploading your keystores, make sure you uncheck the import slashing data option
-   4. Triple-check your password is right and was inputted as you intended
-
-9. Which clients are supported by GBC?
-
-   Lighthouse, Lodestar, Nimbus, and Teku clients. [Read more here](../node/architecture.md#consensus-layer).
-
-10. How long does it take to sync the node?
-
-Along with running the GBC client you can also consider running a Gnosis Node to connect with (_optional - recommended for experienced node runners only_).
-
-Syncing [Gnosis using Nethermind](/node/manual) requires \~200GB (and growing) of data to download. You may encounter some errors during syncing. Depending on your setup, you can expect it to take anywhere from a few hours to several days.
-
-11. Can I use a node provider to run a Gnosis node?
-
-Check the [RPC Providers](../tools/RPC%20Providers/README.md) page for the complete list.
-
-12. Can I use DappNode?
-
-Yes! [DappNode](https://dappnode.io) is a partner and full-featured service provider for the Gnosis Beacon Chain. If you would like to use their services for validation, please see the [guide and instructions here.](https://forum.dappnode.io/t/how-to-setup-a-gnosis-beacon-chain-gbc-validator-on-dappnode/1351)
-
-13. Help! I've lost my validator keys
-
-You are responsible for your keys (deriving and storing your keys and mnemonic securely). If you lose them or your keys are compromised, there is no recourse to recover your funds.
-
-14. What is a validator?
-
-Validators propose and vote on blocks to include in the chain. The chain is secured by a staked amount of GNO. Validators stake GNO and receive additional GNO as rewards for correct behavior (proposing and attesting blocks) and a slashed balance as penalties for incorrect behavior (offline node, attesting invalid blocks).
-
-15. What is the deposit contract?
-
-The deposit contract keeps track of validators and staking amounts. The GBC deposit contract is based on [the original Ethereum beacon chain deposit contract](https://github.com/ethereum/consensus-specs/blob/master/solidity_deposit_contract/deposit_contract.sol), with [some additional functionality](/concepts/specs/security-audit).
-
-- Contract Security Audit by Chainsecurity: [https://chainsecurity.com/security-audit/poa-network-stake-beacon-chain-sbc-deposit/](https://chainsecurity.com/security-audit/poa-network-stake-beacon-chain-sbc-deposit/)
-- GBC Contract Address: [0x0B98057eA310F4d31F2a452B414647007d1645d9](https://gnosis.blockscout.com/address/0x0B98057eA310F4d31F2a452B414647007d1645d9)
-
-16. How much do validators earn in rewards?
-
-This varies based on how many validators are participating. As the number of validators increases, the reward for validation is reduced as security becomes increasingly decentralized. Additional info is available on the [incentives page](../node/rewards-penalties.md).
-
-You can view the current reward yield and other statistics on the [Gnosis Beacon Chain Dune Analytics dashboard](<https://dune.xyz/maxaleks/Gnosis-Beacon-Chain-(Deposits)>).
-
-17. How many validator processes can run per node?
-
-It is possible to run multiple validator processes on a single node with GBC. A 4CPU/8GB node handled 256 validators during testing processes, although for higher decentralization it is recommended to run multiple nodes for this number of validators. The safe recommendation for multiple validators per node is 128.
-
-18. How long does fast sync take with Nethermind?
-
-It depends on the mode and hardware specifications. Typically 24 hours should be allowed.
-
-- For more information on syncing with Nethermind see [https://github.com/NethermindEth/docs/blob/master/ethereum-client/sync-modes.md](https://github.com/NethermindEth/docs/blob/master/ethereum-client/sync-modes.md)
-- To learn more about reading logs during syncing see [https://docs.nethermind.io/nethermind/first-steps-with-nethermind/getting-started#explaining-nethermind-logs](https://docs.nethermind.io/nethermind/first-steps-with-nethermind/getting-started#explaining-nethermind-logs)
-
-## Shapella & Validator withdrawal FAQs
-
-1. What is Shapella?
-
-   Shapella refers to the combination of both Shanghai and Capella. Shanghai enables GNO staking withdrawals for Gnosis Chain, unlike the previous model that doesn’t allow for staked GNO to be withdrawn. Shanghai is the name given to the execution layer (EL) upgrade, while Capella is the name of the coinciding consensus layer (CL) upgrade.
-
-2. What are withdrawals?
-
-   Validator withdrawal allows a validator’s account balance to get withdrawn from Beacon Chain to Execution Layer, in the form of GNO. The GNO will be accrued on validator’s withdrawal address on the Execution Layer, which is set using `eth1_withdrawal_address` option during validator key generation.
-
-3. What are two types of withdrawals?
-
-   There are 2 types of withdrawals: Partial Withdrawal and Full Withdrawal.
-   Partial Withdrawal: Any eligible balance in excess of 1 GNO is processed for withdrawal.
-   Full Withdrawal: The validator exits and its full balance becomes withdrawable to the configured execution withdrawal address. This has to be initiated by the validator by signing a `voluntary_exit` message and broadcasting it to the network. It is irreversible.
-
-4. What are 0x00, 0x01, and 0x02 withdrawal credentials prefixes?
-
-   The beacon chain validators have a field called withdrawal credentials, where the first byte is referred to as the withdrawal prefix.
-
-   `0x02` is the recommended execution-address prefix on Gnosis Chain. It supports the current withdrawal flow and is what new validators should use.
-
-   `0x01` is a legacy execution-address prefix. It still works, but follows the older auto-sweep behavior and is no longer the recommended option for new validators.
-
-   `0x00` is the old BLS-only prefix and does not support withdrawals until you perform a one-time BLS-to-execution credential change.
-
-5. How do I change my withdrawal credential?
-
-   You can find the current step-by-step guide here: [Validator Withdrawals](../node/management/withdrawals.md).
-
-6. I have been running multiple validators. Can I set up the same withdrawal credential for all of them?
-
-   Yes, you can set up the same withdrawal credential for all of your validators and can also set up different withdrawal credentials for individual validators.
-
-7. Where can I check my withdrawal credential?
-
-   Check the Withdrawal tab for your validator on the [Beacon chain explorer](https://beaconchain.gnosischain.com/), or inspect the `withdrawal_credentials` field in your saved `deposit-data*.json` file. See [Validator Withdrawals](../node/management/withdrawals.md) for the current walkthrough.
-
-8. Do partial withdrawals happen automatically?
-
-   The withdrawal processing itself is automatic once your validator is eligible. What is not automatic today is claiming the resulting GNO to the recipient address. After the withdrawal has been processed, you must claim it either on the [Deposit website](https://validators.gnosischain.com/) or by calling [`claimWithdrawal`](https://gnosisscan.io/address/0x0B98057eA310F4d31F2a452B414647007d1645d9#writeProxyContract) or `claimWithdrawals(...)` on the deposit contract.
-
-9. Do full withdrawals happen automatically?
-
-   No. If your validator is currently active and participating in the beacon chain, the full withdrawal will not happen unless you first manually initiate a voluntary exit.
-
-   Additionally, if you initiate an exit while still using `0x00` withdrawal credentials, your funds will remain locked until a `BLSToExecutionChange` is included on chain.
-
-10. Is there a UI that I can use for withdrawals?
-
-    Yes. You can claim withdrawals on the [Deposit website](https://validators.gnosischain.com/). Advanced users can also claim directly through the deposit contract on Gnosis Chain.
-
-11. Where does the automatic balance withdraw to?
-
-    Withdrawals are associated with the validator's configured execution withdrawal address, also referred to as the recipient address in the current docs. If you are still on `0x00`, withdrawals cannot complete until you convert to an execution-address credential.
-
-12. Once I have changed my credential to an execution address, can I change it to an alternative withdrawal address?
-
-    No. The BLS-to-execution change is a one-time operation. Once you set the execution withdrawal address, it cannot be changed later. Please perform this step carefully. The withdrawal address can be either an externally owned account (EOA) or a smart contract wallet such as a Safe.
-
-13. I have lost the private key to my withdrawal address, what can I do?
-
-    Unfortunately, there is nothing that can be done if the withdrawal address is lost. Please ensure this address is properly backed up and securely stored.
-
-14. What happens to my GNO if I make a full withdrawal but I forget to set the withdrawal credential to an execution address?
-
-    Your validator will exit and stop performing duties, but the funds will not be withdrawable until you complete the BLS-to-execution credential change. Once you do that, the validator balance can be withdrawn and claimed to the configured recipient address.
-
-15. Can I cancel a withdrawal request that is in the queue?
-
-    No. These are one-way operations. Once you submit a `BLSToExecutionChange` and/or a voluntary exit, you cannot reverse it. Make sure you understand the effect of each action before proceeding.
-
-16. Where can I find the client updates for Shapella?
-
-    Refer to the current [Validator Withdrawals](../node/management/withdrawals.md) guide and each client's official release notes. The original Shapella client-update post is useful historical context, but the withdrawals guide should be treated as the current operator-facing source of truth.
-
----
-
-// File: faq/others
-
-# Gnosis Chain FAQs
-
-1. Where can I bridge my tokens to Gnosis Chain?
-
-   Between Ethereum and Gnosis Chain : https://bridge.gnosischain.com/
-   More chains and options : [jumper](https://jumper.exchange/), [bungee](https://www.bungee.exchange/), [hop](https://app.hop.exchange/)
-   For specific tokens like AgEUR and EURe, please use [the token's authorised bridge](../faq/bridges.md) instead of Omnibridge.
-
-
-2. What is Gnosis Faucet?
-
-   The Gnosis Chain xDAI faucet distributes xDAI to new users so that they may have enough gas to complete a few transactions and interact with applications on Gnosis Chain : https://faucet.gnosischain.com/
-
-3. Where can I stake my GNO?
-
-   Currently, you can stake your GNO on [Stakewise.io] (https://stakewise.io/). Please note that your wallet must be directed at the Gnosis Chain network with your GNO tokens already bridged to Gnosis.
-
-4. What is sGNO?
-
-   When you stake your GNO on Stakewise you receive sGNO.
-
-5. What is LGNO?
-
-   This stands for locked GNO. The LGNO contact was an incentive program for the Gnosis community to lock their GNO in return for vCOW. To learn more, please visit this thread by Stefan George -https://twitter.com/StefanDGeorge/status/1488924732191907849
-
-6. What is d14n.info?
-
-   :::note
-   The site is deprecated.
-   :::
-   [d14n.info](https://www.d14n.info/) is a real-time dashboard that measures decentralization of the Gnosis Chain and Ethereum networks. We use the Nakamoto Coefficient as the primary quantitative measure across multiple dimensions of the network.
-   You may also check out [Gnosis Metrics](https://www.gnosismetrics.com/#overview)
-
-7. What native bridges does Gnosis have?
-
-   [xDAI & OmniBridge](https://docs.gnosischain.com/bridges/)
-
-8. Which wallets can I use on the Gnosis Chain?
-
-    See [Wallets](../tools/wallets/README.md).
-
-9. How do I connect my wallet to Gnosis Chain?
-
-    Click 'Add to Metamask' in [here](https://docs.gnosischain.com/concepts/networks/mainnet) or view other options from
-    https://docs.gnosischain.com/tools/wallets/
-
-10. I was staking xdai on the easystaking xdai site and it is no longer active. How can I access my xdai?
-
-    This has been down for some time now due to the old team that was running xdai not maintain it anymore. You will need to use the block explorer to interact with the contracts without the UI in order for it to be withdrawn.
-
-    These are the steps that need to be taken:
-
-    https://etherscan.io/address/0xecbcd6d7264e3c9eac24c7130ed3cd2b38f5a7ad#readProxyContract 11. lastDepositIds Type your address which gives you a number. 3. balances Find your deposits. They are numbered from 0 up to the number you got previously. Check all of them.
-    https://etherscan.io/address/0xecbcd6d7264e3c9eac24c7130ed3cd2b38f5a7ad#writeProxyContract 7. makeForcedWithdrawal Withdraw. Please note this instant-withdrawal has a 2% fee
-
-11. I recently transferred an ERC-1155 into a safe. I realized after the fact that gnosis does not support 1155s. Is there a way that I’m able to transfer it back out?
-
-    You have to use “contract interaction” on the safe when you click on “New Transaction”
-    On the pop up, you will put in the contract address of the ERC-1155 token - (It may or may not automatically pull in the ABI so you may have to copy that from the contract details via gnosis scan)
-
-    Once, the contract address and abi is input into the prompt… there should be a drop down of which functions are available to you. You want to drop down to “safeTransferFrom”
-
-    When you select that, you will have prompts to fill in:
-    From(address) - that address that owns the token - your safe
-    To(address) - what wallet do you want to send it to?
-    id(uint256) - The token number of the NFT
-    amount(uint256) - How many of those tokens do you want to send? - usually just 1
-    data(bytes) - I just put in " 0x0 " empty data.
-
-    Add that transaction - then sign it off and that should work
-    if you are still having issues i would suggest to hop into the Safe discord and ask for further assistance there.
-
-12. When SAFE airdrop?
-
-    https://forum.gnosis.io/t/gip-64-should-gnosisdao-distribute-safe-tokens-to-incentivize-decentralizing-gnosis-chain/5896
-    https://forum.gnosis.io/t/gip-64-should-gnosisdao-distribute-safe-tokens-to-incentivize-decentralizing-gnosis-chain/5896/54
-
-13. Where is the simplest way to stake GNO on gnosis chain?
-
-    https://www.validategnosis.com/
-
-14. I’ve been experiencing this error withMetamask on Gnosis Chain. It doesn’t generate fees whenever I send tokens. ‘Transaction error - Internal JASON-RPC error.’
-
-    https://metamask.zendesk.com/hc/en-us/articles/360059289871-Error-Internal-JSON-RPC-error-when-trying-to-interact-with-other-network and please update your RPC on MetaMask to https://rpc.gnosis.gateway.fm/
-
-15. What is WXDAI for?
-
-    As xDai on Gnosis Chain acts similar to ETH on Ethereum Network, you would need a wrapped version of xDai to be used as an ERC-20. Basically, WXDAI is the equivalent of WETH on Gnosis Chain.
-
-16. What is Gnosis chain?
-
-    Gnosis Chain is an EVM-based Layer 1 utilizing PoS consensus. Gnosis Chain utilizes a dual token model unlike similar EVM chains. On Gnosis Chain GNO token is used to secure the consensus layer while xDai is used as the gas token.
-
-17. How can I add Gnosis Chain to Metamask?
-
-    You can follow the instructions on this page: https://docs.gnosischain.com/tools/wallets/metamask/
-
-    Or alternatively, you can go to https://chainlist.org/ search for Gnosis Chain to get Gnosis Chain added automatically to your Metamask.
-
-18. What DApps can we use on Gnosis?
-    All dApps on Gnosis Ecosystem can be found here:
-    https://ecosystem.gnosischain.com/
-
-19. Is it possible run a Node and qualify for future rewards?
-
-    Yes, you can run a Node and qualify for rewards. For all the information you need in terms of running a node, please visit https://docs.gnosischain.com/node/.
-
-20. I’m totally new to this project and I’m trying to feel myself around. Where should I start learning?
-
-    You can jump to all relevant links on our landing page at https://www.gnosis.io/. Alternatively, you can check our documentation https://docs.gnosischain.com/. Also, feel free to take a look at the governance forum to see what is being discussed around the community regarding improvement proposals https://forum.gnosis.io/.
-
-21. Is Gnosis Chain a Testnet or Mainnet released?
-
-    Gnosis Chain is not a testnet. It is a fully operational Layer 1 utilizing Proof of Stake. But if you are wondering, Gnosis Chain has its testnet called Chiado, the details of which can be found here: https://docs.gnosischain.com/concepts/networks/chiado.
-
-22. Is the grants program still running?
-
-    ‼️UPDATE: The Gnosis Ecosystem Fund was discontinued. Projects can now directly apply for funding through the GnosisDAO. For non commercial/public goods : https://bit.ly/gnosis-grants
-
-23. What are the NFT marketplaces on Gnosis Chain?
-
-    https://niftyfair.io/
 
 ---
 
@@ -8081,7 +6719,7 @@ Gnosis is an open peer-to-peer network of nodes operated by anyone in the world 
 
 Gnosis utilizes the same architecture as Ethereum, and has committed to building together with Ethereum and contributing to the research, engineering and tooling for Ethereum's stack.
 
-Gnosis started out as a [proof-of-authority ](../about/specs/consensus/aura.md) sidechain to Ethereum with its own consensus algorithm in 2017. Gnosis [Merged](/updates/2022/12/10/merge) successfully at block 6,306,357 deprecating legacy differences and aligning with Ethereum's new architecture, beginning with the Merge, with a goal of achieving 1:1 parity with Ethereum.
+Gnosis started out as a [proof-of-authority ](../about/specs/consensus/aura.md) sidechain to Ethereum with its own consensus algorithm in 2017. Gnosis [Merged](../about/specs/hard-forks/merge.md) successfully at block 6,306,357 deprecating legacy differences and aligning with Ethereum's new architecture, beginning with the Merge, with a goal of achieving 1:1 parity with Ethereum.
 
 ## Composite Network Architecture
 
@@ -8921,7 +7559,7 @@ import VerifyValidatorPartial from '@site/docs/node/manual/validator/\_partials/
 
 ## More Resources
 
-- [Frequently Asked Questions](../../faq/node.md)
+- [Frequently Asked Questions](../../faq/others.md)
 - [1-click tools](../tools/)
 - [Managing your Node](../management/)
 
@@ -12694,12 +11332,6 @@ It will take about 1.5 hours for your validators to start proposing and attestin
 - This is roughly 1 hour and 25 minutes before the validators start proposing and attesting blocks on the Gnosis Chain.
 - Once live, you can view your validator(s) on the explorer. Copy the pubkey(s) listed in the deposit_data.json file (a key will be generated for each validator as "pubkey": "&lt;your-public-key&gt;") and paste into the search box on the [Beacon chain explorer](https://beaconchain.gnosischain.com/).
 
-:::note Running your own instance
-
-Setup instructions live in the [consolidate-ui repository README](https://github.com/gnosischain/consolidate-ui#readme).
-
-:::
-
 
 ## Appendix
 
@@ -13762,8 +12394,18 @@ You are responsible for your node, including ensuring uptime, correct behavior, 
 
 ### Current Yield
 
-- The current yield on GNO staking can be found in this [Dune Dashboard](https://dune.com/gnosischain_team/gnosischain). and [Gnosis Metrics](https://www.gnosismetrics.com/).
-- Yield changes over time with the size and performance of the active validator set. Always use the live dashboards above instead of a fixed percentage.
+- The current yield on GNO staking is published on [Gnosis Metrics](https://metrics.gnosischain.com/), and can also be queried from the public [Gnosis Analytics API](https://api.analytics.gnosis.io/docs).
+- Yield changes over time with the size and performance of the active validator set. Always use the live sources above instead of a fixed percentage.
+
+To fetch the latest network-wide validator APY:
+
+```bash
+curl https://api.analytics.gnosis.io/v1/consensus/validators_apy/latest
+```
+
+```json
+[{ "value": 8.55, "change_pct": 11.3, "as_of_date": "2026-09-02" }]
+```
 
 ### Rewards Calculation:
 
@@ -13866,69 +12508,1002 @@ We recommend the following readings for a more in-depth understanding of validat
 
 ---
 
-// File: shutterized-gc/README
+// File: start/README
 
-import React from 'react';
-import Button from '@site/src/components/Button';
-import { changeOrAddNetwork } from '@site/src/utils/changeNetwork';
+# Start here
 
-### Protecting Against MEV Attacks: Shutter embedded Gnosis Chain
+Gnosis Chain carries a full set of consumer-grade finance components, and the rails are ready to embed. Pick the route that matches what you are shipping. Each one lists the components it switches on, what they replace, and the 0-1 guides that take you from an empty directory to a result you can verify on-chain.
 
-Maximal Extractable Value (MEV) refers to the maximum value that can be extracted from block production in blockchain protocols, particularly in Ethereum. It represents the profits that can be made by miners or validators by reordering, including, or censoring transactions within a block. 
-To combat this, the Shutter network on Gnosis Chain introduces a mechanism for submitting transactions that resist censorship and front-running attacks by allowing users to encrypt their transactions.
+### 01 · [Yield inside your wallet](/start/yield-in-your-wallet)
 
-Transactions on the Shutterized enabled Gnosis Chain are only decrypted and executed after their inclusion in the blockchain is confirmed and the order of preceding transactions is finalized. Consequently, any third-party attempting to censor or front-run the transaction will be unable to do so without knowledge of its content, thereby nullifying their efforts. This ensures that transactions are protected from MEV attacks, safeguarding users from financial exploitation and maintaining the integrity of the decentralized system.
+For trading and payment apps already selling a money market fund. A rail swap on the same fee model.
 
-### Add the RPC endpoint to your wallet: Take the first step towards secure and private trades on the Gnosis Chain.
+**Includes:** Account, Euro Money, Yield  
+**Status:** Design partners
 
-<Button
-  label="Add Shutter access on Gnosis Chain"
-  onClick={changeOrAddNetwork}
-/>
+### 02 · [Spend and Save](/start/spend-and-save)
 
-### Shutter Protocol and Threshold Encryption
+For wallets and challengers that want a card without carrying a balance sheet. Live today.
 
-The Shutter Protocol employs threshold encryption to shield transactions. By encrypting transactions before they enter the public mempool, the protocol prevents malicious actors from exploiting them to their advantage. Participating validators on the Gnosis Chain commit to including these encrypted transactions, making it virtually impossible for front-runners to interfere. This level of protection ensures that end-users are shielded from financial losses and market manipulation, maintaining the integrity of the decentralized system.
+**Includes:** Account, Euro Money, Yield, Card Settlement, Identity and Rewards  
+**Status:** Live today
 
-With the contribution from teams of [Shutter Network](https://shutter.network/), [Gnosis](https://www.gnosis.io/) and [Nethermind](https://www.nethermind.io/), we released shutter access on chiado testnet followed by mainnet release.
+### 03 · [Full Investing Suite](/start/full-investing-suite)
 
-### Shutter access Chiado Testnet and Gnosis Mainnet
+For brokers and neobanks adding tokenised assets and self-custodial crypto.
 
+**Includes:** Account, Euro Money, Yield, Card Settlement, Assets, Fx & Transfers, Secured Credit, Identity and Rewards  
+**Status:** Design partners
 
-| Network Name       | Gnosis (mainnet)                 | Chiado (testnet)                  |
-| ------------------ | -------------------------------- | ------------------------------------ |
-| Native (fee) token | xDAI                             | Chiado xDAI                          |
-| Chain ID           | 100                              | 10200                                |
-| New RPC URL        | https://erpc.gnosis.shutter.network   | https://erpc.chiado.staging.shutter.network       |
-| Block Explorer     | https://gnosis.blockscout.com/        | https://blockscout.com/gnosis/chiado |
-| Faucet             | https://faucet.gnosischain.com/       | https://faucet.gnosischain.com/?chain=chiado      |
+## The component catalogue
 
+Every route is a bundle of the same eight components. You switch on the ones you need.
 
-### Shutterized Chiado Test dApp
+| Component | Replaces |
+| --- | --- |
+| Account | core banking and a sub-ledger vendor |
+| Euro Money | a deposit account and safeguarding |
+| Yield | a money market fund rail or partner-bank sweep |
+| Card Settlement | float, processor and BIN sponsor |
+| Assets | broker, custodian and CSD |
+| Fx & Transfers | a treasury desk and correspondents |
+| Secured Credit | Lombard lending |
+| Identity and Rewards | batch AML and a loyalty ledger |
 
-You can test out the test version of Shutterized Chiado [here](https://gnosis-shutter.web.app)
+## If you are not a fintech
+
+The routes above are built around embedding finance components. If you are deploying a contract, running infrastructure, or bridging assets, start from the [developer overview](/developers/overview) instead.
 
 ---
 
-// File: shutterized-gc/DeployedContracts
+// File: start/yield-in-your-wallet
 
-### Deployed Contract for integrated Shutter Network on Gnosis Chain([Github](https://github.com/shutter-network/shutter-keyper-deployment/tree/gnosis/main?tab=readme-ov-file#contract-deployments))
+# Yield inside your wallet
 
-| Contract Name | Gnosis Chain Mainnet |
-| ------------  | ------------------------------------ |
-| Sequencer     |  https://gnosis.blockscout.com/address/0xc5C4b277277A1A8401E0F039dfC49151bA64DC2E |
-| ValidatorRegistry | https://gnosis.blockscout.com/address/0xefCC23E71f6bA9B22C4D28F7588141d44496A6D6 |
-| keyperSetManager  | https://gnosis.blockscout.com/address/0x7C2337f9bFce19d8970661DA50dE8DD7d3D34abb |
-| keyBroadcastContract | https://gnosis.blockscout.com/address/0x626dB87f9a9aC47070016A50e802dd5974341301 |
+The narrowest route in. You keep your product and your fee model, and swap the rail underneath the balance your users already hold.
 
+**Who it is for.** For trading and payment apps already selling a money market fund. A rail swap on the same fee model.
 
-### Deployed Contract for Shutterized Chiado Testnet
+**Status.** Design partners
 
+## What it switches on
 
-| Contract Name | Chiado Test |
-| ------------  | ------------------------------------ |
-| Relayer       | https://gnosis-chiado.blockscout.com/address/0xfA606b7eE5Cb3Bb4580FBAa304fE245F91799418 |
-| Sequencer Contract (Encrypted Mempool) | https://gnosis-chiado.blockscout.com/address/0xd073BD5A717Dce1832890f2Fdd9F4fBC4555e41A
+| Component | Replaces |
+| --- | --- |
+| Account | core banking and a sub-ledger vendor |
+| Euro Money | a deposit account and safeguarding |
+| Yield | a money market fund rail or partner-bank sweep |
+
+## 0-1 guides
+
+Work through these in order. Each ends in something you can see on the block explorer; if a step does not produce the stated result, stop there rather than continuing.
+
+### 1. [Deploy your first contract](/start/guides/deploy-your-first-contract)
+
+Get a verified contract on Gnosis. Every other route starts here.
+
+### 2. [Accept stablecoin payments](/start/guides/accept-stablecoin-payments)
+
+Move euro-denominated value in and out of a contract you control.
+
+:::note
+A yield-specific walkthrough (sDAI wrapping and accrual accounting) is being written. Until it lands, the savings section of the Spark and sDAI docs covers the same mechanics.
+:::
+
+## Talk to the engineers
+
+Bundles are configured with the Gnosis team rather than self-served end to end. The [ecosystem directory](https://ecosystem.gnosischain.com/) lists who is already live on each component.
+
+---
+
+// File: start/spend-and-save
+
+# Spend and Save
+
+A spending account where the balance earns while it sits, and a card that settles straight from it. No float to fund and no processor to pre-pay.
+
+**Who it is for.** For wallets and challengers that want a card without carrying a balance sheet. Live today.
+
+**Status.** Live today
+
+## What it switches on
+
+| Component | Replaces |
+| --- | --- |
+| Account | core banking and a sub-ledger vendor |
+| Euro Money | a deposit account and safeguarding |
+| Yield | a money market fund rail or partner-bank sweep |
+| Card Settlement | float, processor and BIN sponsor |
+| Identity and Rewards | batch AML and a loyalty ledger |
+
+## 0-1 guides
+
+Work through these in order. Each ends in something you can see on the block explorer; if a step does not produce the stated result, stop there rather than continuing.
+
+### 1. [Deploy your first contract](/start/guides/deploy-your-first-contract)
+
+Get a verified contract on Gnosis. Every other route starts here.
+
+### 2. [Accept stablecoin payments](/start/guides/accept-stablecoin-payments)
+
+The payment receiver that sits behind a settlement flow.
+
+:::note
+Card settlement is configured with Gnosis engineers rather than self-served, so there is no public 0-1 guide for the card component yet.
+:::
+
+## Talk to the engineers
+
+Bundles are configured with the Gnosis team rather than self-served end to end. The [ecosystem directory](https://ecosystem.gnosischain.com/) lists who is already live on each component.
+
+---
+
+// File: start/full-investing-suite
+
+# Full Investing Suite
+
+Every component switched on: spending, savings, card, tokenised assets, transfers and secured credit against the same account.
+
+**Who it is for.** For brokers and neobanks adding tokenised assets and self-custodial crypto.
+
+**Status.** Design partners
+
+## What it switches on
+
+| Component | Replaces |
+| --- | --- |
+| Account | core banking and a sub-ledger vendor |
+| Euro Money | a deposit account and safeguarding |
+| Yield | a money market fund rail or partner-bank sweep |
+| Card Settlement | float, processor and BIN sponsor |
+| Assets | broker, custodian and CSD |
+| Fx & Transfers | a treasury desk and correspondents |
+| Secured Credit | Lombard lending |
+| Identity and Rewards | batch AML and a loyalty ledger |
+
+## 0-1 guides
+
+Work through these in order. Each ends in something you can see on the block explorer; if a step does not produce the stated result, stop there rather than continuing.
+
+### 1. [Deploy your first contract](/start/guides/deploy-your-first-contract)
+
+Get a verified contract on Gnosis. Every other route starts here.
+
+### 2. [Accept stablecoin payments](/start/guides/accept-stablecoin-payments)
+
+Take euro-denominated payment into a contract you control.
+
+### 3. [Launch a tokenised asset](/start/guides/launch-a-tokenised-asset)
+
+Issue a capped-supply token bound to an off-chain asset.
+
+:::note
+Secured credit and FX are configured with Gnosis engineers. Read the scope note in the tokenised asset guide before issuing anything to anyone.
+:::
+
+## Talk to the engineers
+
+Bundles are configured with the Gnosis team rather than self-served end to end. The [ecosystem directory](https://ecosystem.gnosischain.com/) lists who is already live on each component.
+
+---
+
+// File: start/guides/deploy-your-first-contract
+
+# Deploy your first contract
+
+**Job:** go from nothing to a verified contract on Gnosis. **Time:** about 30 minutes. **Chain:** Chiado testnet.
+
+**Prerequisites:** a terminal on macOS or Linux, and Git installed.
+
+This guide takes you from an empty directory to a contract whose source code anyone can read on the block explorer. You will work on Chiado, the Gnosis testnet, so nothing costs real money. The last section shows what changes for mainnet.
+
+Every step ends in something you can see. If a step does not produce the result described, stop there. The next step will not work.
+
+## Install Foundry
+
+Foundry is the toolchain you will use to compile, deploy and verify. Install it:
+
+```bash
+curl -L https://foundry.paradigm.xyz | bash
+```
+
+Then open a new terminal and run the installer it placed on your path:
+
+```bash
+foundryup
+```
+
+Check it worked:
+
+```bash
+forge --version
+```
+
+You should see a version string. You now have three commands available: `forge` builds and deploys, `cast` reads and writes single calls, and `anvil` runs a local node.
+
+## Create the project
+
+Make a new Foundry project and move into it:
+
+```bash
+forge init gnosis-first-contract
+cd gnosis-first-contract
+```
+
+`forge init` writes a working project with a sample contract and test. Confirm it compiles:
+
+```bash
+forge build
+```
+
+You should see `Compiler run successful`. An `out/` directory now holds the compiled artefacts.
+
+## Write the contract
+
+Replace `src/Counter.sol` with a contract that records who deployed it and counts how many times it has been incremented. Small, but enough to have state worth reading back.
+
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract Counter {
+    address public immutable deployer;
+    uint256 public count;
+
+    event Incremented(address indexed by, uint256 newCount);
+
+    constructor() {
+        deployer = msg.sender;
+    }
+
+    function increment() external {
+        count += 1;
+        emit Incremented(msg.sender, count);
+    }
+}
+```
+
+Compile it:
+
+```bash
+forge build
+```
+
+`Compiler run successful` again. If the compiler complains about the pragma, check the `solc` version in `foundry.toml` is 0.8.20 or later.
+
+## Create an account
+
+You need an account to deploy from. Foundry can generate one and store it encrypted, so no private key ends up in a shell history or a file.
+
+```bash
+cast wallet new
+```
+
+This prints an address and a private key. Import the key into Foundry's keystore under the name `chiado-dev`:
+
+```bash
+cast wallet import chiado-dev --interactive
+```
+
+Paste the private key when prompted, then choose a password. Confirm the account is stored:
+
+```bash
+cast wallet list
+```
+
+You should see `chiado-dev` listed.
+
+:::warning
+This account is for testnet work only. Never import a key that holds real funds into a development keystore, and never paste a private key into a chat window or a file you might commit.
+:::
+
+## Fund the account on Chiado
+
+Chiado is the Gnosis testnet. Its chain ID is 10200 and its gas token is a valueless test xDai.
+
+Copy your address from the previous step and request funds from the faucet at [faucet.chiadochain.net](https://faucet.chiadochain.net).
+
+Check the balance arrived:
+
+```bash
+cast balance <YOUR_ADDRESS> --rpc-url https://rpc.chiadochain.net
+```
+
+The command prints a number in wei. Anything above zero is enough to continue. If it prints `0`, wait a few seconds and run it again. The faucet takes a moment.
+
+## Deploy to Chiado
+
+Deploy the contract, passing the RPC endpoint and the account you imported:
+
+```bash
+forge create src/Counter.sol:Counter \
+  --rpc-url https://rpc.chiadochain.net \
+  --account chiado-dev \
+  --broadcast
+```
+
+Enter your keystore password when prompted. Foundry prints three things: the deployer address, the new contract address, and the transaction hash.
+
+Copy the contract address. The rest of the guide refers to it as `<CONTRACT>`.
+
+Open `https://gnosis-chiado.blockscout.com/address/<CONTRACT>` in a browser. You should see the contract, its creation transaction, and a balance of zero. The code tab shows bytecode but no source. That comes next.
+
+## Verify the contract on Blockscout
+
+Verification publishes your source code and links it to the deployed bytecode, so anyone can read what the contract actually does. Until you do this, the explorer shows only opaque bytes.
+
+```bash
+forge verify-contract <CONTRACT> src/Counter.sol:Counter \
+  --chain-id 10200 \
+  --verifier blockscout \
+  --verifier-url https://gnosis-chiado.blockscout.com/api/
+```
+
+The command polls until Blockscout responds. On success it prints `Contract successfully verified`.
+
+Reload the explorer page. The code tab now shows your Solidity source, and two new tabs appear: **Read contract** and **Write contract**. That green tick is the observable result of this step.
+
+## Change the state
+
+Call `increment()` so the contract has something to read back:
+
+```bash
+cast send <CONTRACT> "increment()" \
+  --rpc-url https://rpc.chiadochain.net \
+  --account chiado-dev
+```
+
+The command prints a transaction receipt with `status  1 (success)`. The receipt also lists one log, the `Incremented` event.
+
+## Read it back on-chain
+
+Read the count directly, without the explorer:
+
+```bash
+cast call <CONTRACT> "count()(uint256)" --rpc-url https://rpc.chiadochain.net
+```
+
+This prints `1`. Read the deployer as well, and check it matches the address you deployed from:
+
+```bash
+cast call <CONTRACT> "deployer()(address)" --rpc-url https://rpc.chiadochain.net
+```
+
+If you have the Gnosis EEZ MCP server installed, your agent can do the same read without leaving the conversation, using the `chain_read_contract` tool:
+
+```json
+{
+  "address": "<CONTRACT>",
+  "abi_fragment": "function count() view returns (uint256)",
+  "function": "count",
+  "chain_id": 10200
+}
+```
+
+It returns `{ "result": "1" }`, the same value, from the same chain, through a different route. Your agent can also call `chain_get_contract_source` on the address to confirm the source is verified.
+
+## Switch to mainnet
+
+Everything above works identically on Gnosis mainnet. Three things change:
+
+|  | Chiado | Gnosis |
+| --- | --- | --- |
+| Chain ID | 10200 | 100 |
+| RPC URL | `https://rpc.chiadochain.net` | `https://rpc.gnosischain.com` |
+| Explorer | `https://gnosis-chiado.blockscout.com` | `https://gnosis.blockscout.com` |
+
+The gas token on mainnet is xDai, and it is worth real money, though a deployment like this one costs a fraction of a cent. Fund the account by bridging at [bridge.gnosischain.com](https://bridge.gnosischain.com) rather than from a faucet.
+
+:::warning
+Use a different account for mainnet than the one you generated here. A testnet key that has been pasted around should never hold value.
+:::
+
+## What you have
+
+A deployed contract, verified source on Blockscout, and one state change you read back two ways. That is the full loop: write, deploy, verify, read.
+
+Next, [accept stablecoin payments](/start/guides/accept-stablecoin-payments) puts a token transfer through a contract you control.
+
+---
+
+// File: start/guides/accept-stablecoin-payments
+
+# Accept stablecoin payments
+
+**Job:** accept stablecoin payments in your app. **Time:** about 40 minutes. **Chain:** Chiado testnet.
+
+**Prerequisites:** [deploy your first contract](/start/guides/deploy-your-first-contract), Foundry installed, and an account funded on Chiado.
+
+A payment receiver is the smallest useful piece of on-chain payment infrastructure: a contract that accepts a stablecoin, records who paid and what for, and lets you withdraw. Everything else, invoicing, reconciliation, refunds, builds on this shape.
+
+You will deploy a mock stablecoin on Chiado to pay yourself with, then the receiver, then put a payment through it. On mainnet you would use a real stablecoin; the last section shows how to look up the canonical address rather than guessing it.
+
+## Understand the pattern
+
+ERC-20 tokens do not notify a contract when they arrive. A plain `transfer` to your contract address moves the tokens but triggers no code, so your contract cannot tell who paid or why. Two patterns solve this:
+
+1. **Approve then pull.** The payer calls `approve` on the token, then calls your contract, which calls `transferFrom`. Two transactions, works with every ERC-20.
+2. **Transfer with callback.** Token standards like ERC-777 or ERC-1363 call your contract on receipt. One transaction, but only works with tokens that support it.
+
+This guide uses approve-then-pull, because it works with every stablecoin on Gnosis today.
+
+## Set up the project
+
+Work in the project from the previous guide, or start a fresh one:
+
+```bash
+forge init gnosis-payments
+cd gnosis-payments
+```
+
+Install OpenZeppelin for its ERC-20 implementation and interfaces:
+
+```bash
+forge install OpenZeppelin/openzeppelin-contracts
+```
+
+Add the remapping so imports resolve. Create or edit `remappings.txt`:
+
+```text
+@openzeppelin/=lib/openzeppelin-contracts/
+```
+
+Confirm the project still builds:
+
+```bash
+forge build
+```
+
+`Compiler run successful`.
+
+## Deploy a mock stablecoin
+
+Chiado has no canonical stablecoin, so deploy one to test against. Create `src/MockEURe.sol`:
+
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+import {ERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+
+/// @notice Test-only stand-in for a real stablecoin. Anyone can mint.
+contract MockEURe is ERC20 {
+    constructor() ERC20("Mock EUR e-money", "mEURe") {}
+
+    function mint(address to, uint256 amount) external {
+        _mint(to, amount);
+    }
+}
+```
+
+Deploy it:
+
+```bash
+forge create src/MockEURe.sol:MockEURe \
+  --rpc-url https://rpc.chiadochain.net \
+  --account chiado-dev \
+  --broadcast
+```
+
+Note the address as `<TOKEN>`. Mint yourself 1,000 tokens:
+
+```bash
+cast send <TOKEN> "mint(address,uint256)" <YOUR_ADDRESS> 1000000000000000000000 \
+  --rpc-url https://rpc.chiadochain.net \
+  --account chiado-dev
+```
+
+Check the balance landed:
+
+```bash
+cast call <TOKEN> "balanceOf(address)(uint256)" <YOUR_ADDRESS> \
+  --rpc-url https://rpc.chiadochain.net
+```
+
+This prints `1000000000000000000000`, 1,000 tokens at 18 decimals.
+
+## Write the payment receiver
+
+Create `src/PaymentReceiver.sol`. It accepts payments in one specified token, tags each with a reference so your backend can match it to an order, and lets only the owner withdraw.
+
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import {SafeERC20} from "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
+
+contract PaymentReceiver {
+    using SafeERC20 for IERC20;
+
+    IERC20 public immutable token;
+    address public immutable owner;
+
+    uint256 public totalReceived;
+
+    event PaymentReceived(address indexed payer, uint256 amount, bytes32 indexed orderRef);
+    event Withdrawn(address indexed to, uint256 amount);
+
+    error NotOwner();
+    error ZeroAmount();
+
+    constructor(IERC20 token_) {
+        token = token_;
+        owner = msg.sender;
+    }
+
+    /// @notice Pull `amount` from the caller. The caller must approve first.
+    function pay(uint256 amount, bytes32 orderRef) external {
+        if (amount == 0) revert ZeroAmount();
+
+        token.safeTransferFrom(msg.sender, address(this), amount);
+        totalReceived += amount;
+
+        emit PaymentReceived(msg.sender, amount, orderRef);
+    }
+
+    function withdraw(address to) external {
+        if (msg.sender != owner) revert NotOwner();
+
+        uint256 balance = token.balanceOf(address(this));
+        if (balance == 0) revert ZeroAmount();
+
+        token.safeTransfer(to, balance);
+        emit Withdrawn(to, balance);
+    }
+}
+```
+
+Two details worth noting. `SafeERC20` handles tokens that return no boolean from `transfer`, which several older stablecoins do. Indexing `orderRef` lets your backend filter logs for one order without scanning every payment.
+
+Build it:
+
+```bash
+forge build
+```
+
+`Compiler run successful`.
+
+## Test it before deploying
+
+Write a test so you find mistakes locally rather than on-chain. Create `test/PaymentReceiver.t.sol`:
+
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+import {Test} from "forge-std/Test.sol";
+import {MockEURe} from "../src/MockEURe.sol";
+import {PaymentReceiver} from "../src/PaymentReceiver.sol";
+
+contract PaymentReceiverTest is Test {
+    MockEURe token;
+    PaymentReceiver receiver;
+    address payer = address(0xBEEF);
+
+    function setUp() public {
+        token = new MockEURe();
+        receiver = new PaymentReceiver(token);
+        token.mint(payer, 100e18);
+    }
+
+    function test_PaymentIsRecorded() public {
+        vm.startPrank(payer);
+        token.approve(address(receiver), 25e18);
+        receiver.pay(25e18, bytes32("order-1"));
+        vm.stopPrank();
+
+        assertEq(receiver.totalReceived(), 25e18);
+        assertEq(token.balanceOf(address(receiver)), 25e18);
+    }
+
+    function test_OnlyOwnerWithdraws() public {
+        vm.startPrank(payer);
+        token.approve(address(receiver), 10e18);
+        receiver.pay(10e18, bytes32("order-2"));
+        vm.expectRevert(PaymentReceiver.NotOwner.selector);
+        receiver.withdraw(payer);
+        vm.stopPrank();
+    }
+}
+```
+
+Run the tests:
+
+```bash
+forge test
+```
+
+Both tests pass. `forge test -vvv` shows the traces if you want to see the calls.
+
+## Deploy the receiver
+
+```bash
+forge create src/PaymentReceiver.sol:PaymentReceiver \
+  --rpc-url https://rpc.chiadochain.net \
+  --account chiado-dev \
+  --broadcast \
+  --constructor-args <TOKEN>
+```
+
+Note the address as `<RECEIVER>`. Verify the source so the explorer shows it:
+
+```bash
+forge verify-contract <RECEIVER> src/PaymentReceiver.sol:PaymentReceiver \
+  --chain-id 10200 \
+  --verifier blockscout \
+  --verifier-url https://gnosis-chiado.blockscout.com/api/ \
+  --constructor-args $(cast abi-encode "constructor(address)" <TOKEN>)
+```
+
+`Contract successfully verified`. The constructor arguments must be encoded, or verification fails with a bytecode mismatch.
+
+## Put a payment through
+
+Approve the receiver to pull 25 tokens:
+
+```bash
+cast send <TOKEN> "approve(address,uint256)" <RECEIVER> 25000000000000000000 \
+  --rpc-url https://rpc.chiadochain.net \
+  --account chiado-dev
+```
+
+Then pay, tagging it with a reference:
+
+```bash
+cast send <RECEIVER> "pay(uint256,bytes32)" 25000000000000000000 $(cast format-bytes32-string "order-1") \
+  --rpc-url https://rpc.chiadochain.net \
+  --account chiado-dev
+```
+
+The receipt shows `status  1 (success)` and two logs: the token's `Transfer` and your `PaymentReceived`.
+
+## Check the balance arrived
+
+Read the running total from the contract:
+
+```bash
+cast call <RECEIVER> "totalReceived()(uint256)" --rpc-url https://rpc.chiadochain.net
+```
+
+This prints `25000000000000000000`. Confirm the tokens are actually held by the contract, not just counted:
+
+```bash
+cast call <TOKEN> "balanceOf(address)(uint256)" <RECEIVER> \
+  --rpc-url https://rpc.chiadochain.net
+```
+
+Same number. The count and the balance agreeing is the result to look for. If they diverge, the contract accounted for something it did not receive.
+
+Your agent can confirm the same through the MCP server with `chain_read_contract`:
+
+```json
+{
+  "address": "<RECEIVER>",
+  "abi_fragment": "function totalReceived() view returns (uint256)",
+  "function": "totalReceived",
+  "chain_id": 10200
+}
+```
+
+Open `https://gnosis-chiado.blockscout.com/address/<RECEIVER>?tab=logs` to see the `PaymentReceived` event with your reference decoded. This is what your backend would watch.
+
+## Withdraw
+
+```bash
+cast send <RECEIVER> "withdraw(address)" <YOUR_ADDRESS> \
+  --rpc-url https://rpc.chiadochain.net \
+  --account chiado-dev
+```
+
+Read the contract's token balance again. It is now `0`, and your own balance has gone back up by 25 tokens.
+
+## Switch to mainnet
+
+On Gnosis you use a real stablecoin, and you must not guess its address. Ask the registry for the canonical one. With the MCP server installed, your agent calls `eez_get_contract_addresses`:
+
+```json
+{ "app_slug": "monerium", "chain_id": 100 }
+```
+
+That returns the EURe token address, checked against Blockscout. You can also read it from the [Monerium record](https://ecosystem.gnosischain.com/) in the directory, or from `eez_chain_info`, which lists the canonical tokens for chain 100: EURe, USDC, WXDAI, GNO and sDAI. The same addresses are listed in [useful contracts](/developers/Usefulcontracts).
+
+Deploy the same receiver with that address as the constructor argument, against `https://rpc.gnosischain.com` and `--chain-id 100`.
+
+:::warning
+Check the decimals of whichever stablecoin you use. EURe and WXDAI have 18 decimals; USDC on Gnosis has 6. An amount computed for 18 decimals sent to a 6-decimal token is a payment a million million times too large. Read `decimals()` rather than assuming.
+:::
+
+## What you have
+
+A verified payment receiver holding real token balances, emitting an indexed event per payment, with an owner-only withdrawal. The pattern scales: add per-order amounts, expiry, or multiple accepted tokens without changing the shape.
+
+Next, [launch a tokenised asset](/start/guides/launch-a-tokenised-asset) issues a token of your own rather than accepting someone else's.
+
+---
+
+// File: start/guides/launch-a-tokenised-asset
+
+# Launch a tokenised asset
+
+**Job:** tokenise an asset. **Time:** about 45 minutes. **Chain:** Chiado testnet.
+
+**Prerequisites:** [deploy your first contract](/start/guides/deploy-your-first-contract), Foundry installed, and an account funded on Chiado.
+
+Tokenising an asset means issuing a token whose supply is bound to something that exists off-chain: a property, a bond, a warehouse of coffee. The on-chain part is the easy half, and this guide covers it honestly: a capped-supply ERC-20, a documented reference to the asset, and controls over who can hold it.
+
+Read the scope note before you build anything.
+
+## Scope: what this guide is not
+
+The contract below is the ledger. It is not the product.
+
+A real tokenised asset needs a legal structure that makes the token a claim on the asset: a special purpose vehicle, a custodian, a prospectus or an exemption from one, and a transfer agent. Without that, holders own a token that references an asset they have no enforceable right to. Which structure applies depends on the asset, the jurisdiction, and who you sell to, and getting it wrong is a securities matter rather than an engineering one.
+
+The RWA projects in the [ecosystem directory](https://ecosystem.gnosischain.com/) have done this work. Backed issues tokens tracking listed securities against a custodian; that arrangement, not its Solidity, is what makes the token meaningful.
+
+Build the contract to understand the mechanics. Get advice before you issue anything to anyone.
+
+## Set up the project
+
+```bash
+forge init gnosis-tokenised-asset
+cd gnosis-tokenised-asset
+forge install OpenZeppelin/openzeppelin-contracts
+```
+
+Add the remapping in `remappings.txt`:
+
+```text
+@openzeppelin/=lib/openzeppelin-contracts/
+```
+
+Confirm it builds:
+
+```bash
+forge build
+```
+
+`Compiler run successful`.
+
+## Decide what the token represents
+
+Before writing code, fix three things, because they determine the contract:
+
+- **The unit.** Does one token equal one unit of the asset, or a fractional share of a whole? This guide uses fractional shares of a single asset.
+- **The cap.** A tokenised asset has a fixed supply matching the asset. Minting beyond it dilutes existing holders' claim, so the cap is enforced in code rather than by policy.
+- **The reference.** Something on-chain must point at the off-chain documents. A URI to the legal documentation and a hash of them is the minimum: the URI can be re-hosted, the hash proves the document has not changed.
+
+The example: a property valued at £500,000, divided into 500,000 shares of £1.
+
+## Write the contract
+
+Create `src/TokenisedAsset.sol`:
+
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+import {ERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
+
+/// @notice Capped-supply token representing fractional shares in one off-chain asset.
+/// @dev The on-chain ledger only. The claim it represents lives in the legal
+///      documentation referenced by documentUri and documentHash.
+contract TokenisedAsset is ERC20, Ownable {
+    /// @notice Maximum tokens that can ever exist, set at deployment.
+    uint256 public immutable cap;
+
+    /// @notice Where the legal documentation is published.
+    string public documentUri;
+
+    /// @notice keccak256 of the documentation, so re-hosting cannot change the terms.
+    bytes32 public documentHash;
+
+    event DocumentUpdated(string uri, bytes32 hash);
+
+    error CapExceeded(uint256 requested, uint256 remaining);
+
+    constructor(
+        string memory name_,
+        string memory symbol_,
+        uint256 cap_,
+        string memory documentUri_,
+        bytes32 documentHash_
+    ) ERC20(name_, symbol_) Ownable(msg.sender) {
+        cap = cap_;
+        documentUri = documentUri_;
+        documentHash = documentHash_;
+    }
+
+    /// @notice Issue shares to a holder, up to the cap.
+    function issue(address to, uint256 amount) external onlyOwner {
+        uint256 remaining = cap - totalSupply();
+        if (amount > remaining) revert CapExceeded(amount, remaining);
+        _mint(to, amount);
+    }
+
+    /// @notice Redeem shares, for example when the asset is sold.
+    function redeem(address from, uint256 amount) external onlyOwner {
+        _burn(from, amount);
+    }
+
+    /// @notice Point at re-published documentation. The hash must match the new document.
+    function setDocument(string calldata uri, bytes32 hash) external onlyOwner {
+        documentUri = uri;
+        documentHash = hash;
+        emit DocumentUpdated(uri, hash);
+    }
+}
+```
+
+The owner can issue and redeem but cannot exceed the cap. That limit is immutable and holds even against the issuer. `redeem` burning from an arbitrary holder is a deliberate choice: a transfer agent needs it to settle a real-world redemption. It is also a power holders must be told about, which is the sort of thing the documentation exists to state.
+
+Build it:
+
+```bash
+forge build
+```
+
+## Test the cap
+
+The cap is the contract's only real guarantee, so test it. Create `test/TokenisedAsset.t.sol`:
+
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+import {Test} from "forge-std/Test.sol";
+import {TokenisedAsset} from "../src/TokenisedAsset.sol";
+
+contract TokenisedAssetTest is Test {
+    TokenisedAsset asset;
+    address holder = address(0xBEEF);
+
+    function setUp() public {
+        asset = new TokenisedAsset(
+            "12 Example Street", "EX12", 500_000e18, "ipfs://placeholder", bytes32(uint256(1))
+        );
+    }
+
+    function test_IssuesUpToCap() public {
+        asset.issue(holder, 500_000e18);
+        assertEq(asset.totalSupply(), 500_000e18);
+        assertEq(asset.balanceOf(holder), 500_000e18);
+    }
+
+    function test_RevertsAboveCap() public {
+        asset.issue(holder, 499_999e18);
+        vm.expectRevert(abi.encodeWithSelector(TokenisedAsset.CapExceeded.selector, 2e18, 1e18));
+        asset.issue(holder, 2e18);
+    }
+
+    function test_OnlyOwnerIssues() public {
+        vm.prank(holder);
+        vm.expectRevert();
+        asset.issue(holder, 1e18);
+    }
+}
+```
+
+Run them:
+
+```bash
+forge test
+```
+
+Three tests pass. The middle one is the important one: it proves the cap holds against the owner.
+
+## Hash the documentation
+
+The token points at a document. Produce the hash from the actual file so the on-chain value means something:
+
+```bash
+cast keccak "$(cat legal/offering.pdf)"
+```
+
+For this walkthrough, hash a placeholder so you have a real value to deploy with:
+
+```bash
+cast keccak "placeholder-offering-document-v1"
+```
+
+Copy the resulting `0x…` value as `<DOCHASH>`.
+
+## Deploy to Chiado
+
+```bash
+forge create src/TokenisedAsset.sol:TokenisedAsset \
+  --rpc-url https://rpc.chiadochain.net \
+  --account chiado-dev \
+  --broadcast \
+  --constructor-args \
+    "12 Example Street" \
+    "EX12" \
+    500000000000000000000000 \
+    "ipfs://placeholder" \
+    <DOCHASH>
+```
+
+Note the address as `<ASSET>`. Verify it:
+
+```bash
+forge verify-contract <ASSET> src/TokenisedAsset.sol:TokenisedAsset \
+  --chain-id 10200 \
+  --verifier blockscout \
+  --verifier-url https://gnosis-chiado.blockscout.com/api/ \
+  --constructor-args $(cast abi-encode \
+    "constructor(string,string,uint256,string,bytes32)" \
+    "12 Example Street" "EX12" 500000000000000000000000 "ipfs://placeholder" <DOCHASH>)
+```
+
+`Contract successfully verified`.
+
+## Issue shares
+
+Issue 100,000 shares to yourself:
+
+```bash
+cast send <ASSET> "issue(address,uint256)" <YOUR_ADDRESS> 100000000000000000000000 \
+  --rpc-url https://rpc.chiadochain.net \
+  --account chiado-dev
+```
+
+`status  1 (success)`.
+
+Now try to exceed the cap, to see the guarantee hold on-chain rather than only in a test:
+
+```bash
+cast send <ASSET> "issue(address,uint256)" <YOUR_ADDRESS> 500000000000000000000000 \
+  --rpc-url https://rpc.chiadochain.net \
+  --account chiado-dev
+```
+
+This reverts with `CapExceeded`. A failed transaction here is the correct result.
+
+## Read the supply on-chain
+
+Check what exists against what can ever exist:
+
+```bash
+cast call <ASSET> "totalSupply()(uint256)" --rpc-url https://rpc.chiadochain.net
+cast call <ASSET> "cap()(uint256)" --rpc-url https://rpc.chiadochain.net
+```
+
+The first prints `100000000000000000000000` and the second `500000000000000000000000`. 100,000 of 500,000 shares issued, and the remainder cannot be exceeded.
+
+Confirm the document reference survived deployment:
+
+```bash
+cast call <ASSET> "documentHash()(bytes32)" --rpc-url https://rpc.chiadochain.net
+```
+
+It matches `<DOCHASH>`.
+
+Through the MCP server, `chain_read_contract` gives your agent the same reading:
+
+```json
+{
+  "address": "<ASSET>",
+  "abi_fragment": "function totalSupply() view returns (uint256)",
+  "function": "totalSupply",
+  "chain_id": 10200
+}
+```
+
+And `chain_get_token_info` returns the name, symbol, decimals and holder count as Blockscout has indexed them.
+
+## Switch to mainnet
+
+The contract deploys unchanged against `https://rpc.gnosischain.com` with `--chain-id 100`.
+
+What changes is everything around it. Before issuing on mainnet you need the legal structure from the scope note, a real document at a durable URI whose hash you have committed, and a decision about transfer restrictions. Most regulated instruments cannot trade freely to any address, which means an allowlist or a permissioned transfer hook this contract does not have.
+
+## What you have
+
+A capped, verified token on Chiado with an immutable supply limit, an on-chain reference to its documentation, and issuance controls you have tested against the owner. That is a sound ledger.
+
+The claim it represents is a legal artefact, not a Solidity one. Look at how the RWA projects in the [ecosystem directory](https://ecosystem.gnosischain.com/) have structured theirs before going further.
 
 ---
 
@@ -13948,115 +13523,6 @@ This section is dedicated to developers looking to dive deep into the Gnosis Cha
 ## Join the Community
 
 If you encounter any issues or have questions, our developer community is here to help. Join our [Discord](https://discord.gg/gnosis) or [Forum](https://forum.gnosis.io/) to connect with other developers and the Gnosis Chain Developer Relations team.
-
----
-
-// File: technicalguides/Bridging/How To Use Hashi
-
-# Using Hashi 🌉
-
-- [Beginners Guide to Hashi 🌉](https://mirror.xyz/0x0e729b11661B3f1C1E829AAdF764D5C3295e1256/V2FdJn7LkBiTH55e51aTXb4PZa20oT1C_WJj8nIMFhw)
-- [Hashi Documentation](https://hashi-doc.gitbook.io/hashi/v0.1/introduction)
-- [Hashi Contracts](https://github.com/gnosis/hashi)
-
-
-# Crosschain Request of a Chainlink VRF with Gnosis's Hashi 🌉
-This article demonstrates how to use the [Yaho](https://github.com/gnosis/hashi/blob/main/packages/evm/contracts/Yaho.sol) and [Yaru](https://github.com/gnosis/hashi/blob/main/packages/evm/contracts/Yaru.sol) contracts, part of the Gnosis's Hashi protocol, to send a crosschain message(from Chiado to Goerli) to a Chainlink VRF contract(deployed on Goerli) and listen for the response event.
-
-### First off, what is the Hashi Protocol 🌉? 
-
-Hashi is an EVM Header Oracle Aggregator, designed to facilitate a principled approach to cross-chain bridge security. It allows users to build custom oracle adapter contracts for any hash oracle mechanism they would like to use. Yaho and Yaru are contracts within the Hashi protocol that facilitate crosschain communication.
-
-- Yaho allows users to dispatch arbitrary messages, store the arbitrary message in storage, and relay previously stored messages to any number of message adapters.
-- Yaru allows the execution of arbitrary messages passed from Yaho.
-
-## Step-by-Step Process 🚶‍♂️
-
-### Step 1: Dispatch the Message
-
-```jsx
-// Initialize Yaho contract with the signer that can interact with it
-const yahoContract = new ethers.Contract(yahoAddress, yahoAbi.abi, chiadoWallet);
-
-// Define the message structure
-const message = {
-  toChainId: ethers.utils.hexValue(5), // Chain ID for Goerli
-  to: vrfConsumerAddress, // Address of the VRF consumer contract on Goerli
-  data: vrfConsumerContract.interface.encodeFunctionData("requestRandomWords"), // Encoded function call
-};
-
-// Dispatch the message to the AMB on the Goerli network
-const dispatchTx = await yahoContract.dispatchMessagesToAdapters(
-  [message],
-  [chiadoAmbAdapterAddress],
-  [goerliAmbAddress],
-);
-await dispatchTx.wait();
-```
-In this step, we're sending our message to the Yaho contract to be relayed to Goerli. The dispatchMessagesToAdapters function is called with the message and the addresses of the AMB adapter contracts.
-
-### Step 2: Get the Signature
-
-```jsx
-// Encode the data for the AMB Helper contract
-const encodedData = new ethers.utils.AbiCoder().encode(
-  ["address", "bytes"],
-  [vrfConsumerAddress, message.data]
-);
-
-// Obtain the signature from the AMB Helper contract
-const signature = await ambHelperContract.getSignature(encodedData);
-```
-The encodedData is constructed with the address of the VRF consumer and the encoded function call data. The getSignature function of the AMB Helper contract is then called to retrieve the signature.
-
-### Step 3: Execute the Signature
-```jsx
-// Interact with the AMB contract on Goerli to execute the signature
-const ambContractOnGoerli = new ethers.Contract(goerliAmbAddress, ambAbi, goerliProvider);
-const executeSignatureTx = await ambContractOnGoerli.executeSignature(encodedData, signature);
-const executeSignatureReceipt = await executeSignatureTx.wait();
-```
-Here, we send the encodedData and signature to the AMB contract on Goerli using the executeSignature function. This triggers the AMB to process our message.
-
-### Step 4: Extract Message ID
-```jsx
-// Extract the messageId from the transaction receipt
-const messageId = executeSignatureReceipt.events.find(event => event.event === "MessageDispatched").args.messageId;
-```
-Once the executeSignature transaction is confirmed, we extract the messageId from the emitted MessageDispatched event.
-
-### Step 5: Execute the Message
-
-```jsx
-// Execute the message on Goerli through the Yaru contract
-const executeTx = await yaruContract.executeMessages(
-  [message],
-  [messageId],
-  [chiadoWallet.address],
-  [goerliAmbAddress],
-);
-await executeTx.wait();
-```
-The executeMessages function of the Yaru contract on Goerli is called with the message, messageId, and the address of our wallet.
-
-### Step 6: Listen for the VRF Response
-```jsx
-// Listen for the VRF response
-listenForVRFResponse(messageId);
-```
-Finally, we invoke a listener function that waits for the VRF response to be emitted by the Chainlink VRF contract.
-
-### Use Cases 🎯
-
-Being able to request VRF crosschain opens up a lot of possibilities for decentralized applications. For example, a dApp on one chain could use a random number generated by a Chainlink VRF on another chain. This could be useful for dApps that need secure, verifiable randomness but are running on a chain where Chainlink VRF is not available or too expensive to use.
-
-# Running Locally
-
-Add your private key to the .env file and run the following commands:
-```yarn install```
-```yarn dev```
-
-To see where the real action is happening skip directly to the `packages/nextjs/pages/getvrf.tsx` directory.
 
 ---
 

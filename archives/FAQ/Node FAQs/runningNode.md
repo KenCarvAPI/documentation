@@ -1,6 +1,19 @@
 ---
 title: Running Nodes
+description: Gnosis Chain node and validator FAQ - running nodes. Archived - previously published at /faq/Node FAQs/runningNode.
+keywords: [node, validator, faq, archived]
 ---
+
+# Running Nodes (Archived)
+
+:::danger Archived
+This page is **no longer published**. It is kept for historical reference only and is not part of
+[docs.gnosischain.com](https://docs.gnosischain.com). Deposit and withdrawal mechanics, client
+versions, monitoring endpoints and staking parameters below have not been maintained.
+
+For maintained node and validator documentation see [Run a node](https://docs.gnosischain.com/node/),
+or ask in [Discord](https://discord.gg/gnosis).
+:::
 
 :::info
 **Find this document incomplete? Visit our [Discord channel](https://discord.gg/gnosis) or contact us via [Validator Request form](https://tally.so/r/3y4V1W)!**

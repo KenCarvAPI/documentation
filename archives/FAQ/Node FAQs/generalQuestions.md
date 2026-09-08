@@ -1,6 +1,19 @@
 ---
 title: General Questions
+description: Gnosis Chain node and validator FAQ - general questions. Archived - previously published at /faq/Node FAQs/generalQuestions.
+keywords: [node, validator, faq, archived]
 ---
+
+# General Questions (Archived)
+
+:::danger Archived
+This page is **no longer published**. It is kept for historical reference only and is not part of
+[docs.gnosischain.com](https://docs.gnosischain.com). Deposit and withdrawal mechanics, client
+versions, monitoring endpoints and staking parameters below have not been maintained.
+
+For maintained node and validator documentation see [Run a node](https://docs.gnosischain.com/node/),
+or ask in [Discord](https://discord.gg/gnosis).
+:::
 
 <img width="1200" alt="Twitter Announcement@2x" src="https://github.com/gnosischain/documentation/assets/75987728/6effcd11-5f0c-4b4d-ae2f-aff99badb373" />
 

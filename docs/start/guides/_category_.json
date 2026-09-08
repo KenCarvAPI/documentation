@@ -1,0 +1,10 @@
+{
+  "label": "0-1 guides",
+  "position": 5,
+  "collapsed": false,
+  "link": {
+    "type": "generated-index",
+    "title": "0-1 guides",
+    "description": "Each guide takes you from an empty directory to a result you can verify on-chain. Work through them in order."
+  }
+}
