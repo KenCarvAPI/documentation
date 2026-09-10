@@ -149,7 +149,7 @@
 
 9. I bridge my WETH from Gnosis Chain to Ethereum, but I don't see my WETH balance increases on Ethereum.
 
-   When bridging [WETH](https://gnosisscan.io/token/0x6a023ccd1ff6f2045c3309768ead9e68f978f6e1) from Gnosis Chain, Omnibridge will automatically unwrap your WETH on Ethereum to ETH, so you will only accept ETH on Ethereum. The transaction calls [WETHOmnibridgeHelper](https://etherscan.io/address/0xa6439Ca0FCbA1d0F80df0bE6A17220feD9c9038a) to withdraw ETH from [WETH](https://etherscan.io/address/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2) token contract, create a new contract to receive the ETH and eventually self destruct that contract and send the ETH to the user. Check out [this transaction](https://etherscan.io/tx/0xfed3bfb9a86b4c65039de6e64f4582e7fad8b1cac0b67f69c185c0332b3fab7e) for more details.
+   When bridging [WETH](https://gnosis.blockscout.com/token/0x6a023ccd1ff6f2045c3309768ead9e68f978f6e1) from Gnosis Chain, Omnibridge will automatically unwrap your WETH on Ethereum to ETH, so you will only accept ETH on Ethereum. The transaction calls [WETHOmnibridgeHelper](https://etherscan.io/address/0xa6439Ca0FCbA1d0F80df0bE6A17220feD9c9038a) to withdraw ETH from [WETH](https://etherscan.io/address/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2) token contract, create a new contract to receive the ETH and eventually self destruct that contract and send the ETH to the user. Check out [this transaction](https://etherscan.io/tx/0xfed3bfb9a86b4c65039de6e64f4582e7fad8b1cac0b67f69c185c0332b3fab7e) for more details.
 
 10. How do I know if xDAI get minted to my account when I'm using xDAI bridge for bridging DAI from Ethereum?
 
@@ -162,7 +162,7 @@
     1. Find the message Id from the transaction log: In the block explorer, check the `Logs` tab of your transaction receipt, and find `messageId` in event `UserRequestForAffirmation`(bridging from ETH) or `UserRequestForSignature`(bridging from Gnosis Chain). The data type of `messageId` is `bytes32`.
     2. On the destination chain's AMB, query the `messageCallStatus(bytes32 messageId)` by pasting the `messageId`. If it returns true, it means the message has been executed. If false, it means the message has not been executed.
        Foreign AMB (Ethereum): https://etherscan.io/address/0x4C36d2919e407f0Cc2Ee3c993ccF8ac26d9CE64e#readProxyContract#F18
-       Home AMB (Gnosis Chain): https://gnosisscan.io/address/0x75Df5AF045d91108662D8080fD1FEFAd6aA0bb59#readProxyContract#F23
+       Home AMB (Gnosis Chain): https://gnosis.blockscout.com/address/0x75Df5AF045d91108662D8080fD1FEFAd6aA0bb59
     3. To find out the transaction of the message being executed, you can find the log which emit the event `AffirmationCompleted` (bridging from ETH), or `RelayedMessage` (bridging from GC).
 
     Here is an example script using viem.

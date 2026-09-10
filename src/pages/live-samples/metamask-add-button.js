@@ -19,7 +19,7 @@ export default function MetaMaskAddButton() {
               decimals: 18,
           },
           rpcUrls: ["https://rpc.gnosischain.com/"],
-          blockExplorerUrls: ["https://gnosisscan.io/"],
+          blockExplorerUrls: ["https://gnosis.blockscout.com/"],
       }
       
       var addGnosisToMetaMask = function() {

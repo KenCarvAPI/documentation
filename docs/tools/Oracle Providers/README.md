@@ -16,4 +16,4 @@ Oracles bring off-chain data - like price feeds and randomness - on-chain so sma
 - [Tellor](/tools/Oracle%20Providers/tellor) - censorship-resistant, permissionless oracle network.
 - [Chronicle](/tools/Oracle%20Providers/chronicle) - decentralized, scalable and cost-efficient oracles.
 - [SupraOracles](/tools/Oracle%20Providers/supraoracles/) - cross-chain oracle solution, including Supra VRF.
-- [Gas Price](/tools/Oracle%20Providers/gas-price) - Blockscout and Gnosisscan gas price API endpoints.
+- [Gas Price](/tools/Oracle%20Providers/gas-price) - Blockscout gas price API endpoint.
