@@ -1,12 +1,12 @@
 ---
-description: Gnosis mainnet infrstructure details.
+description: Gnosis mainnet infrastructure details.
 keywords:
   [gnosis mainnet, mainnet, gnosis infrastructure, gnosis faucet, gno, xdai]
 ---
 
 # Gnosis (Mainnet)
 
-[Add to MetaMask](https://shanejonas.github.io/metamask-link/deep?method=wallet_addEthereumChain&params[0][chainId]=0x64&params[0][chainName]=Gnosis&params[0][rpcUrls][0]=https://rpc.gnosischain.com&params[0][nativeCurrency][name]=xDAI&params[0][nativeCurrency][symbol]=XDAI&params[0][nativeCurrency][decimals]=18&params[0][blockExplorerUrls][0]=https://gnosisscan.io)
+[Add to MetaMask](https://shanejonas.github.io/metamask-link/deep?method=wallet_addEthereumChain&params[0][chainId]=0x64&params[0][chainName]=Gnosis&params[0][rpcUrls][0]=https://rpc.gnosischain.com&params[0][nativeCurrency][name]=xDAI&params[0][nativeCurrency][symbol]=XDAI&params[0][nativeCurrency][decimals]=18&params[0][blockExplorerUrls][0]=https://gnosis.blockscout.com)
 
 ## Summary
 
@@ -25,7 +25,6 @@ keywords:
 | Execution Layer RPC      | https://rpc.gnosis.gateway.fm               |
 | Execution Layer RPC      | https://rpc.gnosischain.com                 |
 | More RPC endpoints       | [RPC Providers](../../tools/RPC%20Providers/README.md) |
-| Execution Layer Explorer | https://gnosisscan.io                       |
 | Execution Layer Explorer | https://gnosis.blockscout.com/              |
 | Fork monitor             | https://forkmon.gnosischain.com             |
 | EthStats                 | https://ethstats.gnosischain.com            |
@@ -38,17 +37,14 @@ keywords:
 | ------------------------ | ------------------------------------------- |
 | Consensus Layer RPC      | https://rpc-gbc.gnosischain.com             |
 | Beacon Explorer          | https://beaconchain.gnosischain.com/                      |
-| Beacon Explorer Backup 1 | https://beacon-v1.gnosischain.com           |
-| Beacon Explorer Backup 2 | https://beacon-v2.gnosischain.com           |
 | Beacon Checkpoint Sync   | https://checkpoint.gnosischain.com          |
-| Beacon Checkpoint Sync   | https://checkpoint-sync-gnosis.dappnode.io/ |
+| Beacon Checkpoint Sync   | https://checkpoint-sync-gnosis.dappnode.net/ |
 
 ### Other Tools
 
 | Other Tools      |                                |
 | ---------------- | ------------------------------ |
-| GnosisPools.info | https://gnosispools.info       |
-| D14N Info        | https://d14n.info/             |
+| Gnosis Metrics           | https://metrics.gnosischain.com/            |
 | Bordel           | https://bordel.wtf/            |
 | More tools       | [Tools](../../tools/README.md) |
 

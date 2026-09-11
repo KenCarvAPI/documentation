@@ -25,7 +25,7 @@ This Dapp will allow you to wave at Gnosis, and see how many times you have wave
 ## Wallet
 
 - Select one of the [wallets](/tools/wallets/) to store Gnosis gas token (xDai).
-- Fund your wallet with xDai using one of the [faucets](/tools/faucets/).
+- Fund your wallet with xDai using one of the [faucets](/tools/Faucets).
 - To interact with dApps, we recommend to [setup and configure MetaMask](/tools/wallets/metamask/).
 
 ## Setting up your project
@@ -231,7 +231,7 @@ const main = async () => {
   runMain();
 ```
 
-Now before you deploy, make sure you have funds in your wallet! Visit the [funds page](/tools/faucets/), if you don't have funds.
+Now before you deploy, make sure you have funds in your wallet! Visit the [funds page](/tools/Faucets), if you don't have funds.
 
 Deploy to Gnosis with the following command:
 
@@ -247,7 +247,7 @@ WavePortal address:  0x343610D353a0B2Ba86dDAAa348BF62B732107284
 
 The ```WavePortal address``` variable, is your **contract address**.
 
-You can verify the deployment on https://gnosisscan.io/, by putting your contract address in.
+You can verify the deployment on https://gnosis.blockscout.com/, by putting your contract address in.
 
 
 ## Adding your Front End
