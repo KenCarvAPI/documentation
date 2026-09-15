@@ -194,6 +194,8 @@ const config = {
             title: "More",
             items: [
               { label: "FAQ", to: "/faq/others" },
+              { label: "Useful contracts", to: "/developers/Usefulcontracts" },
+              { label: "llms.txt", to: "pathname:///llms.txt" },
               { label: "Careers", href: "https://gnosis.io/careers/" },
               { label: "Media kit", href: "https://www.gnosis.io/press" },
               { label: "Terms of use", to: "/terms-conditions" },
