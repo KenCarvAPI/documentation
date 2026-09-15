@@ -241,9 +241,9 @@ Gnosis maintains a [Configs Repo](https://github.com/gnosischain/configs/) that 
 
 ## Key Contracts
 
-- [xDai Bridge](../../bridges/About%20Token%20Bridges/xdai-bridge#key-contracts)
-- [AMB Bridge](../../bridges/About%20Token%20Bridges/amb-bridge)
-- [OmniBridge](../../bridges/About%20Token%20Bridges/omnibridge#key-contracts)
+- [xDai Bridge](../../bridges/how-bridges-work/xdai-bridge#key-contracts)
+- [AMB Bridge](../../bridges/how-bridges-work/amb-bridge)
+- [OmniBridge](../../bridges/how-bridges-work/omnibridge#key-contracts)
 - [Beacon Chain](/about/specs/contracts-and-addresses.md)
 
 ---
@@ -745,7 +745,7 @@ A multi-sig Gnosis Safe is used to expand admin responsibilities to a larger ent
 
 A proposed upgrade is presented to this board and a minimum of 7 signatures are required to enact any proposal.
 
-[Governance Board Members](/bridges/management#current-bridge-governors)
+[Governance Board Members](/bridges/security-and-governance/governance/#current-bridge-governors)
 
 ### Contracts managed by the Governance Board
 
@@ -1754,7 +1754,7 @@ xDai tokens are native tokens on Gnosis and also used to pay for execution of sm
 
 ### Bridge
 
-Convert DAI from Ethereum to xDai using the [Unified Gnosis Bridge App](/bridges/usebridges).
+Convert DAI from Ethereum to xDai using the [Unified Gnosis Bridge App](/bridges/use-the-bridges/use-gnosis-bridge).
 
 ### Buy xDAI
 
@@ -1851,188 +1851,6 @@ Welcome to Gnosis Bridge! 🎉 You can check out Gnosis Bridge here : https://br
 
 ---
 
-// File: bridges/usebridges
-
-:::info
-To begin using Gnosis Bridge, you need to go on this following link : https://bridge.gnosischain.com/
-:::
-
-:::note
-You will need xDAI to perform any transactions on Gnosis Chain as it’s the chain’s gas token. You can get xDAI by transferring DAI from Ethereum using the Bridge Explorer
-:::
-
-![xDAI bridge from ethereum](../../static/img/bridges/bridge-xdai-new.png)
-
-### Follow the below steps to get xDAI into your Ethereum address: 
-1. Go to the Gnosis Chain Bridge UI and connect your wallet to the Ethereum Mainnet.
-2. Once connected, you will see your address populated in the header, and your DAI balance will be displayed on the page.
-3. Enter the amount of DAI you would like to transfer to Gnosis, and click the Transfer button.
-4. The web3 wallet window will open with transaction details. The default gas price is fine, if you would like a faster transaction you can increase. Click Submit or Confirm (depending on wallet) to initiate the transaction.
-5. Wait for the transaction confirmation (this can take some time if the network is super congested). The transaction is considered finalized after 8 blocks. To check on a pending transaction, click on the tx in the UI.
-
-
-### Follow the below steps to get ERC20 token from Ethereum address to Gnosis Chain:
-
-1. Go to the Gnosis Bridge UI
-2. Connect your wallet to the Ethereum Mainnet
-3. Select the token you want to transfer and enter the amount of token you want.
-4. Click Bridge and sign the transaction
-
-![Bridge erc 20 token to gnosis chain](../../static/img/bridges/bridge-erc20-new.png)
-
-Transactions from Ethereum to Gnosis Chain are expected to take ~26 mins (130 blocks) because of the verification through the ZK light client
-
-
-
-You can view and monitor your transactions by visiting this URL: https://bridge.gnosischain.com/bridge-explorer/latest-transactions
-
-- To see status of one specific transaction by pasting the transaction hash in the explorer : https://bridge.gnosischain.com/bridge-explorer
-
-You can also check out all the transactions you have done by checking out the history from "My Transactions" of your connected wallet.
-
-
-![My transactions](../../static/img/bridges/bridge-explorer/transaction-history.png)
-
-:::note
-If you are bridging from Gnosis to Ethereum, you have to claim your funds on Ethereum after the bridge transaction has been validated. You can do this by finding your transaction on the Bridge Explorer and clicking “claim”
-:::
-![Search Transaction](../../static/img/bridges/bridge-explorer/claim-new.png)
-
-:::note
-Please note that Gnosis bridges have certain limits. You can check these limits by visiting this URL: https://bridge-explorer.gnosischain.com/bridge-explorer/bridges/
-If you are bridging funds that exceed the daily limit, your transaction will be delayed till after the bridge limits reset (every 24h).
-:::
-
-:::info
-If you are not coming from other chains, you can choose from a list of third-party bridges here:
-[Third-party bridges](/bridges/thirdpartybridges)
-:::
-
-### Need more help?
-
-Join the Gnosis Chain Discord and if you need to troubleshoot a specific bridge issue, feel free to open a support ticket and tell us more about it.
-
----
-
-// File: bridges/Bridge Explorer
-
-# Bridge Explorer
-
-Bridge explorer allows user to check bridge transactions of Gnosis Bridge, bridges configurations, and validators status. Users may also claim their bridge transactions in bridge explorer.
-
-:::info
-https://bridge-explorer.gnosischain.com/bridge-explorer/latest-transactions
-:::
-
-
-## Transactions
-
-### How to search for your transaction?
-
-1. Search the transaction by inserting the transaction hash or initiator/receiver address.
-2. You can use different filter options to filter out the irrelevant transactions.
-3. Click on the transaction item to check the details of the transaction.
-
-![Search Transaction](../../static/img/bridges/bridge-explorer/search-new-tx.png)
-
-### What does different filters mean?
-
-**Status**
-
-1. Initiated: Transaction is initiated from the source chain.
-2. Collecting: Signatures from validators are being collecting for the transaction.
-3. Unclaimed: Transaction has collected enough signatures, but has not yet been claimed on Ethereum.
-4. Completed: Transaction has been bridged successfully.
-5. Error: Transaction is not bridged successfully.
-
-**Direction**
-
-1. Gnosis > Mainnet: The transaction is initiated from Gnosis Chain, and bridged to Ethereum mainnet, user need to claim the transaction on Ethereum mainnet.
-2. Mainnet > Gnosis: The transaction is initiated from Ethereum mainnet, and bridged to Gnosis Chain.
-
-**Signed by**
-
-- The transaction is signed by which validator (validator calls `submitSignatures` to sign the transaction).
-
-**Executed by**
-
-- The transaction is executed by which validator (validator calls `executeAffirmation` to execute the transaction).
-
-### How to claim your transaction
-
-1. Click **Connect** button on top right corner and connect your wallet.
-2. Search for your transaction
-3. Click **Claim** button to claim your transaction.
-
-
-![Claim Transaction](../../static/img/bridges/bridge-explorer/claim-new.png)
-
-You can also claim your transaction from Transaction page.
-
-![Claim Transaction page](../../static/img/bridges/bridge-explorer/claim-tx-page.png)
-
-### Daily bridge limits
-
-This section shows insight of bridge limit and is reset every `Daily limit reset` hours.
-
-1. **Daily Limit**
-   - Ethereum -> Gnosis Chain: Maximum amount of DAI/token that users can bridge from Ethereum to Gnosis in a day
-   - Gnosis Chain -> Ethereum: Maximum amount of XDAI/token that users can bridge from Gnosis to Ethereum in a day.
-2. **Execution Daily Limit**
-   - Ethereum -> Gnosis Chain: Maximum amount of DAI/token that bridge validators can execute and bridge from Gnosis to Ethereum in a day.
-   - Gnosis Chain -> Ethereum: Maximum amount of XDAI/token that bridge validators can execute and bridge from Ethereum to Gnosis in a day.
-3. **Min. per transaction**: Minimum amount of token that users can bridge in a single transaction.
-4. **Max. per transaction**: Maximum amount of token that users can bridge in a single transaction.
-5. **Execution max. per transaction**: Maximum amount of token that validators can execute in a single transaction.
-6. **Daily limit reset**: In how many hours will the daily limit get reset to zero.
-7. **Token address**: Token address of corresponding token, native token(xDAI) don't have an address.
-
-![](../../static/img/bridges/bridge-explorer/bridge-info-new.png)
-
-### Configuration
-
-This section shows the address of key contracts.
-![](../../static/img/bridges/bridge-explorer/bridge-configuration-new.png)
-
-## Validators
-
-This section shows the insight of current bridges validators, including last seen ago, total signed and executed transactions in 24 hours, balance of validators and their addresses.
-
-![](../../static/img//bridges/bridge-explorer/validator-status-new.png)
-
-
-If you are not coming from Ethereum, you can use one of the following bridges:
-- [Jumper](https://jumper.exchange/) (by Li.Fi)
-- [Bungee](https://www.bungee.exchange)
-- [Hop](https://app.hop.exchange/)
-- [Connext Bridge](https://bridge.connext.network/)
-
-Gnosis' native bridges allow for sending tokens and data, and are run by a group of [trusted bridge validators](../bridges/About%20Token%20Bridges/amb-bridge.md#bridge-validators). There is a [roadmap](../bridges/roadmap.md) as well that you can follow.
-
-Gnosis' native bridges are first-class citizens in the chain's architecture due to the [native Omni and xDai bridge's](../bridges/About%20Token%20Bridges/README.md) integral role in minting and burning the native [xDai token](../about/tokens/xdai.md) used for gas.
-
----
-
-// File: bridges/thirdpartybridges
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import Admonition from '@theme/Admonition';
-
-<Admonition type="info" title="Note">
-The following third-party bridges allow seamless asset transfers to and from Gnosis Chain. Ensure you verify the bridge’s security, trust and fees before using them. For the canonical bridges operated by Gnosis, see [Gnosis Bridge](https://bridge.gnosischain.com/).
-</Admonition>
-
-
-| Bridge Name      | Supported Networks | Link |
-|-----------------|-------------------|------|
-| NEAR Intents | Multiple EVM and non-EVM chains (NEAR, Bitcoin, Solana and more) | [Visit](https://app.near-intents.org/) |
-| Jumper   | Multiple EVM Chains, Solana | [Visit](https://jumper.exchange/?fromChain=100) |
-| Bungee | Multiple EVM Chains  | [Visit](https://www.bungee.exchange/) |
-| Symbiosis         | Multiple EVM and non-EVM chains   | [Visit](https://app.symbiosis.finance/swap) |
-
----
-
 // File: bridges/using-amb
 
 ## Submitting AMB Confirmations Manually
@@ -2064,377 +1882,7 @@ MetaMask will show a high gas estimate for this transaction. In most cases the f
 
 ---
 
-// File: bridges/bridge-limits
-
-Below is a summary of each token’s transaction limits on both Ethereum and Gnosis Chain, along with quick links to inspect their on-chain contract addresses:
-
-The below list only mentions the top 10 most actively bridged assets. For a detailed view for all assets, checkout the [Bridge Explorer's limit dashboard](https://bridge.gnosischain.com/bridge-explorer/bridges).
-
-
-| Token | ETH Max/Tx                                | ETH Daily Limit                                 | ETH Exec Daily              | Gnosis Max/Tx                          | Gnosis Daily Limit                     | Gnosis Exec Daily                             | Ethereum Address                                                                                                                   | Gnosis Address                                                                                                                   |
-|-------|--------------------------------------------|--------------------------------------------------|-----------------------------|----------------------------------------|----------------------------------------|-----------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------|
-| GNO   | 1000000000000000000000000000               | 1000000000000000000000000000000000000           | 36000000000000000000001     | 36000000000000000000000               | 36000000000000000000001               | 1000000000000000000000000000000000000        | [0x6810e776880C02933D47DB1b9fc05908e5386b96](https://etherscan.io/address/0x6810e776880C02933D47DB1b9fc05908e5386b96)            | [0x9C58BAcC331c9aa871AFD802DB6379a98e80CEdb](https://gnosis.blockscout.com/address/0x9C58BAcC331c9aa871AFD802DB6379a98e80CEdb)             |
-| WBTC  | 100000000000000000                         | 100000000000000000000000000                   | 100000000000000000000000000 | 100000000000000000                   | 100000000000000000000000000           | 100000000000000000000000000                  | [0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599](https://etherscan.io/address/0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599)            | [0x8e5bBbb09Ed1ebdE8674Cda39A0c169401db4252](https://gnosis.blockscout.com/address/0x8e5bBbb09Ed1ebdE8674Cda39A0c169401db4252)             |
-| WETH  | 1000000000000000000000000000000000000      | 1000000000000000000000000000000000001          | 1000000000000000000000000000000000001 | 1000000000000000000000000000000000000 | 1000000000000000000000000000000000001  | 1000000000000000000000000000000000001       | [0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2](https://etherscan.io/address/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2)            | [0x6A023CCd1ff6F2045C3309768eAd9E68F978f6e1](https://gnosis.blockscout.com/address/0x6A023CCd1ff6F2045C3309768eAd9E68F978f6e1)             |
-| SAFE  | 1000000000000000000000000000000000000      | 10000000000000000000000000000000000010         | 10000000000000000000000000000000000010 | 1000000000000000000000000000000000000 | 10000000000000000000000000000000000010 | 10000000000000000000000000000000000010      | [0x5aFE3855358E112B5647B952709E6165e1c1eEEe](https://etherscan.io/address/0x5aFE3855358E112B5647B952709E6165e1c1eEEe)            | [0x4d18815D14fe5c3304e87B3FA18318baa5c23820](https://gnosis.blockscout.com/address/0x4d18815D14fe5c3304e87B3FA18318baa5c23820)             |
-| COW   | 1000000000000000000000000000               | 1000000000000000000000000000000000000          | 1000000000000000000000000000000000000  | 1000000000000000000000000000           | 1000000000000000000000000000000000000   | 1000000000000000000000000000000000000       | [0xDEf1CA1fb7FBcDC777520aa7f396b4E015F497aB](https://etherscan.io/address/0xDEf1CA1fb7FBcDC777520aa7f396b4E015F497aB)            | [0x177127622c4A00F3d409B75571e12cB3c8973d3c](https://gnosis.blockscout.com/address/0x177127622c4A00F3d409B75571e12cB3c8973d3c)             |
-| HOPR  | 1000000000000000000000000000               | 1000000000000000000000000000000000000          | 40000000000000000000000001 | 20000000000000000000000001            | 40000000000000000000000001             | 1000000000000000000000000000000000000        | [0xF5581dFeFD8Fb0e4aeC526bE659CFaB1f8c781dA](https://etherscan.io/address/0xF5581dFeFD8Fb0e4aeC526bE659CFaB1f8c781dA)            | [0xD057604A14982FE8D88c5fC25Aac3267eA142a08](https://gnosis.blockscout.com/address/0xD057604A14982FE8D88c5fC25Aac3267eA142a08)             |
-| USDT  | 1000000000000000                           | 1000000000000000000000000                       | 35000000000000               | 10000000000000                         | 35000000000000                          | 1000000000000000000000000                    | [0xdAC17F958D2ee523a2206206994597C13D831ec7](https://etherscan.io/address/0xdAC17F958D2ee523a2206206994597C13D831ec7)            | [0x4ECaBa5870353805a9F068101A40E0f32ed605C6](https://gnosis.blockscout.com/address/0x4ECaBa5870353805a9F068101A40E0f32ed605C6)             |
-| USDC  | 1000000000000000                           | 1000000000000000000000000                       | 35000000000000               | 10000000000000                         | 35000000000000                          | 1000000000000000000000000                    | [0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48](https://etherscan.io/address/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48)            | [0xDDAfbb505ad214D7b80b1f830fcCc89B60fb7A83](https://gnosis.blockscout.com/address/0xDDAfbb505ad214D7b80b1f830fcCc89B60fb7A83)             |
-| OLAS  | 1000000000000000000000000000000000000      | 1000000000000000000000000000000000001          | 1000000000000000000000000000000000001 | 1000000000000000000000000000000000000 | 1000000000000000000000000000000000001  | 1000000000000000000000000000000000001       | [0x0001A500A6B18995B03f44bb040A5fFc28E45CB0](https://etherscan.io/address/0x0001A500A6B18995B03f44bb040A5fFc28E45CB0)            | [0xcE11e14225575945b8E6Dc0D4F2dD4C570f79d9f](https://gnosis.blockscout.com/address/0xcE11e14225575945b8E6Dc0D4F2dD4C570f79d9f)             |
-
-## Fees
-
-| Token               | Ethereum -> Gnosis | Gnosis -> Ethereum |
-| ------------------- | ------------------ | ------------------ |
-| Default Bridge Fees | 0%                 | 0.1%               |
-
-## Check Limits through Smart Contracts
-
-![alt text](bridge.png)
-
-This guide explains how to programmatically retrieve daily usage and per-transaction limits for WETH bridging between Ethereum Mainnet and Gnosis Chain. All calls are against the respective bridge proxy contracts’ **read** ABI.
-
-* **Contract (Ethereum→Gnosis)**
-  `0x88ad09518695c6c3712AC10a214bE5109a655671`
-* **Contract (Gnosis→Ethereum)**
-  `0xf6A78083ca3e2a662D6dd1703c939c8aCE2e268d`
-
-> **Prerequisites**
->
-> * A Web3 client (e.g., [viem](https://github.com/wagmi-dev/viem), Ethers.js)
-> * RPC access to Ethereum Mainnet and Gnosis Chain
-> * The WETH token address on each chain
->
->   * Mainnet WETH: `0xC02aaa39b223FE8D0A0e5C4F27eAD9083C756Cc2`
->   * Gnosis WETH: `0x6A023CCd1ff6F2045C3309768eAd9E68F978f6e1`
-
----
-
-## Ethereum → Gnosis
-
-1. **Get Current Day Index**
-
-   ```js
-   const dayIndex = await contract.read.day();
-   ```
-
-   ↳ Etherscan UI: [day()](https://etherscan.io/address/0x88ad09518695c6c3712AC10a214bE5109a655671#readProxyContract#F8)
-
-2. **Daily Deposit Usage & Limit**
-
-   * **Total WETH Deposited Today**
-
-     ```js
-     const used = await contract.read.totalSpentPerDay([WETH_ADDRESS, dayIndex]);
-     ```
-
-     ↳ [totalSpentPerDay(address token, uint256 day)](https://etherscan.io/address/0x88ad09518695c6c3712AC10a214bE5109a655671#readProxyContract#F26)
-   * **Daily Deposit Limit**
-
-     ```js
-     const limit = await contract.read.dailyLimit(WETH_ADDRESS);
-     ```
-
-     ↳ [dailyLimit(address token)](https://etherscan.io/address/0x88ad09518695c6c3712AC10a214bE5109a655671#readProxyContract#F3)
-
-3. **Daily Withdrawal Usage & Limit**
-
-   * **Total WETH Withdrawn Today**
-
-     ```js
-     const usedExec = await contract.read.totalExecutedPerDay([WETH_ADDRESS, dayIndex]);
-     ```
-
-     ↳ [totalExecutedPerDay(address token, uint256 day)](https://etherscan.io/address/0x88ad09518695c6c3712AC10a214bE5109a655671#readProxyContract#F25)
-   * **Daily Withdrawal Limit**
-
-     ```js
-     const execLimit = await contract.read.executionDailyLimit(WETH_ADDRESS);
-     ```
-
-     ↳ [executionDailyLimit(address token)](https://etherscan.io/address/0x88ad09518695c6c3712AC10a214bE5109a655671#readProxyContract#F4)
-
-4. **Per-Transaction Deposit Bounds**
-
-   * **Minimum Deposit per Tx**
-
-     ```js
-     const minTx = await contract.read.minPerTx(WETH_ADDRESS);
-     ```
-
-     ↳ [minPerTx(address token)](https://etherscan.io/address/0x88ad09518695c6c3712AC10a214bE5109a655671#readProxyContract#F20)
-   * **Maximum Deposit per Tx**
-
-     ```js
-     const maxTx = await contract.read.maxPerTx(WETH_ADDRESS);
-     ```
-
-     ↳ [maxPerTx(address token)](https://etherscan.io/address/0x88ad09518695c6c3712AC10a214bE5109a655671#readProxyContract#F15)
-
-5. **Maximum Withdrawal per Tx**
-
-   ```js
-   const execMax = await contract.read.executionMaxPerTx(WETH_ADDRESS);
-   ```
-
-   ↳ [executionMaxPerTx(address token)](https://etherscan.io/address/0x88ad09518695c6c3712AC10a214bE5109a655671#readProxyContract#F5)
-
----
-
-## Gnosis → Ethereum
-
-> All methods mirror those on the Ethereum proxy, but point at the Gnosis chain contract.
-
-1. **Get Current Day Index**
-
-   ```js
-   const dayIndex = await gnosisContract.read.day();
-   ```
-
-   ↳ [day()](https://gnosis.blockscout.com/address/0xf6A78083ca3e2a662D6dd1703c939c8aCE2e268d)
-
-2. **Daily Deposit Usage & Limit**
-
-   * **Total WETH Deposited Today**
-
-     ```js
-     const used = await gnosisContract.read.totalSpentPerDay([WETH_ADDRESS, dayIndex]);
-     ```
-
-     ↳ [totalSpentPerDay(address token, uint256 day)](https://gnosis.blockscout.com/address/0xf6A78083ca3e2a662D6dd1703c939c8aCE2e268d)
-   * **Daily Deposit Limit**
-
-     ```js
-     const limit = await gnosisContract.read.dailyLimit(WETH_ADDRESS);
-     ```
-
-     ↳ [dailyLimit(address token)](https://gnosis.blockscout.com/address/0xf6A78083ca3e2a662D6dd1703c939c8aCE2e268d)
-
-3. **Daily Withdrawal Usage & Limit**
-
-   * **Total WETH Withdrawn Today**
-
-     ```js
-     const usedExec = await gnosisContract.read.totalExecutedPerDay([WETH_ADDRESS, dayIndex]);
-     ```
-
-     ↳ [totalExecutedPerDay(address token, uint256 day)](https://gnosis.blockscout.com/address/0xf6A78083ca3e2a662D6dd1703c939c8aCE2e268d)
-   * **Daily Withdrawal Limit**
-
-     ```js
-     const execLimit = await gnosisContract.read.executionDailyLimit(WETH_ADDRESS);
-     ```
-
-     ↳ [executionDailyLimit(address token)](https://gnosis.blockscout.com/address/0xf6A78083ca3e2a662D6dd1703c939c8aCE2e268d)
-
-4. **Per-Transaction Deposit Bounds**
-
-   * **Minimum Deposit per Tx**
-
-     ```js
-     const minTx = await gnosisContract.read.minPerTx(WETH_ADDRESS);
-     ```
-
-     ↳ [minPerTx(address token)](https://gnosis.blockscout.com/address/0xf6A78083ca3e2a662D6dd1703c939c8aCE2e268d)
-   * **Maximum Deposit per Tx**
-
-     ```js
-     const maxTx = await gnosisContract.read.maxPerTx(WETH_ADDRESS);
-     ```
-
-     ↳ [maxPerTx(address token)](https://gnosis.blockscout.com/address/0xf6A78083ca3e2a662D6dd1703c939c8aCE2e268d)
-
-5. **Maximum Withdrawal per Tx**
-
-   ```js
-   const execMax = await gnosisContract.read.executionMaxPerTx(WETH_ADDRESS);
-   ```
-
-   ↳ [executionMaxPerTx(address token)](https://gnosis.blockscout.com/address/0xf6A78083ca3e2a662D6dd1703c939c8aCE2e268d)
-
----
-
-## Example (using viem)
-
-```ts
-import { createPublicClient, http } from "viem";
-import { mainnet, gnosis } from "viem/chains";
-
-const ethClient = createPublicClient({ chain: mainnet, transport: http() });
-const gnoClient = createPublicClient({ chain: gnosis, transport: http() });
-
-const ETH_BRIDGE = "0x88ad09518695c6c3712AC10a214bE5109a655671";
-const GNO_BRIDGE = "0xf6A78083ca3e2a662D6dd1703c939c8aCE2e268d";
-const WETH = "0xC02aaa39b223FE8D0A0e5C4F27eAD9083C756Cc2";
-
-async function fetchLimits() {
-  const [dayEth] = await ethClient.read({ address: ETH_BRIDGE, abi: bridgeAbi, functionName: "day" });
-  const [dayGno] = await gnoClient.read({ address: GNO_BRIDGE, abi: bridgeAbi, functionName: "day" });
-
- 
-}
-```
-
----
-
-**Notes:**
-
-* All values are returned in **wei** (base units).
-* Day indexing increments every 24 hours from the bridge’s genesis timestamp.
-* Ensure your RPC node’s clock is in sync to avoid off-by-one-day errors.
-
----
-
-// File: bridges/roadmap
-
-### Fast Confirmation Rule(FCR) integration
-
-Fast Confirmation Rule is a new Ethereum feature that provides a very strong assurance a block will not be reorged within 1 slot (12 seconds), a 98% reduction from the approximately 13-minute time to finality. Integrating FCR into bridges improves the bridging time down to seconds without sacrificing the security. Check [here](./fast-confirmation-rule.md) for more details.
-
-### Hashi - A cross chain protocol based on distributed trust of the underlying security mechanisms (shipped, later deprecated)
-
-:::warning
-🚨 The Hashi integration initiative — originally approved under [GIP‑93](https://forum.gnosis.io/t/gip-93-should-gnosisdao-support-the-integration-of-hashi-within-gnosis-chains-canonical-bridges/8245) and subsequently implemented across both the AMB & xDAI bridges—is formally **deprecated**.
-
-Read the entire forum details [here](https://forum.gnosis.io/t/deprecation-notice-hashi-on-gnosis-canonical-bridges-ends-maintenance/11467)
-:::
-
-Hashi, a cross chain protocol based on distributed trust of the underlying security mechanisms
-Hashi is an EVM Hash Oracle Aggregator designed to enhance cross-chain bridge security by aggregating block headers from various sources. By requiring validation from multiple independent mechanisms, Hashi ensures greater resilience against security incidents. It supports 15+ General Message Passing bridges and ZK light clients, promoting redundancy and reducing reliance on single mechanisms. Integrating Hashi into Gnosis Chain's bridges strengthens security, decentralization, and interoperability. This initiative aims to set a new standard for cross-chain transactions, enhancing user confidence and bolstering the Gnosis ecosystem's security posture. [Check out the proposal](https://forum.gnosis.io/t/gip-93-should-gnosisdao-support-the-integration-of-hashi-within-gnosis-chains-canonical-bridges/8245) .
-
-### Telepathy, zkSNARK-enabled Light Client bridge validator ✅
-
-> > Telepathy has been deprecated from Succinct Lab
-
-Succinct Lab's zkSNARK-enabled Light Client, Telepathy, launched in July 2023, has emerged as a key component of the AMB bridge ecosystem. Utilizing zkSNARKs, Telepathy provides validity proofs, ensuring trustless verification of transaction events across chains. This solution has become one of the most active bridge validators in the AMB network, enhancing security and reliability for cross-chain transactions.
-
-After successful audits and release, we aim to gradually migrate our canonical bridges to Hashi’s distributed trust model.
-
----
-
-// File: bridges/audits
-
-The OmniBridge and xDai Bridge have undergone multiple independent security audits and assessments. We have engaged in the auditing process after introducing major functionality, and have acknowledged and/or fixed all issues found during these audits. Audit results are presented starting with the most recent.
-
-## USDS migration xDAI bridge by Omega, Gnosis Ltd(internal audit)
-
-**Audit Report**:
-
-1. [Omega-Gnosis-USDS Upgrade Final Audit Report](https://github.com/OmegaAudits/audits/blob/main/202510-Gnosis-Bridge-USDS-Upgrade.pdf)
-2. [Gnosis Ltd internal audit final report](https://github.com/cducrest/audit-reports/blob/main/bridge-USDS-upgrade3.pdf)
-
-## xDAI bridge upgrade Audit by Omega and ChainSafe
-
-### Omega
-
-**Completed**: August 31, 2023  
-**Conclusion**: 2 medium issues, 5 low risk issues, 3 info issues. All issues has been resolved.  
-**Contracts**: https://github.com/gnosischain/tokenbridge-contracts/tree/xdaibridge-upgrade-sdai  
-**Audit Report**: [Omega Gnosis Bridge Final Audit Report](../../static/files/Omega%20-%20Gnosis%20Bridge%20-%20final%20report.pdf)
-
-### ChainSafe
-
-**Completed**: August 31, 2023  
-**Conclusion**: 2 minor issues, 2 optimizational issues.  
-**Contracts**: https://github.com/gnosischain/tokenbridge-contracts/tree/xdaibridge-upgrade-sdai  
-**Audit Report**: [ChainSafe Audit Report](../../static/files/dai-xdai-08-23.pdf)
-
-**Reference**: [Savings xDAI](./About%20Token%20Bridges/xdai-bridge.md#savings-xdai)
-
-## OmniBridge v6.0 Smart Contracts Audit by ChainSecurity
-
-**Completed**: September 7, 2021  
-**Conclusion**: 0 Critical Risk Issues, 1 High Risk Issue Mitigated, 1 Medium Issue Mitigated, 2 Corrected, 13 Low Risk Issues all Acknowledged and/or Corrected.  
-**Contracts**: https://github.com/poanetwork/omnibridge  
-**Audit Report**: [ChainSecurity v6.0 Audit](/files/ChainSecurity_POA_Network_Omnibridge_Version_6_0_audit.pdf)
-
-## OmniBridge Audit by ChainSecurity
-
-**Completed**: April 27, 2021  
-**Conclusion**: 0 Critical or High Risk Issues, 2 Medium Issues Accepted, 3 Low Risk Issues Accepted/Acknowledged  
-**Contracts**: https://github.com/poanetwork/omnibridge  
-**Audit Report**: [Chainsecurity OmniBridge Audit](https://chainsecurity.com/security-audit/poa-network-omnibridge/)
-
-## TokenBridge Audit by Quantstamp (covers OmniBridge)
-
-**Completed**: November 6, 2020  
-**Conclusion**: No high and medium risk issues found, all low risk issues addressed.  
-**Contracts**: Revised in version 5.5.0-rc0 to address audit. https://github.com/poanetwork/tokenbridge-contracts/releases/tag/5.5.0-rc0  
-**Audit Report**: [TokenBridge Audit by Quantstamp - OmniBridge](https://github.com/omni/tokenbridge/blob/master/audit/quantstamp/POA-Network-TokenBridge-contracts-5.4.1-security-assessment-report.pdf)
-
-## TokenBridge Audit by Quantstamp (covers AMB bridge)
-
-**Completed**: January 8, 2020  
-**Conclusion**: : All high risk issues resolved and low risk issues addressed. [More information available in this post](https://forum.poa.network/t/quantstamp-security-audit-for-tokenbridge-contracts-completed/3233).  
-**Contracts**: Revised in version 3.3.0 to address audit. https://github.com/poanetwork/tokenbridge-contracts/releases/tag/3.3.0  
-**Audit Report**: [TokenBridge Audit by Quantstamp - AMB Bridge](https://github.com/omni/tokenbridge/blob/73d500210546e2959536dc569f1aec5752077225/audit/quantstamp/POA-Network-Token-bridge-security-assessment-report.pdf)
-
-## Smart Contracts Security Analysis by SmartDec
-
-**Completed**: July 2019  
-**Conclusion**: All of the issues were addressed, some of them fixed in the latest version of the code.  
-**Contracts**: Revised in version 2.3.3 to address audit. https://github.com/poanetwork/tokenbridge-contracts/releases/tag/2.3.3  
-**Audit Report**: [SmartDec Security Audit](https://github.com/omni/tokenbridge/blob/73d500210546e2959536dc569f1aec5752077225/audit/smartdec/POA-Network-TokenBridge-Contracts-v2-3-2-Security-Assessment.pdf)
-
-## Initial TokenBridge Audit by [Peppersec](https://peppersec.com/):
-
-**Completed**: October 2018  
-**Conclusion**: Rated the overall security level of the system as “High”.  
-**Contracts**: Updated to version 2.0.0 to address audit. https://github.com/poanetwork/tokenbridge-contracts/releases/tag/2.0.0  
-**Audit Report**: [Peppersec Initial TokenBridge Audit](https://github.com/omni/tokenbridge/blob/73d500210546e2959536dc569f1aec5752077225/audit/peppersec/POA-Network-Token-bridge-security-assessment-report.pdf)
-
----
-
-// File: bridges/fast-confirmation-rule
-
-# What is FCR?
-
-The Fast Confirmation Rule (FCR) is a new Ethereum feature that provides a very strong assurance a block will not be reorged within 1 slot (12 seconds), a 98% reduction from the approximately 13-minute time to finality.
-
-FCR works by counting attestations in real-time. If there is overwhelming support for a block and robustness checks are passed, the block is fast-confirmed.
-
-FCR comes with two core assumptions. First, it assumes the network is synchronous, meaning attestations are delivered within about 8 seconds. Second, it assumes there is no adversary with more than 25% stake, slightly less than the 33% maximum adversarial stake that finality can withstand. If these assumptions hold, any fast-confirmed block will, with certainty, be finalized.
-These assumptions are reasonable and usually hold. In the rare case that they do not, it can cause either a liveness or a safety failure. A liveness failure means it may take longer than 12 seconds to fast-confirm a block. Eventually, the rule automatically falls back to finality. This is a feature, not a bug: FCR falls back to a more secure confirmation rule when needed. A safety failure means that a fast-confirmed block is reorged. With FCR, reorg risk is extremely small. ethPandaOps has conducted experiment by replaying historical Ethereum beacon chain data(a year) through FCR from consensus clients, the result shows that there is [zero false confirmation](https://ethpandaops.io/posts/fcr-simulator/).
-
-# Why Gnosis bridges integrate FCR?
-
-By integrating FCR, it can drastically decrease the current bridging time from Ethereum.
-
-# How would it work in Gnosis bridges?
-
-By default, the processing rules are the following:
-
-| Source Chain | Destination Chain | Processing rule          |
-| ------------ | ----------------- | ------------------------ |
-| Ethereum     | Gnosis Chain      | FCR (~12s)               |
-| Gnosis Chain | Ethereum          | Block finality (~5 mins) |
-
-1. Bridges smart contracts: No modification.
-2. Bridge validators logic:
-   1. Based on the bridging directions, process the bridging tx accordingly.
-
-   2. The bridge validators run their own nodes, which ensure that the network synchrony of the FCR assumption is satisfied. We require bridge validator to run different clients to ensure client diversity.
-
-   3. In case of hardfork or instability of the network, bridge validator will default to block finality. An alert is raised when a FCR-confirmed processed tx is not later included in the finalized block.
-
-3. Monitoring: Monitoring system will be built to track the following metrics:
-   1. Fast confirmed block by each clients
-   2. Reorgs event
-
-# Q&A
-
-1. Can user choose FCR or block finality when they initiate the bridging?
-
-No, by default, all bridging txs from Ethereum use FCR, while all bridging txs from Gnosis Chain use block finality. Except in the case where network is unstable or during hardfork period, block finality is the default.
-
-# Reference
-
-1. https://fastconfirm.it/
-
----
-
-// File: bridges/About Token Bridges/omnibridge
+// File: bridges/how-bridges-work/omnibridge
 
 # Omnibridge
 
@@ -2445,7 +1893,7 @@ Please avoid using the legacy Omnibridge: https://omni.legacy.gnosischain.com/br
 
 ## Key Information
 
-[Omnibridge](https://bridge.gnosischain.com/) is a native token bridge that mints the canonical representations of bridged assets on Gnosis. The Omnibridge is built on top of the [Arbitrary Message Bridge (AMB)](../About%20Token%20Bridges/amb-bridge.md) and thus relies on the same group of [bridge validators](../About%20Token%20Bridges/amb-bridge#bridge-validators) and trust model as the AMB.
+[Omnibridge](https://bridge.gnosischain.com/) is a native token bridge that mints the canonical representations of bridged assets on Gnosis. The Omnibridge is built on top of the [Arbitrary Message Bridge (AMB)](./amb-bridge.md) and thus relies on the same group of [bridge validators](./amb-bridge#bridge-validators) and trust model as the AMB.
 
 The Omnibridge currently connects Gnosis to Ethereum.
 
@@ -2524,11 +1972,11 @@ Daily Limit is reset according to the following logic: the smart contract stores
 
 ### Bridge Validators
 
-- See [Bridge Validator](../management/validators#amb--omnibridge)
+- See [Bridge Validator](../security-and-governance/governance/validators#amb--omnibridge)
 
 ### Bridge Governance
 
-- See [Bridge Governance](../management/README.md)
+- See [Bridge Governance](../security-and-governance/governance/README.md)
 
 ## How it works
 
@@ -2672,7 +2120,7 @@ For more detail, check out [this twitter post](https://x.com/gnosischain/status/
 
 ---
 
-// File: bridges/About Token Bridges/xdai-bridge
+// File: bridges/how-bridges-work/xdai-bridge
 
 # xDai Bridge
 
@@ -2764,11 +2212,11 @@ Daily Limit is reset according to the following logic: the smart contract stores
 
 ### Bridge Validators
 
-- See [Bridge Validator](../management/validators#xdai-bridge)
+- See [Bridge Validator](../security-and-governance/governance/validators#xdai-bridge)
 
 ### Bridge Governance
 
-- See [Bridge Governance](../management/README.md)
+- See [Bridge Governance](../security-and-governance/governance/README.md)
 
 ## How it Works
 
@@ -2973,13 +2421,13 @@ The second contract is the Interest Receiver. This will be the address provided 
 
 ---
 
-// File: bridges/About Token Bridges/amb-bridge
+// File: bridges/how-bridges-work/amb-bridge
 
 ![](/img/bridges/diagrams/amb-bridge.svg)
 
 The native Arbitrary Message Bridge (AMB) allows user to send arbitrary data between Gnosis Chain and Ethereum. This allows Gnosis contracts to send data and trigger contract functions on Ethereum and other chains, and vice versa.
 
-The AMB is a key bridge primitive that is used inside higher-order bridges like the [Omnibridge native token bridge](../About%20Token%20Bridges/omnibridge.md), and is part of the [Tokenbridge Architecture](https://github.com/tokenbridge/docs).
+The AMB is a key bridge primitive that is used inside higher-order bridges like the [Omnibridge native token bridge](./omnibridge.md), and is part of the [Tokenbridge Architecture](https://github.com/tokenbridge/docs).
 
 Due to the finality requirements on Ethereum, the transactions will take approx. 30mins to be signed by the bridge. However, users can still use 3rd party bridges (Jumper.exchange, Stargate, deBridge, etc) without any impact.
 
@@ -3039,11 +2487,11 @@ Due to the finality requirements on Ethereum, the transactions will take approx.
 
 ### Bridge Validators
 
-- See [Bridge Validator](../management/validators#amb--omnibridge)
+- See [Bridge Validator](../security-and-governance/governance/validators#amb--omnibridge)
 
 ### Bridge Governance
 
-- See [Bridge Governance](../management/README.md)
+- See [Bridge Governance](../security-and-governance/governance/README.md)
 
 ## How it works
 
@@ -3142,7 +2590,7 @@ By setting `maxGasPerTx` to 0, the [condition in `_sendMessage()`](https://githu
 
 ---
 
-// File: bridges/About Token Bridges/README
+// File: bridges/how-bridges-work/README
 
 ## Bridges Conceptual Architecture
 
@@ -3163,11 +2611,11 @@ Gnosis Chain bridge :
 
 ### Bridging Data
 
-See the [Arbitrary Message Passing Bridge](../About%20Token%20Bridges/amb-bridge.md) or AMB Bridge for short.
+See the [Arbitrary Message Passing Bridge](./amb-bridge.md) or AMB Bridge for short.
 
 ## Roadmap
 
-Gnosis has a [long-term roadmap](../roadmap.md) to move towards trustless bridges, and is actively funding research and development in this area.
+Gnosis has a [long-term roadmap](../security-and-governance/roadmap.md) to move towards trustless bridges, and is actively funding research and development in this area.
 
 ## Feedback & Suggestion
 
@@ -3178,7 +2626,153 @@ We would love to hear from you on suggestions and ideas on bridges in Gnosis Cha
 
 ---
 
-// File: bridges/management/README
+// File: bridges/security-and-governance/audits
+
+The OmniBridge and xDai Bridge have undergone multiple independent security audits and assessments. We have engaged in the auditing process after introducing major functionality, and have acknowledged and/or fixed all issues found during these audits. Audit results are presented starting with the most recent.
+
+## USDS migration xDAI bridge by Omega, Gnosis Ltd(internal audit)
+
+**Audit Report**:
+
+1. [Omega-Gnosis-USDS Upgrade Final Audit Report](https://github.com/OmegaAudits/audits/blob/main/202510-Gnosis-Bridge-USDS-Upgrade.pdf)
+2. [Gnosis Ltd internal audit final report](https://github.com/cducrest/audit-reports/blob/main/bridge-USDS-upgrade3.pdf)
+
+## xDAI bridge upgrade Audit by Omega and ChainSafe
+
+### Omega
+
+**Completed**: August 31, 2023  
+**Conclusion**: 2 medium issues, 5 low risk issues, 3 info issues. All issues has been resolved.  
+**Contracts**: https://github.com/gnosischain/tokenbridge-contracts/tree/xdaibridge-upgrade-sdai  
+**Audit Report**: [Omega Gnosis Bridge Final Audit Report](../../../static/files/Omega%20-%20Gnosis%20Bridge%20-%20final%20report.pdf)
+
+### ChainSafe
+
+**Completed**: August 31, 2023  
+**Conclusion**: 2 minor issues, 2 optimizational issues.  
+**Contracts**: https://github.com/gnosischain/tokenbridge-contracts/tree/xdaibridge-upgrade-sdai  
+**Audit Report**: [ChainSafe Audit Report](../../../static/files/dai-xdai-08-23.pdf)
+
+**Reference**: [Savings xDAI](../how-bridges-work/xdai-bridge.md#savings-xdai)
+
+## OmniBridge v6.0 Smart Contracts Audit by ChainSecurity
+
+**Completed**: September 7, 2021  
+**Conclusion**: 0 Critical Risk Issues, 1 High Risk Issue Mitigated, 1 Medium Issue Mitigated, 2 Corrected, 13 Low Risk Issues all Acknowledged and/or Corrected.  
+**Contracts**: https://github.com/poanetwork/omnibridge  
+**Audit Report**: [ChainSecurity v6.0 Audit](/files/ChainSecurity_POA_Network_Omnibridge_Version_6_0_audit.pdf)
+
+## OmniBridge Audit by ChainSecurity
+
+**Completed**: April 27, 2021  
+**Conclusion**: 0 Critical or High Risk Issues, 2 Medium Issues Accepted, 3 Low Risk Issues Accepted/Acknowledged  
+**Contracts**: https://github.com/poanetwork/omnibridge  
+**Audit Report**: [Chainsecurity OmniBridge Audit](https://chainsecurity.com/security-audit/poa-network-omnibridge/)
+
+## TokenBridge Audit by Quantstamp (covers OmniBridge)
+
+**Completed**: November 6, 2020  
+**Conclusion**: No high and medium risk issues found, all low risk issues addressed.  
+**Contracts**: Revised in version 5.5.0-rc0 to address audit. https://github.com/poanetwork/tokenbridge-contracts/releases/tag/5.5.0-rc0  
+**Audit Report**: [TokenBridge Audit by Quantstamp - OmniBridge](https://github.com/omni/tokenbridge/blob/master/audit/quantstamp/POA-Network-TokenBridge-contracts-5.4.1-security-assessment-report.pdf)
+
+## TokenBridge Audit by Quantstamp (covers AMB bridge)
+
+**Completed**: January 8, 2020  
+**Conclusion**: : All high risk issues resolved and low risk issues addressed. [More information available in this post](https://forum.poa.network/t/quantstamp-security-audit-for-tokenbridge-contracts-completed/3233).  
+**Contracts**: Revised in version 3.3.0 to address audit. https://github.com/poanetwork/tokenbridge-contracts/releases/tag/3.3.0  
+**Audit Report**: [TokenBridge Audit by Quantstamp - AMB Bridge](https://github.com/omni/tokenbridge/blob/73d500210546e2959536dc569f1aec5752077225/audit/quantstamp/POA-Network-Token-bridge-security-assessment-report.pdf)
+
+## Smart Contracts Security Analysis by SmartDec
+
+**Completed**: July 2019  
+**Conclusion**: All of the issues were addressed, some of them fixed in the latest version of the code.  
+**Contracts**: Revised in version 2.3.3 to address audit. https://github.com/poanetwork/tokenbridge-contracts/releases/tag/2.3.3  
+**Audit Report**: [SmartDec Security Audit](https://github.com/omni/tokenbridge/blob/73d500210546e2959536dc569f1aec5752077225/audit/smartdec/POA-Network-TokenBridge-Contracts-v2-3-2-Security-Assessment.pdf)
+
+## Initial TokenBridge Audit by [Peppersec](https://peppersec.com/):
+
+**Completed**: October 2018  
+**Conclusion**: Rated the overall security level of the system as “High”.  
+**Contracts**: Updated to version 2.0.0 to address audit. https://github.com/poanetwork/tokenbridge-contracts/releases/tag/2.0.0  
+**Audit Report**: [Peppersec Initial TokenBridge Audit](https://github.com/omni/tokenbridge/blob/73d500210546e2959536dc569f1aec5752077225/audit/peppersec/POA-Network-Token-bridge-security-assessment-report.pdf)
+
+---
+
+// File: bridges/security-and-governance/roadmap
+
+### Fast Confirmation Rule(FCR) integration
+
+Fast Confirmation Rule is a new Ethereum feature that provides a very strong assurance a block will not be reorged within 1 slot (12 seconds), a 98% reduction from the approximately 13-minute time to finality. Integrating FCR into bridges improves the bridging time down to seconds without sacrificing the security. Full details [below](#what-is-fcr).
+
+### Hashi - A cross chain protocol based on distributed trust of the underlying security mechanisms (shipped, later deprecated)
+
+:::warning
+🚨 The Hashi integration initiative — originally approved under [GIP‑93](https://forum.gnosis.io/t/gip-93-should-gnosisdao-support-the-integration-of-hashi-within-gnosis-chains-canonical-bridges/8245) and subsequently implemented across both the AMB & xDAI bridges—is formally **deprecated**.
+
+Read the entire forum details [here](https://forum.gnosis.io/t/deprecation-notice-hashi-on-gnosis-canonical-bridges-ends-maintenance/11467)
+:::
+
+Hashi, a cross chain protocol based on distributed trust of the underlying security mechanisms
+Hashi is an EVM Hash Oracle Aggregator designed to enhance cross-chain bridge security by aggregating block headers from various sources. By requiring validation from multiple independent mechanisms, Hashi ensures greater resilience against security incidents. It supports 15+ General Message Passing bridges and ZK light clients, promoting redundancy and reducing reliance on single mechanisms. Integrating Hashi into Gnosis Chain's bridges strengthens security, decentralization, and interoperability. This initiative aims to set a new standard for cross-chain transactions, enhancing user confidence and bolstering the Gnosis ecosystem's security posture. [Check out the proposal](https://forum.gnosis.io/t/gip-93-should-gnosisdao-support-the-integration-of-hashi-within-gnosis-chains-canonical-bridges/8245) .
+
+### Telepathy, zkSNARK-enabled Light Client bridge validator ✅
+
+> > Telepathy has been deprecated from Succinct Lab
+
+Succinct Lab's zkSNARK-enabled Light Client, Telepathy, launched in July 2023, has emerged as a key component of the AMB bridge ecosystem. Utilizing zkSNARKs, Telepathy provides validity proofs, ensuring trustless verification of transaction events across chains. This solution has become one of the most active bridge validators in the AMB network, enhancing security and reliability for cross-chain transactions.
+
+After successful audits and release, we aim to gradually migrate our canonical bridges to Hashi’s distributed trust model.
+
+---
+
+## What is FCR?
+
+The Fast Confirmation Rule (FCR) is a new Ethereum feature that provides a very strong assurance a block will not be reorged within 1 slot (12 seconds), a 98% reduction from the approximately 13-minute time to finality.
+
+FCR works by counting attestations in real-time. If there is overwhelming support for a block and robustness checks are passed, the block is fast-confirmed.
+
+FCR comes with two core assumptions. First, it assumes the network is synchronous, meaning attestations are delivered within about 8 seconds. Second, it assumes there is no adversary with more than 25% stake, slightly less than the 33% maximum adversarial stake that finality can withstand. If these assumptions hold, any fast-confirmed block will, with certainty, be finalized.
+These assumptions are reasonable and usually hold. In the rare case that they do not, it can cause either a liveness or a safety failure. A liveness failure means it may take longer than 12 seconds to fast-confirm a block. Eventually, the rule automatically falls back to finality. This is a feature, not a bug: FCR falls back to a more secure confirmation rule when needed. A safety failure means that a fast-confirmed block is reorged. With FCR, reorg risk is extremely small. ethPandaOps has conducted experiment by replaying historical Ethereum beacon chain data(a year) through FCR from consensus clients, the result shows that there is [zero false confirmation](https://ethpandaops.io/posts/fcr-simulator/).
+
+## Why Gnosis bridges integrate FCR?
+
+By integrating FCR, it can drastically decrease the current bridging time from Ethereum.
+
+## How would it work in Gnosis bridges?
+
+By default, the processing rules are the following:
+
+| Source Chain | Destination Chain | Processing rule          |
+| ------------ | ----------------- | ------------------------ |
+| Ethereum     | Gnosis Chain      | FCR (~12s)               |
+| Gnosis Chain | Ethereum          | Block finality (~5 mins) |
+
+1. Bridges smart contracts: No modification.
+2. Bridge validators logic:
+   1. Based on the bridging directions, process the bridging tx accordingly.
+
+   2. The bridge validators run their own nodes, which ensure that the network synchrony of the FCR assumption is satisfied. We require bridge validator to run different clients to ensure client diversity.
+
+   3. In case of hardfork or instability of the network, bridge validator will default to block finality. An alert is raised when a FCR-confirmed processed tx is not later included in the finalized block.
+
+3. Monitoring: Monitoring system will be built to track the following metrics:
+   1. Fast confirmed block by each clients
+   2. Reorgs event
+
+## Q&A
+
+1. Can user choose FCR or block finality when they initiate the bridging?
+
+No, by default, all bridging txs from Ethereum use FCR, while all bridging txs from Gnosis Chain use block finality. Except in the case where network is unstable or during hardfork period, block finality is the default.
+
+## Reference
+
+1. https://fastconfirm.it/
+
+---
+
+// File: bridges/security-and-governance/governance/README
 
 Bridge Management encompasses the governance and coordination of bridge-related operations and events. It involves two distinct entities: Bridge Governors and Bridge Validators. Bridge Governors oversee bridge operations on both the Ethereum and Gnosis sides, making critical decisions on bridge parameters and validator settings. Bridge Validators ensure the accurate and timely relaying of messages by monitoring event emissions, validating the associated logic, and invoking the relevant functions on the destination chain.
 
@@ -3263,14 +2857,14 @@ There are two possible scenarios for how the bridge or validators contracts can 
 
 ### Governor: Setting bridge limits
 
-Different limits are set for the [xDai Bridge](../About%20Token%20Bridges/xdai-bridge.md) and the [OmniBridge](../About%20Token%20Bridges/omnibridge.md) by the bridge governors. Please see their respective documentation pages for more information.
+Different limits are set for the [xDai Bridge](../../how-bridges-work/xdai-bridge.md) and the [OmniBridge](../../how-bridges-work/omnibridge.md) by the bridge governors. Please see their respective documentation pages for more information.
 
 ## Bridge Validators
 
-Bridge Validators monitor events on both sides of the chains to ensure that the user's bridging requests are validated promptly. In the Gnosis Chain, there are both trusted and trustless validators. [Telepathy](/bridges/About%20Token%20Bridges/amb-bridge#how-it-works), a trustless ZK-based validator on AMB, secures transactions using zero-knowledge proofs, while the rest of the validators sign the message to validate the message. The threshold of signatures from validators has to be reached in order to execute the message on the destination chain.
+Bridge Validators monitor events on both sides of the chains to ensure that the user's bridging requests are validated promptly. In the Gnosis Chain, there are both trusted and trustless validators. [Telepathy](../../how-bridges-work/amb-bridge.md#how-it-works), a trustless ZK-based validator on AMB, secures transactions using zero-knowledge proofs, while the rest of the validators sign the message to validate the message. The threshold of signatures from validators has to be reached in order to execute the message on the destination chain.
 
-- [xDai Bridge Validators](/bridges/management/validators#xdai-bridge)
-- [AMB & OmniBridge Validators](/bridges/management/validators#amb--omnibridge)
+- [xDai Bridge Validators](./validators.md#xdai-bridge)
+- [AMB & OmniBridge Validators](./validators.md#amb--omnibridge)
 
 ## Summary of different roles in bridge
 
@@ -3293,7 +2887,7 @@ Bridge Validators monitor events on both sides of the chains to ensure that the 
 
 ---
 
-// File: bridges/management/decisions
+// File: bridges/security-and-governance/governance/decisions
 
 # Governance Decisions
 
@@ -3613,7 +3207,7 @@ We [increased the limits](https://app.safe.global/transactions/tx?safe=gno:0x7a4
 
 ## Upgrade xDAI bridge to support investing in sDAI vault.
 
-🗳 Justification: We [upgrade](https://app.safe.global/transactions/tx?safe=eth:0x42F38ec5A75acCEc50054671233dfAC9C0E7A3F6&id=multisig_0x42F38ec5A75acCEc50054671233dfAC9C0E7A3F6_0xd8683bccfe39ace95a1da5f58a5c9a83dc324de39ce07f11fcffb5c2397ca96c) [xDAI bridge](https://etherscan.io/address/0x4aa42145Aa6Ebf72e164C9bBC74fbD3788045016#readProxyContract) to new implementation version in order to support investing DAI from the bridge contract into sDAI vault from Spark Protocol. This upgrade only implements changes on Ethereum, and the next phase will be on Gnosis Chain. The implementation contract is [audited by Omega and ChainSafe](../audits.md#xdai-bridge-upgrade-audit-by-omega-and-chainsafe). For more details, please refer to [docs](../About%20Token%20Bridges/xdai-bridge.md#savings-xdai)
+🗳 Justification: We [upgrade](https://app.safe.global/transactions/tx?safe=eth:0x42F38ec5A75acCEc50054671233dfAC9C0E7A3F6&id=multisig_0x42F38ec5A75acCEc50054671233dfAC9C0E7A3F6_0xd8683bccfe39ace95a1da5f58a5c9a83dc324de39ce07f11fcffb5c2397ca96c) [xDAI bridge](https://etherscan.io/address/0x4aa42145Aa6Ebf72e164C9bBC74fbD3788045016#readProxyContract) to new implementation version in order to support investing DAI from the bridge contract into sDAI vault from Spark Protocol. This upgrade only implements changes on Ethereum, and the next phase will be on Gnosis Chain. The implementation contract is [audited by Omega and ChainSafe](../audits.md#xdai-bridge-upgrade-audit-by-omega-and-chainsafe). For more details, please refer to [docs](../../how-bridges-work/xdai-bridge.md#savings-xdai)
 
 We call the method `upgradeTo()` on the xDAI bridge proxy contract (0x4aa42145aa6ebf72e164c9bbc74fbd3788045016) with parameters: version 8 and impl. 0x166124b75c798cedf1b43655e9b5284ebd5203db.
 
@@ -3898,7 +3492,7 @@ Increase the amount of blocks required for confirmation on the Ethereum Mainnet 
 
 ---
 
-// File: bridges/management/validators
+// File: bridges/security-and-governance/governance/validators
 
 # Bridge Validator
 
@@ -4158,6 +3752,410 @@ Bridge transactions currently requires signatures from 4 of 7 validators.
 ```
 
 - [TokenBridge Docs: Migrating Oracle to new Server](https://github.com/tokenbridge/docs/blob/master/xdai-bridge/xdai-bridge-oracle-maintenance/oracle-migration-to-a-new-server.md)
+
+---
+
+// File: bridges/use-the-bridges/use-gnosis-bridge
+
+:::info
+To begin using Gnosis Bridge, you need to go on this following link : https://bridge.gnosischain.com/
+:::
+
+:::note
+You will need xDAI to perform any transactions on Gnosis Chain as it’s the chain’s gas token. You can get xDAI by transferring DAI from Ethereum using the Bridge Explorer
+:::
+
+![xDAI bridge from ethereum](../../../static/img/bridges/bridge-xdai-new.png)
+
+### Follow the below steps to get xDAI into your Ethereum address: 
+1. Go to the Gnosis Chain Bridge UI and connect your wallet to the Ethereum Mainnet.
+2. Once connected, you will see your address populated in the header, and your DAI balance will be displayed on the page.
+3. Enter the amount of DAI you would like to transfer to Gnosis, and click the Transfer button.
+4. The web3 wallet window will open with transaction details. The default gas price is fine, if you would like a faster transaction you can increase. Click Submit or Confirm (depending on wallet) to initiate the transaction.
+5. Wait for the transaction confirmation (this can take some time if the network is super congested). The transaction is considered finalized after 8 blocks. To check on a pending transaction, click on the tx in the UI.
+
+
+### Follow the below steps to get ERC20 token from Ethereum address to Gnosis Chain:
+
+1. Go to the Gnosis Bridge UI
+2. Connect your wallet to the Ethereum Mainnet
+3. Select the token you want to transfer and enter the amount of token you want.
+4. Click Bridge and sign the transaction
+
+![Bridge erc 20 token to gnosis chain](../../../static/img/bridges/bridge-erc20-new.png)
+
+Transactions from Ethereum to Gnosis Chain are expected to take ~26 mins (130 blocks) because of the verification through the ZK light client
+
+
+
+You can view and monitor your transactions by visiting this URL: https://bridge.gnosischain.com/bridge-explorer/latest-transactions
+
+- To see status of one specific transaction by pasting the transaction hash in the explorer : https://bridge.gnosischain.com/bridge-explorer
+
+You can also check out all the transactions you have done by checking out the history from "My Transactions" of your connected wallet.
+
+
+![My transactions](../../../static/img/bridges/bridge-explorer/transaction-history.png)
+
+:::note
+If you are bridging from Gnosis to Ethereum, you have to claim your funds on Ethereum after the bridge transaction has been validated. You can do this by finding your transaction on the Bridge Explorer and clicking “claim”
+:::
+![Search Transaction](../../../static/img/bridges/bridge-explorer/claim-new.png)
+
+:::note
+Please note that Gnosis bridges have certain limits. You can check these limits by visiting this URL: https://bridge-explorer.gnosischain.com/bridge-explorer/bridges/
+If you are bridging funds that exceed the daily limit, your transaction will be delayed till after the bridge limits reset (every 24h).
+:::
+
+:::info
+If you are not coming from other chains, you can choose from a list of third-party bridges here:
+[Third-party bridges](./third-party-bridges.md)
+:::
+
+### Need more help?
+
+Join the Gnosis Chain Discord and if you need to troubleshoot a specific bridge issue, feel free to open a support ticket and tell us more about it.
+
+---
+
+// File: bridges/use-the-bridges/bridge-explorer
+
+# Bridge Explorer
+
+Bridge explorer allows user to check bridge transactions of Gnosis Bridge, bridges configurations, and validators status. Users may also claim their bridge transactions in bridge explorer.
+
+:::info
+https://bridge-explorer.gnosischain.com/bridge-explorer/latest-transactions
+:::
+
+
+## Transactions
+
+### How to search for your transaction?
+
+1. Search the transaction by inserting the transaction hash or initiator/receiver address.
+2. You can use different filter options to filter out the irrelevant transactions.
+3. Click on the transaction item to check the details of the transaction.
+
+![Search Transaction](../../../static/img/bridges/bridge-explorer/search-new-tx.png)
+
+### What does different filters mean?
+
+**Status**
+
+1. Initiated: Transaction is initiated from the source chain.
+2. Collecting: Signatures from validators are being collecting for the transaction.
+3. Unclaimed: Transaction has collected enough signatures, but has not yet been claimed on Ethereum.
+4. Completed: Transaction has been bridged successfully.
+5. Error: Transaction is not bridged successfully.
+
+**Direction**
+
+1. Gnosis > Mainnet: The transaction is initiated from Gnosis Chain, and bridged to Ethereum mainnet, user need to claim the transaction on Ethereum mainnet.
+2. Mainnet > Gnosis: The transaction is initiated from Ethereum mainnet, and bridged to Gnosis Chain.
+
+**Signed by**
+
+- The transaction is signed by which validator (validator calls `submitSignatures` to sign the transaction).
+
+**Executed by**
+
+- The transaction is executed by which validator (validator calls `executeAffirmation` to execute the transaction).
+
+### How to claim your transaction
+
+1. Click **Connect** button on top right corner and connect your wallet.
+2. Search for your transaction
+3. Click **Claim** button to claim your transaction.
+
+
+![Claim Transaction](../../../static/img/bridges/bridge-explorer/claim-new.png)
+
+You can also claim your transaction from Transaction page.
+
+![Claim Transaction page](../../../static/img/bridges/bridge-explorer/claim-tx-page.png)
+
+### Daily bridge limits
+
+This section shows insight of bridge limit and is reset every `Daily limit reset` hours.
+
+1. **Daily Limit**
+   - Ethereum -> Gnosis Chain: Maximum amount of DAI/token that users can bridge from Ethereum to Gnosis in a day
+   - Gnosis Chain -> Ethereum: Maximum amount of XDAI/token that users can bridge from Gnosis to Ethereum in a day.
+2. **Execution Daily Limit**
+   - Ethereum -> Gnosis Chain: Maximum amount of DAI/token that bridge validators can execute and bridge from Gnosis to Ethereum in a day.
+   - Gnosis Chain -> Ethereum: Maximum amount of XDAI/token that bridge validators can execute and bridge from Ethereum to Gnosis in a day.
+3. **Min. per transaction**: Minimum amount of token that users can bridge in a single transaction.
+4. **Max. per transaction**: Maximum amount of token that users can bridge in a single transaction.
+5. **Execution max. per transaction**: Maximum amount of token that validators can execute in a single transaction.
+6. **Daily limit reset**: In how many hours will the daily limit get reset to zero.
+7. **Token address**: Token address of corresponding token, native token(xDAI) don't have an address.
+
+![](../../../static/img/bridges/bridge-explorer/bridge-info-new.png)
+
+### Configuration
+
+This section shows the address of key contracts.
+![](../../../static/img/bridges/bridge-explorer/bridge-configuration-new.png)
+
+## Validators
+
+This section shows the insight of current bridges validators, including last seen ago, total signed and executed transactions in 24 hours, balance of validators and their addresses.
+
+![](../../../static/img//bridges/bridge-explorer/validator-status-new.png)
+
+
+If you are not coming from Ethereum, you can use one of the following bridges:
+- [Jumper](https://jumper.exchange/) (by Li.Fi)
+- [Bungee](https://www.bungee.exchange)
+- [Hop](https://app.hop.exchange/)
+- [Connext Bridge](https://bridge.connext.network/)
+
+Gnosis' native bridges allow for sending tokens and data, and are run by a group of [trusted bridge validators](../how-bridges-work/amb-bridge.md#bridge-validators). There is a [roadmap](../security-and-governance/roadmap.md) as well that you can follow.
+
+Gnosis' native bridges are first-class citizens in the chain's architecture due to the [native Omni and xDai bridge's](../how-bridges-work/README.md) integral role in minting and burning the native [xDai token](../../about/tokens/xdai.md) used for gas.
+
+---
+
+// File: bridges/use-the-bridges/bridge-limits
+
+Below is a summary of each token’s transaction limits on both Ethereum and Gnosis Chain, along with quick links to inspect their on-chain contract addresses:
+
+The below list only mentions the top 10 most actively bridged assets. For a detailed view for all assets, checkout the [Bridge Explorer's limit dashboard](https://bridge.gnosischain.com/bridge-explorer/bridges).
+
+
+| Token | ETH Max/Tx                                | ETH Daily Limit                                 | ETH Exec Daily              | Gnosis Max/Tx                          | Gnosis Daily Limit                     | Gnosis Exec Daily                             | Ethereum Address                                                                                                                   | Gnosis Address                                                                                                                   |
+|-------|--------------------------------------------|--------------------------------------------------|-----------------------------|----------------------------------------|----------------------------------------|-----------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------|
+| GNO   | 1000000000000000000000000000               | 1000000000000000000000000000000000000           | 36000000000000000000001     | 36000000000000000000000               | 36000000000000000000001               | 1000000000000000000000000000000000000        | [0x6810e776880C02933D47DB1b9fc05908e5386b96](https://etherscan.io/address/0x6810e776880C02933D47DB1b9fc05908e5386b96)            | [0x9C58BAcC331c9aa871AFD802DB6379a98e80CEdb](https://gnosis.blockscout.com/address/0x9C58BAcC331c9aa871AFD802DB6379a98e80CEdb)             |
+| WBTC  | 100000000000000000                         | 100000000000000000000000000                   | 100000000000000000000000000 | 100000000000000000                   | 100000000000000000000000000           | 100000000000000000000000000                  | [0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599](https://etherscan.io/address/0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599)            | [0x8e5bBbb09Ed1ebdE8674Cda39A0c169401db4252](https://gnosis.blockscout.com/address/0x8e5bBbb09Ed1ebdE8674Cda39A0c169401db4252)             |
+| WETH  | 1000000000000000000000000000000000000      | 1000000000000000000000000000000000001          | 1000000000000000000000000000000000001 | 1000000000000000000000000000000000000 | 1000000000000000000000000000000000001  | 1000000000000000000000000000000000001       | [0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2](https://etherscan.io/address/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2)            | [0x6A023CCd1ff6F2045C3309768eAd9E68F978f6e1](https://gnosis.blockscout.com/address/0x6A023CCd1ff6F2045C3309768eAd9E68F978f6e1)             |
+| SAFE  | 1000000000000000000000000000000000000      | 10000000000000000000000000000000000010         | 10000000000000000000000000000000000010 | 1000000000000000000000000000000000000 | 10000000000000000000000000000000000010 | 10000000000000000000000000000000000010      | [0x5aFE3855358E112B5647B952709E6165e1c1eEEe](https://etherscan.io/address/0x5aFE3855358E112B5647B952709E6165e1c1eEEe)            | [0x4d18815D14fe5c3304e87B3FA18318baa5c23820](https://gnosis.blockscout.com/address/0x4d18815D14fe5c3304e87B3FA18318baa5c23820)             |
+| COW   | 1000000000000000000000000000               | 1000000000000000000000000000000000000          | 1000000000000000000000000000000000000  | 1000000000000000000000000000           | 1000000000000000000000000000000000000   | 1000000000000000000000000000000000000       | [0xDEf1CA1fb7FBcDC777520aa7f396b4E015F497aB](https://etherscan.io/address/0xDEf1CA1fb7FBcDC777520aa7f396b4E015F497aB)            | [0x177127622c4A00F3d409B75571e12cB3c8973d3c](https://gnosis.blockscout.com/address/0x177127622c4A00F3d409B75571e12cB3c8973d3c)             |
+| HOPR  | 1000000000000000000000000000               | 1000000000000000000000000000000000000          | 40000000000000000000000001 | 20000000000000000000000001            | 40000000000000000000000001             | 1000000000000000000000000000000000000        | [0xF5581dFeFD8Fb0e4aeC526bE659CFaB1f8c781dA](https://etherscan.io/address/0xF5581dFeFD8Fb0e4aeC526bE659CFaB1f8c781dA)            | [0xD057604A14982FE8D88c5fC25Aac3267eA142a08](https://gnosis.blockscout.com/address/0xD057604A14982FE8D88c5fC25Aac3267eA142a08)             |
+| USDT  | 1000000000000000                           | 1000000000000000000000000                       | 35000000000000               | 10000000000000                         | 35000000000000                          | 1000000000000000000000000                    | [0xdAC17F958D2ee523a2206206994597C13D831ec7](https://etherscan.io/address/0xdAC17F958D2ee523a2206206994597C13D831ec7)            | [0x4ECaBa5870353805a9F068101A40E0f32ed605C6](https://gnosis.blockscout.com/address/0x4ECaBa5870353805a9F068101A40E0f32ed605C6)             |
+| USDC  | 1000000000000000                           | 1000000000000000000000000                       | 35000000000000               | 10000000000000                         | 35000000000000                          | 1000000000000000000000000                    | [0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48](https://etherscan.io/address/0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48)            | [0xDDAfbb505ad214D7b80b1f830fcCc89B60fb7A83](https://gnosis.blockscout.com/address/0xDDAfbb505ad214D7b80b1f830fcCc89B60fb7A83)             |
+| OLAS  | 1000000000000000000000000000000000000      | 1000000000000000000000000000000000001          | 1000000000000000000000000000000000001 | 1000000000000000000000000000000000000 | 1000000000000000000000000000000000001  | 1000000000000000000000000000000000001       | [0x0001A500A6B18995B03f44bb040A5fFc28E45CB0](https://etherscan.io/address/0x0001A500A6B18995B03f44bb040A5fFc28E45CB0)            | [0xcE11e14225575945b8E6Dc0D4F2dD4C570f79d9f](https://gnosis.blockscout.com/address/0xcE11e14225575945b8E6Dc0D4F2dD4C570f79d9f)             |
+
+## Fees
+
+| Token               | Ethereum -> Gnosis | Gnosis -> Ethereum |
+| ------------------- | ------------------ | ------------------ |
+| Default Bridge Fees | 0%                 | 0.1%               |
+
+## Check Limits through Smart Contracts
+
+![alt text](bridge.png)
+
+This guide explains how to programmatically retrieve daily usage and per-transaction limits for WETH bridging between Ethereum Mainnet and Gnosis Chain. All calls are against the respective bridge proxy contracts’ **read** ABI.
+
+* **Contract (Ethereum→Gnosis)**
+  `0x88ad09518695c6c3712AC10a214bE5109a655671`
+* **Contract (Gnosis→Ethereum)**
+  `0xf6A78083ca3e2a662D6dd1703c939c8aCE2e268d`
+
+> **Prerequisites**
+>
+> * A Web3 client (e.g., [viem](https://github.com/wagmi-dev/viem), Ethers.js)
+> * RPC access to Ethereum Mainnet and Gnosis Chain
+> * The WETH token address on each chain
+>
+>   * Mainnet WETH: `0xC02aaa39b223FE8D0A0e5C4F27eAD9083C756Cc2`
+>   * Gnosis WETH: `0x6A023CCd1ff6F2045C3309768eAd9E68F978f6e1`
+
+---
+
+## Ethereum → Gnosis
+
+1. **Get Current Day Index**
+
+   ```js
+   const dayIndex = await contract.read.day();
+   ```
+
+   ↳ Etherscan UI: [day()](https://etherscan.io/address/0x88ad09518695c6c3712AC10a214bE5109a655671#readProxyContract#F8)
+
+2. **Daily Deposit Usage & Limit**
+
+   * **Total WETH Deposited Today**
+
+     ```js
+     const used = await contract.read.totalSpentPerDay([WETH_ADDRESS, dayIndex]);
+     ```
+
+     ↳ [totalSpentPerDay(address token, uint256 day)](https://etherscan.io/address/0x88ad09518695c6c3712AC10a214bE5109a655671#readProxyContract#F26)
+   * **Daily Deposit Limit**
+
+     ```js
+     const limit = await contract.read.dailyLimit(WETH_ADDRESS);
+     ```
+
+     ↳ [dailyLimit(address token)](https://etherscan.io/address/0x88ad09518695c6c3712AC10a214bE5109a655671#readProxyContract#F3)
+
+3. **Daily Withdrawal Usage & Limit**
+
+   * **Total WETH Withdrawn Today**
+
+     ```js
+     const usedExec = await contract.read.totalExecutedPerDay([WETH_ADDRESS, dayIndex]);
+     ```
+
+     ↳ [totalExecutedPerDay(address token, uint256 day)](https://etherscan.io/address/0x88ad09518695c6c3712AC10a214bE5109a655671#readProxyContract#F25)
+   * **Daily Withdrawal Limit**
+
+     ```js
+     const execLimit = await contract.read.executionDailyLimit(WETH_ADDRESS);
+     ```
+
+     ↳ [executionDailyLimit(address token)](https://etherscan.io/address/0x88ad09518695c6c3712AC10a214bE5109a655671#readProxyContract#F4)
+
+4. **Per-Transaction Deposit Bounds**
+
+   * **Minimum Deposit per Tx**
+
+     ```js
+     const minTx = await contract.read.minPerTx(WETH_ADDRESS);
+     ```
+
+     ↳ [minPerTx(address token)](https://etherscan.io/address/0x88ad09518695c6c3712AC10a214bE5109a655671#readProxyContract#F20)
+   * **Maximum Deposit per Tx**
+
+     ```js
+     const maxTx = await contract.read.maxPerTx(WETH_ADDRESS);
+     ```
+
+     ↳ [maxPerTx(address token)](https://etherscan.io/address/0x88ad09518695c6c3712AC10a214bE5109a655671#readProxyContract#F15)
+
+5. **Maximum Withdrawal per Tx**
+
+   ```js
+   const execMax = await contract.read.executionMaxPerTx(WETH_ADDRESS);
+   ```
+
+   ↳ [executionMaxPerTx(address token)](https://etherscan.io/address/0x88ad09518695c6c3712AC10a214bE5109a655671#readProxyContract#F5)
+
+---
+
+## Gnosis → Ethereum
+
+> All methods mirror those on the Ethereum proxy, but point at the Gnosis chain contract.
+
+1. **Get Current Day Index**
+
+   ```js
+   const dayIndex = await gnosisContract.read.day();
+   ```
+
+   ↳ [day()](https://gnosis.blockscout.com/address/0xf6A78083ca3e2a662D6dd1703c939c8aCE2e268d)
+
+2. **Daily Deposit Usage & Limit**
+
+   * **Total WETH Deposited Today**
+
+     ```js
+     const used = await gnosisContract.read.totalSpentPerDay([WETH_ADDRESS, dayIndex]);
+     ```
+
+     ↳ [totalSpentPerDay(address token, uint256 day)](https://gnosis.blockscout.com/address/0xf6A78083ca3e2a662D6dd1703c939c8aCE2e268d)
+   * **Daily Deposit Limit**
+
+     ```js
+     const limit = await gnosisContract.read.dailyLimit(WETH_ADDRESS);
+     ```
+
+     ↳ [dailyLimit(address token)](https://gnosis.blockscout.com/address/0xf6A78083ca3e2a662D6dd1703c939c8aCE2e268d)
+
+3. **Daily Withdrawal Usage & Limit**
+
+   * **Total WETH Withdrawn Today**
+
+     ```js
+     const usedExec = await gnosisContract.read.totalExecutedPerDay([WETH_ADDRESS, dayIndex]);
+     ```
+
+     ↳ [totalExecutedPerDay(address token, uint256 day)](https://gnosis.blockscout.com/address/0xf6A78083ca3e2a662D6dd1703c939c8aCE2e268d)
+   * **Daily Withdrawal Limit**
+
+     ```js
+     const execLimit = await gnosisContract.read.executionDailyLimit(WETH_ADDRESS);
+     ```
+
+     ↳ [executionDailyLimit(address token)](https://gnosis.blockscout.com/address/0xf6A78083ca3e2a662D6dd1703c939c8aCE2e268d)
+
+4. **Per-Transaction Deposit Bounds**
+
+   * **Minimum Deposit per Tx**
+
+     ```js
+     const minTx = await gnosisContract.read.minPerTx(WETH_ADDRESS);
+     ```
+
+     ↳ [minPerTx(address token)](https://gnosis.blockscout.com/address/0xf6A78083ca3e2a662D6dd1703c939c8aCE2e268d)
+   * **Maximum Deposit per Tx**
+
+     ```js
+     const maxTx = await gnosisContract.read.maxPerTx(WETH_ADDRESS);
+     ```
+
+     ↳ [maxPerTx(address token)](https://gnosis.blockscout.com/address/0xf6A78083ca3e2a662D6dd1703c939c8aCE2e268d)
+
+5. **Maximum Withdrawal per Tx**
+
+   ```js
+   const execMax = await gnosisContract.read.executionMaxPerTx(WETH_ADDRESS);
+   ```
+
+   ↳ [executionMaxPerTx(address token)](https://gnosis.blockscout.com/address/0xf6A78083ca3e2a662D6dd1703c939c8aCE2e268d)
+
+---
+
+## Example (using viem)
+
+```ts
+import { createPublicClient, http } from "viem";
+import { mainnet, gnosis } from "viem/chains";
+
+const ethClient = createPublicClient({ chain: mainnet, transport: http() });
+const gnoClient = createPublicClient({ chain: gnosis, transport: http() });
+
+const ETH_BRIDGE = "0x88ad09518695c6c3712AC10a214bE5109a655671";
+const GNO_BRIDGE = "0xf6A78083ca3e2a662D6dd1703c939c8aCE2e268d";
+const WETH = "0xC02aaa39b223FE8D0A0e5C4F27eAD9083C756Cc2";
+
+async function fetchLimits() {
+  const [dayEth] = await ethClient.read({ address: ETH_BRIDGE, abi: bridgeAbi, functionName: "day" });
+  const [dayGno] = await gnoClient.read({ address: GNO_BRIDGE, abi: bridgeAbi, functionName: "day" });
+
+ 
+}
+```
+
+---
+
+**Notes:**
+
+* All values are returned in **wei** (base units).
+* Day indexing increments every 24 hours from the bridge’s genesis timestamp.
+* Ensure your RPC node’s clock is in sync to avoid off-by-one-day errors.
+
+---
+
+// File: bridges/use-the-bridges/third-party-bridges
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Admonition from '@theme/Admonition';
+
+<Admonition type="info" title="Note">
+The following third-party bridges allow seamless asset transfers to and from Gnosis Chain. Ensure you verify the bridge’s security, trust and fees before using them. For the canonical bridges operated by Gnosis, see [Gnosis Bridge](https://bridge.gnosischain.com/).
+</Admonition>
+
+
+| Bridge Name      | Supported Networks | Link |
+|-----------------|-------------------|------|
+| NEAR Intents | Multiple EVM and non-EVM chains (NEAR, Bitcoin, Solana and more) | [Visit](https://app.near-intents.org/) |
+| Jumper   | Multiple EVM Chains, Solana | [Visit](https://jumper.exchange/?fromChain=100) |
+| Bungee | Multiple EVM Chains  | [Visit](https://www.bungee.exchange/) |
+| Symbiosis         | Multiple EVM and non-EVM chains   | [Visit](https://app.symbiosis.finance/swap) |
 
 ---
 

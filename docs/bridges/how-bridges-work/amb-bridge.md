@@ -10,7 +10,7 @@ keywords:
 
 The native Arbitrary Message Bridge (AMB) allows user to send arbitrary data between Gnosis Chain and Ethereum. This allows Gnosis contracts to send data and trigger contract functions on Ethereum and other chains, and vice versa.
 
-The AMB is a key bridge primitive that is used inside higher-order bridges like the [Omnibridge native token bridge](../About%20Token%20Bridges/omnibridge.md), and is part of the [Tokenbridge Architecture](https://github.com/tokenbridge/docs).
+The AMB is a key bridge primitive that is used inside higher-order bridges like the [Omnibridge native token bridge](./omnibridge.md), and is part of the [Tokenbridge Architecture](https://github.com/tokenbridge/docs).
 
 Due to the finality requirements on Ethereum, the transactions will take approx. 30mins to be signed by the bridge. However, users can still use 3rd party bridges (Jumper.exchange, Stargate, deBridge, etc) without any impact.
 
@@ -70,11 +70,11 @@ Due to the finality requirements on Ethereum, the transactions will take approx.
 
 ### Bridge Validators
 
-- See [Bridge Validator](../management/validators#amb--omnibridge)
+- See [Bridge Validator](../security-and-governance/governance/validators#amb--omnibridge)
 
 ### Bridge Governance
 
-- See [Bridge Governance](../management/README.md)
+- See [Bridge Governance](../security-and-governance/governance/README.md)
 
 ## How it works
 

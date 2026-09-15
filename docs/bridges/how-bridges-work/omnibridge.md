@@ -14,7 +14,7 @@ Please avoid using the legacy Omnibridge: https://omni.legacy.gnosischain.com/br
 
 ## Key Information
 
-[Omnibridge](https://bridge.gnosischain.com/) is a native token bridge that mints the canonical representations of bridged assets on Gnosis. The Omnibridge is built on top of the [Arbitrary Message Bridge (AMB)](../About%20Token%20Bridges/amb-bridge.md) and thus relies on the same group of [bridge validators](../About%20Token%20Bridges/amb-bridge#bridge-validators) and trust model as the AMB.
+[Omnibridge](https://bridge.gnosischain.com/) is a native token bridge that mints the canonical representations of bridged assets on Gnosis. The Omnibridge is built on top of the [Arbitrary Message Bridge (AMB)](./amb-bridge.md) and thus relies on the same group of [bridge validators](./amb-bridge#bridge-validators) and trust model as the AMB.
 
 The Omnibridge currently connects Gnosis to Ethereum.
 
@@ -93,11 +93,11 @@ Daily Limit is reset according to the following logic: the smart contract stores
 
 ### Bridge Validators
 
-- See [Bridge Validator](../management/validators#amb--omnibridge)
+- See [Bridge Validator](../security-and-governance/governance/validators#amb--omnibridge)
 
 ### Bridge Governance
 
-- See [Bridge Governance](../management/README.md)
+- See [Bridge Governance](../security-and-governance/governance/README.md)
 
 ## How it works
 

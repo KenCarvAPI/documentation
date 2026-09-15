@@ -1,0 +1,11 @@
+{
+    "position": 2,
+    "label": "Use the Bridges",
+    "collapsible": true,
+    "collapsed": true,
+    "link": {
+      "type": "generated-index",
+      "slug": "/bridges/use-the-bridges",
+      "description": "Bridge tokens between Ethereum and Gnosis Chain, track transfers, and check limits."
+    }
+  }

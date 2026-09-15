@@ -117,7 +117,7 @@ const HOME = {
           title: 'Move assets across chains',
           to: '/bridges',
           links: [
-            ['Use Gnosis Bridge', '/bridges/usebridges'],
+            ['Use Gnosis Bridge', '/bridges/use-the-bridges/use-gnosis-bridge'],
             ['Arbitrary Message Bridge', '/bridges/using-amb'],
           ],
         },

@@ -1,6 +1,6 @@
 ---
-sidebar_position: 3
-title: Using Gnosis Bridge Explorer
+sidebar_position: 2
+title: Bridge Explorer
 keywords: [gnosis bridge, bridge architecture, omnibridge, xdai bridge]
 ---
 
@@ -21,7 +21,7 @@ https://bridge-explorer.gnosischain.com/bridge-explorer/latest-transactions
 2. You can use different filter options to filter out the irrelevant transactions.
 3. Click on the transaction item to check the details of the transaction.
 
-![Search Transaction](../../static/img/bridges/bridge-explorer/search-new-tx.png)
+![Search Transaction](../../../static/img/bridges/bridge-explorer/search-new-tx.png)
 
 ### What does different filters mean?
 
@@ -53,11 +53,11 @@ https://bridge-explorer.gnosischain.com/bridge-explorer/latest-transactions
 3. Click **Claim** button to claim your transaction.
 
 
-![Claim Transaction](../../static/img/bridges/bridge-explorer/claim-new.png)
+![Claim Transaction](../../../static/img/bridges/bridge-explorer/claim-new.png)
 
 You can also claim your transaction from Transaction page.
 
-![Claim Transaction page](../../static/img/bridges/bridge-explorer/claim-tx-page.png)
+![Claim Transaction page](../../../static/img/bridges/bridge-explorer/claim-tx-page.png)
 
 ### Daily bridge limits
 
@@ -75,18 +75,18 @@ This section shows insight of bridge limit and is reset every `Daily limit reset
 6. **Daily limit reset**: In how many hours will the daily limit get reset to zero.
 7. **Token address**: Token address of corresponding token, native token(xDAI) don't have an address.
 
-![](../../static/img/bridges/bridge-explorer/bridge-info-new.png)
+![](../../../static/img/bridges/bridge-explorer/bridge-info-new.png)
 
 ### Configuration
 
 This section shows the address of key contracts.
-![](../../static/img/bridges/bridge-explorer/bridge-configuration-new.png)
+![](../../../static/img/bridges/bridge-explorer/bridge-configuration-new.png)
 
 ## Validators
 
 This section shows the insight of current bridges validators, including last seen ago, total signed and executed transactions in 24 hours, balance of validators and their addresses.
 
-![](../../static/img//bridges/bridge-explorer/validator-status-new.png)
+![](../../../static/img//bridges/bridge-explorer/validator-status-new.png)
 
 
 If you are not coming from Ethereum, you can use one of the following bridges:
@@ -95,7 +95,7 @@ If you are not coming from Ethereum, you can use one of the following bridges:
 - [Hop](https://app.hop.exchange/)
 - [Connext Bridge](https://bridge.connext.network/)
 
-Gnosis' native bridges allow for sending tokens and data, and are run by a group of [trusted bridge validators](../bridges/About%20Token%20Bridges/amb-bridge.md#bridge-validators). There is a [roadmap](../bridges/roadmap.md) as well that you can follow.
+Gnosis' native bridges allow for sending tokens and data, and are run by a group of [trusted bridge validators](../how-bridges-work/amb-bridge.md#bridge-validators). There is a [roadmap](../security-and-governance/roadmap.md) as well that you can follow.
 
-Gnosis' native bridges are first-class citizens in the chain's architecture due to the [native Omni and xDai bridge's](../bridges/About%20Token%20Bridges/README.md) integral role in minting and burning the native [xDai token](../about/tokens/xdai.md) used for gas.
+Gnosis' native bridges are first-class citizens in the chain's architecture due to the [native Omni and xDai bridge's](../how-bridges-work/README.md) integral role in minting and burning the native [xDai token](../../about/tokens/xdai.md) used for gas.
 

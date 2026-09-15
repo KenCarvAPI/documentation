@@ -1,6 +1,6 @@
 ---
-sidebar_position: 6
-title: Gnosis Bridge Limits
+sidebar_position: 3
+title: Bridge Limits
 description: Limits of Gnosis Omni Bridge
 keywords:
   [amb bridge, arbitrary message bridge, using amb, bridge, gnosis bridge]

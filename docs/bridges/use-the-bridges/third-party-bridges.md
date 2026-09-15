@@ -1,6 +1,6 @@
 ---
 title: Third-Party Bridges
-sidebar_position: 3
+sidebar_position: 4
 description: Third party bridges which support Gnosis Chain.
 keywords: [gnosis bridge, bridge, bridge gnosis tokens, near intents, jumper, bungee, symbiosis]
 ---

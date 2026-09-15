@@ -1,0 +1,11 @@
+{
+    "position": 5,
+    "label": "Security & Governance",
+    "collapsible": true,
+    "collapsed": true,
+    "link": {
+      "type": "generated-index",
+      "slug": "/bridges/security-and-governance",
+      "description": "How the Gnosis bridges are governed, audited, and made more trust-minimized over time."
+    }
+  }

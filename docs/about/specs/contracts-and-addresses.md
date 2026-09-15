@@ -101,7 +101,7 @@ A multi-sig Gnosis Safe is used to expand admin responsibilities to a larger ent
 
 A proposed upgrade is presented to this board and a minimum of 7 signatures are required to enact any proposal.
 
-[Governance Board Members](/bridges/management#current-bridge-governors)
+[Governance Board Members](/bridges/security-and-governance/governance/#current-bridge-governors)
 
 ### Contracts managed by the Governance Board
 

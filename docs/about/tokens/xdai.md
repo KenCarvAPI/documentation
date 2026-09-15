@@ -12,7 +12,7 @@ xDai tokens are native tokens on Gnosis and also used to pay for execution of sm
 
 ### Bridge
 
-Convert DAI from Ethereum to xDai using the [Unified Gnosis Bridge App](/bridges/usebridges).
+Convert DAI from Ethereum to xDai using the [Unified Gnosis Bridge App](/bridges/use-the-bridges/use-gnosis-bridge).
 
 ### Buy xDAI
 

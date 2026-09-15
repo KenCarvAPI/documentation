@@ -95,11 +95,11 @@ Daily Limit is reset according to the following logic: the smart contract stores
 
 ### Bridge Validators
 
-- See [Bridge Validator](../management/validators#xdai-bridge)
+- See [Bridge Validator](../security-and-governance/governance/validators#xdai-bridge)
 
 ### Bridge Governance
 
-- See [Bridge Governance](../management/README.md)
+- See [Bridge Governance](../security-and-governance/governance/README.md)
 
 ## How it Works
 
