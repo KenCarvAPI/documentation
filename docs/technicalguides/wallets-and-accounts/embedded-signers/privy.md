@@ -7,7 +7,7 @@ keywords: [privy,custom-signers]
 
 This guide will walk you through the steps to integrate the Privy Wallet and SDK into your Web3 DApp, with a specific configuration for the Gnosis chain(mainnet & Chiado testnet).
 
-![Privy Image](../../../static/img/signers/privy.png)
+![Privy Image](/img/signers/privy.png)
 
 ## Guide
 

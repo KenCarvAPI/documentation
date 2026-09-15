@@ -194,6 +194,8 @@ const config = {
             title: "More",
             items: [
               { label: "FAQ", to: "/faq/others" },
+              { label: "Useful contracts", to: "/developers/Usefulcontracts" },
+              { label: "llms.txt", to: "pathname:///llms.txt" },
               { label: "Careers", href: "https://gnosis.io/careers/" },
               { label: "Media kit", href: "https://www.gnosis.io/press" },
               { label: "Terms of use", to: "/terms-conditions" },
@@ -300,6 +302,73 @@ const config = {
           {
             to: "/bridges/bridge-limits",
             from: "/bridges/brige-limits",
+          },
+          // Knowledge hub recategorized: AA / signers / Pectra grouped under
+          // Wallets & Accounts, ramps promoted out of About, one-page
+          // categories merged into Integration Guides
+          {
+            to: "/technicalguides/wallets-and-accounts/account-abstraction/",
+            from: "/technicalguides/account-abstraction",
+          },
+          {
+            to: "/technicalguides/wallets-and-accounts/account-abstraction/zerodev-guide",
+            from: "/technicalguides/account-abstraction/zerodev-guide",
+          },
+          {
+            to: "/technicalguides/wallets-and-accounts/account-abstraction/particle-network",
+            from: "/technicalguides/account-abstraction/particle-network",
+          },
+          {
+            to: "/technicalguides/wallets-and-accounts/account-abstraction/safe-aa-infra/",
+            from: "/technicalguides/account-abstraction/Safe and supported AA infra providers",
+          },
+          {
+            to: "/technicalguides/wallets-and-accounts/account-abstraction/safe-aa-infra/integration-guide-for-safe",
+            from: "/technicalguides/account-abstraction/Safe and supported AA infra providers/integration-guide-for-safe",
+          },
+          {
+            to: "/technicalguides/wallets-and-accounts/account-abstraction/safe-aa-infra/gelato",
+            from: "/technicalguides/account-abstraction/Safe and supported AA infra providers/gelato",
+          },
+          {
+            to: "/technicalguides/wallets-and-accounts/account-abstraction/safe-aa-infra/pimlico",
+            from: "/technicalguides/account-abstraction/Safe and supported AA infra providers/pimilico",
+          },
+          {
+            to: "/technicalguides/wallets-and-accounts/embedded-signers/",
+            from: "/technicalguides/custom-signers",
+          },
+          {
+            to: "/technicalguides/wallets-and-accounts/embedded-signers/privy",
+            from: "/technicalguides/custom-signers/privy",
+          },
+          {
+            to: "/technicalguides/wallets-and-accounts/embedded-signers/dynamic",
+            from: "/technicalguides/custom-signers/dynamic",
+          },
+          {
+            to: "/technicalguides/wallets-and-accounts/smart-eoas/eip-7702",
+            from: "/technicalguides/Pectra/eip-7702",
+          },
+          {
+            to: "/technicalguides/wallets-and-accounts/smart-eoas/eip-5792",
+            from: "/technicalguides/Pectra/eip-5792",
+          },
+          {
+            to: "/technicalguides/integration-guides/cow-swap-widget",
+            from: "/technicalguides/DeFi/Deploy A Cow Swap Widget",
+          },
+          {
+            to: "/technicalguides/integration-guides/secret-network",
+            from: "/technicalguides/Confidential Computing/secret-network",
+          },
+          {
+            to: "/technicalguides/payments-and-ramps/uramp",
+            from: ["/about/uRamp", "/concepts/uRamp"],
+          },
+          {
+            to: "/technicalguides/payments-and-ramps/third-party-onramps",
+            from: ["/about/third-parties", "/concepts/third-parties"],
           },
           // Updates blog archived to /archives/Updates; nothing under /updates is published
           {

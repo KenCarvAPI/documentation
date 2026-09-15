@@ -1,6 +1,6 @@
 ---
-sidebar_label: "uRamp - off ramp and on ramp solution by Gnosis team"
-sidebar_position: 4
+sidebar_label: "uRamp"
+sidebar_position: 1
 keywords: [on ramp solutions] 
 title: uRamp - Seamlessly move Euros from an IBAN to the blockchain and back
 ---

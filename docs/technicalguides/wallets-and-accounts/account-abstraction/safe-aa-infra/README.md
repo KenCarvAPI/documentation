@@ -14,7 +14,7 @@ keywords: [safe,account-abstraction]
 
 ## Safe Core Account Abstraction SDK
 Safe Core Account Abstraction SDK allows developers to create AA functionalities into their apps.
-![](../../../../static/img/developers/Safe/safe-AA-SDK.png)
+![](/img/developers/Safe/safe-AA-SDK.png)
 
 
 ### [Protocol Kit](https://docs.safe.global/learn/safe-core/safe-core-account-abstraction-sdk/protocol-kit)

@@ -1,0 +1,11 @@
+{
+    "position": 2,
+    "label": "Smart EOAs (EIP-7702 & EIP-5792)",
+    "collapsible": true,
+    "collapsed": true,
+    "link": {
+      "type": "generated-index",
+      "slug": "/technicalguides/wallets-and-accounts/smart-eoas",
+      "description": "Pectra-era wallet capabilities on Gnosis Chain: EIP-7702 set-code transactions and the EIP-5792 wallet API."
+    }
+  }

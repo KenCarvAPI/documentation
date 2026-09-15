@@ -4,7 +4,8 @@
     "collapsible": true,
     "collapsed": true,
     "link": {
-      "type": "generated-index",
-      "description": "Deprecated consensus models used by Gnosis Chain (then xDai Chain) before The Merge in December 2022."
+        "type": "generated-index",
+        "description": "Deprecated consensus models used by Gnosis Chain (then xDai Chain) before The Merge in December 2022.",
+        "slug": "/about/specs/consensus/history"
     }
-  }
+}

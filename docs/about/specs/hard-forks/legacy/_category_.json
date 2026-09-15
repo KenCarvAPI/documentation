@@ -4,7 +4,8 @@
     "collapsible": true,
     "collapsed": true,
     "link": {
-      "type": "generated-index",
-      "description": "Historical hard forks from the xDai Chain era, listed by activation block number."
+        "type": "generated-index",
+        "description": "Historical hard forks from the xDai Chain era, listed by activation block number.",
+        "slug": "/about/specs/hard-forks/legacy"
     }
-  }
+}

@@ -1,6 +1,6 @@
 ---
-sidebar_label: "Third party On-Ramp Solutions"
-sidebar_position: 4
+sidebar_label: "Third-party On-Ramps"
+sidebar_position: 2
 keywords: [on ramp solutions, third party,] 
 title: Third Party On-Ramp Solutions
 ---

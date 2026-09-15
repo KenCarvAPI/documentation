@@ -1,9 +1,9 @@
 ---
-sidebar_position: 4
-sidebar_label: Custom Signers
+sidebar_position: 3
+sidebar_label: Embedded Signers
 ---
 
-# Custom Signers
+# Embedded & Custom Signers
 
 Custom signers allow developers to inject their own signing mechanisms tailored to specific use cases. This flexibility enhances security, usability, and adaptability in different environments, such as multi-signature wallets or smart contract interactions.
 
