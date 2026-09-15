@@ -71,7 +71,7 @@ Welcome to the Developers section! This section gives an extensive overview on h
 ## Resources
 - [Wallets](/tools/wallets): A list of wallets that support Gnosis Chain.
 - [Faucets](/tools/Faucets): A list of faucets you can use for testing purposes.
-- [RPC Providers](/tools/RPC%20Providers/): A list of RPC providers that provide access to the network.
+- [RPC Providers](/tools/rpc-providers/): A list of RPC providers that provide access to the network.
 
 ### Building on Top of Gnosis Pay
 

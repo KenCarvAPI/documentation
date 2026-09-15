@@ -298,6 +298,108 @@ const config = {
             to: "/about/security/security-audit",
             from: "/about/specs/security-audit",
           },
+          // Tools section folders kebab-cased and web3-name-sdk moved under
+          // user-onboarding
+          {
+            to: "/tools/rpc-providers/",
+            from: "/tools/RPC Providers/",
+          },
+          {
+            to: "/tools/block-explorers/",
+            from: "/tools/Blockchain Explorers/",
+          },
+          {
+            to: "/tools/block-explorers/blockscout",
+            from: "/tools/Blockchain Explorers/blockscout",
+          },
+          {
+            to: "/tools/block-explorers/tenderly",
+            from: "/tools/Blockchain Explorers/tenderly",
+          },
+          {
+            to: "/tools/indexers-analytics/",
+            from: "/tools/Indexer & Analytics",
+          },
+          {
+            to: "/tools/indexers-analytics/covalent",
+            from: "/tools/Indexer & Analytics/covalent",
+          },
+          {
+            to: "/tools/indexers-analytics/dune",
+            from: "/tools/Indexer & Analytics/dune",
+          },
+          {
+            to: "/tools/indexers-analytics/envio",
+            from: "/tools/Indexer & Analytics/envio",
+          },
+          {
+            to: "/tools/indexers-analytics/moralis",
+            from: "/tools/Indexer & Analytics/moralis",
+          },
+          {
+            to: "/tools/indexers-analytics/subquery",
+            from: "/tools/Indexer & Analytics/subquery",
+          },
+          {
+            to: "/tools/indexers-analytics/the-graph",
+            from: "/tools/Indexer & Analytics/the-graph",
+          },
+          {
+            to: "/tools/oracles/",
+            from: "/tools/Oracle Providers",
+          },
+          {
+            to: "/tools/oracles/api3",
+            from: "/tools/Oracle Providers/api3",
+          },
+          {
+            to: "/tools/oracles/chainlink",
+            from: "/tools/Oracle Providers/chainlink",
+          },
+          {
+            to: "/tools/oracles/chronicle",
+            from: "/tools/Oracle Providers/chronicle",
+          },
+          {
+            to: "/tools/oracles/dia",
+            from: "/tools/Oracle Providers/dia",
+          },
+          {
+            to: "/tools/oracles/gas-price",
+            from: "/tools/Oracle Providers/gas-price",
+          },
+          {
+            to: "/tools/oracles/pyth",
+            from: "/tools/Oracle Providers/pyth",
+          },
+          {
+            to: "/tools/oracles/tellor",
+            from: "/tools/Oracle Providers/tellor",
+          },
+          {
+            to: "/tools/oracles/supraoracles/",
+            from: "/tools/Oracle Providers/supraoracles/",
+          },
+          {
+            to: "/tools/oracles/supraoracles/vrf",
+            from: "/tools/Oracle Providers/supraoracles/vrf",
+          },
+          {
+            to: "/tools/user-onboarding/",
+            from: "/tools/User Onboarding/",
+          },
+          {
+            to: "/tools/user-onboarding/openfort",
+            from: "/tools/User Onboarding/openfort",
+          },
+          {
+            to: "/tools/user-onboarding/reown",
+            from: "/tools/User Onboarding/reown",
+          },
+          {
+            to: "/tools/user-onboarding/web3-name-sdk",
+            from: "/tools/web3-name-sdk",
+          },
           // Slug typo fixed (brige -> bridge)
           {
             to: "/bridges/bridge-limits",

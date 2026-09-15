@@ -186,7 +186,7 @@ TODO -->
 | ------------------------ | ------------------------------------------- |
 | Execution Layer RPC      | https://rpc.gnosis.gateway.fm               |
 | Execution Layer RPC      | https://rpc.gnosischain.com                 |
-| More RPC endpoints       | [RPC Providers](../../tools/RPC%20Providers/README.md) |
+| More RPC endpoints       | [RPC Providers](../../tools/rpc-providers/README.md) |
 | Execution Layer Explorer | https://gnosis.blockscout.com/              |
 | Fork monitor             | https://forkmon.gnosischain.com             |
 | EthStats                 | https://ethstats.gnosischain.com            |
@@ -470,7 +470,7 @@ The token constitutes a VFA in terms of Maltese law. Please contact [team@xdaich
 | - | - |
 | Block Size | 17M gas units |
 | Block Speed | 5 seconds |
-| Gas price | check [gas price oracle](/tools/Oracle%20Providers/gas-price) |
+| Gas price | check [gas price oracle](/tools/oracles/gas-price) |
 | Patchset | Osaka |
 | Fee Token | [xDai](/about/tokens/xdai) |
 | Consensus Token | [GNO](/about/tokens/gno) |
@@ -4230,7 +4230,7 @@ Welcome to the Developers section! This section gives an extensive overview on h
 ## Resources
 - [Wallets](/tools/wallets): A list of wallets that support Gnosis Chain.
 - [Faucets](/tools/Faucets): A list of faucets you can use for testing purposes.
-- [RPC Providers](/tools/RPC%20Providers/): A list of RPC providers that provide access to the network.
+- [RPC Providers](/tools/rpc-providers/): A list of RPC providers that provide access to the network.
 
 ### Building on Top of Gnosis Pay
 
@@ -5242,7 +5242,7 @@ This documentation site is built in ReactJS, check [this sample page](/live-samp
 
 # Using Web3.js
 
-[web3.js](https://web3js.readthedocs.io/en/v1.7.5/web3.html) is a collection of libraries that allow you to interact with a local or remote Ethereum node using HTTP, IPC or WebSocket. Since Gnosis and Ethereum are very similar, web3.js can also be used in the same way. This page will go over some of the basics to get started. The web3.js docs have a lot more on the full features and functionality of the library and can be found [here](https://web3js.readthedocs.io/en/v1.7.5/). You can view RPCs to connect to [here](/tools/RPC%20Providers/). 
+[web3.js](https://web3js.readthedocs.io/en/v1.7.5/web3.html) is a collection of libraries that allow you to interact with a local or remote Ethereum node using HTTP, IPC or WebSocket. Since Gnosis and Ethereum are very similar, web3.js can also be used in the same way. This page will go over some of the basics to get started. The web3.js docs have a lot more on the full features and functionality of the library and can be found [here](https://web3js.readthedocs.io/en/v1.7.5/). You can view RPCs to connect to [here](/tools/rpc-providers/). 
 
 ## Adding web3.js to your Project
 
@@ -5519,7 +5519,7 @@ npx hardhat run scripts/deploy.js --network chiado
 </TabItem>
 </Tabs>
 
-View your deployed contract on any of the [explorers](/tools/Blockchain%20Explorers).
+View your deployed contract on any of the [explorers](/tools/block-explorers/).
 
 Visit our [Tools page](/tools) for other support.
 
@@ -8548,21 +8548,64 @@ If you would like to request your product as part of developer tool for Gnosis C
 
 ---
 
-// File: tools/Blockchain Explorers/README
+// File: tools/Faucets
 
-# Explorers
+# Faucets
+
+A faucet is a service that provides small amounts of [xDai tokens](/about/tokens/xdai) to users who are experimenting with Gnosis. Here is a list of the available faucets.
+
+:::note
+If the faucet is not functioning properly, feel free to seek assistance on the [Gnosis Chain Discord channel](https://discord.gg/gnosis).
+:::
+
+## Official Faucet
+
+- [Gnosis Chain Faucet](https://faucet.gnosischain.com/)
+- [Chiado Testnet Faucet](https://faucet.gnosischain.com/?chain=chiado)
+
+## Community Faucets
+
+- [Stakely](https://stakely.io/en/faucet/gnosis-chain-xdai)
+- [dRPC](https://drpc.org/faucet/gnosis)
+- [Tenderly](https://docs.tenderly.co/virtual-testnets/unlimited-faucet?mtm_campaign=ext-docs&mtm_kwd=gnosis)
+
+---
+
+// File: tools/token-distribution
+
+# Token Distribution
+
+Sending tokens to multiple receivers could be cumbersome.
+This section shows ways to send tokens to multiple addresses in batch. Various tools built by the community are available. 
+
+## Platforms Supporting Gnosis
+
+- [LinkDrop](https://linkdrop.io/): features SDK, mult-chain and multi-token support.
+- [Token MultiSender](https://multisender.app/): dev-focused & security minded interface.
+- [Iroiro](https://xdai.iroiro.social/): airdrops with lower fees, csv generation for bulk sends.
+- [BiuBiu.Tools](https://biubiu.tools/#/apps/multisender): batch sending of tokens with reduced gas costs.
+
+:::info Connect to Gnosis
+All the platforms above requires to [connect MetaMask to Gnosis](/tools/wallets/metamask/).
+:::
+
+---
+
+// File: tools/block-explorers/README
+
+# Block Explorers
 
 Explorers are pieces of software that scans Gnosis and make easier for users to search for blocks, transactions, addresses, contracts.
 
 Gnosis supports the following explorers:
 
-- [Blockscout](/tools/Blockchain%20Explorers/blockscout)
+- [Blockscout](/tools/block-explorers/blockscout)
 - [Beacon chain explorer](https://beaconchain.gnosischain.com/)
 - [3xpl](https://3xpl.com/gnosis-chain)
 
 ---
 
-// File: tools/Blockchain Explorers/blockscout
+// File: tools/block-explorers/blockscout
 
 # BlockScout
 
@@ -8593,7 +8636,7 @@ Full docs: [https://docs.blockscout.com/devs/pro-api#pro-api-overview](https://d
 
 ---
 
-// File: tools/Blockchain Explorers/tenderly
+// File: tools/block-explorers/tenderly
 
 # Tenderly
 
@@ -8614,45 +8657,22 @@ With Tenderly Developer Explorer you can:
 
 ---
 
-// File: tools/Faucets
+// File: tools/indexers-analytics/README
 
-# Faucets
-
-A faucet is a service that provides small amounts of [xDai tokens](/about/tokens/xdai) to users who are experimenting with Gnosis. Here is a list of the available faucets.
-
-:::note
-If the faucet is not functioning properly, feel free to seek assistance on the [Gnosis Chain Discord channel](https://discord.gg/gnosis).
-:::
-
-## Official Faucet
-
-- [Gnosis Chain Faucet](https://faucet.gnosischain.com/)
-- [Chiado Testnet Faucet](https://faucet.gnosischain.com/?chain=chiado)
-
-## Community Faucets
-
-- [Stakely](https://stakely.io/en/faucet/gnosis-chain-xdai)
-- [dRPC](https://drpc.org/faucet/gnosis)
-- [Tenderly](https://docs.tenderly.co/virtual-testnets/unlimited-faucet?mtm_campaign=ext-docs&mtm_kwd=gnosis)
-
----
-
-// File: tools/Indexer & Analytics/README
-
-# Indexer & Analytics
+# Indexers & Analytics
 
 Indexing and analytics tools let you query and analyze on-chain data on Gnosis Chain through APIs and GraphQL, instead of scanning blocks yourself.
 
-- [The Graph](/tools/Indexer%20%26%20Analytics/the-graph) - decentralized protocol for indexing and querying chain data.
-- [SubQuery](/tools/Indexer%20%26%20Analytics/subquery) - open-source data indexer with custom APIs.
-- [Envio](/tools/Indexer%20%26%20Analytics/envio) - fast, flexible indexing solution for real-time and historical EVM data.
-- [Moralis](/tools/Indexer%20%26%20Analytics/moralis) - enterprise-grade APIs for wallet, token and NFT data.
-- [GoldRush - powered by Covalent](/tools/Indexer%20%26%20Analytics/covalent) - comprehensive blockchain data API suite.
-- [Dune](/tools/Indexer%20%26%20Analytics/dune) - on-chain data platform and dashboards.
+- [The Graph](/tools/indexers-analytics/the-graph) - decentralized protocol for indexing and querying chain data.
+- [SubQuery](/tools/indexers-analytics/subquery) - open-source data indexer with custom APIs.
+- [Envio](/tools/indexers-analytics/envio) - fast, flexible indexing solution for real-time and historical EVM data.
+- [Moralis](/tools/indexers-analytics/moralis) - enterprise-grade APIs for wallet, token and NFT data.
+- [GoldRush - powered by Covalent](/tools/indexers-analytics/covalent) - comprehensive blockchain data API suite.
+- [Dune](/tools/indexers-analytics/dune) - on-chain data platform and dashboards.
 
 ---
 
-// File: tools/Indexer & Analytics/covalent
+// File: tools/indexers-analytics/covalent
 
 # GoldRush - powered by Covalent
 
@@ -8675,7 +8695,7 @@ Learn more about GoldRush's integration with Gnosis chain [here](https://goldrus
 
 ---
 
-// File: tools/Indexer & Analytics/dune
+// File: tools/indexers-analytics/dune
 
 # Dune
 
@@ -8708,7 +8728,7 @@ For more information regarding Dune's data capabilities, including educational r
 
 ---
 
-// File: tools/Indexer & Analytics/envio
+// File: tools/indexers-analytics/envio
 
 [Envio](https://envio.dev/) is a feature-rich indexing solution that provides developers with a seamless and efficient way to index and aggregate blockchain data for any EVM. The indexed data is easily accessible through custom GraphQL queries, providing developers with the flexibility and power to retrieve specific information.
 
@@ -8795,7 +8815,7 @@ Join our growing community of elite builders, and find peace of mind with Envio.
 
 ---
 
-// File: tools/Indexer & Analytics/moralis
+// File: tools/indexers-analytics/moralis
 
 [Moralis](https://moralis.io/?utm_source=gnosis-docs&utm_medium=partner-docs) is a blockchain data platform that provides developers with all the data they need to build better blockchain applications. From NFT data and token data, through to raw blockchain data, Moralis offers a wide range of products that cover all major crypto and blockchain use cases, and it supports [Gnosis](https://moralis.io/chains/gnosis/?utm_source=gnosis-docs&utm_medium=partner-docs) together with all other major EVM chains.
 
@@ -8919,7 +8939,7 @@ You can also set up Streams programmatically, check out the [Moralis Streams doc
 
 ---
 
-// File: tools/Indexer & Analytics/subquery
+// File: tools/indexers-analytics/subquery
 
 # SubQuery Data Indexing
 
@@ -9388,7 +9408,7 @@ The fastest way to get support is by [searching our documentation](https://acade
 
 ---
 
-// File: tools/Indexer & Analytics/the-graph
+// File: tools/indexers-analytics/the-graph
 
 # The Graph 
 
@@ -9583,24 +9603,24 @@ axios(graphQLRequest)
 
 ---
 
-// File: tools/Oracle Providers/README
+// File: tools/oracles/README
 
-# Oracle Providers
+# Oracles
 
 Oracles bring off-chain data - like price feeds and randomness - on-chain so smart contracts on Gnosis Chain can use it.
 
-- [Chainlink](/tools/Oracle%20Providers/chainlink) - aggregated price feeds and external data via a decentralized oracle network.
-- [Pyth](/tools/Oracle%20Providers/pyth) - real-time market data across 40+ blockchains.
-- [API3](/tools/Oracle%20Providers/api3) - first-party oracles with Oracle Extractable Value (OEV) recapture.
-- [DIA](/tools/Oracle%20Providers/dia) - transparent, customizable oracles for price and on-chain data.
-- [Tellor](/tools/Oracle%20Providers/tellor) - censorship-resistant, permissionless oracle network.
-- [Chronicle](/tools/Oracle%20Providers/chronicle) - decentralized, scalable and cost-efficient oracles.
-- [SupraOracles](/tools/Oracle%20Providers/supraoracles/) - cross-chain oracle solution, including Supra VRF.
-- [Gas Price](/tools/Oracle%20Providers/gas-price) - Blockscout gas price API endpoint.
+- [Chainlink](/tools/oracles/chainlink) - aggregated price feeds and external data via a decentralized oracle network.
+- [Pyth](/tools/oracles/pyth) - real-time market data across 40+ blockchains.
+- [API3](/tools/oracles/api3) - first-party oracles with Oracle Extractable Value (OEV) recapture.
+- [DIA](/tools/oracles/dia) - transparent, customizable oracles for price and on-chain data.
+- [Tellor](/tools/oracles/tellor) - censorship-resistant, permissionless oracle network.
+- [Chronicle](/tools/oracles/chronicle) - decentralized, scalable and cost-efficient oracles.
+- [SupraOracles](/tools/oracles/supraoracles/) - cross-chain oracle solution, including Supra VRF.
+- [Gas Price](/tools/oracles/gas-price) - Blockscout gas price API endpoint.
 
 ---
 
-// File: tools/Oracle Providers/api3
+// File: tools/oracles/api3
 
 # Api3
 [Api3](https://api3.org/) delivers first-party oracles that pay you.
@@ -9716,7 +9736,7 @@ contract DataFeedReaderExample is Ownable {
 
 ---
 
-// File: tools/Oracle Providers/chainlink
+// File: tools/oracles/chainlink
 
 # Chainlink Price Feeds
 
@@ -9868,7 +9888,7 @@ Once verified, you will see the checkmark next to the code, and you can read (an
 
 ---
 
-// File: tools/Oracle Providers/chronicle
+// File: tools/oracles/chronicle
 
 # Chronicle  
 
@@ -9954,7 +9974,7 @@ If you have any questions or need support, drop us a message on [Discord](https:
 
 ---
 
-// File: tools/Oracle Providers/dia
+// File: tools/oracles/dia
 
 # DIA
 
@@ -9982,7 +10002,7 @@ If you have any questions or need support, drop us a message on [Discord](https:
 
 ---
 
-// File: tools/Oracle Providers/gas-price
+// File: tools/oracles/gas-price
 
 # Gas Price Oracle
 
@@ -10017,7 +10037,7 @@ https://blockscout.chiadochain.net/api/v1/gas-price-oracle
 
 ---
 
-// File: tools/Oracle Providers/pyth
+// File: tools/oracles/pyth
 
 ## Overview
 
@@ -10092,7 +10112,7 @@ If you have any questions or issues, contact us on the following platforms:
 
 ---
 
-// File: tools/Oracle Providers/supraoracles/README
+// File: tools/oracles/supraoracles/README
 
 :::info testnet
 SupraOracles only supports [Chiado testnet](/about/networks/chiado).
@@ -10232,7 +10252,7 @@ The SNAP program is partnered with some of Web3's most prolific names who are he
 
 ---
 
-// File: tools/Oracle Providers/supraoracles/vrf
+// File: tools/oracles/supraoracles/vrf
 
 :::info testnet
 SupraOracles only supports [Chiado testnet](../../../about/networks/chiado.md).
@@ -10387,7 +10407,7 @@ For additional tutorials and guides based on example use-cases, please refer to 
 
 ---
 
-// File: tools/Oracle Providers/tellor
+// File: tools/oracles/tellor
 
 # Tellor Data Feeds
 
@@ -10466,7 +10486,7 @@ contract BtcPriceContract is UsingTellor {
 
 ---
 
-// File: tools/RPC Providers/README
+// File: tools/rpc-providers/README
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
@@ -10593,7 +10613,7 @@ https://gnosis.api.onfinality.io/public
 
 ---
 
-// File: tools/User Onboarding/Readme
+// File: tools/user-onboarding/README
 
 # User Onboarding
 
@@ -10601,7 +10621,7 @@ Web3 onboarding often faces challenges due to complex wallet setups, unfamiliari
 
 ---
 
-// File: tools/User Onboarding/openfort
+// File: tools/user-onboarding/openfort
 
 # Openfort
 
@@ -10628,7 +10648,7 @@ Some links to learn more about Openfort:
 
 ---
 
-// File: tools/User Onboarding/reown
+// File: tools/user-onboarding/reown
 
 # Reown (prev. known as WalletConnect)
 
@@ -10654,23 +10674,129 @@ Some links to learn more about Reown:
 
 ---
 
-// File: tools/token-distribution
+// File: tools/user-onboarding/web3-name-sdk
 
-# Token Distribution
+# Space ID Web3 Name Sdk
 
-Sending tokens to multiple receivers could be cumbersome.
-This section shows ways to send tokens to multiple addresses in batch. Various tools built by the community are available. 
+Resolve web3 domain name or reverse resolve conventional address
 
-## Platforms Supporting Gnosis
+## Overview​
 
-- [LinkDrop](https://linkdrop.io/): features SDK, mult-chain and multi-token support.
-- [Token MultiSender](https://multisender.app/): dev-focused & security minded interface.
-- [Iroiro](https://xdai.iroiro.social/): airdrops with lower fees, csv generation for bulk sends.
-- [BiuBiu.Tools](https://biubiu.tools/#/apps/multisender): batch sending of tokens with reduced gas costs.
+The primary capabilities of the SDK include:
 
-:::info Connect to Gnosis
-All the platforms above requires to [connect MetaMask to Gnosis](/tools/wallets/metamask/).
-:::
+- Domain Name Resolution: It resolves domain names to obtain essential information about the domain, including its associated conventional address, various records (such as avatars, IPFS links, social data), and metadata, etc.
+- Reverse Resolution: The SDK facilitates reverse address resolution. This feature makes it possible to determine the primary domain name associated with a given address, even across different blockchains or TLDs, returning Chain Primary Name or TLD Primary Name.
+
+### Key Terminology
+
+TLD Primary Name:
+
+- Every address is able to set TLD Primary Name to configure a reverse resolution domain for each Top-Level Domain, regardless of whether it has been verified or not on SPACE ID.
+- Examples include setting "allen.eth" as TLD Primary Name for .eth, "allen.gno" for .gno, "allen.bnb" for .bnb. 
+
+Chain Primary Name:
+
+- Each address is permitted to have only one unique Chain Primary Name for each blockchain or network.
+- Specifically, when multiple TLDs verified on a single chain exist, only one domain name can be chosen as such reverse resolution domain for that particular chain.
+- For instance, "allen.eth" could serve as Chain Primary Name for Ethereum, and "allen.gno" might function as the primary name for Gnosis Chain.
+
+By default, all EVM-based domain names are supported for domain resolution in the Web3 Name SDK. Reverse resolution returns a Chain Primary Name for each EVM chain. Project administrators have the flexibility to choose whether to integrate support for all or only specific chains and TLDs. They can also configure custom settings for reverse resolution as needed. This adaptability allows projects to tailor the SDK's functionality to their specific requirements.
+
+## Get Started
+
+Developers can resolve web3 domain name or reverse resolve conventional address with Web3 Name SDK with zero configuration.
+
+## Install
+
+`npm install @web3-name-sdk/core viem@^1.20`
+
+If you are using next.js, please add the following configuration in your next.config.js in order to transpile commonjs dependencies:
+
+```typescript
+const nextConfig = {
+  transpilePackages: ["@web3-name-sdk/core"],
+};
+```
+
+### 1. Setup client​
+
+```typescript
+import { createWeb3Name } from "@web3-name-sdk/core";
+
+const web3Name = createWeb3Name();
+```
+
+### 2. Resolve a domain name​
+
+You can get address from domain name with a single request:
+
+```typescript
+const address = await web3name.getAddress("gnosis.gno");
+const address = await web3name.getAddress("bts_official.lens");
+const address = await web3name.getAddress("beresnev.crypto");
+const address = await web3name.getAddress("registry.gno");
+```
+
+### 3. Resolve an address​
+
+There are optional parameters in the method to select your target chain or TLD (top-level Domain).  
+By providing chain IDs, you can resolve addresses on selected chains and get an available domain name from all TLDs deployed on these chains.
+
+```typescript
+// Resolve an address from Gnosis Chain
+const name = await web3name.getDomainName({
+  address: "0x18ce5dc03a2bd7275ff5b69f76b76267ba7da9f4",
+  queryChainIdList: [2818],
+}); // expect: goncalo.gno
+```
+
+By providing TLDs, address can be resolved from the selected TLDs and get an available TLD primary name.
+
+```typescript
+// Resolve an address from .gno TLD
+const name = await web3name.getDomainName({
+  address: "0x18ce5dc03a2bd7275ff5b69f76b76267ba7da9f4",
+  queryTldList: ["gno"],
+}); // expect: goncalo.gno
+```
+
+### 4. Record
+
+Domain text records can be fetched by providing domain name and the key. For example, the avatar record of goncalo.gno is returned from this method given key name avatar:
+
+```typescript
+const record = await web3Name.getDomainRecord({
+  name: "goncalo.gno",
+  key: "avatar",
+});
+```
+
+### 5. Metadata​
+
+Domain metadata can be fetched by SDK directly.
+
+```typescript
+// requesting
+const metadata = await web3Name.getMetadata({ name: "public.gno" });
+```
+
+## Resolving `.gno` names with the Blockscout BENS API
+
+Blockscout's name service API ([BENS](https://github.com/blockscout/blockscout-ens)) resolves Genome (`.gno`) names on Gnosis Chain without any SDK. Chain ID `100` is Gnosis mainnet.
+
+Forward resolution (name to address):
+
+```bash
+curl "https://bens.services.blockscout.com/api/v1/100/domains:lookup?name=gnosis.gno"
+```
+
+Reverse resolution (address to names):
+
+```bash
+curl "https://bens.services.blockscout.com/api/v1/100/addresses:lookup?address=0x22D26d8bC069825613E84D3664F0a5e4556BC73d&resolved_to=true&owned_by=true"
+```
+
+Both return JSON with the matching `name`, `resolved_address`, `owner` and expiry. This is the same service that powers name display on [gnosis.blockscout.com](https://gnosis.blockscout.com/).
 
 ---
 
@@ -10994,129 +11120,3 @@ Once connected to [Gnosis in MetaMask](/tools/wallets/metamask) and your Trezor 
 
 - [Trezor Learn & Support](https://trezor.io/learn)
 - [Supported coins & tokens](https://trezor.io/coins/)
-
----
-
-// File: tools/web3-name-sdk
-
-# Space ID Web3 Name Sdk
-
-Resolve web3 domain name or reverse resolve conventional address
-
-## Overview​
-
-The primary capabilities of the SDK include:
-
-- Domain Name Resolution: It resolves domain names to obtain essential information about the domain, including its associated conventional address, various records (such as avatars, IPFS links, social data), and metadata, etc.
-- Reverse Resolution: The SDK facilitates reverse address resolution. This feature makes it possible to determine the primary domain name associated with a given address, even across different blockchains or TLDs, returning Chain Primary Name or TLD Primary Name.
-
-### Key Terminology
-
-TLD Primary Name:
-
-- Every address is able to set TLD Primary Name to configure a reverse resolution domain for each Top-Level Domain, regardless of whether it has been verified or not on SPACE ID.
-- Examples include setting "allen.eth" as TLD Primary Name for .eth, "allen.gno" for .gno, "allen.bnb" for .bnb. 
-
-Chain Primary Name:
-
-- Each address is permitted to have only one unique Chain Primary Name for each blockchain or network.
-- Specifically, when multiple TLDs verified on a single chain exist, only one domain name can be chosen as such reverse resolution domain for that particular chain.
-- For instance, "allen.eth" could serve as Chain Primary Name for Ethereum, and "allen.gno" might function as the primary name for Gnosis Chain.
-
-By default, all EVM-based domain names are supported for domain resolution in the Web3 Name SDK. Reverse resolution returns a Chain Primary Name for each EVM chain. Project administrators have the flexibility to choose whether to integrate support for all or only specific chains and TLDs. They can also configure custom settings for reverse resolution as needed. This adaptability allows projects to tailor the SDK's functionality to their specific requirements.
-
-## Get Started
-
-Developers can resolve web3 domain name or reverse resolve conventional address with Web3 Name SDK with zero configuration.
-
-## Install
-
-`npm install @web3-name-sdk/core viem@^1.20`
-
-If you are using next.js, please add the following configuration in your next.config.js in order to transpile commonjs dependencies:
-
-```typescript
-const nextConfig = {
-  transpilePackages: ["@web3-name-sdk/core"],
-};
-```
-
-### 1. Setup client​
-
-```typescript
-import { createWeb3Name } from "@web3-name-sdk/core";
-
-const web3Name = createWeb3Name();
-```
-
-### 2. Resolve a domain name​
-
-You can get address from domain name with a single request:
-
-```typescript
-const address = await web3name.getAddress("gnosis.gno");
-const address = await web3name.getAddress("bts_official.lens");
-const address = await web3name.getAddress("beresnev.crypto");
-const address = await web3name.getAddress("registry.gno");
-```
-
-### 3. Resolve an address​
-
-There are optional parameters in the method to select your target chain or TLD (top-level Domain).  
-By providing chain IDs, you can resolve addresses on selected chains and get an available domain name from all TLDs deployed on these chains.
-
-```typescript
-// Resolve an address from Gnosis Chain
-const name = await web3name.getDomainName({
-  address: "0x18ce5dc03a2bd7275ff5b69f76b76267ba7da9f4",
-  queryChainIdList: [2818],
-}); // expect: goncalo.gno
-```
-
-By providing TLDs, address can be resolved from the selected TLDs and get an available TLD primary name.
-
-```typescript
-// Resolve an address from .gno TLD
-const name = await web3name.getDomainName({
-  address: "0x18ce5dc03a2bd7275ff5b69f76b76267ba7da9f4",
-  queryTldList: ["gno"],
-}); // expect: goncalo.gno
-```
-
-### 4. Record
-
-Domain text records can be fetched by providing domain name and the key. For example, the avatar record of goncalo.gno is returned from this method given key name avatar:
-
-```typescript
-const record = await web3Name.getDomainRecord({
-  name: "goncalo.gno",
-  key: "avatar",
-});
-```
-
-### 5. Metadata​
-
-Domain metadata can be fetched by SDK directly.
-
-```typescript
-// requesting
-const metadata = await web3Name.getMetadata({ name: "public.gno" });
-```
-
-## Resolving `.gno` names with the Blockscout BENS API
-
-Blockscout's name service API ([BENS](https://github.com/blockscout/blockscout-ens)) resolves Genome (`.gno`) names on Gnosis Chain without any SDK. Chain ID `100` is Gnosis mainnet.
-
-Forward resolution (name to address):
-
-```bash
-curl "https://bens.services.blockscout.com/api/v1/100/domains:lookup?name=gnosis.gno"
-```
-
-Reverse resolution (address to names):
-
-```bash
-curl "https://bens.services.blockscout.com/api/v1/100/addresses:lookup?address=0x22D26d8bC069825613E84D3664F0a5e4556BC73d&resolved_to=true&owned_by=true"
-```
-
-Both return JSON with the matching `name`, `resolved_address`, `owner` and expiry. This is the same service that powers name display on [gnosis.blockscout.com](https://gnosis.blockscout.com/).
