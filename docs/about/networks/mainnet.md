@@ -24,7 +24,7 @@ keywords:
 | ------------------------ | ------------------------------------------- |
 | Execution Layer RPC      | https://rpc.gnosis.gateway.fm               |
 | Execution Layer RPC      | https://rpc.gnosischain.com                 |
-| More RPC endpoints       | [RPC Providers](../../tools/RPC%20Providers/README.md) |
+| More RPC endpoints       | [RPC Providers](../../tools/rpc-providers/README.md) |
 | Execution Layer Explorer | https://gnosis.blockscout.com/              |
 | Fork monitor             | https://forkmon.gnosischain.com             |
 | EthStats                 | https://ethstats.gnosischain.com            |

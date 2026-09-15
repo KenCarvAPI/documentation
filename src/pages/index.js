@@ -135,8 +135,8 @@ const HOME = {
           title: 'Read chain data',
           to: '/tools',
           links: [
-            ['RPC providers', '/tools/RPC Providers/'],
-            ['Block explorers', '/tools/Blockchain Explorers/'],
+            ['RPC providers', '/tools/rpc-providers/'],
+            ['Block explorers', '/tools/block-explorers/'],
           ],
         },
       ],

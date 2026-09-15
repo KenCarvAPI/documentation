@@ -1,4 +1,5 @@
 ---
+sidebar_position: 9
 description: Send tokens to multiple addresses in batch. Various tools built by the community are available. 
 keywords: [linkdrop, token distribution, multisender, multisend, airdrop]
 ---

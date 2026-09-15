@@ -1,4 +1,5 @@
 ---
+sidebar_position: 6
 description: Find your Gnosis Chain wallet
 keywords: [gnosis tools, dev tools, wallets, safe, seed, metamask, ledger, trezor]
 ---

@@ -11,7 +11,7 @@ keywords: [gnosis specs, gnosis specifications, gnosis block size, block speed, 
 | - | - |
 | Block Size | 17M gas units |
 | Block Speed | 5 seconds |
-| Gas price | check [gas price oracle](/tools/Oracle%20Providers/gas-price) |
+| Gas price | check [gas price oracle](/tools/oracles/gas-price) |
 | Patchset | Osaka |
 | Fee Token | [xDai](/about/tokens/xdai) |
 | Consensus Token | [GNO](/about/tokens/gno) |

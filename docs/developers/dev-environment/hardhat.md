@@ -176,7 +176,7 @@ npx hardhat run scripts/deploy.js --network chiado
 </TabItem>
 </Tabs>
 
-View your deployed contract on any of the [explorers](/tools/Blockchain%20Explorers).
+View your deployed contract on any of the [explorers](/tools/block-explorers/).
 
 Visit our [Tools page](/tools) for other support.
 
