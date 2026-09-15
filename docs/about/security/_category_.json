@@ -1,0 +1,10 @@
+{
+    "position": 4,
+    "label": "Security",
+    "collapsible": true,
+    "collapsed": true,
+    "link": {
+      "type": "generated-index",
+      "description": "Bug bounty program and security audits of Gnosis Chain and related infrastructure."
+    }
+  }

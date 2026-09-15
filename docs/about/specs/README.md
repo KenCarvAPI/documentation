@@ -3,7 +3,7 @@ description: Gnosis Chain protocol specifications and resources
 keywords: [gnosis specs, gnosis specifications, gnosis block size, block speed, patchset, gnosis token, gnosis chain id, chiado chain id]
 ---
 
-# Gnosis Specifications
+# Network Parameters
 
 ## General Information
 

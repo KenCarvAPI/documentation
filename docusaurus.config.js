@@ -234,6 +234,68 @@ const config = {
           return undefined;
         },
         redirects: [
+          // Chain Specifications recategorized: consensus history, legacy forks,
+          // merged contracts page, and security pages moved out of /about/specs
+          {
+            to: "/about/specs/consensus/history/aura",
+            from: "/about/specs/consensus/aura",
+          },
+          {
+            to: "/about/specs/consensus/history/posdao",
+            from: "/about/specs/consensus/posdao",
+          },
+          {
+            to: "/about/specs/consensus/",
+            from: "/about/specs/consensus/proof-of-stake",
+          },
+          {
+            to: "/about/specs/hard-forks/legacy/1604400",
+            from: "/about/specs/hard-forks/1604400",
+          },
+          {
+            to: "/about/specs/hard-forks/legacy/2508800",
+            from: "/about/specs/hard-forks/2508800",
+          },
+          {
+            to: "/about/specs/hard-forks/legacy/7298030",
+            from: "/about/specs/hard-forks/7298030",
+          },
+          {
+            to: "/about/specs/hard-forks/legacy/9186425",
+            from: "/about/specs/hard-forks/9186425",
+          },
+          {
+            to: "/about/specs/hard-forks/legacy/16101500",
+            from: "/about/specs/hard-forks/16101500",
+          },
+          {
+            to: "/about/specs/hard-forks/legacy/19040000",
+            from: "/about/specs/hard-forks/19040000",
+          },
+          {
+            to: "/about/specs/hard-forks/legacy/21735000",
+            from: "/about/specs/hard-forks/21735000",
+          },
+          {
+            to: "/about/specs/hard-forks/legacy/spec.json-update",
+            from: "/about/specs/hard-forks/spec.json-update",
+          },
+          {
+            to: "/about/specs/contracts-and-addresses",
+            from: [
+              "/about/specs/deposit-contracts",
+              "/about/specs/gbc",
+              "/about/specs/gbc/upgradeability",
+            ],
+          },
+          {
+            to: "/about/security/bug-bounty",
+            from: "/about/specs/bug-bounty",
+          },
+          {
+            to: "/about/security/security-audit",
+            from: "/about/specs/security-audit",
+          },
           // Slug typo fixed (brige -> bridge)
           {
             to: "/bridges/bridge-limits",

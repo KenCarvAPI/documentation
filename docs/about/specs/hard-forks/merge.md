@@ -14,9 +14,9 @@ Hard forks are backward-incompatible upgrades used to introduce new functionalit
 
 # The Merge
 
-In early December 2022, Gnosis underwent the Merge. The Gnosis execution layer (formerly xDai) has been merged with the [Gnosis Beacon Chain](../gbc/README.md), in a process similar to the [Ethereum merge](https://ethereum.org/en/upgrades/merge/).
+In early December 2022, Gnosis underwent the Merge. The Gnosis execution layer (formerly xDai) has been merged with the [Gnosis Beacon Chain](../contracts-and-addresses.md), in a process similar to the [Ethereum merge](https://ethereum.org/en/upgrades/merge/).
 
-The Merge represents an important shift for Gnosis, replacing the legacy [Proof-of-Authority consensus](../consensus/aura.md) with the open and unpermissioned [Beacon Chain Consensus](../gbc/README.md). This allows Gnosis to transition to a fully decentralized and permissionless proof-of-stake network.
+The Merge represents an important shift for Gnosis, replacing the legacy [Proof-of-Authority consensus](../consensus/history/aura.md) with the open and unpermissioned [Beacon Chain Consensus](../contracts-and-addresses.md). This allows Gnosis to transition to a fully decentralized and permissionless proof-of-stake network.
 
 The Merge is also another step in Gnosis' journey together with Ethereum. From the early days of xDai at ETHDenver, Gnosis has had a role in Ethereum's journey. With the adoption of Ethereum's consensus mechanism, Gnosis will continue to contribute to Ethereum's growth as an experimental chain, where newcomers, experiments and ideas are welcome.
 

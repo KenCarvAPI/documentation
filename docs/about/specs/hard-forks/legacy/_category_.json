@@ -1,0 +1,10 @@
+{
+    "position": 99,
+    "label": "Legacy xDai forks (pre-merge)",
+    "collapsible": true,
+    "collapsed": true,
+    "link": {
+      "type": "generated-index",
+      "description": "Historical hard forks from the xDai Chain era, listed by activation block number."
+    }
+  }
