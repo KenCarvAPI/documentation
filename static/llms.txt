@@ -8595,11 +8595,18 @@ All the platforms above requires to [connect MetaMask to Gnosis](/tools/wallets/
 
 Explorers are pieces of software that scans Gnosis and make easier for users to search for blocks, transactions, addresses, contracts.
 
+:::tip Use it
+Shipped a contract? [**Verify it so its source and Read/Write tabs show on Blockscout →**](/developers/Verify%20Smart%20Contracts/)
+:::
+
 Gnosis supports the following explorers:
 
-- [Blockscout](/tools/block-explorers/blockscout)
-- [Beacon chain explorer](https://beaconchain.gnosischain.com/)
-- [3xpl](https://3xpl.com/gnosis-chain)
+| Explorer | What it covers | Networks |
+| --- | --- | --- |
+| [Blockscout](/tools/block-explorers/blockscout) | The canonical explorer: blocks, txs, contracts, tokens, APIs | Gnosis · Chiado |
+| [Tenderly](/tools/block-explorers/tenderly) | Developer explorer: transaction simulation and debugging | Gnosis · Ethereum |
+| [Beacon chain explorer](https://beaconchain.gnosischain.com/) | Consensus layer: validators, epochs, attestations | Gnosis |
+| [3xpl](https://3xpl.com/gnosis-chain) | Universal multi-chain explorer | Gnosis · Ethereum |
 
 ---
 
@@ -8661,12 +8668,16 @@ With Tenderly Developer Explorer you can:
 
 Indexing and analytics tools let you query and analyze on-chain data on Gnosis Chain through APIs and GraphQL, instead of scanning blocks yourself.
 
-- [The Graph](/tools/indexers-analytics/the-graph) - decentralized protocol for indexing and querying chain data.
-- [SubQuery](/tools/indexers-analytics/subquery) - open-source data indexer with custom APIs.
-- [Envio](/tools/indexers-analytics/envio) - fast, flexible indexing solution for real-time and historical EVM data.
-- [Moralis](/tools/indexers-analytics/moralis) - enterprise-grade APIs for wallet, token and NFT data.
-- [GoldRush - powered by Covalent](/tools/indexers-analytics/covalent) - comprehensive blockchain data API suite.
-- [Dune](/tools/indexers-analytics/dune) - on-chain data platform and dashboards.
+**Choosing:** building a custom API over your own contracts → [The Graph](/tools/indexers-analytics/the-graph), [SubQuery](/tools/indexers-analytics/subquery) or [Envio](/tools/indexers-analytics/envio); ready-made REST APIs for wallet, token and NFT data → [Moralis](/tools/indexers-analytics/moralis) or [GoldRush](/tools/indexers-analytics/covalent); SQL and dashboards over decoded chain data → [Dune](/tools/indexers-analytics/dune).
+
+| Provider | What it does | Networks |
+| --- | --- | --- |
+| [The Graph](/tools/indexers-analytics/the-graph) | Decentralized protocol for indexing and querying chain data | Gnosis · Ethereum |
+| [SubQuery](/tools/indexers-analytics/subquery) | Open-source data indexer with custom APIs | Gnosis · Ethereum |
+| [Envio](/tools/indexers-analytics/envio) | Fast, flexible indexing for real-time and historical EVM data | Gnosis · Ethereum |
+| [Moralis](/tools/indexers-analytics/moralis) | Enterprise-grade APIs for wallet, token and NFT data | Gnosis · Ethereum |
+| [GoldRush (Covalent)](/tools/indexers-analytics/covalent) | Comprehensive blockchain data API suite | Gnosis · Ethereum |
+| [Dune](/tools/indexers-analytics/dune) | On-chain data platform and dashboards | Gnosis · Ethereum |
 
 ---
 
@@ -9601,20 +9612,79 @@ axios(graphQLRequest)
 
 ---
 
+// File: tools/oracles/read-a-price-feed
+
+# Read a Price Feed
+
+Five minutes from an empty directory to a live ETH/USD price read from Gnosis Chain — and a way to verify the answer on-chain. Works the same on Ethereum mainnet with a different feed address.
+
+## 1. Set up
+
+```bash
+mkdir price-feed && cd price-feed && npm init -y && npm install viem
+```
+
+## 2. Read the feed
+
+Chainlink's ETH/USD aggregator on Gnosis lives at [`0xa767f745331D267c7751297D982b050c93985627`](https://gnosis.blockscout.com/address/0xa767f745331D267c7751297D982b050c93985627). Save this as `price.mjs`:
+
+```js
+import { createPublicClient, http, parseAbi } from "viem";
+import { gnosis } from "viem/chains";
+
+const client = createPublicClient({ chain: gnosis, transport: http() });
+
+const feed = "0xa767f745331D267c7751297D982b050c93985627"; // ETH/USD
+const abi = parseAbi([
+  "function latestRoundData() view returns (uint80, int256 answer, uint256, uint256 updatedAt, uint80)",
+  "function decimals() view returns (uint8)",
+]);
+
+const [[, answer, , updatedAt], decimals] = await Promise.all([
+  client.readContract({ address: feed, abi, functionName: "latestRoundData" }),
+  client.readContract({ address: feed, abi, functionName: "decimals" }),
+]);
+
+console.log(`ETH/USD: ${Number(answer) / 10 ** decimals}`);
+console.log(`updated: ${new Date(Number(updatedAt) * 1000).toISOString()}`);
+```
+
+```bash
+node price.mjs
+```
+
+## 3. Verify the result
+
+Open the feed on [Blockscout](https://gnosis.blockscout.com/address/0xa767f745331D267c7751297D982b050c93985627?tab=read_contract) and call `latestRoundData` from the **Read contract** tab — the `answer` should match your script's output.
+
+## Where to go next
+
+- Other pairs: the full list of Gnosis feeds is in the [Chainlink docs](https://docs.chain.link/docs/data-feeds-gnosis-chain/).
+- Use it in Solidity: the [Chainlink provider page](/tools/oracles/chainlink) walks through the same read from a contract.
+- Alternative providers: [compare the oracle providers](/tools/oracles/) — Pyth for high-frequency market data, Supra for [verifiable randomness](/tools/oracles/supraoracles/vrf).
+
+---
+
 // File: tools/oracles/README
 
 # Oracles
 
 Oracles bring off-chain data - like price feeds and randomness - on-chain so smart contracts on Gnosis Chain can use it.
 
-- [Chainlink](/tools/oracles/chainlink) - aggregated price feeds and external data via a decentralized oracle network.
-- [Pyth](/tools/oracles/pyth) - real-time market data across 40+ blockchains.
-- [API3](/tools/oracles/api3) - first-party oracles with Oracle Extractable Value (OEV) recapture.
-- [DIA](/tools/oracles/dia) - transparent, customizable oracles for price and on-chain data.
-- [Tellor](/tools/oracles/tellor) - censorship-resistant, permissionless oracle network.
-- [Chronicle](/tools/oracles/chronicle) - decentralized, scalable and cost-efficient oracles.
-- [SupraOracles](/tools/oracles/supraoracles/) - cross-chain oracle solution, including Supra VRF.
-- [Gas Price](/tools/oracles/gas-price) - Blockscout gas price API endpoint.
+:::tip Use it
+New to oracles? [**Read a price feed in 5 minutes →**](/tools/oracles/read-a-price-feed)
+:::
+
+| Provider | What it does | Networks |
+| --- | --- | --- |
+| [Chainlink](/tools/oracles/chainlink) | Aggregated price feeds and external data via a decentralized oracle network | Gnosis · Ethereum |
+| [Pyth](/tools/oracles/pyth) | Real-time market data across 40+ blockchains | Gnosis · Ethereum |
+| [API3](/tools/oracles/api3) | First-party oracles with Oracle Extractable Value (OEV) recapture | Gnosis · Ethereum |
+| [DIA](/tools/oracles/dia) | Transparent, customizable oracles for price and on-chain data | Gnosis · Ethereum |
+| [Tellor](/tools/oracles/tellor) | Censorship-resistant, permissionless oracle network | Gnosis · Ethereum |
+| [Chronicle](/tools/oracles/chronicle) | Decentralized, scalable and cost-efficient oracles | Gnosis · Ethereum |
+| [SupraOracles](/tools/oracles/supraoracles/) | Cross-chain oracle solution, including Supra VRF | Gnosis · Ethereum |
+| [Gas Price](/tools/oracles/gas-price) | Blockscout gas price API endpoint | Gnosis |
 
 ---
 
@@ -10484,6 +10554,55 @@ contract BtcPriceContract is UsingTellor {
 
 ---
 
+// File: tools/rpc-providers/connect-and-read
+
+# Connect and Read the Chain
+
+Five minutes from an empty directory to reading live chain state over JSON-RPC — and a way to verify the answer on-chain. Works the same on Ethereum mainnet by swapping the chain import.
+
+## 1. Set up
+
+```bash
+mkdir hello-gnosis && cd hello-gnosis && npm init -y && npm install viem
+```
+
+## 2. Read the chain
+
+Save this as `read.mjs`. It uses the free public RPC (`https://rpc.gnosischain.com`, viem's default for Gnosis) — fine for scripts; use a [provider](/tools/rpc-providers/) for production traffic.
+
+```js
+import { createPublicClient, http, formatEther } from "viem";
+import { gnosis } from "viem/chains";
+
+const client = createPublicClient({ chain: gnosis, transport: http() });
+
+const block = await client.getBlock();
+console.log(`block #${block.number} at ${new Date(Number(block.timestamp) * 1000).toISOString()}`);
+console.log(`gas used: ${block.gasUsed} / ${block.gasLimit}`);
+
+// xDai balance of any address — swap in your own
+const balance = await client.getBalance({
+  address: "0x9C58BAcC331c9aa871AFD802DB6379a98e80CEdb",
+});
+console.log(`balance: ${formatEther(balance)} xDai`);
+```
+
+```bash
+node read.mjs
+```
+
+## 3. Verify the result
+
+Open [Blockscout](https://gnosis.blockscout.com/) — the latest block number on the homepage should match your script's output (give or take the ~5-second block time), and any address you queried shows the same balance on its page.
+
+## Where to go next
+
+- Production traffic or websockets: [pick an RPC provider](/tools/rpc-providers/).
+- Testnet: swap `gnosis` for `gnosisChiado` in the import — free xDai from the [faucets](/tools/Faucets).
+- Write your first transaction: the [developer quickstart](/developers/quickstart) deploys a contract next.
+
+---
+
 // File: tools/rpc-providers/README
 
 import Tabs from "@theme/Tabs";
@@ -10492,6 +10611,10 @@ import TabItem from "@theme/TabItem";
 # RPC Providers
 
 Gnosis encourages developers to work with our ecosystem of professional RPC providers that provide high-availability, reliable RPCs for access to the network.
+
+:::tip Use it
+First time connecting? [**Connect and read the chain in 5 minutes →**](/tools/rpc-providers/connect-and-read)
+:::
 
 RPC Providers implement the JSON RPC API that Dapps and developers can interact with:
 

@@ -11,6 +11,10 @@ import TabItem from "@theme/TabItem";
 
 Gnosis encourages developers to work with our ecosystem of professional RPC providers that provide high-availability, reliable RPCs for access to the network.
 
+:::tip Use it
+First time connecting? [**Connect and read the chain in 5 minutes →**](/tools/rpc-providers/connect-and-read)
+:::
+
 RPC Providers implement the JSON RPC API that Dapps and developers can interact with:
 
 - [JSON RPC API reference](https://ethereum.org/en/developers/docs/apis/json-rpc/)
