@@ -7,7 +7,7 @@ keywords: [dynamic ,custom-signers]
 
 Dynamic offers smart and beautiful login flows for crypto-native users, simple onboarding flows for everyone else, and powerful developer tools that go beyond authentication. This is a basic guide which demonstrates the integration of Dynamic wallet with Gnosis chain and generate offchain user signatures.
 
-![Dynamic Image](../../../static/img/signers/dynamic.png)
+![Dynamic Image](/img/signers/dynamic.png)
 
 
 ## Guide

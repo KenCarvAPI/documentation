@@ -1,0 +1,11 @@
+{
+    "position": 4,
+    "label": "Integration Guides",
+    "collapsible": true,
+    "collapsed": true,
+    "link": {
+      "type": "generated-index",
+      "slug": "/technicalguides/integration-guides",
+      "description": "Hands-on tutorials for integrating ecosystem products on Gnosis Chain."
+    }
+  }

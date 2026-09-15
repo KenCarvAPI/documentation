@@ -1,0 +1,11 @@
+{
+    "position": 3,
+    "label": "Payments & Ramps",
+    "collapsible": true,
+    "collapsed": true,
+    "link": {
+      "type": "generated-index",
+      "slug": "/technicalguides/payments-and-ramps",
+      "description": "Moving between fiat and Gnosis Chain: uRamp and third-party on-ramp solutions."
+    }
+  }

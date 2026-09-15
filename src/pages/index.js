@@ -106,7 +106,7 @@ const FEATURES = [
     icon: Icon.Wallet,
     title: 'Use smart accounts',
     body: 'Account abstraction, custom signers and EIP-7702 with Safe as the custody layer.',
-    to: '/technicalguides/account-abstraction/',
+    to: '/technicalguides/wallets-and-accounts/account-abstraction/',
   },
   {
     icon: Icon.Pay,
@@ -148,9 +148,9 @@ const USE_CASES = [
     icon: Icon.Wallet,
     title: 'Build with smart accounts',
     links: [
-      ['Account abstraction', '/technicalguides/account-abstraction/'],
-      ['Custom signers', '/technicalguides/custom-signers/'],
-      ['EIP-7702 on Gnosis', '/technicalguides/Pectra/eip-7702'],
+      ['Account abstraction', '/technicalguides/wallets-and-accounts/account-abstraction/'],
+      ['Custom signers', '/technicalguides/wallets-and-accounts/embedded-signers/'],
+      ['EIP-7702 on Gnosis', '/technicalguides/wallets-and-accounts/smart-eoas/eip-7702'],
     ],
   },
 ];

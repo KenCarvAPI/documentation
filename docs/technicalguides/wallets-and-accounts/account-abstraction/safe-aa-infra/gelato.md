@@ -46,18 +46,18 @@ import { GelatoRelayPack } from '@safe-global/relay-kit';
 - Login with your Metamask or relevant wallet. This will be the owner for 1Balance account.
 - Once logged in, you will get this dashboard
 
-![](../../../../static/img/developers/Safe/gelato-home.png)
+![](/img/developers/Safe/gelato-home.png)
 
 - Now, to generate an API key, we will go to [Relay](https://app.gelato.network/relay). You will see "Create App" option.
 - Once you click, you will get a popup for a New App. 
-![](../../../../static//img/developers//Safe//create-app-gelato.png)
+![](/img/developers/Safe/create-app-gelato.png)
 
 - Based on your reference to which chain you are creating Safe on, Gnosis Chain or Chiado, you can choose the kind of network, give a app name and add the smart contract that you have deployed on the chain and enable 'Allow sponsored transactions from Safe'
 
 - If you don't have any specific contract, you can still use the generated API KEY for any contract that exists on Gnosis Chain.
 
 - This is what you will get after the setup
-![](../../../../static/img/developers/Safe/Final-dashboard.png)
+![](/img/developers/Safe/Final-dashboard.png)
 
 - Copy the API KEY to `.env` file and we can then use it in our JSX.
 
@@ -69,7 +69,7 @@ import { GelatoRelayPack } from '@safe-global/relay-kit';
 
 - Once you fill up with your prepaid amount, you will have access to dashboard where you can check the usage of balance and all the relayed transactions and even get cumulative spend by the users for every single month.
 
-![](../../../../static//img/developers/Safe/1balance-txns.png)
+![](/img/developers/Safe/1balance-txns.png)
 
 ### 6. Create transaction object and use Protocol Kit 
 

@@ -1,0 +1,11 @@
+{
+    "position": 2,
+    "label": "Wallets & Accounts",
+    "collapsible": true,
+    "collapsed": true,
+    "link": {
+      "type": "generated-index",
+      "slug": "/technicalguides/wallets-and-accounts",
+      "description": "Smarter accounts on Gnosis Chain: account abstraction, EIP-7702/EIP-5792 smart EOAs, and embedded signers."
+    }
+  }

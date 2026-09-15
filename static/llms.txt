@@ -1,66 +1,3 @@
-// File: about/third-parties
-
-### On-ramps
-- [Monerium](https://monerium.com/)
-- [Mt Pelerin](https://www.mtpelerin.com/)
-- [Ramp](https://ramp.network/)
-- [AscendEX](https://ascendex.com/en)
-
----
-
-// File: about/uRamp
-
-import ReactPlayer from 'react-player'
-
-## What is uRamp ?
-
-uRamp offers seamless on and off ramp to users by allowing them to on ramp to ERC20 tokens across EVM chains by sending EUR to their Monerium IBAN. Similarly, it allows users to off ramp from  ERC20 tokens from EVM chains to EUR in their bank account.
-
-The existing user experience in Web3 for on and off ramping between fiat and on chain assets is very clunky and requires users to go through many steps and incur heavy fees with no certainty of when they will receive their fiat in bank account and vice versa. uRamp is been built to provide an easy to use product allowing people to on and offramp between their IBANs and wallets seamlessly by integrating both Monerium and Li.Fi and leveraging their powers of collateralised stablecoin offering, native IBANs, low fees model and cross chain bridging and swapping.
-
-uRamp is supposed to be a simple representation of possibilities of Gnosis Chain when combined with Monerium and Li.Fi .
-
-## How to use uRamp ?
-
-To use uRamp a user needs to have a wallet and a Monerium account (IBAN linked to Gnosis Chain). uRamp takes the user through a Monerium onboarding flow in case the user does not have an existing Monerium account. 
-
-Once connected with both the services the user can choose between Bank to Crypto (On Ramp) or Crypto to Bank (Off Ramp).
-
-Go to https://uramp.gnosis.io/login and follow the steps mentioned or you can follow the video tutorial.
-
-<ReactPlayer playing controls url='/Uramp_demo_V1.1.mp4' />
-
-## Crypto to Bank:
-
-1. Selects a token from the drop down box listing the available tokens in the wallet
-2. Specify the amount of token to be off ramped into EUR
-3. Specify the bank details including Name, IBAN, BIC and Note (optional)
-4. Verify the quote and sign a transaction to execute the transfer 
-5. Example: ETH on mainnet to EUR
-    1. ETH is swapped for USDC on mainnet by Li.Fi
-    2. USDC on mainnet is bridged to USDC on Gnosis Chain by Li.Fi
-    3. USDC on Gnosis Chain is swapped to EURe on Gnosis Chain by Li.Fi
-    4. EURe on Gnosis Chain is burnt by Monerium
-    5. EUR is deposited in specified IBAN by Monerium
-
-## Bank to Crypto:
-
-1. Select the ERC20 token the user wishes to on ramp to 
-2. Specify the amount of EUR to be exchanged or ERC20 token required
-3. Verify the quote and EUR required for the whole process to function
-4. Start the process
-5. Send EUR to Monerium IBAN
-6. Execute the on chain transaction
-7. Example: EUR to ETH on mainnet
-    1. Send EUR to Monerium IBAN
-    2. Monerium mints EURe to the user wallet on Gnosis Chain
-    3. uRamp prompts user to sign Li.Fi transaction (if quote is still valid and balance has increased)
-    4. EURe on Gnosis Chain is swapped to USDC on Gnosis Chain by Li.Fi
-    5. USDC on Gnosis Chain is bridged to USDC on mainnet by Li.Fi
-    6. USDC is swapped for ETH on mainnet by Li.Fi
-
----
-
 // File: about/communication
 
 ## News
@@ -7022,31 +6959,7 @@ If you encounter any issues or have questions, our developer community is here t
 
 ---
 
-// File: technicalguides/Confidential Computing/secret-network
-
-# Secret Network
-
-On most blockchains, all data is public by default. While this works for many of the popular Web3 applications we see today, having the ability to keep some data confidential unlocks powerful new capabilities. Incorporating decentralized confidential computing (DeCC) enables things like private voting for DAOs, secure random number generation for gaming, encrypted databases for various applications, encrypted data tied to NFTs, sealed-bid auctions, and encrypted order books for DeFi applications. All of this can be built on Gnosis by utilizing [Secret Network](https://scrt.network)’s Confidential Computing Layer.
-
-## Integrating Secret's Confidential Computing Layer​
-
-You can integrate Secret’s CCL into an existing Gnosis application, or design a new application from the ground up to take advantage of the unique use-cases it enables.
-
-To start, check out Secret Network’s [Confidential Computing Layer](https://scrt.network/confidential-computing-layer) landing page to get an overview of how it works, and example use-cases for inspiration. From there you’ll find multiple links to Secret's CCL documentation:
-
-1. [Basics](https://docs.scrt.network/secret-network-documentation/confidential-computing-layer/ethereum-evm-developer-toolkit/basics) - explains the cross-chain communication technologies used, and how to connect a MetaMask wallet to Secret Network.
-
-2. [Use-cases](https://docs.scrt.network/secret-network-documentation/confidential-computing-layer/ethereum-evm-developer-toolkit/usecases) - provides tutorials showing how to build various types of EVM applications using Secret’s CCL. All of these tutorials can be used to deploy a contract on Gnosis.
-
-3. [Supported Networks](https://docs.scrt.network/secret-network-documentation/confidential-computing-layer/ethereum-evm-developer-toolkit/supported-networks) - provides a list of gateway contract addresses. This is how your Gnosis application will communicate with Secret.
-
-## Get Support
-
-To get CCL development help, you can join the Secret Network [Discord](https://scrt.network/discord) or [Telegram](https://scrt.network/SCRTCommunity). You can also [get in touch](mailto:info@scrt.network) with the Secret Network team directly.
-
----
-
-// File: technicalguides/DeFi/Deploy A Cow Swap Widget
+// File: technicalguides/integration-guides/cow-swap-widget
 
 # Deploy Your Own Cow Swap Frontend 
 
@@ -7081,7 +6994,1053 @@ Choose the example that best fits your project's needs. You can copy the example
 
 ---
 
-// File: technicalguides/Pectra/eip-5792
+// File: technicalguides/integration-guides/secret-network
+
+# Secret Network
+
+On most blockchains, all data is public by default. While this works for many of the popular Web3 applications we see today, having the ability to keep some data confidential unlocks powerful new capabilities. Incorporating decentralized confidential computing (DeCC) enables things like private voting for DAOs, secure random number generation for gaming, encrypted databases for various applications, encrypted data tied to NFTs, sealed-bid auctions, and encrypted order books for DeFi applications. All of this can be built on Gnosis by utilizing [Secret Network](https://scrt.network)’s Confidential Computing Layer.
+
+## Integrating Secret's Confidential Computing Layer​
+
+You can integrate Secret’s CCL into an existing Gnosis application, or design a new application from the ground up to take advantage of the unique use-cases it enables.
+
+To start, check out Secret Network’s [Confidential Computing Layer](https://scrt.network/confidential-computing-layer) landing page to get an overview of how it works, and example use-cases for inspiration. From there you’ll find multiple links to Secret's CCL documentation:
+
+1. [Basics](https://docs.scrt.network/secret-network-documentation/confidential-computing-layer/ethereum-evm-developer-toolkit/basics) - explains the cross-chain communication technologies used, and how to connect a MetaMask wallet to Secret Network.
+
+2. [Use-cases](https://docs.scrt.network/secret-network-documentation/confidential-computing-layer/ethereum-evm-developer-toolkit/usecases) - provides tutorials showing how to build various types of EVM applications using Secret’s CCL. All of these tutorials can be used to deploy a contract on Gnosis.
+
+3. [Supported Networks](https://docs.scrt.network/secret-network-documentation/confidential-computing-layer/ethereum-evm-developer-toolkit/supported-networks) - provides a list of gateway contract addresses. This is how your Gnosis application will communicate with Secret.
+
+## Get Support
+
+To get CCL development help, you can join the Secret Network [Discord](https://scrt.network/discord) or [Telegram](https://scrt.network/SCRTCommunity). You can also [get in touch](mailto:info@scrt.network) with the Secret Network team directly.
+
+---
+
+// File: technicalguides/payments-and-ramps/uramp
+
+import ReactPlayer from 'react-player'
+
+## What is uRamp ?
+
+uRamp offers seamless on and off ramp to users by allowing them to on ramp to ERC20 tokens across EVM chains by sending EUR to their Monerium IBAN. Similarly, it allows users to off ramp from  ERC20 tokens from EVM chains to EUR in their bank account.
+
+The existing user experience in Web3 for on and off ramping between fiat and on chain assets is very clunky and requires users to go through many steps and incur heavy fees with no certainty of when they will receive their fiat in bank account and vice versa. uRamp is been built to provide an easy to use product allowing people to on and offramp between their IBANs and wallets seamlessly by integrating both Monerium and Li.Fi and leveraging their powers of collateralised stablecoin offering, native IBANs, low fees model and cross chain bridging and swapping.
+
+uRamp is supposed to be a simple representation of possibilities of Gnosis Chain when combined with Monerium and Li.Fi .
+
+## How to use uRamp ?
+
+To use uRamp a user needs to have a wallet and a Monerium account (IBAN linked to Gnosis Chain). uRamp takes the user through a Monerium onboarding flow in case the user does not have an existing Monerium account. 
+
+Once connected with both the services the user can choose between Bank to Crypto (On Ramp) or Crypto to Bank (Off Ramp).
+
+Go to https://uramp.gnosis.io/login and follow the steps mentioned or you can follow the video tutorial.
+
+<ReactPlayer playing controls url='/Uramp_demo_V1.1.mp4' />
+
+## Crypto to Bank:
+
+1. Selects a token from the drop down box listing the available tokens in the wallet
+2. Specify the amount of token to be off ramped into EUR
+3. Specify the bank details including Name, IBAN, BIC and Note (optional)
+4. Verify the quote and sign a transaction to execute the transfer 
+5. Example: ETH on mainnet to EUR
+    1. ETH is swapped for USDC on mainnet by Li.Fi
+    2. USDC on mainnet is bridged to USDC on Gnosis Chain by Li.Fi
+    3. USDC on Gnosis Chain is swapped to EURe on Gnosis Chain by Li.Fi
+    4. EURe on Gnosis Chain is burnt by Monerium
+    5. EUR is deposited in specified IBAN by Monerium
+
+## Bank to Crypto:
+
+1. Select the ERC20 token the user wishes to on ramp to 
+2. Specify the amount of EUR to be exchanged or ERC20 token required
+3. Verify the quote and EUR required for the whole process to function
+4. Start the process
+5. Send EUR to Monerium IBAN
+6. Execute the on chain transaction
+7. Example: EUR to ETH on mainnet
+    1. Send EUR to Monerium IBAN
+    2. Monerium mints EURe to the user wallet on Gnosis Chain
+    3. uRamp prompts user to sign Li.Fi transaction (if quote is still valid and balance has increased)
+    4. EURe on Gnosis Chain is swapped to USDC on Gnosis Chain by Li.Fi
+    5. USDC on Gnosis Chain is bridged to USDC on mainnet by Li.Fi
+    6. USDC is swapped for ETH on mainnet by Li.Fi
+
+---
+
+// File: technicalguides/payments-and-ramps/third-party-onramps
+
+### On-ramps
+- [Monerium](https://monerium.com/)
+- [Mt Pelerin](https://www.mtpelerin.com/)
+- [Ramp](https://ramp.network/)
+- [AscendEX](https://ascendex.com/en)
+
+---
+
+// File: technicalguides/wallets-and-accounts/account-abstraction/README
+
+# Understanding Account Abstraction
+<FeatureCard imgUrl="">
+        <h2>What is Account Abstraction ? </h2>
+        <p>Account abstraction allows for more flexible and user-friendly account models beyond the traditional externally owned accounts (EOAs). With AA, smart contract wallets can initiate transactions, enabling more complex logic like multi-signature verification, recovery mechanisms, and gas fee payments in tokens. AA revolves around the idea of avoiding the need for change in consensus layer.</p>
+</FeatureCard>
+
+<CardContainer>
+    <Card
+    title="Programmable wallets more advanced than EOA"
+    url=""
+    />
+    <Card
+    title="Seamless user onboarding experience"
+    url=""
+    />
+    <Card
+    title="Batched transaction for sending multiple transactions"
+    url=""
+    />
+    <Card
+    title="Sponsoring users gas fees for gasless experience"
+    url=""
+    /> 
+    <Card
+    title="Allowing users to pay gas fees in stablecoins "
+    url=""
+    /> 
+</CardContainer>
+
+
+---
+
+# Account Abstraction on Gnosis Chain
+
+Gnosis Chain offers a range of account abstraction (AA) providers designed to enhance user experience of dApps, so that users can do on-chain activities and transactions cheaper and leverage the power of AA stack with different provider solutions for the non-web3 users.
+### Providers for Account Abstraction on Gnosis Chain
+
+import DocCardList from '@theme/DocCardList';
+
+<DocCardList />
+
+---
+
+// File: technicalguides/wallets-and-accounts/account-abstraction/particle-network
+
+# Building AA powered dApp with Particle Network
+
+Particle Network provides a Smart Wallet-as-a-Service, leveraging modular and customizable wallet components. It supports native ERC-4337 AA capabilities, streamlining user onboarding and transaction processes.
+
+- **Key Features:**
+  - Integration with Gnosis Mainnet and Testnet.
+  - Simplified user onboarding via Web2 accounts.
+  - Native support for ERC-4337 AA.
+  - Intrinsic modularity with various AA infrastructure providers.
+
+For more details, refer to the [Particle Network documentation](https://docs.particle.network/).
+
+
+
+## Understanding Particle Network's Smart Wallet-as-a-Service
+
+With Particle's Smart Wallet-as-a-Service, developers can curate an unparalleled user experience through modular and customizable EOA/AA embedded wallet components. Using MPC-TSS for key management, Particle can streamline user onboarding via familiar Web2 accounts—such as Google accounts, email addresses, and phone numbers.
+
+Particle has integrated Gnosis’ Mainnet and Testnet through both EOA interactions and native ERC-4337 SimpleAccount implementations.
+
+Particle Network offers native ERC-4337 Account Abstraction capabilities within their Smart Wallet-as-a-Service stack. This allows developers to facilitate end-to-end utilization of smart accounts, beginning at the onboarding process and ending at the construction and sponsorship of UserOperations. 
+
+This integration is facilitated by:
+- [Particle Network Wallet-as-a-Service](https://developers.particle.network)
+- [Particle Network AA SDK](https://developers.particle.network/reference/introduction-to-smart-waas)
+- [Particle Network Bundler](https://developers.particle.network/docs/particle-bundler)
+- [Particle Network Paymaster](https://developers.particle.network/docs/omnichain-paymaster)
+
+And thus, the collection of these technologies is coined as "Smart Wallet-as-a-Service." You can learn more about Particle Network's Smart Wallet-as-a-Service Modular Stack [here](https://blog.particle.network/announcing-our-smart-wallet-as-a-service-modular-stack-upgrading-waas-with-erc-4337/).
+
+![Particle Network Smart WaaS map](https://blog.particle.network/content/images/2023/10/graphic-image-2.png)
+
+## Particle Network AA SDK
+
+The Particle Network AA SDK simplifies utilization of ERC-4337 Account Abstraction by facilitating the creation of a smart accounts, constructing UserOperations, sponsoring transactions, paying gas fees in ERC20 tokens, etc. –all formatted to minimize complexity.
+
+Directly within the Particle Network AA SDK, you can choose a specific smart account implementation to use. Currently, the options include Biconomy, CyberConnect, and SimpleAccount, with more on the way.
+
+The Particle Network AA SDK defaults to using the Particle Bundler for natively pushing UserOperations. On Testnets, it employs the Particle Paymaster for managing transaction fees, whereas on Mainnets, Biconomy is used as the default Paymaster.
+
+## Intrinsic Modularity
+
+Leveraging Particle Network's Smart Wallet-as-a-Service to either facilitate or play a role within full-stack ERC-4337 Account Abstraction is simple due to it's inherent modularity –both natively and externally– with various different AA infrastructure providers.
+
+![Particle Network Smart WaaS infrastructure stack](https://blog.particle.network/content/images/size/w1000/2023/10/1-3.png)
+
+## Example application
+
+Using Particle Network's Smart Wallet-as-a-Service on Gnosis only takes a few lines of code.
+
+Take a look at the following demo application showcasing the creation of a smart account through Particle Network’s MPC-based social login; then using that account to send a sample UserOperation: https://github.com/TABASCOatw/particle-gnosis-demo
+
+---
+
+// File: technicalguides/wallets-and-accounts/account-abstraction/safe-aa-infra/README
+
+# Building Account Abstraction with Safe
+[Safe](https://docs.safe.global/) provides a variety of Account Abstraction stacks for developers to integrate and build Account Abstraction on top of Safe. 
+
+[Safe Core](https://docs.safe.global/learn/safe-core) suites:
+1. [Safe Core Account Abstraction SDK](https://docs.safe.global/learn/safe-core/safe-core-account-abstraction-sdk)
+2. [Safe Core  API](https://docs.safe.global/learn/safe-core/safe-core-api)
+3. [Safe Core Protocol](https://docs.safe.global/learn/safe-core/safe-core-protocol)
+
+## Safe Core Account Abstraction SDK
+Safe Core Account Abstraction SDK allows developers to create AA functionalities into their apps.
+![](/img/developers/Safe/safe-AA-SDK.png)
+
+
+### [Protocol Kit](https://docs.safe.global/learn/safe-core/safe-core-account-abstraction-sdk/protocol-kit)
+Protocol Kit provides functionalities such as creating new Safe accounts, updating the configuration of existing Safes, and proposing and executing transactions.
+
+For more details, see [Guide: Integrating the Safe Core SDK](https://github.com/safe-global/safe-core-sdk/blob/main/guides/integrating-the-safe-core-sdk.md) and [Safe Core SDK API Reference](https://github.com/safe-global/safe-core-sdk/tree/main/packages/protocol-kit#sdk-api)
+
+Follow the [tutorial on Safe](https://docs.safe.global/learn/safe-core/safe-core-account-abstraction-sdk/protocol-kit#quickstart) to **create a 2 of 3 multi-sig Safe** and propose and **execute a transaction** to send some ETH out of this Safe.
+
+### [Auth Kit](https://docs.safe.global/learn/safe-core/safe-core-account-abstraction-sdk/auth-kit)
+Auth Kit enables users to sign in using an email address, social media account, or traditional crypto wallets like Metamask. It creates an Ethereum/Gnosis address and let users to authenticate the account using above-mentioned authentication methods.
+
+Follow the [tutorial on Safe](https://docs.safe.global/learn/safe-core/safe-core-account-abstraction-sdk/auth-kit#quickstart) to create a Signing Account using your email or social media account. Once authenticated, you can sign transactions and interact with any Safe Smart Accounts you own.
+
+
+### [Onramp Kit](https://docs.safe.global/learn/safe-core/safe-core-account-abstraction-sdk/onramp-kit)
+Onramp Kit allows users to buy cryptocurrencies using a credit card or other payment methods.
+This package is provided for testing purpose only. Please use it at your own risk.
+
+Follow the [tutorial on Safe](https://docs.safe.global/learn/safe-core/safe-core-account-abstraction-sdk/onramp-kit#quickstart) to create a React component that allows you to enter an Ethereum address and fund it using a credit card. The full code example can be found in the [Safe Space repo](https://github.com/5afe/safe-space) in the [WalletFund.tsx](https://github.com/5afe/safe-space/blob/onramp-kit-integration/src/scenes/Wallet/WalletFund.tsx) file in [PR #8](https://github.com/5afe/safe-space/pull/8). We will also be using a [pre-deployed server](https://github.com/5afe/aa-stripe-service).
+
+### [Relay Kit](https://docs.safe.global/learn/safe-core/safe-core-account-abstraction-sdk/relay-kit)
+Relay Kit allows users to pay transaction fees (gas fees) using the native blockchain token or ERC-20 tokens. This allows you to pay gas fees using any ERC-20 token in your Safe, even if you don't have ETH.
+
+Currently, the Relay Kit is only compatible with [Gelato relay](https://docs.gelato.network/developer-services/relay). There are two ways to use Gelato relay:
+1. [Gelato 1Balance](https://docs.gelato.network/developer-services/relay/payment-and-fees/1balance-and-relay): Using prepaid deposit(via USDC on Polygon for mainnet, via gETH on Goerli for testnet) to funds the 1Balance account.With the deposit on 1Balance account, the Relay Kit can sponsors a transactions to other Safe within or on another chain. 
+2. [Gelato SyncFee](https://docs.gelato.network/developer-services/relay/non-erc-2771/callwithsyncfee): Allows you to execute a transaction and pay the gas fees directly with funds in your Safe, even if you don't have ETH on Ethereum or xDAI on Gnosis Chain.
+
+
+Follow the [tutorial on Safe](https://docs.safe.global/learn/safe-core/safe-core-account-abstraction-sdk/relay-kit#quickstart) to send some tokens to another address using the Relay Kit to pay for he gas fees. 
+
+To learn more about how to use Gelato with Safe, checkout the demos linked below.
+
+import DocCardList from '@theme/DocCardList';
+
+<DocCardList />
+
+---
+
+// File: technicalguides/wallets-and-accounts/account-abstraction/safe-aa-infra/integration-guide-for-safe
+
+### In this guide, you will learn the very first steps to generate safe smart account and execute transactions on Gnosis Chain.
+
+
+### We would be using these two packages from Safe Core AA SDK :
+1. [Auth Kit](https://github.com/safe-global/safe-core-sdk/blob/main/packages/auth-kit/src/packs/safe-auth/SafeAuthPack.ts): The Auth Kit creates an EOA address and authenticates a blockchain account using an email address, social media account, or crypto wallet like Metamask. We would be using the [Safe Auth Integration](https://docs.safe.global/sdk/auth-kit/guides/safe-auth) which uses Web3Auth's MPC technology. 
+
+2. [Protocol Kit](https://github.com/safe-global/safe-core-sdk/tree/main/packages/protocol-kit) :This Kit can be used to create new Safe accounts, update the configuration of existing Safes, propose and execute transactions, among other features.
+
+
+### Let's begin building!
+
+## Using Safe Auth Kit to generate Safe using social accounts
+---
+
+### 1. Install the following dependencies.
+
+```
+npm install @safe-global/auth-kit @web3auth/safeauth-embed
+```
+
+### 2. Create a SafeAuthPack Instance 
+
+```jsx
+import
+{ SafeAuthPack, SafeAuthInitOptions,AuthKitSignInData,SafeAuthUserInfo } from "@safe-global/auth-kit"
+
+ const initSafeAuthPack = async () => {
+      try {
+        const safeAuthInitOptions = {
+          showWidgetButton: true,
+          enableLogging: true,
+          buttonPosition: "top-right",
+          buildEnv: "production",
+          chainConfig: {
+            chainId: "0x64",
+            displayName: "Gnosis",
+            rpcTarget: 'https://gnosis.drpc.org',
+            blockExplorerURL: 'https://gnosis.blockscout.com/',
+            ticker: "xDAI",
+            tickerName: "Gnosis Chain",
+          },
+        };
+
+        const safeAuthPack = new SafeAuthPack();
+
+        await safeAuthPack.init(safeAuthInitOptions);
+        setSafeAuth(safeAuthPack);
+
+        if (safeAuthPack.isAuthenticated) {
+          const signInInfo = await safeAuthPack?.signIn();
+          // The signIn() method returns the user's EOA address and the associated Safe addresses
+          setSafeAuthSignInResponse(signInInfo);
+          setProvider(safeAuthPack.getProvider());
+          setIsAuthenticated(true);
+          toast.success("Initialization and auto-login successful!");
+        }
+      } catch (error) {
+        console.error(error);
+        toast.error("Failed to initialize SafeAuthPack,try again!");
+      }
+    };
+
+    initSafeAuthPack();
+
+
+```
+
+After you have successfully authenticated your session, `authKitSignData` will return the following objects:
+
+``` jsx
+AuthKitSignInData {
+  eoa: string // This would be your signer
+  safes?: string[] // The list of associated Safe addresses in the chain
+}
+```
+
+### Now let's move onto our Protocol Kit that we would be using with this SafeAuthPack Instance
+
+
+### 1. Install the following dependencies.
+
+```
+npm install ethers
+npm install @safe-global/protocol-kit
+```
+### 2. Import these in your `.jsx` file
+
+```
+import { ethers, BrowserProvider } from "ethers";
+import Safe, { EthersAdapter, SafeFactory } from "@safe-global/protocol-kit";
+```
+
+```jsx
+ const web3Provider = safeAuth.getProvider();
+      const userInfo = await safeAuth.getUserInfo();
+      console.log(userInfo);
+      setUserInfo(userInfo);
+
+      if (web3Provider) {
+        const provider = new BrowserProvider(safeAuth.getProvider());
+        const signer = await provider.getSigner();
+        const signerAddress = await signer.getAddress();
+      }
+```
+- You can checkout all the details of a user using `getUserInfo` method.
+
+### 3. Create a Safe Adapter and using protocol kit
+
+```jsx
+const createSafe = async () => {
+    if (!safeAuthSignInResponse?.eoa) {
+        toast.error("No EOA (Externally Owned Account) available to create a Safe.");
+        return;
+    }
+        const provider = new ethers.BrowserProvider(safeAuth?.getProvider());
+        const signer = await provider.getSigner();
+        const ethAdapter = new EthersAdapter({
+            ethers,
+            signerOrProvider: signer,
+        });
+
+        const safeFactory = await SafeFactory.create({ ethAdapter });
+
+        const safe = await safeFactory.deploySafe({
+            safeAccountConfig: { threshold: 1, owners: [safeAuthSignInResponse?.eoa] },
+            //keeping threshold to single owner 1
+        });
+
+        const safeAddress = await safe.getAddress();
+        console.log("SAFE Created!", safeAddress);
+}
+```
+
+If you would like to check out the full code implementation of how to use `SafeAuthPack` and Protocol Kit, you can checkout this code repository hosted on [Github](https://github.com/vanshika-srivastava/safe-gnosis-chain/blob/2baf5926250adf6aabe963c7bd053afc844e46da/src/App.jsx#L14).
+
+#### We would be moving to next guide implementation which is for using the [Relay Kit by Gelato](./gelato.md).
+
+---
+
+// File: technicalguides/wallets-and-accounts/account-abstraction/safe-aa-infra/gelato
+
+# Building on Safe AA with Gelato
+
+As mentioned in previous section, Safe natively uses Gelato Relay to provide gasless transactions and more seamless experience. In this section, we will learn how you can connect with Safe and use Gelato Relay integration.
+
+Currently, the Relay Kit is only compatible with the Gelato relay. The Gelato relay can be used in two ways:
+
+- [Gelato 1Balance](https://docs.gelato.network/web3-services/relay/subscriptions-and-payments/1balance-and-relay)
+- [Gelato SyncFee](https://docs.gelato.network/web3-services/relay/non-erc-2771/callwithsyncfee)
+
+
+We would be using **Gelato 1Balance** on Gnosis Chain.
+
+Gelato 1Balance is mechanism which would allow you to execute transactions for amount that is deposited. You can use it to sponsor transactions for users on Gnosis Chain and pay for their gas fees.
+
+1Balance works by toping up with USDC on Polygon, regardless of the chain that is being used for deployed Safe address. 
+
+You can learn more about usage of [Gelato 1Balance](https://docs.gelato.network/web3-services/relay/subscriptions-and-payments/1balance-and-relay) but now let's quickly implement this for our dApp.
+
+
+### 1. Install the following dependencies.
+
+```
+npm install @safe-global/relay-kit
+```
+
+### 2. Import the dependencies in your `.jsx` file
+```
+import { GelatoRelayPack } from '@safe-global/relay-kit';
+```
+ 
+### 3. We would be requiring to get an `API KEY` for using Gelato 1Balance. We would be using `.env` to save our API Keys.
+
+```
+  const GELATO_1_BALANCE = import.meta.env.VITE_BALANCE_API_KEY;
+```
+
+### 4. How to get your API KEY from Gelato ?
+
+- Go on [1Balance](https://app.gelato.network/1balance) page.
+- Login with your Metamask or relevant wallet. This will be the owner for 1Balance account.
+- Once logged in, you will get this dashboard
+
+![](/img/developers/Safe/gelato-home.png)
+
+- Now, to generate an API key, we will go to [Relay](https://app.gelato.network/relay). You will see "Create App" option.
+- Once you click, you will get a popup for a New App. 
+![](/img/developers/Safe/create-app-gelato.png)
+
+- Based on your reference to which chain you are creating Safe on, Gnosis Chain or Chiado, you can choose the kind of network, give a app name and add the smart contract that you have deployed on the chain and enable 'Allow sponsored transactions from Safe'
+
+- If you don't have any specific contract, you can still use the generated API KEY for any contract that exists on Gnosis Chain.
+
+- This is what you will get after the setup
+![](/img/developers/Safe/Final-dashboard.png)
+
+- Copy the API KEY to `.env` file and we can then use it in our JSX.
+
+### 5. Depositing the balance amount USDC to use it on Gnosis Chain
+
+- Now once you have setup the contract and got the App API_KEY, we need to setup our 1Balance which will be actually used to pay for the transactions.
+
+- In order to achieve this, your connected metamask account should have USDC on Polygon (if you are deploying on mainnet which is Gnosis Chain).
+
+- Once you fill up with your prepaid amount, you will have access to dashboard where you can check the usage of balance and all the relayed transactions and even get cumulative spend by the users for every single month.
+
+![](/img/developers/Safe/1balance-txns.png)
+
+### 6. Create transaction object and use Protocol Kit 
+
+
+```jsx
+const transactions  = [{
+  to: destinationAddress,
+  data: '0x',
+  value: withdrawAmount
+}]
+
+const ethAdapter = new EthersAdapter({
+        ethers,
+        signerOrProvider: currentSigner,
+      });
+
+      const protocolKit = await Safe.create({
+        ethAdapter,
+        safeAddress: safeAuthSignInResponse?.safes[0],
+      });
+```
+
+### 7. Setup transactions to be relayed on Gnosis Chain
+
+```jsx
+    const relayKit = new GelatoRelayPack({ apiKey: GELATO_1_BALANCE, protocolKit });
+
+      const safeTransaction = await relayKit.createRelayedTransaction({
+        transactions,
+        options: { isSponsored: true, gasLimit: '100000' },
+      });
+
+      const signedSafeTransaction = await protocolKit.signTransaction(safeTransaction);
+
+      const response = await relayKit.executeRelayTransaction(signedSafeTransaction, { isSponsored: true });
+      console.log(`Relay Transaction Task ID: https://relay.gelato.digital/tasks/status/${response.taskId}`);
+      
+      const transactionHash = response.taskId;
+      console.log(`Transaction Hash: ${transactionHash}`);
+```
+
+You will be able to check the relayed transaction status on console.
+
+:::info
+To checkout the entire frontend along with code you can checkout the [github code](https://github.com/vanshika-srivastava/safe-gnosis-chain/tree/2baf5926250adf6aabe963c7bd053afc844e46da/src)
+
+Test out the application live here on [vercel](https://safe-gnosis-chain.vercel.app/)
+:::
+
+---
+
+// File: technicalguides/wallets-and-accounts/account-abstraction/safe-aa-infra/pimlico
+
+# Building on Safe AA with Pimilico
+
+Safe supports 4337 which means you can now plug in Safe accounts to ERC-4337 bundlers and paymasters. This guide will walk you through how to create and use a Safe account with permissionless.js.
+
+### 1. Import the required packages
+
+```jsx
+import { ENTRYPOINT_ADDRESS_V06, createSmartAccountClient } from "permissionless"
+import { signerToSafeSmartAccount } from "permissionless/accounts"
+import {
+	createPimlicoBundlerClient,
+	createPimlicoPaymasterClient,
+} from "permissionless/clients/pimlico"
+import { createPublicClient, getContract, http, parseEther } from "viem"
+import { gnosis } from "viem/chains"
+```
+
+### 2. Create the clients
+First we must create the public, bundler, and (optionally) paymaster clients that will be used to interact with the Safe account.
+
+```jsx
+export const publicClient = createPublicClient({
+	transport: http("https://gnosis.drpc.org"),
+})
+ 
+export const paymasterClient = createPimlicoPaymasterClient({
+	transport: http("https://api.pimlico.io/v2/gnosis/rpc?apikey=API_KEY"),
+	entryPoint: ENTRYPOINT_ADDRESS_V06,
+})
+```
+
+### 3. Create the signer
+
+The Safe account will need to have a signer to sign user operations. In permissionless.js, the default Safe account validates ECDSA signatures. Any permissionless.js-compatible signer can be used for the Safe account.
+
+For example, to create a signer based on a private key:
+
+```jsx
+import { privateKeyToAccount } from "viem/accounts"
+import { pimlicoBundlerClient } from "../pimlicoBundlerClient"
+ 
+const signer = privateKeyToAccount("0xPRIVATE_KEY")
+```
+
+### 4. With a signer, you can create a Safe account as such:
+```jsx
+const safeAccount = await signerToSafeSmartAccount(publicClient, {
+	entryPoint: ENTRYPOINT_ADDRESS_V06,
+	signer: signer,
+	saltNonce: 0n, // optional
+	safeVersion: "1.4.1",
+	address: "0x...", // optional, only if you are using an already created account
+})
+```
+### 5. Create the smart account client
+
+```jsx
+const smartAccountClient = createSmartAccountClient({
+	account: safeAccount,
+	entryPoint: ENTRYPOINT_ADDRESS_V06,
+	chain: gnosis,
+	bundlerTransport: http("https://api.pimlico.io/v1/gnosis/rpc?apikey=API_KEY"),
+	middleware: {
+		gasPrice: async () => (await pimlicoBundlerClient.getUserOperationGasPrice()).fast, // use pimlico bundler to get gas prices
+		sponsorUserOperation: paymasterClient.sponsorUserOperation, // optional
+	},
+})
+```
+
+### 6. Fetch the gas prices
+
+If you're using Pimlico as your bundler, fetch the required gas price to use beforehand and pass it in as the maxFeePerGas and maxPriorityFeePerGas parameters. Other providers might have different requirements for fetching the gas price.
+
+```jsx
+export const bundlerClient = createPimlicoBundlerClient({
+	transport: http("https://api.pimlico.io/v1/sepolia/rpc?apikey=API_KEY"),
+	entryPoint: ENTRYPOINT_ADDRESS_V06,
+})
+ 
+const gasPrices = await bundlerClient.getUserOperationGasPrice()
+```
+
+
+### 7. Send a transaction
+Transactions using permissionless.js simply wrap around user operations. This means you can switch to permissionless.js from your existing viem EOA codebase with minimal-to-no changes.
+
+```jsx
+const txHash = await smartAccountClient.sendTransaction({
+	to: destinationAddress,
+	value: parseEther("0.1"),
+	maxFeePerGas: gasPrices.fast.maxFeePerGas, // if using Pimlico
+	maxPriorityFeePerGas: gasPrices.fast.maxPriorityFeePerGas, // if using Pimlico
+})
+```
+
+---
+
+// File: technicalguides/wallets-and-accounts/account-abstraction/zerodev-guide
+
+# Building AA powered dApp with ZeroDev
+
+<CardContainer>
+<Card
+    title="ZeroDev is a smart, white-labeled, and modular embedded wallet for building user-friendly Web3 experiences, particularly for DeFi applications."
+    />
+</CardContainer>
+
+### Key Features of ZeroDev AA stack
+
+- Smart: ZeroDev leverages account abstraction.
+- White-labeled: ZeroDev doesn't have a UI -- it provides the underlying wallet logic that you can build a totally customized experience on top of.
+- Modular: ZeroDev is built on top of Kernel, the most popular open-source smart account that supports ERC-7579 plugins for customizing wallet logic.
+
+:::info
+- If you are building a DApp, get started with the [capabilities API](https://docs.zerodev.app/smart-wallet/quickstart-capabilities).
+- If you are building a wallet, get started with the [Core SDK](https://docs.zerodev.app/smart-wallet/quickstart-core) or the [React SDK](https://docs.zerodev.app/smart-wallet/quickstart-react).
+:::
+
+Let's take a quick look at how you can start off by creating a new project in the ZeroDev Dashboard.
+
+### 1. Setup ProjectID in dashboard
+
+Sign up on [ZeroDev Dashboard](https://dashboard.zerodev.app/). Sign up on dashboard and create a new project. Name your project accordingly and choose the network chain as ```Gnosis``` .
+
+### 2. Get config from Dashboard
+
+Once you have setup a project, you will get ```PROJECTID```, ```BundlerRPC```, ```PaymasterRPC```. You can create .env file and store these config values to be used later in project.
+
+### 3. Creating Wallet
+
+ZeroDev supports three types of wallet creation:
+
+- Passkeys : ZeroDev supports on-chain passkeys, where transactions are signed directly with passkeys on your user's device, and the signatures are validated on-chain with either RIP-7212 (if supported by the network) or smart contracts, without reliance on centralized infrastructure. Learn more here.
+- Socials or Social Logins : ZeroDev supports social logins natively, but you can also use ZeroDev with third-party auth providers such as Dynamic, Privy, and Magic if your prefer their UI.
+- EOA Wallet : Sign using EOA wallet (e.g. MetaMask) through ZeroDev, this EOA will be the signer of the ZeroDev smart wallet. Therefore, the smart wallet will be different counterfactual address than the address of the user's EOA.
+
+### Setting up React Implementation with ZeroDev Packages
+
+We will utilize ```@zerodev/waas``` package for the React implementation of our dApp.
+
+### 1. Install packages
+
+```shell
+npm install @zerodev/waas viem@2.x @tanstack/react-query
+```
+### 2. Create a provider for ZeroDev. 
+
+We will utilise the ```ProjectID``` from Dashboard and use chain object corresponding to ZeroDev project.
+
+```typescript
+import { http } from "viem"
+import { gnosis } from "viem/chains"
+import { ZeroDevProvider, createConfig } from "@zerodev/waas"
+ 
+function Providers({ children }: { children: React.ReactNode}) {
+  const PROJECT_ID = " "        //enter PROJECT ID here
+ 
+  const config = createConfig({
+    chains: [gnosis],
+    transports: {
+      [gnosis.id]: http()
+    },
+    projectIds: {
+      [gnosis.id]: PROJECT_ID
+    }
+  })
+ 
+  return (
+    <ZeroDevProvider config={config}>
+      {children}
+    </ZeroDevProvider>
+  )
+}
+```
+
+### 3. Create a Smart Account
+
+```typescript
+import { useCreateKernelClientPasskey } from "@zerodev/waas";
+
+function App() {
+  const { connectRegister, isPending } = useCreateKernelClientPasskey({ version: "v3" });
+
+  return (
+    <button
+      disabled={isPending}
+      onClick={() => {
+        connectRegister({ username: "zerodev_quickstart" });
+      }}
+    >
+      {isPending ? 'Connecting...' : 'Create Smart Account'}
+    </button>
+  );
+}
+
+export default App;
+```
+
+### 4. Getting Smart Account Address
+
+```typescript
+import { useKernelClient } from "@zerodev/waas"
+ 
+function App() {
+  const { address } = useKernelClient()
+ 
+  return (
+    /* ...Create Smart Account */
+    <p>{`Smart Account Address: ${address}`}</p>
+  )
+}
+```
+
+### 5. Sending UserOp sponsored transaction
+
+```typescript
+import { parseAbi } from "viem"
+import { useKernelClient, useSendUserOperation } from "@zerodev/waas"
+ 
+function App() {
+  const { address } = useKernelClient()
+  const { data: userOpHash, write, isPending } = useSendUserOperation({
+    paymaster: {
+      type: "SPONSOR"
+    }
+  })
+  const tokenAddress = "0x3870419Ba2BBf0127060bCB37f69A1b1C090992B"
+  const abi = parseAbi(["function mint(address _to, uint256 amount) public"])
+ 
+  return (
+    /* ...Create & Get Smart Account */
+    <div>
+      <button 
+        disabled={isPending}
+        onClick={() => {
+          write([
+            {
+              address: tokenAddress,
+              abi: abi,
+              functionName: "mint",
+              args: [address, 1],
+              value: BigInt(0),
+            }
+          ])
+        }}
+      >
+        {isPending ? 'Minting...' : 'Mint'}
+      </button>
+      {userOpHash && <p>{`UserOp Hash: ${userOpHash}`}</p>}
+    </div>
+  )
+}
+```
+
+:::info
+
+Check out the quickstart code on [github](https://github.com/zerodevapp/waas-examples/tree/main/quick-start) and official documentation [here](https://docs.zerodev.app/smart-wallet/quickstart-core)
+
+---
+If you want to check out how to pay gas fees using ERC20 Tokens, check out the [ZeroDev section for paying using ERC20 Tokens](https://docs.zerodev.app/smart-wallet/pay-gas-in-erc20s)
+:::
+
+---
+
+// File: technicalguides/wallets-and-accounts/embedded-signers/README
+
+# Embedded & Custom Signers
+
+Custom signers allow developers to inject their own signing mechanisms tailored to specific use cases. This flexibility enhances security, usability, and adaptability in different environments, such as multi-signature wallets or smart contract interactions.
+
+## Why Use Custom Signers?
+
+### Tailored Signing Methods
+With custom signers, you can personalize the signing process to fit your dApp’s specific needs. This could mean automatic signing for trusted operations, requiring additional confirmation for sensitive actions, or integrating unique hardware devices for enhanced security.Users can now interact with dapps by just using their emails or passkeys.
+
+### Enhanced Security
+Custom signers give developers more control over how and where signing keys are stored. This can include signing transactions in hardware security modules (HSMs), using a multi-sig contract, or requiring multi-factor authentication before a transaction is signed.
+
+### Optimized for Specific Use Cases
+Whether you’re dealing with privacy-focused transactions, or social recovery mechanisms, custom signers can be configured to handle the specific logic needed. They allow for flexibility in crafting unique user flows that require specialized transaction signing methods.
+
+
+
+
+<CardContainer>
+    <Card
+        title="Privy"
+        subtitle="Guide to intgerate Privy Wallet and SDK"
+        url="/technicalguides/custom-signers/privy" 
+    />
+    <Card
+        title="Dynamic"
+        subtitle="Guide to intgerate Dynamic Wallet and SDK"
+        url="/technicalguides/custom-signers/dynamic" 
+    />
+</CardContainer>
+
+---
+
+// File: technicalguides/wallets-and-accounts/embedded-signers/dynamic
+
+# Dynamic
+
+Dynamic offers smart and beautiful login flows for crypto-native users, simple onboarding flows for everyone else, and powerful developer tools that go beyond authentication. This is a basic guide which demonstrates the integration of Dynamic wallet with Gnosis chain and generate offchain user signatures.
+
+![Dynamic Image](/img/signers/dynamic.png)
+
+
+## Guide
+
+- Create a NextJs application from scratch
+
+```
+npx create-next-app dynamic-gnosis
+# install with Tailwind
+```
+- Install Dynamic labs SDK & some other dependencies
+
+```
+npm install @dynamic-labs/ethereum @dynamic-labs/ethers-v6 @dynamic-labs/sdk-react-core
+```
+
+- Create an account at [Dynamic Web App](https://app.dynamic.xyz/) and choose the Ethereum Sandbox option.
+In the dashboard, enable the networks you want to allow your users. For our example we will enable Gnosis network. Also make sure you have Email as an authentication enabled for your users. This helps create a wallet by just using user's email.
+
+- In the [developers section](https://app.dynamic.xyz/dashboard/developer/api), copy the Environment ID, we will need this in the next step.
+
+- Initialize the SDK in your **layout.tsx** file like this. The goal is to initialize the SDK as early as possible when loading you application. Put your Environment ID in the proper variable.
+Make sure you have **EthersExtension** also added in the extensions variable, this will be useful later!
+```
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <DynamicContextProvider
+        settings={{
+          environmentId: "<Replace with you own Environment ID>",
+          walletConnectors: [EthereumWalletConnectors],
+          walletConnectorExtensions: [EthersExtension],
+        }}
+      >
+        <body className={inter.className}>{children}</body>
+      </DynamicContextProvider>
+    </html>
+  );
+}
+
+```
+
+
+- Create a components folder and inside that create a component **DynamicWidgetButton.tsx** and here we need to declare our DynamicWidget component provided to us by Dynamic SDK.
+
+```
+export const DynamicWidgetButton: React.FC = () => {
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '20px' }}>
+      <Title level={3} style={{ marginBottom: '20px' }}>Wallet Interaction</Title>
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        <DynamicWidget />
+      </div>
+    </div>
+  );
+};
+
+```
+
+- Now we can use and initialize the Dynamic wallet anywhere in our app by just using the above component!
+
+- Let's create our Main component in **page.tsx** file.
+
+In this file, we will [**useDynamicContext**](https://docs.dynamic.xyz/sdks/react-sdk/hooks/usedynamiccontext#header) provided by the dynamic sdk to fetch the wallet connected. We will also use this same wallet to execute all our ethers expression.
+
+```
+  const { primaryWallet } = useDynamicContext();
+```
+
+- In our application, we have built a basic **Signer** component which uses the connected Dynamic wallet to generate a signature from the user.
+
+
+```
+  const signMessage = async () => {
+    if (!primaryWallet) {
+      console.error("No primary wallet connected");
+      return;
+    }
+
+    try {
+      const signedMessage = await primaryWallet.connector.signMessage('You are signing an example message');
+      if (signedMessage) {
+        setSignature(signedMessage);
+      } else {
+        setSignature(null);
+      }
+    } catch (error) {
+      console.error("Error signing message:", error);
+      setSignature(null);
+    }
+  };
+```
+
+You can also see that the **signMessage** function is provided by the  Dynamic SDK.  So cool!
+
+## Using ethers
+
+The last piece of component, I want to discuss is the **getBalance** component. Although Dybamic also gives a component to fetch user balance, this function is created to demonstrate how you can use standard ethers expression to build out your app further.
+
+```
+  const getBalance = async () => {
+    if (!primaryWallet) {
+      console.error("No primary wallet connected");
+      return null;
+    }
+
+    const provider = await primaryWallet.connector?.ethers?.getRpcProvider();
+    
+    if (!provider) {
+      console.error("No provider available");
+      return null;
+    }
+    try {
+      const balance = await provider.getBalance(primaryWallet.address);
+      console.log(balance);
+      return balance;
+    } catch (error) {
+      console.error("Error getting balance:", error);
+      return null;
+    }
+  };
+
+```
+
+## Demo Application
+
+You can check out this [**repository**](https://github.com/gnosischain/developer-resources/tree/main/custom-signers/dynamic-gnosis) for the full stack application demo.
+
+---
+
+// File: technicalguides/wallets-and-accounts/embedded-signers/privy
+
+# Privy
+
+This guide will walk you through the steps to integrate the Privy Wallet and SDK into your Web3 DApp, with a specific configuration for the Gnosis chain(mainnet & Chiado testnet).
+
+![Privy Image](/img/signers/privy.png)
+
+## Guide
+
+The [Privy React SDK](https://www.npmjs.com/package/@privy-io/react-auth) is the easiest way to integrate Privy in your
+application.
+
+In order to integrate the Privy React SDK, your project must be on:
+
+- a minimum React version of 18
+- a minimum TypeScript version of 5
+
+### 1. Install the Privy React SDK
+
+```shell
+npm install @privy-io/react-auth@latest
+```
+
+### 2. Setup Log-in methods & Privy App ID
+
+Navigate to your [Privy dashboard](https://dashboard.privy.io/apps) and from the **Login methods** methods tab, enable all the login methods you want the end-user to have.
+
+Also, note the **App ID** from the settings, we will need to configure while initializing Privy.
+
+### 3. Setup Privy Provider and Gnosis Config
+
+We can now initialize **PrivyProvider**. Replace the App ID field with your own Privy App ID and import the chains you want to support in your dapp. In our case, we have imported **gnosisChiado** and **gnosis** from viem. We can also also customize with theme, logo and , colours and other [configs](https://docs.privy.io/guide/react/configuration/appearance#app-name).
+
+```shell
+'use client';
+
+import {PrivyProvider} from '@privy-io/react-auth';
+import {gnosisChiado, gnosis} from 'viem/chains';
+
+export default function Providers({children}: {children: React.ReactNode}) {
+  return (
+    <PrivyProvider
+      appId="<Enter App ID>"
+      config={{
+        appearance: {
+          theme: 'dark',
+          accentColor: '#676FFF',
+          logo: 'https://cdn.prod.website-files.com/662931fe35e0c191d1733ab9/662931fe35e0c191d1733b0f_owl-forest.png',
+        },
+        defaultChain: gnosisChiado,
+        supportedChains: [gnosisChiado,gnosis], 
+
+        embeddedWallets: {
+          createOnLogin: 'users-without-wallets',
+        },
+      }}
+    >
+      {children}
+    </PrivyProvider>
+  );
+}
+```
+
+
+You can now import the above component and wrap around your application in the **layout.tsx** file(In case of a NextJS app).
+
+Here is an example:
+
+```shell
+import type { Metadata } from "next";
+import PrivyProvider from "./components/privy"; 
+
+export const metadata: Metadata = {
+  title: "Gnosis App Demo",
+  description: "Gnosis App Demo",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en" className="dark"> 
+      <body>
+          <PrivyProvider> 
+            {children} 
+          </PrivyProvider>
+      </body>
+    </html>
+  );
+}
+
+```
+
+## Demo Application
+
+Here is a full-stack dapp which showcases Privy integration along with proper configurations to fetch wallet data and make on-chain transactions. The application integrates the Pirvy React SDK and uses it to mint ERC-1155 tokens on the Gnosis Chiado testnet.
+
+[**Link to Demo Application**](https://github.com/gnosischain/developer-resources/tree/main/custom-signers/privy-gnosis)
+
+---
+
+// File: technicalguides/wallets-and-accounts/smart-eoas/eip-5792
 
 # EIP‑5792
 
@@ -7254,7 +8213,7 @@ useEffect(() => {
 
 ---
 
-// File: technicalguides/Pectra/eip-7702
+// File: technicalguides/wallets-and-accounts/smart-eoas/eip-7702
 
 # EIP‑7702
 > **Status:** Live on Gnosis mainnet since **7 May 2025** (Pectra).  
@@ -7408,965 +8367,6 @@ await walletClient.sendTransaction({
 * **Code size ≤ 24576 bytes** or the tx will revert.  
 * **Audit everything** – attached code runs with EOA’s permissions.  
 * **Gas caps** – always set sensible `maxFeePerGas` when using paymasters.
-
----
-
-// File: technicalguides/account-abstraction/README
-
-# Understanding Account Abstraction
-<FeatureCard imgUrl="">
-        <h2>What is Account Abstraction ? </h2>
-        <p>Account abstraction allows for more flexible and user-friendly account models beyond the traditional externally owned accounts (EOAs). With AA, smart contract wallets can initiate transactions, enabling more complex logic like multi-signature verification, recovery mechanisms, and gas fee payments in tokens. AA revolves around the idea of avoiding the need for change in consensus layer.</p>
-</FeatureCard>
-
-<CardContainer>
-    <Card
-    title="Programmable wallets more advanced than EOA"
-    url=""
-    />
-    <Card
-    title="Seamless user onboarding experience"
-    url=""
-    />
-    <Card
-    title="Batched transaction for sending multiple transactions"
-    url=""
-    />
-    <Card
-    title="Sponsoring users gas fees for gasless experience"
-    url=""
-    /> 
-    <Card
-    title="Allowing users to pay gas fees in stablecoins "
-    url=""
-    /> 
-</CardContainer>
-
-
----
-
-# Account Abstraction on Gnosis Chain
-
-Gnosis Chain offers a range of account abstraction (AA) providers designed to enhance user experience of dApps, so that users can do on-chain activities and transactions cheaper and leverage the power of AA stack with different provider solutions for the non-web3 users.
-### Providers for Account Abstraction on Gnosis Chain
-
-import DocCardList from '@theme/DocCardList';
-
-<DocCardList />
-
----
-
-// File: technicalguides/account-abstraction/Safe and supported AA infra providers/README
-
-# Building Account Abstraction with Safe
-[Safe](https://docs.safe.global/) provides a variety of Account Abstraction stacks for developers to integrate and build Account Abstraction on top of Safe. 
-
-[Safe Core](https://docs.safe.global/learn/safe-core) suites:
-1. [Safe Core Account Abstraction SDK](https://docs.safe.global/learn/safe-core/safe-core-account-abstraction-sdk)
-2. [Safe Core  API](https://docs.safe.global/learn/safe-core/safe-core-api)
-3. [Safe Core Protocol](https://docs.safe.global/learn/safe-core/safe-core-protocol)
-
-## Safe Core Account Abstraction SDK
-Safe Core Account Abstraction SDK allows developers to create AA functionalities into their apps.
-![](../../../../static/img/developers/Safe/safe-AA-SDK.png)
-
-
-### [Protocol Kit](https://docs.safe.global/learn/safe-core/safe-core-account-abstraction-sdk/protocol-kit)
-Protocol Kit provides functionalities such as creating new Safe accounts, updating the configuration of existing Safes, and proposing and executing transactions.
-
-For more details, see [Guide: Integrating the Safe Core SDK](https://github.com/safe-global/safe-core-sdk/blob/main/guides/integrating-the-safe-core-sdk.md) and [Safe Core SDK API Reference](https://github.com/safe-global/safe-core-sdk/tree/main/packages/protocol-kit#sdk-api)
-
-Follow the [tutorial on Safe](https://docs.safe.global/learn/safe-core/safe-core-account-abstraction-sdk/protocol-kit#quickstart) to **create a 2 of 3 multi-sig Safe** and propose and **execute a transaction** to send some ETH out of this Safe.
-
-### [Auth Kit](https://docs.safe.global/learn/safe-core/safe-core-account-abstraction-sdk/auth-kit)
-Auth Kit enables users to sign in using an email address, social media account, or traditional crypto wallets like Metamask. It creates an Ethereum/Gnosis address and let users to authenticate the account using above-mentioned authentication methods.
-
-Follow the [tutorial on Safe](https://docs.safe.global/learn/safe-core/safe-core-account-abstraction-sdk/auth-kit#quickstart) to create a Signing Account using your email or social media account. Once authenticated, you can sign transactions and interact with any Safe Smart Accounts you own.
-
-
-### [Onramp Kit](https://docs.safe.global/learn/safe-core/safe-core-account-abstraction-sdk/onramp-kit)
-Onramp Kit allows users to buy cryptocurrencies using a credit card or other payment methods.
-This package is provided for testing purpose only. Please use it at your own risk.
-
-Follow the [tutorial on Safe](https://docs.safe.global/learn/safe-core/safe-core-account-abstraction-sdk/onramp-kit#quickstart) to create a React component that allows you to enter an Ethereum address and fund it using a credit card. The full code example can be found in the [Safe Space repo](https://github.com/5afe/safe-space) in the [WalletFund.tsx](https://github.com/5afe/safe-space/blob/onramp-kit-integration/src/scenes/Wallet/WalletFund.tsx) file in [PR #8](https://github.com/5afe/safe-space/pull/8). We will also be using a [pre-deployed server](https://github.com/5afe/aa-stripe-service).
-
-### [Relay Kit](https://docs.safe.global/learn/safe-core/safe-core-account-abstraction-sdk/relay-kit)
-Relay Kit allows users to pay transaction fees (gas fees) using the native blockchain token or ERC-20 tokens. This allows you to pay gas fees using any ERC-20 token in your Safe, even if you don't have ETH.
-
-Currently, the Relay Kit is only compatible with [Gelato relay](https://docs.gelato.network/developer-services/relay). There are two ways to use Gelato relay:
-1. [Gelato 1Balance](https://docs.gelato.network/developer-services/relay/payment-and-fees/1balance-and-relay): Using prepaid deposit(via USDC on Polygon for mainnet, via gETH on Goerli for testnet) to funds the 1Balance account.With the deposit on 1Balance account, the Relay Kit can sponsors a transactions to other Safe within or on another chain. 
-2. [Gelato SyncFee](https://docs.gelato.network/developer-services/relay/non-erc-2771/callwithsyncfee): Allows you to execute a transaction and pay the gas fees directly with funds in your Safe, even if you don't have ETH on Ethereum or xDAI on Gnosis Chain.
-
-
-Follow the [tutorial on Safe](https://docs.safe.global/learn/safe-core/safe-core-account-abstraction-sdk/relay-kit#quickstart) to send some tokens to another address using the Relay Kit to pay for he gas fees. 
-
-To learn more about how to use Gelato with Safe, checkout the demos linked below.
-
-import DocCardList from '@theme/DocCardList';
-
-<DocCardList />
-
----
-
-// File: technicalguides/account-abstraction/Safe and supported AA infra providers/integration-guide-for-safe
-
-### In this guide, you will learn the very first steps to generate safe smart account and execute transactions on Gnosis Chain.
-
-
-### We would be using these two packages from Safe Core AA SDK :
-1. [Auth Kit](https://github.com/safe-global/safe-core-sdk/blob/main/packages/auth-kit/src/packs/safe-auth/SafeAuthPack.ts): The Auth Kit creates an EOA address and authenticates a blockchain account using an email address, social media account, or crypto wallet like Metamask. We would be using the [Safe Auth Integration](https://docs.safe.global/sdk/auth-kit/guides/safe-auth) which uses Web3Auth's MPC technology. 
-
-2. [Protocol Kit](https://github.com/safe-global/safe-core-sdk/tree/main/packages/protocol-kit) :This Kit can be used to create new Safe accounts, update the configuration of existing Safes, propose and execute transactions, among other features.
-
-
-### Let's begin building!
-
-## Using Safe Auth Kit to generate Safe using social accounts
----
-
-### 1. Install the following dependencies.
-
-```
-npm install @safe-global/auth-kit @web3auth/safeauth-embed
-```
-
-### 2. Create a SafeAuthPack Instance 
-
-```jsx
-import
-{ SafeAuthPack, SafeAuthInitOptions,AuthKitSignInData,SafeAuthUserInfo } from "@safe-global/auth-kit"
-
- const initSafeAuthPack = async () => {
-      try {
-        const safeAuthInitOptions = {
-          showWidgetButton: true,
-          enableLogging: true,
-          buttonPosition: "top-right",
-          buildEnv: "production",
-          chainConfig: {
-            chainId: "0x64",
-            displayName: "Gnosis",
-            rpcTarget: 'https://gnosis.drpc.org',
-            blockExplorerURL: 'https://gnosis.blockscout.com/',
-            ticker: "xDAI",
-            tickerName: "Gnosis Chain",
-          },
-        };
-
-        const safeAuthPack = new SafeAuthPack();
-
-        await safeAuthPack.init(safeAuthInitOptions);
-        setSafeAuth(safeAuthPack);
-
-        if (safeAuthPack.isAuthenticated) {
-          const signInInfo = await safeAuthPack?.signIn();
-          // The signIn() method returns the user's EOA address and the associated Safe addresses
-          setSafeAuthSignInResponse(signInInfo);
-          setProvider(safeAuthPack.getProvider());
-          setIsAuthenticated(true);
-          toast.success("Initialization and auto-login successful!");
-        }
-      } catch (error) {
-        console.error(error);
-        toast.error("Failed to initialize SafeAuthPack,try again!");
-      }
-    };
-
-    initSafeAuthPack();
-
-
-```
-
-After you have successfully authenticated your session, `authKitSignData` will return the following objects:
-
-``` jsx
-AuthKitSignInData {
-  eoa: string // This would be your signer
-  safes?: string[] // The list of associated Safe addresses in the chain
-}
-```
-
-### Now let's move onto our Protocol Kit that we would be using with this SafeAuthPack Instance
-
-
-### 1. Install the following dependencies.
-
-```
-npm install ethers
-npm install @safe-global/protocol-kit
-```
-### 2. Import these in your `.jsx` file
-
-```
-import { ethers, BrowserProvider } from "ethers";
-import Safe, { EthersAdapter, SafeFactory } from "@safe-global/protocol-kit";
-```
-
-```jsx
- const web3Provider = safeAuth.getProvider();
-      const userInfo = await safeAuth.getUserInfo();
-      console.log(userInfo);
-      setUserInfo(userInfo);
-
-      if (web3Provider) {
-        const provider = new BrowserProvider(safeAuth.getProvider());
-        const signer = await provider.getSigner();
-        const signerAddress = await signer.getAddress();
-      }
-```
-- You can checkout all the details of a user using `getUserInfo` method.
-
-### 3. Create a Safe Adapter and using protocol kit
-
-```jsx
-const createSafe = async () => {
-    if (!safeAuthSignInResponse?.eoa) {
-        toast.error("No EOA (Externally Owned Account) available to create a Safe.");
-        return;
-    }
-        const provider = new ethers.BrowserProvider(safeAuth?.getProvider());
-        const signer = await provider.getSigner();
-        const ethAdapter = new EthersAdapter({
-            ethers,
-            signerOrProvider: signer,
-        });
-
-        const safeFactory = await SafeFactory.create({ ethAdapter });
-
-        const safe = await safeFactory.deploySafe({
-            safeAccountConfig: { threshold: 1, owners: [safeAuthSignInResponse?.eoa] },
-            //keeping threshold to single owner 1
-        });
-
-        const safeAddress = await safe.getAddress();
-        console.log("SAFE Created!", safeAddress);
-}
-```
-
-If you would like to check out the full code implementation of how to use `SafeAuthPack` and Protocol Kit, you can checkout this code repository hosted on [Github](https://github.com/vanshika-srivastava/safe-gnosis-chain/blob/2baf5926250adf6aabe963c7bd053afc844e46da/src/App.jsx#L14).
-
-#### We would be moving to next guide implementation which is for using the [Relay Kit by Gelato](./gelato.md).
-
----
-
-// File: technicalguides/account-abstraction/Safe and supported AA infra providers/gelato
-
-# Building on Safe AA with Gelato
-
-As mentioned in previous section, Safe natively uses Gelato Relay to provide gasless transactions and more seamless experience. In this section, we will learn how you can connect with Safe and use Gelato Relay integration.
-
-Currently, the Relay Kit is only compatible with the Gelato relay. The Gelato relay can be used in two ways:
-
-- [Gelato 1Balance](https://docs.gelato.network/web3-services/relay/subscriptions-and-payments/1balance-and-relay)
-- [Gelato SyncFee](https://docs.gelato.network/web3-services/relay/non-erc-2771/callwithsyncfee)
-
-
-We would be using **Gelato 1Balance** on Gnosis Chain.
-
-Gelato 1Balance is mechanism which would allow you to execute transactions for amount that is deposited. You can use it to sponsor transactions for users on Gnosis Chain and pay for their gas fees.
-
-1Balance works by toping up with USDC on Polygon, regardless of the chain that is being used for deployed Safe address. 
-
-You can learn more about usage of [Gelato 1Balance](https://docs.gelato.network/web3-services/relay/subscriptions-and-payments/1balance-and-relay) but now let's quickly implement this for our dApp.
-
-
-### 1. Install the following dependencies.
-
-```
-npm install @safe-global/relay-kit
-```
-
-### 2. Import the dependencies in your `.jsx` file
-```
-import { GelatoRelayPack } from '@safe-global/relay-kit';
-```
- 
-### 3. We would be requiring to get an `API KEY` for using Gelato 1Balance. We would be using `.env` to save our API Keys.
-
-```
-  const GELATO_1_BALANCE = import.meta.env.VITE_BALANCE_API_KEY;
-```
-
-### 4. How to get your API KEY from Gelato ?
-
-- Go on [1Balance](https://app.gelato.network/1balance) page.
-- Login with your Metamask or relevant wallet. This will be the owner for 1Balance account.
-- Once logged in, you will get this dashboard
-
-![](../../../../static/img/developers/Safe/gelato-home.png)
-
-- Now, to generate an API key, we will go to [Relay](https://app.gelato.network/relay). You will see "Create App" option.
-- Once you click, you will get a popup for a New App. 
-![](../../../../static//img/developers//Safe//create-app-gelato.png)
-
-- Based on your reference to which chain you are creating Safe on, Gnosis Chain or Chiado, you can choose the kind of network, give a app name and add the smart contract that you have deployed on the chain and enable 'Allow sponsored transactions from Safe'
-
-- If you don't have any specific contract, you can still use the generated API KEY for any contract that exists on Gnosis Chain.
-
-- This is what you will get after the setup
-![](../../../../static/img/developers/Safe/Final-dashboard.png)
-
-- Copy the API KEY to `.env` file and we can then use it in our JSX.
-
-### 5. Depositing the balance amount USDC to use it on Gnosis Chain
-
-- Now once you have setup the contract and got the App API_KEY, we need to setup our 1Balance which will be actually used to pay for the transactions.
-
-- In order to achieve this, your connected metamask account should have USDC on Polygon (if you are deploying on mainnet which is Gnosis Chain).
-
-- Once you fill up with your prepaid amount, you will have access to dashboard where you can check the usage of balance and all the relayed transactions and even get cumulative spend by the users for every single month.
-
-![](../../../../static//img/developers/Safe/1balance-txns.png)
-
-### 6. Create transaction object and use Protocol Kit 
-
-
-```jsx
-const transactions  = [{
-  to: destinationAddress,
-  data: '0x',
-  value: withdrawAmount
-}]
-
-const ethAdapter = new EthersAdapter({
-        ethers,
-        signerOrProvider: currentSigner,
-      });
-
-      const protocolKit = await Safe.create({
-        ethAdapter,
-        safeAddress: safeAuthSignInResponse?.safes[0],
-      });
-```
-
-### 7. Setup transactions to be relayed on Gnosis Chain
-
-```jsx
-    const relayKit = new GelatoRelayPack({ apiKey: GELATO_1_BALANCE, protocolKit });
-
-      const safeTransaction = await relayKit.createRelayedTransaction({
-        transactions,
-        options: { isSponsored: true, gasLimit: '100000' },
-      });
-
-      const signedSafeTransaction = await protocolKit.signTransaction(safeTransaction);
-
-      const response = await relayKit.executeRelayTransaction(signedSafeTransaction, { isSponsored: true });
-      console.log(`Relay Transaction Task ID: https://relay.gelato.digital/tasks/status/${response.taskId}`);
-      
-      const transactionHash = response.taskId;
-      console.log(`Transaction Hash: ${transactionHash}`);
-```
-
-You will be able to check the relayed transaction status on console.
-
-:::info
-To checkout the entire frontend along with code you can checkout the [github code](https://github.com/vanshika-srivastava/safe-gnosis-chain/tree/2baf5926250adf6aabe963c7bd053afc844e46da/src)
-
-Test out the application live here on [vercel](https://safe-gnosis-chain.vercel.app/)
-:::
-
----
-
-// File: technicalguides/account-abstraction/Safe and supported AA infra providers/pimilico
-
-# Building on Safe AA with Pimilico
-
-Safe supports 4337 which means you can now plug in Safe accounts to ERC-4337 bundlers and paymasters. This guide will walk you through how to create and use a Safe account with permissionless.js.
-
-### 1. Import the required packages
-
-```jsx
-import { ENTRYPOINT_ADDRESS_V06, createSmartAccountClient } from "permissionless"
-import { signerToSafeSmartAccount } from "permissionless/accounts"
-import {
-	createPimlicoBundlerClient,
-	createPimlicoPaymasterClient,
-} from "permissionless/clients/pimlico"
-import { createPublicClient, getContract, http, parseEther } from "viem"
-import { gnosis } from "viem/chains"
-```
-
-### 2. Create the clients
-First we must create the public, bundler, and (optionally) paymaster clients that will be used to interact with the Safe account.
-
-```jsx
-export const publicClient = createPublicClient({
-	transport: http("https://gnosis.drpc.org"),
-})
- 
-export const paymasterClient = createPimlicoPaymasterClient({
-	transport: http("https://api.pimlico.io/v2/gnosis/rpc?apikey=API_KEY"),
-	entryPoint: ENTRYPOINT_ADDRESS_V06,
-})
-```
-
-### 3. Create the signer
-
-The Safe account will need to have a signer to sign user operations. In permissionless.js, the default Safe account validates ECDSA signatures. Any permissionless.js-compatible signer can be used for the Safe account.
-
-For example, to create a signer based on a private key:
-
-```jsx
-import { privateKeyToAccount } from "viem/accounts"
-import { pimlicoBundlerClient } from "../pimlicoBundlerClient"
- 
-const signer = privateKeyToAccount("0xPRIVATE_KEY")
-```
-
-### 4. With a signer, you can create a Safe account as such:
-```jsx
-const safeAccount = await signerToSafeSmartAccount(publicClient, {
-	entryPoint: ENTRYPOINT_ADDRESS_V06,
-	signer: signer,
-	saltNonce: 0n, // optional
-	safeVersion: "1.4.1",
-	address: "0x...", // optional, only if you are using an already created account
-})
-```
-### 5. Create the smart account client
-
-```jsx
-const smartAccountClient = createSmartAccountClient({
-	account: safeAccount,
-	entryPoint: ENTRYPOINT_ADDRESS_V06,
-	chain: gnosis,
-	bundlerTransport: http("https://api.pimlico.io/v1/gnosis/rpc?apikey=API_KEY"),
-	middleware: {
-		gasPrice: async () => (await pimlicoBundlerClient.getUserOperationGasPrice()).fast, // use pimlico bundler to get gas prices
-		sponsorUserOperation: paymasterClient.sponsorUserOperation, // optional
-	},
-})
-```
-
-### 6. Fetch the gas prices
-
-If you're using Pimlico as your bundler, fetch the required gas price to use beforehand and pass it in as the maxFeePerGas and maxPriorityFeePerGas parameters. Other providers might have different requirements for fetching the gas price.
-
-```jsx
-export const bundlerClient = createPimlicoBundlerClient({
-	transport: http("https://api.pimlico.io/v1/sepolia/rpc?apikey=API_KEY"),
-	entryPoint: ENTRYPOINT_ADDRESS_V06,
-})
- 
-const gasPrices = await bundlerClient.getUserOperationGasPrice()
-```
-
-
-### 7. Send a transaction
-Transactions using permissionless.js simply wrap around user operations. This means you can switch to permissionless.js from your existing viem EOA codebase with minimal-to-no changes.
-
-```jsx
-const txHash = await smartAccountClient.sendTransaction({
-	to: destinationAddress,
-	value: parseEther("0.1"),
-	maxFeePerGas: gasPrices.fast.maxFeePerGas, // if using Pimlico
-	maxPriorityFeePerGas: gasPrices.fast.maxPriorityFeePerGas, // if using Pimlico
-})
-```
-
----
-
-// File: technicalguides/account-abstraction/particle-network
-
-# Building AA powered dApp with Particle Network
-
-Particle Network provides a Smart Wallet-as-a-Service, leveraging modular and customizable wallet components. It supports native ERC-4337 AA capabilities, streamlining user onboarding and transaction processes.
-
-- **Key Features:**
-  - Integration with Gnosis Mainnet and Testnet.
-  - Simplified user onboarding via Web2 accounts.
-  - Native support for ERC-4337 AA.
-  - Intrinsic modularity with various AA infrastructure providers.
-
-For more details, refer to the [Particle Network documentation](https://docs.particle.network/).
-
-
-
-## Understanding Particle Network's Smart Wallet-as-a-Service
-
-With Particle's Smart Wallet-as-a-Service, developers can curate an unparalleled user experience through modular and customizable EOA/AA embedded wallet components. Using MPC-TSS for key management, Particle can streamline user onboarding via familiar Web2 accounts—such as Google accounts, email addresses, and phone numbers.
-
-Particle has integrated Gnosis’ Mainnet and Testnet through both EOA interactions and native ERC-4337 SimpleAccount implementations.
-
-Particle Network offers native ERC-4337 Account Abstraction capabilities within their Smart Wallet-as-a-Service stack. This allows developers to facilitate end-to-end utilization of smart accounts, beginning at the onboarding process and ending at the construction and sponsorship of UserOperations. 
-
-This integration is facilitated by:
-- [Particle Network Wallet-as-a-Service](https://developers.particle.network)
-- [Particle Network AA SDK](https://developers.particle.network/reference/introduction-to-smart-waas)
-- [Particle Network Bundler](https://developers.particle.network/docs/particle-bundler)
-- [Particle Network Paymaster](https://developers.particle.network/docs/omnichain-paymaster)
-
-And thus, the collection of these technologies is coined as "Smart Wallet-as-a-Service." You can learn more about Particle Network's Smart Wallet-as-a-Service Modular Stack [here](https://blog.particle.network/announcing-our-smart-wallet-as-a-service-modular-stack-upgrading-waas-with-erc-4337/).
-
-![Particle Network Smart WaaS map](https://blog.particle.network/content/images/2023/10/graphic-image-2.png)
-
-## Particle Network AA SDK
-
-The Particle Network AA SDK simplifies utilization of ERC-4337 Account Abstraction by facilitating the creation of a smart accounts, constructing UserOperations, sponsoring transactions, paying gas fees in ERC20 tokens, etc. –all formatted to minimize complexity.
-
-Directly within the Particle Network AA SDK, you can choose a specific smart account implementation to use. Currently, the options include Biconomy, CyberConnect, and SimpleAccount, with more on the way.
-
-The Particle Network AA SDK defaults to using the Particle Bundler for natively pushing UserOperations. On Testnets, it employs the Particle Paymaster for managing transaction fees, whereas on Mainnets, Biconomy is used as the default Paymaster.
-
-## Intrinsic Modularity
-
-Leveraging Particle Network's Smart Wallet-as-a-Service to either facilitate or play a role within full-stack ERC-4337 Account Abstraction is simple due to it's inherent modularity –both natively and externally– with various different AA infrastructure providers.
-
-![Particle Network Smart WaaS infrastructure stack](https://blog.particle.network/content/images/size/w1000/2023/10/1-3.png)
-
-## Example application
-
-Using Particle Network's Smart Wallet-as-a-Service on Gnosis only takes a few lines of code.
-
-Take a look at the following demo application showcasing the creation of a smart account through Particle Network’s MPC-based social login; then using that account to send a sample UserOperation: https://github.com/TABASCOatw/particle-gnosis-demo
-
----
-
-// File: technicalguides/account-abstraction/zerodev-guide
-
-# Building AA powered dApp with ZeroDev
-
-<CardContainer>
-<Card
-    title="ZeroDev is a smart, white-labeled, and modular embedded wallet for building user-friendly Web3 experiences, particularly for DeFi applications."
-    />
-</CardContainer>
-
-### Key Features of ZeroDev AA stack
-
-- Smart: ZeroDev leverages account abstraction.
-- White-labeled: ZeroDev doesn't have a UI -- it provides the underlying wallet logic that you can build a totally customized experience on top of.
-- Modular: ZeroDev is built on top of Kernel, the most popular open-source smart account that supports ERC-7579 plugins for customizing wallet logic.
-
-:::info
-- If you are building a DApp, get started with the [capabilities API](https://docs.zerodev.app/smart-wallet/quickstart-capabilities).
-- If you are building a wallet, get started with the [Core SDK](https://docs.zerodev.app/smart-wallet/quickstart-core) or the [React SDK](https://docs.zerodev.app/smart-wallet/quickstart-react).
-:::
-
-Let's take a quick look at how you can start off by creating a new project in the ZeroDev Dashboard.
-
-### 1. Setup ProjectID in dashboard
-
-Sign up on [ZeroDev Dashboard](https://dashboard.zerodev.app/). Sign up on dashboard and create a new project. Name your project accordingly and choose the network chain as ```Gnosis``` .
-
-### 2. Get config from Dashboard
-
-Once you have setup a project, you will get ```PROJECTID```, ```BundlerRPC```, ```PaymasterRPC```. You can create .env file and store these config values to be used later in project.
-
-### 3. Creating Wallet
-
-ZeroDev supports three types of wallet creation:
-
-- Passkeys : ZeroDev supports on-chain passkeys, where transactions are signed directly with passkeys on your user's device, and the signatures are validated on-chain with either RIP-7212 (if supported by the network) or smart contracts, without reliance on centralized infrastructure. Learn more here.
-- Socials or Social Logins : ZeroDev supports social logins natively, but you can also use ZeroDev with third-party auth providers such as Dynamic, Privy, and Magic if your prefer their UI.
-- EOA Wallet : Sign using EOA wallet (e.g. MetaMask) through ZeroDev, this EOA will be the signer of the ZeroDev smart wallet. Therefore, the smart wallet will be different counterfactual address than the address of the user's EOA.
-
-### Setting up React Implementation with ZeroDev Packages
-
-We will utilize ```@zerodev/waas``` package for the React implementation of our dApp.
-
-### 1. Install packages
-
-```shell
-npm install @zerodev/waas viem@2.x @tanstack/react-query
-```
-### 2. Create a provider for ZeroDev. 
-
-We will utilise the ```ProjectID``` from Dashboard and use chain object corresponding to ZeroDev project.
-
-```typescript
-import { http } from "viem"
-import { gnosis } from "viem/chains"
-import { ZeroDevProvider, createConfig } from "@zerodev/waas"
- 
-function Providers({ children }: { children: React.ReactNode}) {
-  const PROJECT_ID = " "        //enter PROJECT ID here
- 
-  const config = createConfig({
-    chains: [gnosis],
-    transports: {
-      [gnosis.id]: http()
-    },
-    projectIds: {
-      [gnosis.id]: PROJECT_ID
-    }
-  })
- 
-  return (
-    <ZeroDevProvider config={config}>
-      {children}
-    </ZeroDevProvider>
-  )
-}
-```
-
-### 3. Create a Smart Account
-
-```typescript
-import { useCreateKernelClientPasskey } from "@zerodev/waas";
-
-function App() {
-  const { connectRegister, isPending } = useCreateKernelClientPasskey({ version: "v3" });
-
-  return (
-    <button
-      disabled={isPending}
-      onClick={() => {
-        connectRegister({ username: "zerodev_quickstart" });
-      }}
-    >
-      {isPending ? 'Connecting...' : 'Create Smart Account'}
-    </button>
-  );
-}
-
-export default App;
-```
-
-### 4. Getting Smart Account Address
-
-```typescript
-import { useKernelClient } from "@zerodev/waas"
- 
-function App() {
-  const { address } = useKernelClient()
- 
-  return (
-    /* ...Create Smart Account */
-    <p>{`Smart Account Address: ${address}`}</p>
-  )
-}
-```
-
-### 5. Sending UserOp sponsored transaction
-
-```typescript
-import { parseAbi } from "viem"
-import { useKernelClient, useSendUserOperation } from "@zerodev/waas"
- 
-function App() {
-  const { address } = useKernelClient()
-  const { data: userOpHash, write, isPending } = useSendUserOperation({
-    paymaster: {
-      type: "SPONSOR"
-    }
-  })
-  const tokenAddress = "0x3870419Ba2BBf0127060bCB37f69A1b1C090992B"
-  const abi = parseAbi(["function mint(address _to, uint256 amount) public"])
- 
-  return (
-    /* ...Create & Get Smart Account */
-    <div>
-      <button 
-        disabled={isPending}
-        onClick={() => {
-          write([
-            {
-              address: tokenAddress,
-              abi: abi,
-              functionName: "mint",
-              args: [address, 1],
-              value: BigInt(0),
-            }
-          ])
-        }}
-      >
-        {isPending ? 'Minting...' : 'Mint'}
-      </button>
-      {userOpHash && <p>{`UserOp Hash: ${userOpHash}`}</p>}
-    </div>
-  )
-}
-```
-
-:::info
-
-Check out the quickstart code on [github](https://github.com/zerodevapp/waas-examples/tree/main/quick-start) and official documentation [here](https://docs.zerodev.app/smart-wallet/quickstart-core)
-
----
-If you want to check out how to pay gas fees using ERC20 Tokens, check out the [ZeroDev section for paying using ERC20 Tokens](https://docs.zerodev.app/smart-wallet/pay-gas-in-erc20s)
-:::
-
----
-
-// File: technicalguides/custom-signers/README
-
-# Custom Signers
-
-Custom signers allow developers to inject their own signing mechanisms tailored to specific use cases. This flexibility enhances security, usability, and adaptability in different environments, such as multi-signature wallets or smart contract interactions.
-
-## Why Use Custom Signers?
-
-### Tailored Signing Methods
-With custom signers, you can personalize the signing process to fit your dApp’s specific needs. This could mean automatic signing for trusted operations, requiring additional confirmation for sensitive actions, or integrating unique hardware devices for enhanced security.Users can now interact with dapps by just using their emails or passkeys.
-
-### Enhanced Security
-Custom signers give developers more control over how and where signing keys are stored. This can include signing transactions in hardware security modules (HSMs), using a multi-sig contract, or requiring multi-factor authentication before a transaction is signed.
-
-### Optimized for Specific Use Cases
-Whether you’re dealing with privacy-focused transactions, or social recovery mechanisms, custom signers can be configured to handle the specific logic needed. They allow for flexibility in crafting unique user flows that require specialized transaction signing methods.
-
-
-
-
-<CardContainer>
-    <Card
-        title="Privy"
-        subtitle="Guide to intgerate Privy Wallet and SDK"
-        url="/technicalguides/custom-signers/privy" 
-    />
-    <Card
-        title="Dynamic"
-        subtitle="Guide to intgerate Dynamic Wallet and SDK"
-        url="/technicalguides/custom-signers/dynamic" 
-    />
-</CardContainer>
-
----
-
-// File: technicalguides/custom-signers/dynamic
-
-# Dynamic
-
-Dynamic offers smart and beautiful login flows for crypto-native users, simple onboarding flows for everyone else, and powerful developer tools that go beyond authentication. This is a basic guide which demonstrates the integration of Dynamic wallet with Gnosis chain and generate offchain user signatures.
-
-![Dynamic Image](../../../static/img/signers/dynamic.png)
-
-
-## Guide
-
-- Create a NextJs application from scratch
-
-```
-npx create-next-app dynamic-gnosis
-# install with Tailwind
-```
-- Install Dynamic labs SDK & some other dependencies
-
-```
-npm install @dynamic-labs/ethereum @dynamic-labs/ethers-v6 @dynamic-labs/sdk-react-core
-```
-
-- Create an account at [Dynamic Web App](https://app.dynamic.xyz/) and choose the Ethereum Sandbox option.
-In the dashboard, enable the networks you want to allow your users. For our example we will enable Gnosis network. Also make sure you have Email as an authentication enabled for your users. This helps create a wallet by just using user's email.
-
-- In the [developers section](https://app.dynamic.xyz/dashboard/developer/api), copy the Environment ID, we will need this in the next step.
-
-- Initialize the SDK in your **layout.tsx** file like this. The goal is to initialize the SDK as early as possible when loading you application. Put your Environment ID in the proper variable.
-Make sure you have **EthersExtension** also added in the extensions variable, this will be useful later!
-```
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return (
-    <html lang="en">
-      <DynamicContextProvider
-        settings={{
-          environmentId: "<Replace with you own Environment ID>",
-          walletConnectors: [EthereumWalletConnectors],
-          walletConnectorExtensions: [EthersExtension],
-        }}
-      >
-        <body className={inter.className}>{children}</body>
-      </DynamicContextProvider>
-    </html>
-  );
-}
-
-```
-
-
-- Create a components folder and inside that create a component **DynamicWidgetButton.tsx** and here we need to declare our DynamicWidget component provided to us by Dynamic SDK.
-
-```
-export const DynamicWidgetButton: React.FC = () => {
-  return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '20px' }}>
-      <Title level={3} style={{ marginBottom: '20px' }}>Wallet Interaction</Title>
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-        <DynamicWidget />
-      </div>
-    </div>
-  );
-};
-
-```
-
-- Now we can use and initialize the Dynamic wallet anywhere in our app by just using the above component!
-
-- Let's create our Main component in **page.tsx** file.
-
-In this file, we will [**useDynamicContext**](https://docs.dynamic.xyz/sdks/react-sdk/hooks/usedynamiccontext#header) provided by the dynamic sdk to fetch the wallet connected. We will also use this same wallet to execute all our ethers expression.
-
-```
-  const { primaryWallet } = useDynamicContext();
-```
-
-- In our application, we have built a basic **Signer** component which uses the connected Dynamic wallet to generate a signature from the user.
-
-
-```
-  const signMessage = async () => {
-    if (!primaryWallet) {
-      console.error("No primary wallet connected");
-      return;
-    }
-
-    try {
-      const signedMessage = await primaryWallet.connector.signMessage('You are signing an example message');
-      if (signedMessage) {
-        setSignature(signedMessage);
-      } else {
-        setSignature(null);
-      }
-    } catch (error) {
-      console.error("Error signing message:", error);
-      setSignature(null);
-    }
-  };
-```
-
-You can also see that the **signMessage** function is provided by the  Dynamic SDK.  So cool!
-
-## Using ethers
-
-The last piece of component, I want to discuss is the **getBalance** component. Although Dybamic also gives a component to fetch user balance, this function is created to demonstrate how you can use standard ethers expression to build out your app further.
-
-```
-  const getBalance = async () => {
-    if (!primaryWallet) {
-      console.error("No primary wallet connected");
-      return null;
-    }
-
-    const provider = await primaryWallet.connector?.ethers?.getRpcProvider();
-    
-    if (!provider) {
-      console.error("No provider available");
-      return null;
-    }
-    try {
-      const balance = await provider.getBalance(primaryWallet.address);
-      console.log(balance);
-      return balance;
-    } catch (error) {
-      console.error("Error getting balance:", error);
-      return null;
-    }
-  };
-
-```
-
-## Demo Application
-
-You can check out this [**repository**](https://github.com/gnosischain/developer-resources/tree/main/custom-signers/dynamic-gnosis) for the full stack application demo.
-
----
-
-// File: technicalguides/custom-signers/privy
-
-# Privy
-
-This guide will walk you through the steps to integrate the Privy Wallet and SDK into your Web3 DApp, with a specific configuration for the Gnosis chain(mainnet & Chiado testnet).
-
-![Privy Image](../../../static/img/signers/privy.png)
-
-## Guide
-
-The [Privy React SDK](https://www.npmjs.com/package/@privy-io/react-auth) is the easiest way to integrate Privy in your
-application.
-
-In order to integrate the Privy React SDK, your project must be on:
-
-- a minimum React version of 18
-- a minimum TypeScript version of 5
-
-### 1. Install the Privy React SDK
-
-```shell
-npm install @privy-io/react-auth@latest
-```
-
-### 2. Setup Log-in methods & Privy App ID
-
-Navigate to your [Privy dashboard](https://dashboard.privy.io/apps) and from the **Login methods** methods tab, enable all the login methods you want the end-user to have.
-
-Also, note the **App ID** from the settings, we will need to configure while initializing Privy.
-
-### 3. Setup Privy Provider and Gnosis Config
-
-We can now initialize **PrivyProvider**. Replace the App ID field with your own Privy App ID and import the chains you want to support in your dapp. In our case, we have imported **gnosisChiado** and **gnosis** from viem. We can also also customize with theme, logo and , colours and other [configs](https://docs.privy.io/guide/react/configuration/appearance#app-name).
-
-```shell
-'use client';
-
-import {PrivyProvider} from '@privy-io/react-auth';
-import {gnosisChiado, gnosis} from 'viem/chains';
-
-export default function Providers({children}: {children: React.ReactNode}) {
-  return (
-    <PrivyProvider
-      appId="<Enter App ID>"
-      config={{
-        appearance: {
-          theme: 'dark',
-          accentColor: '#676FFF',
-          logo: 'https://cdn.prod.website-files.com/662931fe35e0c191d1733ab9/662931fe35e0c191d1733b0f_owl-forest.png',
-        },
-        defaultChain: gnosisChiado,
-        supportedChains: [gnosisChiado,gnosis], 
-
-        embeddedWallets: {
-          createOnLogin: 'users-without-wallets',
-        },
-      }}
-    >
-      {children}
-    </PrivyProvider>
-  );
-}
-```
-
-
-You can now import the above component and wrap around your application in the **layout.tsx** file(In case of a NextJS app).
-
-Here is an example:
-
-```shell
-import type { Metadata } from "next";
-import PrivyProvider from "./components/privy"; 
-
-export const metadata: Metadata = {
-  title: "Gnosis App Demo",
-  description: "Gnosis App Demo",
-};
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en" className="dark"> 
-      <body>
-          <PrivyProvider> 
-            {children} 
-          </PrivyProvider>
-      </body>
-    </html>
-  );
-}
-
-```
-
-## Demo Application
-
-Here is a full-stack dapp which showcases Privy integration along with proper configurations to fetch wallet data and make on-chain transactions. The application integrates the Pirvy React SDK and uses it to mint ERC-1155 tokens on the Gnosis Chiado testnet.
-
-[**Link to Demo Application**](https://github.com/gnosischain/developer-resources/tree/main/custom-signers/privy-gnosis)
 
 ---
 
