@@ -1,6 +1,6 @@
 ---
-sidebar_position: 2
-title: How to use Gnosis Bridge ?
+sidebar_position: 1
+title: Bridge Tokens
 keywords: [gnosis bridges, omnibridge, xdai bridge]
 ---
 :::info
@@ -11,7 +11,7 @@ To begin using Gnosis Bridge, you need to go on this following link : https://br
 You will need xDAI to perform any transactions on Gnosis Chain as it’s the chain’s gas token. You can get xDAI by transferring DAI from Ethereum using the Bridge Explorer
 :::
 
-![xDAI bridge from ethereum](../../static/img/bridges/bridge-xdai-new.png)
+![xDAI bridge from ethereum](../../../static/img/bridges/bridge-xdai-new.png)
 
 ### Follow the below steps to get xDAI into your Ethereum address: 
 1. Go to the Gnosis Chain Bridge UI and connect your wallet to the Ethereum Mainnet.
@@ -28,7 +28,7 @@ You will need xDAI to perform any transactions on Gnosis Chain as it’s the cha
 3. Select the token you want to transfer and enter the amount of token you want.
 4. Click Bridge and sign the transaction
 
-![Bridge erc 20 token to gnosis chain](../../static/img/bridges/bridge-erc20-new.png)
+![Bridge erc 20 token to gnosis chain](../../../static/img/bridges/bridge-erc20-new.png)
 
 Transactions from Ethereum to Gnosis Chain are expected to take ~26 mins (130 blocks) because of the verification through the ZK light client
 
@@ -41,12 +41,12 @@ You can view and monitor your transactions by visiting this URL: https://bridge.
 You can also check out all the transactions you have done by checking out the history from "My Transactions" of your connected wallet.
 
 
-![My transactions](../../static/img/bridges/bridge-explorer/transaction-history.png)
+![My transactions](../../../static/img/bridges/bridge-explorer/transaction-history.png)
 
 :::note
 If you are bridging from Gnosis to Ethereum, you have to claim your funds on Ethereum after the bridge transaction has been validated. You can do this by finding your transaction on the Bridge Explorer and clicking “claim”
 :::
-![Search Transaction](../../static/img/bridges/bridge-explorer/claim-new.png)
+![Search Transaction](../../../static/img/bridges/bridge-explorer/claim-new.png)
 
 :::note
 Please note that Gnosis bridges have certain limits. You can check these limits by visiting this URL: https://bridge-explorer.gnosischain.com/bridge-explorer/bridges/
@@ -55,7 +55,7 @@ If you are bridging funds that exceed the daily limit, your transaction will be 
 
 :::info
 If you are not coming from other chains, you can choose from a list of third-party bridges here:
-[Third-party bridges](/bridges/thirdpartybridges)
+[Third-party bridges](./third-party-bridges.md)
 :::
 
 ### Need more help?

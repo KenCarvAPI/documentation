@@ -400,9 +400,62 @@ const config = {
             to: "/tools/user-onboarding/web3-name-sdk",
             from: "/tools/web3-name-sdk",
           },
+          // Bridges section grouped into Use / How it works / Security & Governance
+          {
+            to: "/bridges/use-the-bridges/use-gnosis-bridge",
+            from: "/bridges/usebridges",
+          },
+          {
+            to: "/bridges/use-the-bridges/bridge-explorer",
+            from: "/bridges/Bridge Explorer",
+          },
+          {
+            to: "/bridges/use-the-bridges/bridge-limits",
+            from: "/bridges/bridge-limits",
+          },
+          {
+            to: "/bridges/use-the-bridges/third-party-bridges",
+            from: "/bridges/thirdpartybridges",
+          },
+          {
+            to: "/bridges/how-bridges-work/",
+            from: "/bridges/About Token Bridges/",
+          },
+          {
+            to: "/bridges/how-bridges-work/amb-bridge",
+            from: "/bridges/About Token Bridges/amb-bridge",
+          },
+          {
+            to: "/bridges/how-bridges-work/omnibridge",
+            from: "/bridges/About Token Bridges/omnibridge",
+          },
+          {
+            to: "/bridges/how-bridges-work/xdai-bridge",
+            from: "/bridges/About Token Bridges/xdai-bridge",
+          },
+          {
+            to: "/bridges/security-and-governance/governance/",
+            from: "/bridges/management",
+          },
+          {
+            to: "/bridges/security-and-governance/governance/decisions",
+            from: "/bridges/management/decisions",
+          },
+          {
+            to: "/bridges/security-and-governance/governance/validators",
+            from: "/bridges/management/validators",
+          },
+          {
+            to: "/bridges/security-and-governance/audits",
+            from: "/bridges/audits",
+          },
+          {
+            to: "/bridges/security-and-governance/roadmap",
+            from: ["/bridges/roadmap", "/bridges/fast-confirmation-rule"],
+          },
           // Slug typo fixed (brige -> bridge)
           {
-            to: "/bridges/bridge-limits",
+            to: "/bridges/use-the-bridges/bridge-limits",
             from: "/bridges/brige-limits",
           },
           // Knowledge hub recategorized: AA / signers / Pectra grouped under

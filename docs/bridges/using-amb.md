@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 3
 title: Build with Bridges using the AMB
 description: How to use the Arbitrary Message Bridge
 keywords:
