@@ -93,7 +93,7 @@ html:root {
   --ifm-line-height-base: 1.6;
   --ifm-code-font-size: 90%;
   --ifm-global-radius: 14px;
-  --ifm-navbar-height: 104px;
+  --ifm-navbar-height: 104px; /* 60px shared header + 44px section row */
   --ifm-navbar-background-color: var(--gc-bg);
   --ifm-navbar-shadow: none;
   --ifm-toc-border-color: var(--gc-border);
@@ -205,10 +205,24 @@ a {
 /* ---------- navbar ---------- */
 nav.navbar {
   height: var(--ifm-navbar-height);
-  padding: 0 2rem;
+  padding: 0; /* rows pad themselves (shared header + section row) */
   box-shadow: none;
   border-bottom: 1px solid var(--gc-border);
   background-color: var(--ifm-navbar-background-color);
+}
+/* The shared header is sticky with its own bottom border for the ecosystem
+   app. Here the navbar is already fixed and draws the border under the
+   section row, and a sticky z-index would paint over the mobile sidebar. */
+nav.navbar > .navbar__inner > header {
+  position: static;
+  z-index: auto;
+  border-bottom: 0;
+}
+/* Separator between doc sections and site links in the phone sidebar. */
+.menu__separator {
+  margin: 0.5rem 0.75rem;
+  border: 0;
+  border-top: 1px solid var(--gc-border);
 }
 
 .navbar__brand {
@@ -414,9 +428,6 @@ a:hover .socialButton path {
 @media (max-width: 996px) {
   html:root {
     --ifm-navbar-height: 56px;
-  }
-  nav.navbar {
-    padding: 0 1rem;
   }
   .navbar__logo,
   .navbar__logo img {

@@ -9,18 +9,21 @@ import {
   splitNavbarItems,
   useNavbarMobileSidebar,
 } from '@docusaurus/theme-common/internal';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import NavbarItem from '@theme/NavbarItem';
 import NavbarColorModeToggle from '@theme/Navbar/ColorModeToggle';
 import SearchBar from '@theme/SearchBar';
 import NavbarMobileSidebarToggle from '@theme/Navbar/MobileSidebar/Toggle';
-import NavbarLogo from '@theme/Navbar/Logo';
 import NavbarSearch from '@theme/Navbar/Search';
+import SiteHeader from '@site/src/components/SiteHeader/SiteHeader';
 import styles from './styles.module.css';
 
 /**
  * Two-row navbar.
- *  Row 1: mobile toggle, logo, search, right-hand items, colour-mode toggle.
+ *  Row 1: the site header shared with the ecosystem app (build.gnosischain.com):
+ *         mobile toggle, logo, search, site links, socials, colour-mode toggle.
  *  Row 2: section links (the "left" navbar items from docusaurus.config.js).
+ * "Right" navbar items are not rendered; the shared header owns that space.
  */
 function NavbarItems({items}) {
   return (
@@ -46,51 +49,33 @@ ${JSON.stringify(item, null, 2)}`,
 export default function NavbarContent() {
   const mobileSidebar = useNavbarMobileSidebar();
   const items = useThemeConfig().navbar.items;
-  const [leftItems, rightItems] = splitNavbarItems(items);
+  const [leftItems] = splitNavbarItems(items);
   const searchBarItem = items.find((item) => item.type === 'search');
-
-  /* Right-hand cluster reads as two groups: text links, then icon buttons. */
-  const rightTextItems = rightItems.filter((item) => !item.html);
-  const rightIconItems = rightItems.filter((item) => item.html);
+  const logoSrc = useBaseUrl('/img/gnosis.svg');
 
   return (
     <div className={clsx('navbar__inner', styles.inner)}>
-      <div className={styles.topRow}>
-        <div
-          className={clsx(
-            ThemeClassNames.layout.navbar.containerLeft,
-            'navbar__items',
-            styles.brand,
-          )}>
-          {!mobileSidebar.disabled && <NavbarMobileSidebarToggle />}
-          <NavbarLogo />
-          <span className={styles.wordmark}>Docs</span>
-        </div>
-
-        {!searchBarItem && (
-          <div className={styles.search}>
+      <SiteHeader
+        current="docs"
+        logoSrc={logoSrc}
+        mobileMenu={false}
+        start={!mobileSidebar.disabled && <NavbarMobileSidebarToggle />}
+        center={
+          !searchBarItem && (
             <NavbarSearch>
               <SearchBar />
             </NavbarSearch>
-          </div>
-        )}
+          )
+        }
+        end={<NavbarColorModeToggle className={styles.colorModeToggle} />}
+      />
 
-        <div
-          className={clsx(
-            ThemeClassNames.layout.navbar.containerRight,
-            'navbar__items navbar__items--right',
-            styles.actions,
-          )}>
-          <NavbarItems items={rightTextItems} />
-          {rightIconItems.length > 0 && (
-            <span className={styles.divider} aria-hidden="true" />
-          )}
-          <NavbarItems items={rightIconItems} />
-          <NavbarColorModeToggle className={styles.colorModeToggle} />
-        </div>
-      </div>
-
-      <div className={clsx('navbar__items', styles.sections)}>
+      <div
+        className={clsx(
+          ThemeClassNames.layout.navbar.containerLeft,
+          'navbar__items',
+          styles.sections,
+        )}>
         <NavbarItems items={leftItems} />
       </div>
     </div>
