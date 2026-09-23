@@ -238,10 +238,7 @@ nav.navbar > .navbar__inner > header {
   height: 26px;
 }
 
-/* The source mark is white; on the cream navbar it is darkened to brand ink. */
-[data-theme='light'] .navbar__logo img {
-  filter: brightness(0) saturate(100%);
-}
+/* Logo has light and dark files (img/gnosis-chain-light.svg, -dark.svg); no colour filter needed. */
 
 .navbar__link {
   color: var(--gc-text-muted);

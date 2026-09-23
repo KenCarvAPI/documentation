@@ -2,6 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 import {
   useThemeConfig,
+  useColorMode,
   ErrorCauseBoundary,
   ThemeClassNames,
 } from '@docusaurus/theme-common';
@@ -51,7 +52,10 @@ export default function NavbarContent() {
   const items = useThemeConfig().navbar.items;
   const [leftItems] = splitNavbarItems(items);
   const searchBarItem = items.find((item) => item.type === 'search');
-  const logoSrc = useBaseUrl('/img/gnosis.svg');
+  const {colorMode} = useColorMode();
+  const logoLight = useBaseUrl('/img/gnosis-chain-light.svg');
+  const logoDark = useBaseUrl('/img/gnosis-chain-dark.svg');
+  const logoSrc = colorMode === 'dark' ? logoDark : logoLight;
 
   return (
     <div className={clsx('navbar__inner', styles.inner)}>

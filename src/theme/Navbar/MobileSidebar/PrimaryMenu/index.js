@@ -7,10 +7,13 @@ import NavbarItem from '@theme/NavbarItem';
  * Swizzled to add the build.gnosischain.com site links under the section
  * links. On desktop those live in the shared header (src/components/SiteHeader);
  * on phones the shared header hides them and this sidebar is the only menu.
- * Plain anchor on purpose: "/" is outside this site's baseUrl, and
- * Docusaurus <Link> would prefix it with /docs/.
+ * Plain anchors on purpose: these paths are outside this site's baseUrl,
+ * and Docusaurus <Link> would prefix them with /docs/.
  */
-const SITE_LINKS = [{label: 'Ecosystem', href: '/'}];
+const SITE_LINKS = [
+  {label: 'Solutions', href: '/solutions'},
+  {label: 'Ecosystem', href: '/ecosystem'},
+];
 
 export default function NavbarMobilePrimaryMenu() {
   const mobileSidebar = useNavbarMobileSidebar();

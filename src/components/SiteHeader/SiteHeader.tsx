@@ -12,10 +12,11 @@
 import { useState, type ReactNode } from "react";
 import styles from "./SiteHeader.module.css";
 
-export type SiteKey = "ecosystem" | "docs";
+export type SiteKey = "home" | "solutions" | "ecosystem" | "docs";
 
 const SITES: { key: SiteKey; label: string; href: string }[] = [
-  { key: "ecosystem", label: "Ecosystem", href: "/" },
+  { key: "solutions", label: "Solutions", href: "/solutions" },
+  { key: "ecosystem", label: "Ecosystem", href: "/ecosystem" },
   { key: "docs", label: "Docs", href: "/docs/" },
 ];
 
@@ -37,10 +38,11 @@ const SOCIALS = [
   },
 ];
 
-const JOIN = { label: "Join us", href: "https://tally.so/r/3lrN05" };
+// No destination yet: the old "Join us" form is retired. Add an href when there is one.
+const CONTACT = { label: "Contact", href: undefined as string | undefined };
 
 type Props = {
-  /** Which site this header is rendered on. Shown as the wordmark and the active pill. */
+  /** Which section this header is rendered on. Marks the active pill; the logo goes home. */
   current: SiteKey;
   /** URL of the white Gnosis wordmark. Differs per app (public/ vs static/img/). */
   logoSrc: string;
@@ -86,7 +88,8 @@ function SocialLinks({ className }: { className: string }) {
 
 export default function SiteHeader({ current, logoSrc, start, center, end, mobileMenu = true }: Props) {
   const [menuOpen, setMenuOpen] = useState(false);
-  const here = SITES.find((s) => s.key === current) ?? SITES[0];
+  // Wordmark next to the logo names the section you are in. The landing page shows the logo alone.
+  const wordmark = { home: null, solutions: "Solutions", ecosystem: "Ecosystem", docs: "Docs" }[current];
 
   return (
     <header className={styles.header}>
@@ -95,7 +98,7 @@ export default function SiteHeader({ current, logoSrc, start, center, end, mobil
         <a href="/" className={styles.logo} aria-label="Gnosis home">
           <img src={logoSrc} alt="Gnosis" width={118} height={26} />
         </a>
-        <span className={styles.wordmark}>{here.label}</span>
+        {wordmark && <span className={styles.wordmark}>{wordmark}</span>}
       </div>
 
       {center && <div className={styles.center}>{center}</div>}
@@ -107,7 +110,7 @@ export default function SiteHeader({ current, logoSrc, start, center, end, mobil
               key={s.key}
               href={s.href}
               className={styles.pill}
-              aria-current={s.key === here.key ? "page" : undefined}
+              aria-current={s.key === current ? "page" : undefined}
             >
               {s.label}
             </a>
@@ -115,8 +118,8 @@ export default function SiteHeader({ current, logoSrc, start, center, end, mobil
         </nav>
         <span className={styles.divider} aria-hidden="true" />
         <SocialLinks className={styles.social} />
-        <a href={JOIN.href} target="_blank" rel="noreferrer" className={styles.join}>
-          {JOIN.label}
+        <a href={CONTACT.href} className={styles.join}>
+          {CONTACT.label}
         </a>
         {end}
       </div>
@@ -137,15 +140,15 @@ export default function SiteHeader({ current, logoSrc, start, center, end, mobil
               </button>
             </div>
             {SITES.map((s) => (
-              <a key={s.key} href={s.href} className={styles.panelLink} aria-current={s.key === here.key ? "page" : undefined}>
+              <a key={s.key} href={s.href} className={styles.panelLink} aria-current={s.key === current ? "page" : undefined}>
                 {s.label}
               </a>
             ))}
             <div className={styles.panelSocials}>
               <SocialLinks className={styles.social} />
             </div>
-            <a href={JOIN.href} target="_blank" rel="noreferrer" className={styles.panelJoin}>
-              {JOIN.label}
+            <a href={CONTACT.href} className={styles.panelJoin}>
+              {CONTACT.label}
             </a>
           </div>
         </div>

@@ -68,11 +68,6 @@
   height: 26px;
   width: auto;
 }
-/* The source mark is white; on the cream (light) navbar it is darkened to ink. */
-:global(html[data-theme="light"]) .logo img,
-:global(html[data-theme="light"]) .panelLogo {
-  filter: brightness(0) saturate(100%);
-}
 .wordmark {
   font-size: 0.75rem;
   font-weight: 600;

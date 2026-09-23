@@ -85,9 +85,9 @@ const config = {
       navbar: {
         logo: {
           alt: "Gnosis Chain",
-          src: "img/gnosis.svg",
-          srcDark: "img/gnosis.svg",
-          width: 118,
+          src: "img/gnosis-chain-light.svg",
+          srcDark: "img/gnosis-chain-dark.svg",
+          width: 176,
           height: 26,
         },
         items: [
