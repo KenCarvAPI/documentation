@@ -9,7 +9,7 @@ const config = {
   title: "Gnosis Chain",
   tagline:
     "Build apps, payments and infrastructure on Gnosis Chain: an EVM network with 5-second blocks, near-zero fees and a stablecoin as gas.",
-  url: "https://docs.gnosischain.com",
+  url: process.env.DOCS_URL || "https://docs.gnosischain.com",
   baseUrl: process.env.DOCS_BASE_URL || "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "throw",
@@ -51,6 +51,11 @@ const config = {
         },
         // Updates blog archived to /archives/Updates (not published).
         blog: false,
+        sitemap: {
+          // Some doc folders have spaces in their names; sitemap URLs must be encoded.
+          createSitemapItems: async ({ defaultCreateSitemapItems, ...params }) =>
+            (await defaultCreateSitemapItems(params)).map((item) => ({ ...item, url: item.url.replace(/ /g, "%20") })),
+        },
         theme: {
           customCss: require.resolve("./src/css/custom.scss"),
         },
@@ -312,9 +317,22 @@ const config = {
       },
     ],
     [
-      "docusaurus-plugin-generate-llms-txt",
+      // Agent-readable output: llms.txt (index), llms-full.txt (all content) and a .md copy of every page.
+      require.resolve("./src/plugins/llms-txt.mjs"),
       {
-        outputFile: "llms.txt", // defaults to llms.txt if not specified
+        siteTitle: "Gnosis Chain Docs",
+        siteDescription:
+          "How to build on Gnosis Chain: an EVM network (chain ID 100) with 5-second blocks, near-zero fees and xDAI, a stablecoin, as gas. Covers embedding Gnosis products, smart contract development, running nodes and bridging.",
+        depth: 2,
+        // Start Here first: it is where an agent should begin.
+        includeOrder: ["/docs/start/**", "/docs/developers/**", "/docs/bridges/**", "/docs/tools/**", "/docs/node/**"],
+        content: {
+          enableLlmsFullTxt: true,
+          includePages: true,
+          // Full URLs, so every link resolves from wherever an agent read the file.
+          relativePaths: false,
+          excludeRoutes: ["/docs/search", "/docs/live-samples/**"],
+        },
       },
     ],
   ],
