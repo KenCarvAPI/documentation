@@ -44,8 +44,8 @@ const CookieBanner: React.FC = () => {
         }}>
             <h3 style={{
                 fontFamily: 'var(--gc-font-display)',
-                fontSize: '1.15rem',
-                fontWeight: 700,
+                fontSize: '1.3rem',
+                fontWeight: 400,
                 letterSpacing: '-0.02em',
                 margin: '0 0 0.6rem 0'
             }}>

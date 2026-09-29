@@ -1,5 +1,5 @@
 "use client";
-// Shared site header for build.gnosischain.com, in the docs navbar style.
+// Shared site header for build.gnosischain.com: a floating pill, as on gnosis.io/chain.
 // IDENTICAL copies live in:
 //   gnosis-general/ecosystem/components/SiteHeader/
 //   gnosischain-docs/src/components/SiteHeader/
@@ -9,7 +9,7 @@
 // Colours come from the docs' --gc-* tokens when present (so the docs
 // light/dark switch works) and fall back to the navy dark palette elsewhere.
 
-import { useState, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import styles from "./SiteHeader.module.css";
 
 export type SiteKey = "home" | "solutions" | "ecosystem" | "docs";
@@ -88,11 +88,19 @@ function SocialLinks({ className }: { className: string }) {
 
 export default function SiteHeader({ current, logoSrc, start, center, end, mobileMenu = true }: Props) {
   const [menuOpen, setMenuOpen] = useState(false);
+  // See-through at the top of the page, solid pill once scrolled.
+  const [solid, setSolid] = useState(false);
+  useEffect(() => {
+    const update = () => setSolid(window.scrollY > 8);
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    return () => window.removeEventListener("scroll", update);
+  }, []);
   // Wordmark next to the logo names the section you are in. The landing page shows the logo alone.
   const wordmark = { home: null, solutions: "Solutions", ecosystem: "Ecosystem", docs: "Docs" }[current];
 
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${solid ? styles.solid : ""}`}>
       <div className={styles.brand}>
         {start}
         <a href="/" className={styles.logo} aria-label="Gnosis home">

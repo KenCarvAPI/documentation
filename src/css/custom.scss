@@ -2,7 +2,8 @@
  * Gnosis Chain documentation — global theme.
  *
  * Design tokens live on :root / [data-theme]. Everything else reads from them.
- * Type: GT Planar for display headings, Suisse Intl for UI and body copy.
+ * Type: Playfair Display for display headings, Figtree for UI and body copy,
+ * matching the rest of build.gnosischain.com (fonts load in docusaurus.config.js).
  */
 
 /* ---------- fonts ---------- */
@@ -44,8 +45,8 @@
 
 /* ---------- tokens ---------- */
 html:root {
-  --gc-font-body: 'Suisse Intl', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --gc-font-display: 'Unica 77', var(--gc-font-body);
+  --gc-font-body: 'Figtree', 'Suisse Intl', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --gc-font-display: 'Playfair Display', Georgia, serif;
 
   /* Brand palette (shared with the Gnosis Chain marketing site) */
   --gc-cream: #faf5f1;
@@ -56,22 +57,24 @@ html:root {
   --gc-purple: #3f2acd;
   --gc-purple-300: #9994ed;
   --gc-mint: #8de9aa;
-  --gc-line: #e1e4ea;
+  --gc-line: #e3e1ee;
+  --gc-lavender: #f6f1fa;
 
-  --gc-bg: var(--gc-cream);
-  --gc-surface: var(--gc-paper);
-  --gc-surface-2: #f2ede9;
+  /* Light mode matches the ecosystem app (lavender page, white cards, ink text). */
+  --gc-bg: var(--gc-lavender);
+  --gc-surface: #ffffff;
+  --gc-surface-2: #efeaf6;
   --gc-border: var(--gc-line);
-  --gc-border-strong: #c9cede;
-  --gc-text: var(--gc-indigo);
-  --gc-text-muted: #6e6c7d;
-  --gc-text-faint: #918fa3;
+  --gc-border-strong: #c7c4dc;
+  --gc-text: var(--gc-navy);
+  --gc-text-muted: #55546f;
+  --gc-text-faint: #8e8ca6;
   --gc-accent: var(--gc-purple);
   --gc-accent-hover: #3423ad;
   --gc-accent-ink: #ffffff;
   --gc-accent-soft: rgba(63, 42, 205, 0.08);
-  --gc-cta: var(--gc-mint);
-  --gc-cta-ink: var(--gc-navy);
+  --gc-cta: var(--gc-navy);
+  --gc-cta-ink: #ffffff;
   --gc-radius: 20px;
   --gc-radius-sm: 14px;
 
@@ -93,7 +96,7 @@ html:root {
   --ifm-line-height-base: 1.6;
   --ifm-code-font-size: 90%;
   --ifm-global-radius: 14px;
-  --ifm-navbar-height: 104px; /* 60px shared header + 44px section row */
+  --ifm-navbar-height: 112px; /* 12px gap + 56px floating header + 44px section row */
   --ifm-navbar-background-color: var(--gc-bg);
   --ifm-navbar-shadow: none;
   --ifm-toc-border-color: var(--gc-border);
@@ -157,7 +160,7 @@ html {
 
 body {
   font-family: var(--gc-font-body);
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: -0.005em;
 }
 
@@ -172,9 +175,10 @@ h5, h6 { font-weight: 500; }
 
 .markdown h1:first-child {
   font-family: var(--gc-font-display);
-  font-weight: 700;
-  font-size: 2.35rem;
-  letter-spacing: -0.025em;
+  font-weight: 400;
+  font-size: 2.6rem;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
 }
 .markdown > h2 {
   font-size: 1.5rem;
@@ -210,13 +214,13 @@ nav.navbar {
   border-bottom: 1px solid var(--gc-border);
   background-color: var(--ifm-navbar-background-color);
 }
-/* The shared header is sticky with its own bottom border for the ecosystem
-   app. Here the navbar is already fixed and draws the border under the
-   section row, and a sticky z-index would paint over the mobile sidebar. */
+/* The shared header is sticky in the ecosystem app and overlaps the hero
+   (negative bottom margin). Here the navbar is already fixed and the section
+   row sits right under it; a sticky z-index would paint over the mobile sidebar. */
 nav.navbar > .navbar__inner > header {
   position: static;
   z-index: auto;
-  border-bottom: 0;
+  margin-bottom: 0;
 }
 /* Separator between doc sections and site links in the phone sidebar. */
 .menu__separator {
@@ -325,9 +329,9 @@ a:hover .socialButton path {
 }
 /* Docusaurus's own theme takes the search container out of the navbar's flow
    below 996px (`position: absolute; right: ...`) so it can sit beside a
-   collapsed logo. We want the full pill to stay centered in the row down to
-   phone width instead, so put it back in normal flow through that range. */
-@media (max-width: 996px) and (min-width: 561px) {
+   collapsed logo. We keep it in normal flow at every width, so it stays inside
+   the floating header pill (centered down to phone width, then at the end). */
+@media (max-width: 996px) {
   .navbar [class*='navbarSearchContainer'] {
     position: static;
   }
@@ -424,7 +428,7 @@ a:hover .socialButton path {
 
 @media (max-width: 996px) {
   html:root {
-    --ifm-navbar-height: 56px;
+    --ifm-navbar-height: 68px; /* 8px gap + 52px floating header + 8px */
   }
   .navbar__logo,
   .navbar__logo img {
@@ -441,7 +445,7 @@ a:hover .socialButton path {
   }
   .navbar .DocSearch-Button {
     width: auto;
-    height: 40px;
+    height: 36px;
     padding: 0 0.6rem;
   }
   .DocSearch-Button-Placeholder,

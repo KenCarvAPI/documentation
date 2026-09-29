@@ -1,8 +1,24 @@
 .page {
+  position: relative;
+  isolation: isolate;
   max-width: 1280px;
   margin: 0 auto;
   padding: 4.5rem 2rem 5rem;
   background: var(--gc-bg);
+}
+/* Full-width colour wash behind the hero, same stops as the ecosystem app's hero. */
+.page::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: calc(50% - 50vw);
+  width: 100vw;
+  height: 36rem;
+  background: linear-gradient(180deg, #d6e2f4 0%, #dbeeea 42%, #ddf2e6 62%, #f6f1fa 96%);
+}
+html[data-theme='dark'] .page::before {
+  display: none;
 }
 
 /* ---------- hero ---------- */
@@ -13,10 +29,10 @@
 
 .heroTitle {
   font-family: var(--gc-font-display);
-  font-weight: 700;
-  font-size: clamp(2.2rem, 4.4vw, 3.4rem);
+  font-weight: 400;
+  font-size: clamp(2.4rem, 4.8vw, 3.8rem);
   line-height: 1.05;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
   margin: 0 0 1.5rem;
   color: var(--gc-text);
 }
@@ -129,8 +145,8 @@
   flex: 1 1 auto;
 }
 .pathwayTitle {
-  font-family: var(--gc-font-display);
-  font-weight: 700;
+  font-family: var(--gc-font-body);
+  font-weight: 600;
   font-size: 1.3rem;
   line-height: 1.15;
   letter-spacing: -0.02em;

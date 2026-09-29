@@ -20,6 +20,10 @@ const config = {
       async: true,
     },
   ],
+  // Same typefaces as the ecosystem app (Figtree body, Playfair Display headings).
+  stylesheets: [
+    "https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Playfair+Display:wght@400;500&display=swap",
+  ],
   customFields: {
     GOOGLE_ANALYTICS_ID: process.env.GOOGLE_ANALYTICS_ID ?? "G-YVPQSCP6S7",
   },
@@ -78,7 +82,7 @@ const config = {
         isCloseable: true,
       },
       colorMode: {
-        defaultMode: "dark", // Set default mode to dark
+        defaultMode: "light", // Light by default, like the rest of build.gnosischain.com
         disableSwitch: false, // Enable the theme switch
         respectPrefersColorScheme: false, // Do not change theme based on user preference
       },
