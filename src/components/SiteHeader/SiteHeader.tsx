@@ -38,8 +38,8 @@ const SOCIALS = [
   },
 ];
 
-// No destination yet: the old "Join us" form is retired. Add an href when there is one.
-const CONTACT = { label: "Contact", href: undefined as string | undefined };
+// Same contact page as the gnosis.io header.
+const CONTACT = { label: "Contact", href: "https://www.gnosis.io/contact" };
 
 type Props = {
   /** Which section this header is rendered on. Marks the active pill; the logo goes home. */
