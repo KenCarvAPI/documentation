@@ -400,6 +400,16 @@ a:hover .socialButton path {
   color: var(--gc-text);
 }
 
+/* Sidebars and the on-page TOC scroll on their own: reaching the end of one
+   doesn't start scrolling the page behind it. Not set on the page itself, so
+   trackpad swipe-back and pull-to-refresh still work. */
+.theme-doc-sidebar-menu,
+.menu,
+.navbar-sidebar__item,
+[class*='tableOfContents'] {
+  overscroll-behavior: contain;
+}
+
 /* mobile sidebar */
 .navbar-sidebar {
   background: var(--gc-bg);

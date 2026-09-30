@@ -236,6 +236,7 @@
   color: var(--sh-text);
   border-left: 1px solid var(--sh-border);
   overflow-y: auto;
+  overscroll-behavior: contain; /* reaching the end doesn't scroll the page behind */
 }
 .panelTop {
   display: flex;
