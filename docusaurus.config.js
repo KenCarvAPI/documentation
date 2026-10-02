@@ -146,7 +146,7 @@ const config = {
           {
             title: "Build",
             items: [
-              { label: "Start here", to: "/start" },
+              { label: "Docs", to: "/" },
               { label: "Quickstart", to: "/developers/quickstart" },
               { label: "Developer overview", to: "/developers/Overview" },
               { label: "Bridges", to: "/bridges" },
@@ -159,7 +159,7 @@ const config = {
               { label: "Network details", to: "/about/networks/" },
               { label: "Chiado testnet", to: "/about/networks/chiado" },
               { label: "Faucets", to: "/tools/Faucets" },
-              { label: "Blockscout", href: "https://gnosis.blockscout.com" },
+              { label: "Explorer", href: "https://gnosis.blockscout.com" },
               { label: "Gnosis Bridge", href: "https://bridge.gnosischain.com" },
             ],
           },
